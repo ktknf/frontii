@@ -1,0 +1,366 @@
+/*********************main*******************************/
+.main-page{
+  padding-bottom: 50px;
+  background: #f0f0f2;
+  .slide-search{
+    @extend .padd-top50;
+    @extend .w-95;
+    .search-section{
+      .box-search{
+        @extend %back-yellow;
+        min-height: 400px;
+        @extend %b-rad20;
+        ul{
+          border-radius: 20px 20px 0 0;
+          background: #ffba00;
+          border-bottom: none;
+          li.nav-item{
+            background: #ffba00;
+            border-left: 4px solid #ffa800;
+            width: 25%;
+            max-height: 102px;
+            @extend .txt-center;
+            a{
+              @extend .color-white;
+              font-size: 16px;
+              padding: 10px 0;
+              @extend .font-w;
+              &.active ,&:hover{
+                border-color: transparent;
+              }
+              &.active ,&:hover{
+                @extend %back-yellow;
+               @extend .color-blue;
+                &#fly-in-tab{
+                  &:before{
+                    background: url("../images/icon.png") 155px -69px;
+                  }
+                }
+                &#fly-out-tab{
+                  &:before{
+                    background: url("../images/icon.png") -154px -75px;
+                  }
+                }
+                &#hotel-tab{
+                  &:before{
+                    background: url("../images/icon.png") -80px -80px;
+                  }
+                }
+                &#tour-tab{
+                  &:before{
+                    background: url("../images/icon.png") -6px -80px;
+                  }
+                }
+              }
+              &:before{
+                content: '';
+                width: 60px;
+                height: 50px;
+                @extend .dis-block;
+                @extend .mrg-auto;
+                margin-bottom: 5px;
+              }
+              &#fly-in-tab{
+                &:before{
+                 background: url("../images/icon.png") 163px -13px;
+                }
+              }
+              &#fly-out-tab{
+                &:before{
+                 background: url("../images/icon.png") -154px -10px;
+                }
+              }
+              &#hotel-tab{
+                &:before{
+                 background: url("../images/icon.png") -80px -10px;
+                }
+              }
+              &#tour-tab{
+                &:before{
+                 background: url("../images/icon.png") -6px -10px;
+                }
+              }
+            }
+            &:first-child {
+              border-radius: 0 20px 0 0;
+              a{
+                border-radius: 0 20px 0 0;
+              }
+            }
+            &:last-child{
+              border-radius: 20px 0 0 0;
+              border-left: none;
+              margin: 0;
+              a{
+                border-radius: 20px 0 0 0;
+              }
+            }
+          }
+        }
+        .tab-content{
+          .tab-pane{
+            @extend .txt-center;
+            .btn-toggle{
+              border-radius: 20px;
+              width: 180px;
+              @extend .m-top20;
+              @extend .back-white;
+              .btn{
+                padding: 3px 10px;
+                font-size: 12px;
+                @extend .color-blue;
+                @extend .font-w;
+                &.active{
+                  border-radius: 20px;
+                  @extend .color-white;
+                }
+              }
+            }
+            .form-search{
+              form{
+                @extend .m-top20;
+                .form-row{
+                  .form-group{
+                    @extend .pos-relative;
+                    .title-input{
+                      @extend .dis-in;
+                      @extend .pos-abs;
+                      @extend .color-blue;
+                      @extend .font-w;
+                      right: 18px;
+                      font-size: 12px;
+                      bottom: 0;
+                      &:before{
+                        content: '';
+                        width: 30px;
+                        height: 30px;
+                        @extend .pos-abs;
+                        @extend .dis-block;
+                        top: -20px;
+                        right: -6px;
+                      }
+                    }
+                    &.begin-part ,&.end-part{
+                      .title-input{
+                        &:before{
+                          background: url(../images/icon.png) 37px -8px;
+                        }
+                      }
+                    }
+                    &.go-part{
+                      .title-input{
+                        &:before{
+                          background: url(../images/icon.png) 37px -48px;
+                        }
+                      }
+                    }
+                    &.back-part{
+                      .title-input{
+                        color: #cbcbcb;
+                        right: 15px;
+                        &:before{
+                            background: url(../images/icon.png) 77px -48px;
+                            right: 2px;
+                          }
+                      }
+                      .form-control{
+                        border: 1px solid #cbcbcb;
+                      }
+                      &.active{
+                        .title-input{
+                          @extend .color-blue;
+                          &:before{
+                            background: url(../images/icon.png) 37px -48px;
+                          }
+                        }
+                        .form-control{
+                          border: 1px solid #0478b8;
+                        }
+                      }
+                    }
+                    &.num-part{
+                      .title-input{
+                        &:before{
+                          background: url(../images/icon.png) 76px -9px;
+                        }
+                      }
+                    }
+                    .form-control{
+                      height: 45px;
+                      border-radius: 0;
+                      border: 1px solid #0478b8;
+                      padding-right: 40px;
+                      width: 95%;
+                      margin: 7px auto;
+                      &.submit-src{
+                        border: 1px solid #fff;
+                        padding-right: 0;
+                        @extend .color-white;
+                        @extend .back-blue;
+                        &:hover{
+                          @extend %tran;
+                          background: #0328bb;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .slide-img{
+      img{
+        max-width: 100%;
+        margin: 15px 0;
+      }
+    }
+  }
+  .information-fly{
+    .list-info-fly{
+      @extend .w100;
+      @extend .txt-center;
+      .details-info-fly{
+        ul{
+          li{
+            @extend .dis-in;
+            @extend .color-blue;
+            @extend .ver-midd;
+            margin: 15px 35px;
+            font-size: 22px;
+            p{
+              &:first-child{
+                @extend .color-blue;
+                @extend .font-w;
+              }
+              &:last-child{
+                color: #ffa800;
+                font-size: 18px;
+                @extend .fa-num;
+              }
+            }
+            &:first-child{
+              span{
+                font-size: 24px;
+                @extend .font-w;
+              }
+            }
+          }
+        }
+        &:nth-child(even){
+          @extend .back-white;
+        }
+      }
+    }
+  }
+  .special-tour , .special-fly , .special-hotel{
+    @extend .w-95;
+    min-height: 300px;
+    @extend .m-top30;
+    .title-section{
+      border-radius: 0 20px 20px 0;
+      width: 85px;
+      @extend .back-blue;
+      padding: 10px 15px;
+      @extend .pos-relative;
+      h2{
+        @extend .pos-abs;
+        transform: rotate(-270deg);
+        width: 174px;
+        display: block;
+        top: 58%;
+        right: -44px;
+        height: 40px;
+        @extend .color-white;
+      }
+    }
+    .content-special{
+      width: 92.5%;
+      @extend .back-white;
+      @extend .txt-center;
+      padding: 30px 10px;
+      border-radius: 20px 0 0 20px;
+      .list-item-spe{
+        @extend .w-90;
+        .slick-arrow{
+          width: 60px;
+          height: 65px;
+          @extend .dis-in;
+        }
+        .slick-prev {
+          background: url(../images/icon.png) -6px -153px;
+          left: -56px;
+        }
+        .slick-next{
+          background: url(../images/icon.png) -76px -153px;
+          right: -56px;
+        }
+      }
+      .item-special{
+        width: 350px;
+        @extend .dis-in;
+        a.over-pic{
+          @extend .dis-block;
+          overflow: hidden;
+          @extend %b-rad20;
+          img{
+            @extend .w100;
+            @extend %b-rad20;
+            -webkit-transition: all .25s linear;
+            transition: all .25s linear;
+          }
+        }
+        &:hover{
+          a.over-pic{
+            img{
+              -webkit-transform: scale3d(1.2,1.2,1);
+              transform: scale3d(1.2,1.2,1);
+            }
+          }
+          a.more-info{
+            @extend .back-blue;
+          }
+        }
+        a.more-info{
+          background: #ffa800;
+          @extend .m-top10;
+          @extend .dis-in;
+          @extend .color-white;
+          padding: 3px 30px;
+          @extend %b-rad20;
+          font-size: 13px;
+          line-height: 1.5;
+          @extend %box-sh;
+          @extend %tran;
+        }
+        h3{font-size: 16px;}
+        p{font-size: 22px;}
+        h3,p{
+          @extend .color-blue;
+          @extend .font-w;
+        }
+      }
+    }
+  }
+}
+.datepicker-plot-area .datepicker-navigator .pwt-btn-next, .datepicker-plot-area .datepicker-navigator .pwt-btn-switch, .datepicker-plot-area .datepicker-navigator .pwt-btn-prev ,.datepicker-plot-area .datepicker-navigator .pwt-btn-next{
+  direction: ltr;
+}
+
+.datepicker-plot-area{
+  width: 280px;
+  max-width: 100%;
+  min-width:230px;
+  direction: rtl;
+  right: -230px;
+  .toolbox{
+    .pwt-btn-calendar{
+      background: #0077bb;
+      background-color: #0077bb!important; ;
+      color: #fff;
+      border-radius: 5px;
+    }
+  }
+}

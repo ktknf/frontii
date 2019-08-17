@@ -1,0 +1,570 @@
+/*********************responsive*******************************************/
+/*********************responsive*******************************************/
+@media only screen and (min-width: 1400px) {
+  .container-fluid{
+    max-width: 1600px;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .head-page {
+    .menu-part {
+      .navbar {
+        li {
+          a {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+  .main-page{
+    .slide-search {
+      .search-section {
+        .box-search {
+          ul{
+            li.nav-item{
+              a{
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .information-fly{
+      .list-info-fly{
+        .details-info-fly{
+          ul{
+            li{
+              font-size: 18px;
+              margin: 15px 20px;
+              p{
+                &:last-child{
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .special-tour , .special-fly , .special-hotel {
+      .content-special {
+        width: 90%;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .content-search{
+    .content-list-src{
+      min-width: 725px;
+      .item-list-src{  }
+    }
+    .side-left{
+      max-width: 165px;
+    }
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .content-search{
+    .content-list-src{
+      min-width: 795px!important;
+      .item-list-src{  }
+    }
+    .side-left{
+      max-width: 165px;
+    }
+  }
+}
+@media only screen and (min-width: 1350px) {
+  .content-search{
+    .content-list-src{
+      min-width: 830px!important;
+    }
+    .side-left{
+      max-width: 165px;
+    }
+  }
+}
+@media only screen and (max-width: 990px) {
+  .head-page{
+    .menu-part{
+      display: none;
+    }
+    .responsive-menu{
+      display: inline-flex;
+    }
+    .content-head{
+      >div {
+        &:first-child , &:nth-child(2) , &:nth-child(3){
+          -ms-flex: 0 0 42%;
+          flex: 0 0 42%;
+          max-width: 42%;
+        }
+        padding: 0;
+        &.menu-part{
+          padding: 10px 20px;
+        }
+        &.responsive-menu{
+          -ms-flex: 0 0 15%;
+          flex: 0 0 15%;
+          max-width: 15%;
+        }
+      }
+    }
+  }
+  .main-page{
+    .slide-search{
+      width: 100%;
+    }
+    .information-fly{
+      .list-info-fly{
+        .details-info-fly{
+          padding-right: 20px;
+          ul{
+            li{
+              margin: 5px 10px;
+              &:first-child{
+                display: block;
+                text-align: right;
+                span{
+                  font-size: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .special-tour , .special-fly , .special-hotel {
+      width: 100%;
+      .content-special {
+        width: 88%;
+      }
+    }
+  }
+  .search-head{
+    display: none;
+  }
+  .datepicker-container {
+    position: fixed;
+    top: 0!important;
+    width: 100%;
+    left: 0!important;
+    height: 100vh;
+    .glyphicon{
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 22px;
+      cursor: pointer;
+      color: #fff;
+      z-index: 999;
+      background: url(../images/icon.png) 70px -100px;
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+    }
+    .datepicker-plot-area{
+      padding-top: 60px;
+      top: 0!important;
+      direction: ltr;
+      width: 100%;
+      left: 0!important;
+      height: 100vh;
+      background: #000000f5;
+      .datepicker-day-view {
+        .table-days {
+          td span{
+            background: #000000f5;
+            background-color: #000000f5;
+            color: #ffffff!important;
+            &:hover{
+              background-color: #007be6;
+            }
+          }
+          td.selected span{
+            background-color: #005299;
+          }
+        }
+        .month-grid-box .header .header-row-cell{
+          color: #007be6;
+        }
+      }
+      .datepicker-navigator {
+        .pwt-btn-switch , .pwt-btn-prev , .pwt-btn-next{
+          background-color: rgb(246, 243, 243);
+        }
+      }
+      .toolbox{
+        .pwt-btn-today{
+          float: right!important;
+          background-color: rgb(250, 250, 250);
+          position: relative;
+          right:0;
+        }
+      }
+    }
+  }
+  .responsive-side-src{
+    display: block;
+    .modal-content{
+      .modal-body{
+        .search-head{
+          display:inline-block!important;
+        }
+      }
+    }
+  }
+  .content-search{
+    .content-list-src{
+     padding: 0 15px;
+    }
+    .side-left , .side-right{
+      display: none;
+    }
+  }
+  .side-right{
+    .widget {
+      margin-bottom: 5px;
+    }
+    .list-class-fly{
+      ul.list-check {
+        li {
+          .lableSorc {
+            span {
+              &:first-child, &:nth-child(2) {
+                width: 43%;
+              }
+            }
+          }
+        }
+      }
+    }
+    ul.list-check {
+      .lableSorc {
+        span{
+          font-size: 14px;
+          &.icon-fly-check , &:first-child{
+            min-width: 55px;
+          }
+          &.fa-num{
+            width: 60px;
+          }
+        }
+      }
+    }
+  }
+  .content-search .content-list-src {
+    .item-list-src .above-div{
+      .part-right-above {
+        .sort-fly{
+          p{
+            right: -5px;
+            bottom: -10px;
+            padding: 5px;
+            line-height: 1;
+            border-radius: 5px 5px 0 0;
+            font-size: 11px;
+            &.title-system{
+              right: -12px;
+              font-size: 10px;
+            }
+			min--width:70px;
+          }
+        }
+        .hour-start-end ul li {
+          margin: 0;
+          p:first-child{
+            font-size: 16px;
+          }
+          p:last-child{
+            font-size: 14px;
+          }
+          &.line-between {
+            width: 50%;
+          }
+        }
+      }
+
+    }
+    .footer-co-src {
+      .number-fly ,.details-fly  {
+        width: 49%;
+        display: inline-block;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .head-page{
+    min-height: 80px;
+    .logo-part{
+      img{
+        max-width: 100%;
+      }
+    }
+
+  }
+  .main-page {
+    padding-top: 10px;
+    .slide-search {
+      .search-section{
+        .box-search{
+          .tab-content{
+            .tab-pane .form-search form .form-row .form-group .form-control{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .information-fly{
+      .list-info-fly{
+        .details-info-fly{
+          padding-right: 5px;
+        }
+      }
+    }
+    .special-tour , .special-fly , .special-hotel{
+      width: auto;
+      margin-right: -15px;
+      margin-left: -15px;
+      overflow: hidden;
+      .title-section{
+        border-radius: 0;
+        width: auto;
+        padding: 0 15px;
+        margin-right: 4px;
+        h2{
+          transform: rotate(0deg);
+          width: auto;
+          display: block;
+          top: auto;
+          right: auto;
+          height: auto;
+          position: relative;
+        }
+      }
+      .content-special{
+        width: 98%;
+        border-radius: 0;
+        margin: 0 auto;
+        border-top: 2px solid #0077bb;
+        .list-item-spe{
+          .slick-arrow{
+            width: 35px;
+            height: 35px;
+          }
+          .slick-prev {
+            background: url(../images/icon.png) -9px -240px;
+            left: -23px;
+          }
+          .slick-next{
+            background: url(../images/icon.png) -48px -240px;
+            right: -23px;
+          }
+        }
+        .item-special{
+          a.over-pic{
+            img{
+              width: auto;
+              margin:0 auto;
+            }
+          }
+          h3{font-size: 13px;}
+          p{font-size: 18px;}
+        }
+      }
+    }
+  }
+}
+@media (max-width: 650px) {
+  .content-search .content-list-src {
+    .item-list-src .above-div{
+      .part-right-above {
+        .icon-fly{
+          width: 20%;
+          padding: 0 0;
+        }
+        .hour-start-end{
+          width: 63%;
+          ul li{
+            p:first-child{
+              font-size: 14px;
+            }
+            p:last-child{
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+    .footer-co-src {
+      .number-fly ,.details-fly  {
+        padding: 0 5px;
+        p , a{
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .main-page {
+    .slide-search {
+      width: auto;
+      margin-right: -15px;
+      margin-left: -15px;
+      .search-section{
+        padding: 0;
+        .box-search{
+          ul{
+            li.nav-item{
+              max-height: 95px;
+              a{
+                font-size: 13px;
+                padding: 10px 0;
+                &.active ,&:hover{
+                }
+                &.active ,&:hover{
+                  &#fly-in-tab{
+                    &:before{
+                      background:  url("../images/icon.png") 55px -174px;
+                    }
+                  }
+                  &#fly-out-tab{
+                    &:before{
+                      background: url("../images/icon.png") 117px -180px;
+                    }
+                  }
+                  &#hotel-tab{
+                    &:before{
+                      background: url("../images/icon.png") 178px -180px;
+                    }
+                  }
+                  &#tour-tab{
+                    &:before{
+                      background: url("../images/icon.png") 238px -180px;
+                    }
+                  }
+                }
+                &:before{
+                  content: '';
+                  width: 45px;
+                  height: 45px;
+                }
+                &#fly-in-tab{
+                  &:before{
+                    background: url("../images/icon.png") 55px -133px;
+                  }
+                }
+                &#fly-out-tab{
+                  &:before{
+                    background: url("../images/icon.png") 116px -133px;
+                  }
+                }
+                &#hotel-tab{
+                  &:before{
+                    background: url("../images/icon.png") 177px -133px;
+                  }
+                }
+                &#tour-tab{
+                  &:before{
+                    background: url("../images/icon.png") 238px -133px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-page .content-footer {
+    width: auto;
+    margin-right: -15px;
+    margin-left: -15px;
+    .list-namd .top-part ul{
+      text-align: center;
+      li{
+        width: 25%;
+        img{
+          width: 100%;
+        }
+      }
+    }
+    .address-info{
+      li{
+        &:nth-child(2),&:nth-child(3){
+          font-size: 22px;
+        }
+      }
+    }
+    .list-namd{
+      .bottom-part{
+        .box-copyright{
+          width: 90%;
+          margin: 0 auto;
+          min-height: 70px;
+        }
+      }
+    }
+  }
+  .content-search .content-list-src {
+    .item-list-src .above-div{
+      .part-left-above {
+        border-top:1px dashed #cccccc;
+        p{
+          display: inline-block;
+          margin: 0 10px;
+          &:first-child{
+            font-size: 11px;
+          }
+          &.price-ticket{
+            span:first-child{
+              font-size: 16px!important;
+            }
+          }
+        }
+        .btn-primary{
+          padding: 5px;
+          line-height: 1;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+
+}
+@media only screen and (max-width: 370px) {
+  .main-page {
+    .information-fly{
+      .list-info-fly{
+        .details-info-fly{
+          ul{
+            li{
+              margin: 5px;
+              font-size: 16px;
+              p{
+                &:last-child{
+                  font-size: 13px;
+                }
+              }
+              &:first-child{
+                span{
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

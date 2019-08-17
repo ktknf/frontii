@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/slick.css" />
+    <link rel="stylesheet" href="/css/persian-datepicker.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <!--[if IE]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    -<![endif]-->
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="QYcADuZEI3N2zr_TC21wCW-siU9CWNZojpGSs3eQs0sP4DVZkw8QCi-l1YRqVCpBOcP_GSw_lDy3oKLHB-DsLA==">
+    <title></title>
+    </head>
+<body>
+<!-- Modal-ok-waiting-error-->
+<!--Add class .pop-wait to div.modal for waiting-->
+<!--Add class .pop-error to div.modal for error-->
+<!--Add class .pop-ok to div.modal for ok-->
+<div class="modal fade pop-wait" id="modal-popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="ok-part content-popup">
+                    <div class="img-popup"></div>
+                    <p>عملیات</p>
+                    <p>با موفقیت انجام شد</p>
+                </div>
+                <div class="waiting-part content-popup">
+                    <div class="img-popup"></div>
+                    <p>تا تکمیل جستجو</p>
+                    <p>لطفا شکیبا باشید</p>
+                </div>
+                <div class="error-part content-popup">
+                    <div class="img-popup"></div>
+                    <p>عملیات</p>
+                    <p>با خطا روبرو شد</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Modal-ok-waiting-error-->
+<header class="head-page">
+    <section class="container-fluid">
+        <section class="row content-head">
+            <div class="col-md-3 col-sm-3 logo-part">
+                <a href="#">
+                    <img src="/images/logo.png" alt="">
+                    <h1 class="sr-only">عنوان سایت</h1>
+                    <h2 class="sr-only">توضیحاتی درباره سایت</h2>
+                </a>
+            </div><!--logo-part-->
+            <div class="col-md-7 col-sm-6 menu-part">
+                <nav class="nav-menu">
+                    <ul class="navbar">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> خرید بلیط </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">رزرو هتل</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">تور</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">تور های ویژه </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">پروازهای ویژه</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">هتل های ویژه</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">دانستنی های سفر</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div><!--.menu-part-->
+            <div class="col-md-2 col-sm-6 login-part">
+                <div class="link-login">
+                    <a href="#">ورود | عضویت</a>
+                </div>
+            </div><!--.login-part-->
+            <div class="responsive-menu col-sm-3">
+                <a href="#" class="icon-menu" data-toggle="modal" data-target="#menuresponsive"></a>
+                <div class="modal right fade" id="menuresponsive" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <nav class="menu-res">
+                                    <ul class="text-right navbar">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#"> خرید بلیط </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">رزرو هتل</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">تور</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">تور های ویژه </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">پروازهای ویژه</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">هتل های ویژه</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">دانستنی های سفر</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--responsive-menu-->
+        </section>
+    </section>
+</header>
+<main class="main-page" role="main">
+    <section class="container-fluid">
+        <!--.slide-search-->
+        <section class="row slide-search">
+            <!--.search-section-->
+            <div class="col-lg-5 col-md-6  search-section">
+                <div class="box-search">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="fly-in-tab" data-toggle="tab" href="#fly-in" role="tab" aria-controls="home" aria-selected="true">پرواز داخلی</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="fly-out-tab" data-toggle="tab" href="#fly-out" role="tab" aria-controls="profile" aria-selected="false">پرواز خارجی</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="hotel-tab" data-toggle="tab" href="#hotel" role="tab" aria-controls="contact" aria-selected="false">هتل</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="tour-tab" data-toggle="tab" href="#tour" role="tab" aria-controls="contact" aria-selected="false">تور</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="fly-in" role="tabpanel" aria-labelledby="fly-in-tab">
+                            <div class="btn-group btn-toggle">
+                                <button class="btn btn-default">یکطرفه</button>
+                                <button class="btn btn-primary active">رفت و برگشت</button>
+                            </div>
+                            <div class="form-search w-90">
+                                <form action="/flight">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6 begin-part">
+                                            <span class="title-input">مبداء</span>
+                                            <select name="from" class="form-control">
+                                                <option value="THR">تهران( THR )</option><option value="MHD">مشهد( MHD )</option><option value="TTQ">TTQ( TTQ )</option><option value="UGT">UGT( UGT )</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6 end-part">
+                                            <span class="title-input">مقصد</span>
+                                            <select name="to" class="form-control">
+                                                <option value="MHD">مشهد( MHD )</option>
+                                                <option value="THR">تهران( THR )</option>
+                                                <option value="TTQ">TTQ( TTQ )</option><option value="UGT">UGT( UGT )</option>                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6 go-part">
+                                            <span class="title-input">رفت</span>
+                                            <input type="text" class="form-control" id="dateOne" name="date" value="<%= today %>" >
+                                        </div>
+                                        <!--add class-active-for icon comeback-->
+                                        <div class="form-group col-md-6 back-part">
+                                            <span class="title-input">برگشت</span>
+                                            <input type="text" class="form-control" id="dateTwo" name="date2" value="<%= today %>" >
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6 num-part">
+                                            <span class="title-input">تعداد</span>
+                                            <select class="form-control" name="adult">
+                                                <option value="1"> 1 بزرگسال</option>
+                                                <option  value="2"> 2 بزرگسال</option>
+                                                <option  value="3" > 3 بزرگسال</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input type="submit" class="form-control submit-src" value="جستجو" data-toggle="modal" data-target="#modal-popup">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div><!--.form-search-->
+                        </div><!--#fly-in-->
+                        <div class="tab-pane fade" id="fly-out" role="tabpanel" aria-labelledby="fly-out-tab">
+                            <div class="form-search w-90">
+                                <form action="/flight">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6 begin-part">
+                                            <span class="title-input">مبداء</span>
+                                            <select name="from" class="form-control">
+                                                <option value="IKA">تهران( IKA )</option><option value="DXB">دبی( DXB )</option><option value="GYD">باکو( GYD )</option><option value="SAW">استانبول( SAW )</option><option value="MCT">مسقط( MCT )</option><option value="URC">ارومچی( URC )</option><option value="IST">استانبول( IST )</option><option value="DOH">دهه( DOH )</option><option value="SVO">مسکو( SVO )</option><option value="FRA">فرانفورت( FRA )</option><option value="ZRH">زوریخ( ZRH )</option><option value="MUC">مونیخ( MUC )</option><option value="KBP">کیو( KBP )</option><option value="ODS">ادسا( ODS )</option><option value="VIE">وین( VIE )</option><option value="AMM">امان( AMM )</option><option value="KWI">کویت سیتی( KWI )</option><option value="ESB">آنکارا( ESB )</option><option value="WUH">ووهان( WUH )</option><option value="CAN">گوانجو( CAN )</option><option value="ADB">ازمیر( ADB )</option><option value="BJV">( BJV )</option><option value="AYT">آنتالیا( AYT )</option><option value="ADA">آدنا( ADA )</option><option value="DME">مسکو( DME )</option><option value="LHR">لندن( LHR )</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6 end-part">
+                                            <span class="title-input">مقصد</span>
+                                            <select name="to" class="form-control">
+                                                <option value="IKA">تهران( IKA )</option><option value="DXB">دبی( DXB )</option><option value="GYD">باکو( GYD )</option><option value="SAW">استانبول( SAW )</option><option value="MCT">مسقط( MCT )</option><option value="URC">ارومچی( URC )</option><option value="IST">استانبول( IST )</option><option value="DOH">دهه( DOH )</option><option value="SVO">مسکو( SVO )</option><option value="FRA">فرانفورت( FRA )</option><option value="ZRH">زوریخ( ZRH )</option><option value="MUC">مونیخ( MUC )</option><option value="KBP">کیو( KBP )</option><option value="ODS">ادسا( ODS )</option><option value="VIE">وین( VIE )</option><option value="AMM">امان( AMM )</option><option value="KWI">کویت سیتی( KWI )</option><option value="ESB">آنکارا( ESB )</option><option value="WUH">ووهان( WUH )</option><option value="CAN">گوانجو( CAN )</option><option value="ADB">ازمیر( ADB )</option><option value="BJV">( BJV )</option><option value="AYT">آنتالیا( AYT )</option><option value="ADA">آدنا( ADA )</option><option value="DME">مسکو( DME )</option><option value="LHR">لندن( LHR )</option>                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6 go-part">
+                                            <span class="title-input">رفت</span>
+                                            <input type="text" class="form-control" id="datethree" name="date" value="۱۳۹۸-۰۵-۱۶" >
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6 num-part">
+                                            <span class="title-input">تعداد</span>
+                                            <select class="form-control" name="adult">
+                                                <option value="1"> 1 بزرگسال</option>
+                                                <option  value="2"> 2 بزرگسال</option>
+                                                <option  value="3" > 3 بزرگسال</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input type="submit" class="form-control submit-src" value="جستجو" data-toggle="modal" data-target="#modal-popup">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">...</div>
+                        <div class="tab-pane fade" id="tour" role="tabpanel" aria-labelledby="tour-tab">...</div>
+                    </div>
+                </div><!--.box-search-->
+            </div><!--.search-section-->
+            <div class="col-lg-7 col-md-6 slide-img">
+                <img src="/images/slider.jpg" alt="">
+            </div>
+        </section><!--.slide-search-->
+        <div class="clearfix"></div>
+        <!--.information-fly-->
+        <section class="row information-fly">
+            <div class="list-info-fly">
+                <div class="details-info-fly">
+                    <ul>
+                        <li> پرواز از <span>تهران</span> به</li>
+                        <li>
+                            <p>بوشهر</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>یزد</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>استانبول</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>بندرعباس</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>زاهدان</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="details-info-fly">
+                    <ul>
+                        <li> پرواز از <span>مشهد</span> به</li>
+                        <li>
+                            <p>بوشهر</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>یزد</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>استانبول</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>بندرعباس</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>زاهدان</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="details-info-fly">
+                    <ul>
+                        <li> پرواز از <span>تهران</span> به</li>
+                        <li>
+                            <p>بوشهر</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>یزد</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>استانبول</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>بندرعباس</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>زاهدان</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="details-info-fly">
+                    <ul>
+                        <li> پرواز از <span>مشهد</span> به</li>
+                        <li>
+                            <p>بوشهر</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>یزد</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>استانبول</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>بندرعباس</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>زاهدان</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="details-info-fly">
+                    <ul>
+                        <li> پرواز از <span>اصفهان</span> به</li>
+                        <li>
+                            <p>بوشهر</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>یزد</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>استانبول</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>بندرعباس</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                        <li>
+                            <p>زاهدان</p>
+                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section><!--.information-fly-->
+        <div class="clearfix"></div>
+        <!--.special-tour-->
+        <section class="row special-tour">
+            <div class="title-section">
+                <h2>تور های ویژه</h2>
+            </div>
+            <div class="content-special">
+                <div class="list-item-spe">
+
+		<% for(var i=0; i<tours.length; i++) {%>              
+                    <div class="item-special col-md-4">
+                        <div class="content-item-spe text-center">
+                            <a href="#" class="over-pic">
+                                <img src="<%= "http://95.217.5.6:8300/static/"+tours[i].TourImage %>" alt="" width="302" height="203">
+                            </a>
+                            <h3> <%= tours[i].TourTitle %> </h3>
+                            <p> <%= tours[i].TourDescription %> </p>
+                            <a href="#" class="more-info">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+		<% } %>
+
+                </div>
+            </div>
+        </section> <!--.special-tour-->
+        <div class="clearfix"></div>
+        <!--.special-hotel-->
+        <section class="row special-hotel">
+            <div class="title-section">
+                <h2>هتل های ویژه</h2>
+            </div>
+            <div class="content-special">
+                <div class="list-item-spe">
+                    <div class="item-special col-md-4">
+                        <div class="content-item-spe text-center">
+                            <a href="#" class="over-pic">
+                                <img src="/images/hotel.jpg" alt="" width="302" height="203">
+                            </a>
+                            <h3>هتل مارمارا</h3>
+                            <p>از شبی ۲،۰۰۰،۰۰۰ تومان</p>
+                            <a href="#" class="more-info">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                    <div class="item-special col-md-4">
+                        <div class="content-item-spe text-center">
+                            <a href="#" class="over-pic">
+                                <img src="/images/hotel.jpg" alt="" width="302" height="203">
+                            </a>
+                            <h3>هتل مارمارا</h3>
+                            <p>از شبی ۲،۰۰۰،۰۰۰ تومان</p>
+                            <a href="#" class="more-info">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                    <div class="item-special col-md-4">
+                        <div class="content-item-spe text-center">
+                            <a href="#" class="over-pic">
+                                <img src="/images/hotel.jpg" alt="" width="302" height="203">
+                            </a>
+                            <h3>هتل مارمارا</h3>
+                            <p>از شبی ۲،۰۰۰،۰۰۰ تومان</p>
+                            <a href="#" class="more-info">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                    <div class="item-special col-md-4">
+                        <div class="content-item-spe text-center">
+                            <a href="#" class="over-pic">
+                                <img src="/images/hotel.jpg" alt="" width="302" height="203">
+                            </a>
+                            <h3>هتل مارمارا</h3>
+                            <p>از شبی ۲،۰۰۰،۰۰۰ تومان</p>
+                            <a href="#" class="more-info">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                    <div class="item-special col-md-4">
+                        <div class="content-item-spe text-center">
+                            <a href="#" class="over-pic">
+                                <img src="/images/hotel.jpg" alt="" width="302" height="203">
+                            </a>
+                            <h3>هتل مارمارا</h3>
+                            <p>از شبی ۲،۰۰۰،۰۰۰ تومان</p>
+                            <a href="#" class="more-info">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!--.special-hotel-->
+        <div class="clearfix"></div>
+        <!--.special-fly-->
+        <section class="row special-fly">
+            <div class="title-section">
+                <h2>پروازهای ویژه</h2>
+            </div>
+            <div class="content-special">
+                <div class="list-item-spe">
+                    <div class="item-special col-md-4">
+                        <div class="content-item-spe text-center">
+                            <a href="#" class="over-pic">
+                                <img src="/images/fly.jpg" alt="" width="302" height="203">
+                            </a>
+                            <h3>تهران-استانبول (5 تیر)</h3>
+                            <p>از ۲،۰۰۰،۰۰۰ تومان</p>
+                            <a href="#" class="more-info">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                    <div class="item-special col-md-4">
+                        <div class="content-item-spe text-center">
+                            <a href="#" class="over-pic">
+                                <img src="/images/fly.jpg" alt="" width="302" height="203">
+                            </a>
+                            <h3>تهران-استانبول (5 تیر)</h3>
+                            <p>از ۲،۰۰۰،۰۰۰ تومان</p>
+                            <a href="#" class="more-info">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                    <div class="item-special col-md-4">
+                        <div class="content-item-spe text-center">
+                            <a href="#" class="over-pic">
+                                <img src="/images/fly.jpg" alt="" width="302" height="203">
+                            </a>
+                            <h3>تهران-استانبول (5 تیر)</h3>
+                            <p>از ۲،۰۰۰،۰۰۰ تومان</p>
+                            <a href="#" class="more-info">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                    <div class="item-special col-md-4">
+                        <div class="content-item-spe text-center">
+                            <a href="#" class="over-pic">
+                                <img src="/images/fly.jpg" alt="" width="302" height="203">
+                            </a>
+                            <h3>تهران-استانبول (5 تیر)</h3>
+                            <p>از ۲،۰۰۰،۰۰۰ تومان</p>
+                            <a href="#" class="more-info">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                    <div class="item-special col-md-4">
+                        <div class="content-item-spe text-center">
+                            <a href="#" class="over-pic">
+                                <img src="/images/fly.jpg" alt="" width="302" height="203">
+                            </a>
+                            <h3>تهران-استانبول (5 تیر)</h3>
+                            <p>از ۲،۰۰۰،۰۰۰ تومان</p>
+                            <a href="#" class="more-info">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                    <div class="item-special col-md-4">
+                        <div class="content-item-spe text-center">
+                            <a href="#" class="over-pic">
+                                <img src="/images/fly.jpg" alt="" width="302" height="203">
+                            </a>
+                            <h3>تهران-استانبول (5 تیر)</h3>
+                            <p>از ۲،۰۰۰،۰۰۰ تومان</p>
+                            <a href="#" class="more-info">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!--.special-fly-->
+        <div class="clearfix"></div>
+    </section><!--container-fluid-->
+</main><footer class="footer-page">
+    <section class="container-fluid">
+        <div class="row content-footer">
+            <div class="col-md-5 address-info">
+                <ul>
+                    <li>
+                        <p>آدرس : تهران، فلکه صادقيه،بلوار آيت الله کاشاني، بين اباذر و مهران -مجتمع آرميتا،پلاک77-واحد3</p>
+                    </li>
+                    <li>021-44049072</li>
+                    <li>021-44977069</li>
+                </ul>
+            </div>
+            <div class="col-md-7 list-namd">
+                <div class="top-part">
+                    <ul>
+                        <li><a href="#"><img src="/images/namad/1.png" alt=""></a></li>
+                        <li><a href="#"><img src="/images/namad/2.png" alt=""></a></li>
+                        <li><a href="#"><img src="/images/namad/3.png" alt=""></a></li>
+                        <li><a href="#"><img src="/images/namad/4.png" alt=""></a></li>
+                        <li><a href="#"><img src="/images/namad/5.png" alt=""></a></li>
+                    </ul>
+                </div>
+                <div class="bottom-part text-left">
+                    <div class="box-copyright mr-auto">
+                        <p>طراحی وب سایت توسط استودیو کسب و کار دوپود</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/persian-date.min.js"></script>
+<script type="text/javascript" src="/js/persian-datepicker.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/slick.min.js"></script>
+<script type="text/javascript" src="/js/coustom.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        window.pd1 = $('#dateOne').persianDatepicker({
+            altField: '#normalAlt',
+            altFormat: 'LLLL',
+            initialValue: false,
+            observer: true,
+            format: 'YYYY-MM-DD',
+            autoClose: true,
+            timePicker: {
+                enabled: false
+            }
+        });
+        window.pd2 = $('#dateTwo').persianDatepicker({
+            altField: '#normalAlt',
+            altFormat: 'LLLL',
+            initialValue: false,
+            observer: true,
+            format: 'YYYY-MM-DD',
+            autoClose: true,
+            timePicker: {
+                enabled: false
+            }
+        });
+        window.pd2 = $('#datethree').persianDatepicker({
+            altField: '#normalAlt',
+            altFormat: 'LLLL',
+            initialValue: false,
+            observer: true,
+            format: 'YYYY-MM-DD',
+            autoClose: true,
+            timePicker: {
+                enabled: false
+            }
+        });
+    });
+</script>
+</body>
+</html>
+

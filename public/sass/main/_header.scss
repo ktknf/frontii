@@ -1,0 +1,273 @@
+/*********************header*******************************************/
+#modal-popup{
+  .modal-dialog{
+    margin-top: 120px;
+    .modal-content{
+      @extend %b-rad20;
+      border: 1px solid rgb(0, 119, 187);
+      .modal-body{
+        @extend .back-blue;
+        min-height: 360px;
+        padding-top: 60px;
+        @extend %b-rad20;
+        .content-popup{
+          .img-popup{
+            width: 250px;
+            height: 170px;
+            background-size: contain!important;
+            max-width: 100%;
+            background-position: center!important;
+            @extend .mrg-auto;
+          }
+          p{
+            @extend .txt-center;
+            color: #ffa800;
+            font-size: 18px;
+            @extend .font-w;
+          }
+        }
+        .ok-part{
+          display: none;
+          .img-popup{
+            background: url("../images/ok.png") no-repeat;
+          }
+        }
+        .waiting-part{
+          display: none;
+          .img-popup{
+            background: url("../images/waiting.png") no-repeat;
+          }
+        }
+        .error-part{
+          display: none;
+          .img-popup{
+            background: url("../images/error.png") no-repeat;
+          }
+        }
+      }
+    }
+  }
+  &.pop-ok{
+    .modal-dialog {
+      .modal-content {
+        .modal-body{
+          .ok-part{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  &.pop-wait{
+    .modal-dialog {
+      .modal-content {
+        .modal-body{
+          .waiting-part{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  &.pop-error{
+    .modal-dialog {
+      .modal-content {
+        .modal-body{
+          .error-part{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+.head-page{
+  background: #0077bb;
+  min-height: 125px;
+  .logo-part{
+    @extend .txt-center;
+    a{
+      img{
+        @extend .m-top10;
+      }
+    }
+  }
+  .menu-part{
+    @extend .dis-flx;
+    @extend .padd0;
+    .navbar{
+      @extend .padd0;
+      li{
+        @extend .pos-relative;
+        a{
+          @extend .color-white;
+          border-left: 1px solid #fff;
+          padding: 5px 15px;
+          line-height: 1;
+          @extend %tran;
+          &:before{
+            background-color: rgba(255,255,255,0);
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+            border-radius: 100px;
+            content: '';
+            height: 40%;
+            opacity: 0;
+            visibility: hidden;
+            @extend .pos-abs;
+            right: 30%;
+            top: 30%;
+            width: 40%;
+            -webkit-transition: .3s all;
+            -moz-transition: .3s all;
+            transition: .3s all;
+          }
+          &:hover , &:focus{
+            &:before{
+              background-color: rgba(0,0,0,.1);
+              -webkit-border-radius: 4px;
+              -moz-border-radius: 4px;
+              border-radius: 4px;
+              opacity: 1;
+              visibility: visible;
+              top: 0;
+              right: 0;
+              height: 100%;
+              width: 100%;
+              @extend .pos-abs;
+            }
+          }
+        }
+        &:last-child{
+          a{
+            border-left: none;
+          }
+        }
+      }
+    }
+  }
+  .login-part{
+    @extend .dis-flx;
+    @extend %ju-center;
+    .link-login{
+      @extend .pos-relative;
+      padding: 5px;
+      a{
+        @extend .color-white;
+        @extend %tran;
+        font-size: 14px;
+        &:before{
+          background-color: rgba(255,255,255,0);
+          -webkit-border-radius: 100px;
+          -moz-border-radius: 100px;
+          border-radius: 100px;
+          content: '';
+          height: 40%;
+          opacity: 0;
+          visibility: hidden;
+          @extend .pos-abs;
+          right: 30%;
+          top: 30%;
+          width: 40%;
+          -webkit-transition: .3s all;
+          -moz-transition: .3s all;
+          transition: .3s all;
+        }
+        &:hover , &:focus{
+          &:before{
+            background-color: rgba(0,0,0,.1);
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            opacity: 1;
+            visibility: visible;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            @extend .pos-abs;
+          }
+        }
+      }
+    }
+  }
+  .responsive-menu{
+    @extend .dis-flx;
+    justify-content: flex-end;
+    display: none;
+    .icon-menu{
+      @extend %icon-log;
+      background: url(../images/icon.png) 38px -98px;
+    }
+    .modal-dialog{
+      .modal-header{
+        background: url("../images/mobile-header.jpg");
+        min-height: 100px;
+        background-size: cover;
+      }
+      .modal-body{
+        @extend .padd0;
+        nav{
+          ul{
+            display: block;
+            @extend .padd0;
+            li{
+              a{
+                margin: 0;
+                border-bottom: 1px solid #eee;
+                padding: 14px 15px 18px;
+                text-align: right;
+                display: block;
+                font-size: 14px;
+                color: #444;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*******************************/
+.modal.left .modal-dialog,
+.modal.right .modal-dialog {
+  position: fixed;
+  margin: auto;
+  width: 320px;
+  height: 100%;
+  -webkit-transform: translate3d(0%, 0, 0);
+  -ms-transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
+}
+.modal.left .modal-content,
+.modal.right .modal-content {
+  height: 100%;
+  overflow-y: auto;
+}
+
+/*Left*/
+.modal.left.fade .modal-dialog{
+  left: -320px;
+  -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+  -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+  transition: opacity 0.3s linear, left 0.3s ease-out;
+}
+
+.modal.left.fade.in .modal-dialog{
+  left: 0;
+}
+
+/*Right*/
+.modal.right.fade .modal-dialog {
+  right: -320px;
+  -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+  transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right.fade.show .modal-dialog {
+  right: 0;
+}

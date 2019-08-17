@@ -1,0 +1,52 @@
+/*********************footer*******************************************/
+.footer-page{
+  background: #ffa800;
+  border-top: 8px solid #0077bb;
+  border-bottom: 8px solid #0077bb;
+  .content-footer{
+    padding-top: 30px;
+    @extend .w-95;
+    .address-info{
+      @extend .txt-right;
+      li{
+        @extend .color-white;
+        &:nth-child(2){
+          @extend .m-top20;
+        }
+        &:nth-child(3){
+          @extend .m-top10;
+        }
+        &:nth-child(2),&:nth-child(3){
+          @extend .fa-num;
+          font-size: 30px;
+          @extend .font-w;
+        }
+      }
+    }
+    .list-namd{
+      @extend .padd0;
+      .top-part{
+        ul{
+          li{
+            @extend .dis-in;
+            margin: 5px;
+            @extend .ver-midd;
+          }
+        }
+      }
+      .bottom-part{
+        .box-copyright{
+          @extend .back-blue;
+          @extend .txt-center;
+          width: 50%;
+          min-height: 60px;
+          @extend %b-rad20;
+          p{
+            @extend .color-white;
+            padding-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}
