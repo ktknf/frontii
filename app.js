@@ -12,9 +12,9 @@ var formidable = require('formidable');
 var mysql      = require('mysql');
 var md5 = require('md5');
 
-
 //Modules
 var Zagros = require("./Zagros.js");
+var Selector = require("./Selector.js");
 
 
 //configs
@@ -29,12 +29,9 @@ app.use(bodyParser.json())
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
 app.get('/', function (req, res) {
+	Selector.select_all('',function(all_tour){
 
-	Zagros.Reserve('MHD','THR','ID','1','28','5','Mohammad','Ahmadi','22','117000998833','4030','123123123', function(result)
-	{
-		console.log(result);
 	});
-
 })
 
 app.get('/soon', function (req, res) {
