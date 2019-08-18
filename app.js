@@ -15,7 +15,7 @@ var md5 = require('md5');
 //Modules
 var Zagros = require("./Zagros.js");
 var Selector = require("./Selector.js");
-
+var Utility = require("./utility.js");
 
 //configs
 const port = 29
@@ -29,8 +29,8 @@ app.use(bodyParser.json())
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
 app.get('/', function (req, res) {
-	Selector.select_all('',function(all_tour){
-
+	Selector.select_all('Tour',function(all_tour){
+		res.render('main.ejs',{tours:all_tour,today:Utility.GetNowJalali()});
 	});
 })
 

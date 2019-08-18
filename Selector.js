@@ -1,17 +1,18 @@
 var mysql = require('mysql');
 var connection = mysql.createConnection({
   host: 'localhost',
-  user: 'me',
-  password: 'secret',
-  database: 'my_db'
+  user: 'root',
+  password: '2bacvvy',
+  database: 'cms'
 });
 
 
 module.exports = {
   select_all: function(table, callback) {
     connection.connect();
-
-    connection.query('SELECT * FROM '+table+';' , function(error, results, fields) {
+    var query='SELECT * FROM '+table+';';
+    console.log(query);
+    connection.query(query , function(error, results, fields) {
       if (error) throw error;
       callback(results);
     });
