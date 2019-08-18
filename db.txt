@@ -1,0 +1,6 @@
+CREATE TABLE Invoice (
+    InvoiceID int NOT NULL,
+    Type varchar(255) NOT NULL,
+    Estate varchar(255),
+    PRIMARY KEY (InvoiceID)
+);
