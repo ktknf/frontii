@@ -30,8 +30,8 @@ module.exports = {
             FullTo:flght[i]['Destination'],
             Price:flght[i]['ClassesStatus'][j]['Price'],
             FlightNo:flght[i]['FlightNo'],
-            Class:flght[i]['ClassesStatus'][j]['FlightClass']
-
+            Class:flght[i]['ClassesStatus'][j]['FlightClass'],
+            Spec:flght[i]['Origin']+"-"+flght[i]['Destination']+"-"+flght[i]['FlightNo']+"-"+flght[i]['ClassesStatus'][j]['FlightClass']+"-"+Day+"-"+Month+"-"+flght[i]['ClassesStatus'][j]['Price']
           });
         }
       }
@@ -47,9 +47,9 @@ module.exports = {
       Day + "&Month=" + Month + "&edtName1=" + Name + "&edtLast1=" + Last + "&edtAge1=" + Age + "&edtID1=" +
       ID + "&OfficeUser=THR210-1.WS&OfficePass=K2019&edtContact=" + Contact + "&FlightNo=" + FlightNo;
 
+      console.log(get_url);
     request.get(get_url, function(err, res, body) {
-
-      callback(body);
+      callback(JSON.parse(body)['AirReserve'][0]);
     });
   }
   //Reserve Fuvnction End

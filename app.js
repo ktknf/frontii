@@ -16,6 +16,7 @@ var md5 = require('md5');
 var Zagros = require("./Zagros.js");
 var Selector = require("./Selector.js");
 var Utility = require("./utility.js");
+var Insertor = require("./Insertor.js");
 
 //configs
 const port = 29
@@ -28,15 +29,24 @@ app.use(bodyParser.json())
 
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
-app.get('/zvreserve', function (req, res) {
+app.post('/zvreserve', function (req, res) {
 
-	var day_value=req.query.date.split('-')[2];
-	var month_value=req.query.date.split('-')[1];
+	var age_value=33;
 
-	Zagros.Reserve(req.body.from,req.query.to,Utility.ToEnglishDigits(day_value),Utility.ToEnglishDigits(month_value),req.query.adult,0,0,function(all_flights){
-		var data={flights:all_flights,today:Utility.GetNowJalali(),par:req.query};
-		console.log(data);
-		res.render('flight_results.ejs',data);
+	Zagros.Reserve(req.body.from,req.body.to,req.body.classname,1,req.body.day,req.body.month,
+	req.body.edtname,req.body.edtlast,age_value,req.body.edtid,req.body.fnumber,'1111111',function(reserve_result){
+		//var data={flights:all_flights,today:Utility.GetNowJalali(),par:req.query};
+		console.log(reserve_result);
+		var invoice_id=Math.floor(Math.random() * 1000).toString()+req.body.edtid.substring(3,7);
+		Insertor.insert_one('Invoice',['InvoiceID', 'Type', 'Estate', 'PNR'],[invoice_id,'zagros','new',reserve_result['PNR']],function(insert_result){
+			var price_value=1000;
+			//var price_value=req.body.price;
+    	var red="https://sep.shaparak.ir/payment.aspx?Amount="+price_value+"&ResNum="+invoice_id+"&MerchantCode="+reserve_result['PNR']+"&RedirectURL=http://kouhenour.ir:29/payres&MID=11593879";
+			console.log(red);
+			res.redirect(red);
+
+		});
+		//res.render('flight_results.ejs',data);
 	});
 
 })
