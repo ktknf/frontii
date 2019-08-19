@@ -5,11 +5,11 @@ var connection = mysql.createConnection({
   password: '2bacvvy',
   database: 'cms'
 });
+connection.connect();
 
 
 module.exports = {
   select_all: function(table, callback) {
-    connection.connect();
     var query='SELECT * FROM '+table+';';
     console.log(query);
     connection.query(query , function(error, results, fields) {
@@ -17,18 +17,18 @@ module.exports = {
       callback(results);
     });
 
-    connection.end();
   },
 
   select_all_where: function(table, where, callback) {
-    connection.connect();
 
-    connection.query('SELECT * FROM '+table+' WHERE '+ where + ';' , function(error, results, fields) {
+    var query='SELECT * FROM '+table+' WHERE '+ where + ';';
+    console.log(query);
+
+    connection.query(query , function(error, results, fields) {
       if (error) throw error;
       callback(results);
     });
 
-    connection.end();
   },
 
   ToShamsi: function() {

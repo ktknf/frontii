@@ -38,7 +38,7 @@ app.post('/zvreserve', function (req, res) {
 		//var data={flights:all_flights,today:Utility.GetNowJalali(),par:req.query};
 		console.log(reserve_result);
 		var invoice_id=Math.floor(Math.random() * 1000).toString()+req.body.edtid.substring(3,7);
-		Insertor.insert_one('Invoice',['InvoiceID', 'Type', 'Estate', 'PNR'],[invoice_id,'zagros','new',reserve_result['PNR']],function(insert_result){
+		Insertor.insert_one('Invoice',['InvoiceID', 'Type', 'Estate', 'PNR','Email'],[invoice_id,'zagros','new',reserve_result['PNR'],req.body.email],function(insert_result){
 			var price_value=1000;
 			//var price_value=req.body.price;
     	var red="https://sep.shaparak.ir/payment.aspx?Amount="+price_value+"&ResNum="+invoice_id+"&MerchantCode="+reserve_result['PNR']+"&RedirectURL=http://kouhenour.ir:29/payres&MID=11593879";
@@ -81,6 +81,12 @@ app.post('/payres', function (req, res) {
 	if(req.body.State==='OK')
 	{
 		console.log(req.body);
+		Selector.select_all_where('Invoice','InvoiceID='+req.body.ResNum,function(select_result){
+			console.log(select_result[0]);
+			Zagros.Issue(select_result[0].PNR,select_result[0].Email,function(issue_result){
+				console.log(issue_result);
+			});
+		});
 	}
 })
 //End of Payment Result

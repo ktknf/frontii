@@ -51,6 +51,19 @@ module.exports = {
     request.get(get_url, function(err, res, body) {
       callback(JSON.parse(body)['AirReserve'][0]);
     });
-  }
+  },
   //Reserve Fuvnction End
+
+
+  //Issue Function Start
+  Issue: function(PNR, Email, callback) {
+    var get_url = "Book.zagrosairlines.com/cgi-bin/NRSWeb.cgi/ETIssueJS?Airline=ZV" +
+      "&PNR=" + PNR + "&Email=" + Email+ "&OfficeUser=THR210-1.WS&OfficePass=K2019";
+
+      console.log(get_url);
+    request.get(get_url, function(err, res, body) {
+      callback(body);
+    });
+  }
+  //Issue Fuvnction End
 };
