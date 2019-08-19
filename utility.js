@@ -52,7 +52,12 @@ module.exports = {
   },
 
   GetNowJalali: function() {
-    return convertToPersianNumber(moment().format('jYYYY-jM-jD'));
+    var val=moment().format('jYYYY-jM-jD');
+    for(var i=0;i<10;i++)
+    {
+      val=val.replace(i,persian[i]);
+    }
+    return val;
   },
 
 

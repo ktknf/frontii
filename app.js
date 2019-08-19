@@ -30,7 +30,9 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 
 app.get('/', function (req, res) {
 	Selector.select_all('Tour',function(all_tour){
-		res.render('main.ejs',{tours:all_tour,today:Utility.GetNowJalali()});
+		var data={tours:all_tour,today:Utility.GetNowJalali()};
+		console.log(data);
+		res.render('main.ejs',data);
 	});
 })
 
