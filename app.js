@@ -28,6 +28,19 @@ app.use(bodyParser.json())
 
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
+app.get('/zvreserve', function (req, res) {
+
+	var day_value=req.query.date.split('-')[2];
+	var month_value=req.query.date.split('-')[1];
+
+	Zagros.Reserve(req.body.from,req.query.to,Utility.ToEnglishDigits(day_value),Utility.ToEnglishDigits(month_value),req.query.adult,0,0,function(all_flights){
+		var data={flights:all_flights,today:Utility.GetNowJalali(),par:req.query};
+		console.log(data);
+		res.render('flight_results.ejs',data);
+	});
+
+})
+
 app.get('/flight', function (req, res) {
 
 	var day_value=req.query.date.split('-')[2];

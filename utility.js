@@ -2,32 +2,20 @@ var moment = require('moment-jalaali')
 
 var persian = Array('۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹');
 var english = Array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+var month_before = Array('/۰۱/', '/۰۲/', '/۰۳/', '/۰۴/', '/۰۵/', '/۰۶/', '/۰۷/', '/۰۸/', '/۰۹/','/۱۰/','/۱۱/','/۱۲/');
+var month = Array(' فروردین ',
+  ' اردیبهشت ',
+  ' خرداد ',
+  ' تیر ',
+  ' مرداد ',
+  ' شهریور ',
+  ' مهر ',
+  ' آبان ',
+  ' آذر ',
+  ' دی ',
+  ' بهمن ',
+  ' اسفند ');
 
-function convertToPersianNumber(value) {
-  const arabicNumbers = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
-  const persianNumbers = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-  const englishNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-  let confidentValue = value;
-  for (var i = 0; i < value.length; i++) {
-    const inArabicIndex = arabicNumbers.indexOf(value[i]);
-    if (inArabicIndex > -1) {
-    confidentValue = confidentValue.replace(
-      value[i],
-      englishNumbers[inArabicIndex]
-    );
-  }
-
-  const inPersianIndex = persianNumbers.indexOf(value[i]);
-  if (inPersianIndex > -1) {
-      confidentValue = confidentValue.replace(
-        value[i],
-        englishNumbers[inPersianIndex]
-      );
-    }
-  }
-  return confidentValue;
-}
 
 var FullName = {
   'MHD': 'مشهد',
@@ -75,7 +63,35 @@ module.exports = {
     m = moment(date, 'YYYY-M-D');
     m.locale('fa').format('YYYY/MM/DD');
     var ret=m.locale('fa').format('jYYYY/jMM/jDD')+" "+time;
+
+    for(var i=0;i<12;i++)
+    {
+      ret=ret.replace(month_before[i],month[i]);
+    }
+
     return ret;
+  },
+
+  TimeClass: function(datetime) {
+    var time=datetime.split(' ')[1].split(':'[0]);
+    if(time<10)
+    {
+      return "morning";
+    }
+
+    if(time<14)
+    {
+      return "noon";
+    }
+
+    if(time<20)
+    {
+      return "evening";
+    }
+
+
+      return "night";
+
   },
 
   ToPersianDigits: function() {

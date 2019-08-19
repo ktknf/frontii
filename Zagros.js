@@ -19,7 +19,9 @@ module.exports = {
         //console.log(flght[i]);
         for (var j = 0; j < flght[i]['ClassesStatus'].length; j++) {
           final_return.push({
-            AirLine:'ZV',
+            AirLine:'زاگرس',
+            AirLineShort:'ZV',
+            TimeClass:utility.TimeClass(flght[i]['DepartureDateTime']),
             DepartureDateTime:utility.ToShamsi(flght[i]['DepartureDateTime']),
             ArrivalDateTime:utility.ToShamsi(flght[i]['ArrivalDateTime']),
             From:flght[i]['Origin'],
