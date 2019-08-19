@@ -1,6 +1,7 @@
 var moment = require('moment-jalaali')
 
 var persian = Array('۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹');
+var english = Array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
 
 function convertToPersianNumber(value) {
   const arabicNumbers = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
@@ -52,18 +53,29 @@ module.exports = {
   },
 
   GetNowJalali: function() {
-    var val=moment().format('jYYYY-jM-jD');
+    var val=moment().format('jYYYY-jM-jD')+' ';
     for(var i=0;i<10;i++)
     {
       val=val.replace(i,persian[i]);
     }
-    return val;
+    return val.trim();
   },
 
-
-  ToShamsi: function() {
-    //TODO
-    return "HELLO";
+  ToEnglishDigits: function(str) {
+    var val=str+' ';
+    for(var i=0;i<10;i++)
+    {
+      val=val.replace(persian[i],english[i]);
+    }
+    return val.trim();
+  },
+  ToShamsi: function(datetime) {
+    var date=datetime.split(' ')[0];
+    var time=datetime.split(' ')[1];
+    m = moment(date, 'YYYY-M-D');
+    m.locale('fa').format('YYYY/MM/DD');
+    var ret=m.locale('fa').format('jYYYY/jMM/jDD')+" "+time;
+    return ret;
   },
 
   ToPersianDigits: function() {
