@@ -63,7 +63,22 @@ module.exports = {
       console.log(get_url);
     request.get(get_url, function(err, res, body) {
       callback(body);
-    });
-  }
+    }).setTimeout(600000);
+  },
   //Issue Fuvnction End
+
+
+  //CancelSeat Function Start
+  CancelSeat: function(PNR,Name,Last,Date,FlightNo, callback) {
+    var get_url = "Book.zagrosairlines.com/cgi-bin/NRSWeb.cgi/CancelSeatJS?Airline=ZV" +
+      "&PNR=" + PNR + "&PassengerName=" + Name+ "&PassengerLastName=" + Last+"&DepartureDate=" + Date+
+      "&FlightNo=" + FlightNo + "&OfficeUser=THR210-1.WS&OfficePass=K2019";
+
+      console.log(get_url);
+    request.get(get_url, function(err, res, body) {
+      callback(body);
+    }).setTimeout(600000);
+  }
+  //CancelSeat Fuvnction End
+
 };

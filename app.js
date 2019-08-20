@@ -91,4 +91,11 @@ app.post('/payres', function (req, res) {
 })
 //End of Payment Result
 
+
+app.get('/test_any', function (req, res) {
+			Zagros.CancelSeat('QSQJ3','mohammad','mahmoodi','2019-08-20','1001',function(cancel_result){
+				console.log(cancel_result);
+			});
+})
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
