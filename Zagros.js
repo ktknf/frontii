@@ -35,6 +35,8 @@ module.exports = {
           });
         }
       }
+      console.log("total Zagros: ");
+      console.log(final_return.length);
       callback(final_return);
     });
   },

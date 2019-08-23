@@ -14,6 +14,7 @@ var md5 = require('md5');
 
 //Modules
 var Zagros = require("./Zagros.js");
+var Caspian = require("./Caspian.js");
 var Selector = require("./Selector.js");
 var Utility = require("./utility.js");
 var Insertor = require("./Insertor.js");
@@ -56,19 +57,24 @@ app.post('/zvreserve', function(req, res) {
 
 app.get('/flight', function(req, res) {
 
-  var day_value = req.query.date.split('-')[2];
-  var month_value = req.query.date.split('-')[1];
+      var day_value = req.query.date.split('-')[2];
+      var month_value = req.query.date.split('-')[1];
+      var final_array = [];
+      Zagros.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(all_flights) {
+        final_array = final_array.concat(all_flights);
 
-  Zagros.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(all_flights) {
-    var data = {
-      flights: all_flights,
-      today: Utility.GetNowJalali(),
-      par: req.query
-    };
-    console.log(data);
-    res.render('flight_results.ejs', data);
-  });
+        Caspian.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(iv_all_flights) {
+          final_array = final_array.concat(iv_all_flights);
 
+          var data = {
+            flights: final_array,
+            today: Utility.GetNowJalali(),
+            par: req.query
+          };
+          console.log(data);
+          res.render('flight_results.ejs', data);
+        });
+      });
 })
 
 app.get('/', function(req, res) {

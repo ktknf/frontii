@@ -1166,6 +1166,7 @@ body.modal-open .datepicker-container {
   .container-fluid {
     max-width: 1600px; } }
 @media only screen and (max-width: 1250px) {
+
   .head-page .menu-part .navbar li a {
     font-size: 13px; }
 
@@ -1194,6 +1195,13 @@ body.modal-open .datepicker-container {
   .content-search .side-left {
     max-width: 165px; } }
 @media only screen and (max-width: 990px) {
+
+  .item-list-src{
+    width:90%;
+    left: 5%;
+  }
+
+
   .head-page .menu-part {
     display: none; }
   .head-page .responsive-menu {
@@ -1386,6 +1394,10 @@ body.modal-open .datepicker-container {
       width: 32%;
       display: inline-block; } }
 @media (max-width: 650px) {
+  .content-search .content-list-src .item-list-src .above-div .part-right-above {
+      border-left:unset;
+  }
+
   .content-search .content-list-src .item-list-src .above-div .part-right-above .icon-fly {
     width: 20%;
     padding: 0 0; }
