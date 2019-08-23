@@ -28,7 +28,7 @@ module.exports = {
             FullFrom:flght[i]['Origin'],
             To:flght[i]['Destination'],
             FullTo:flght[i]['Destination'],
-            Price:flght[i]['ClassesStatus'][j]['Price'],
+            Price:utility.CommaSeprate(flght[i]['ClassesStatus'][j]['Price']/10),
             FlightNo:flght[i]['FlightNo'],
             Class:flght[i]['ClassesStatus'][j]['FlightClass'],
             Spec:flght[i]['Origin']+"-"+flght[i]['Destination']+"-"+flght[i]['FlightNo']+"-"+flght[i]['ClassesStatus'][j]['FlightClass']+"-"+Day+"-"+Month+"-"+flght[i]['ClassesStatus'][j]['Price']

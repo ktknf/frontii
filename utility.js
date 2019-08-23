@@ -41,10 +41,10 @@ module.exports = {
   },
 
   GetNowJalali: function() {
-    var val=moment().format('jYYYY-jM-jD')+' ';
+    var val=moment().format('jYYYY-jMM-jDD')+' ';
     for(var i=0;i<10;i++)
     {
-      val=val.replace(i,persian[i]);
+      val=val.replace(new RegExp(english[i], 'g'),persian[i]);
     }
     return val.trim();
   },
@@ -97,5 +97,11 @@ module.exports = {
   ToPersianDigits: function() {
     //TODO
     return "Hola";
+  },
+
+
+  CommaSeprate: function(num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
   }
+
 };

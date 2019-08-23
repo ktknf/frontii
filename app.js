@@ -15,12 +15,13 @@ var md5 = require('md5');
 //Modules
 var Zagros = require("./Zagros.js");
 var Caspian = require("./Caspian.js");
+var Mahan = require("./Mahan.js");
 var Selector = require("./Selector.js");
 var Utility = require("./utility.js");
 var Insertor = require("./Insertor.js");
 
 //configs
-const port = 29
+const port = 8400
 
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
@@ -114,8 +115,9 @@ app.post('/payres', function(req, res) {
 
 
 app.get('/test_any', function(req, res) {
-  Zagros.CancelSeat('QSQJ3', 'mohammad', 'mahmoodi', '2019-08-20', '1001', function(cancel_result) {
-    console.log(cancel_result);
+  Mahan.GetFlights("THR","MHD","23","8", 1, 0, 0, function(ccc)
+ {
+    console.log(ccc);
   });
 })
 
