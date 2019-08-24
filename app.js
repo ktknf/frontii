@@ -16,12 +16,34 @@ var md5 = require('md5');
 var Zagros = require("./Zagros.js");
 var Caspian = require("./Caspian.js");
 var Mahan = require("./Mahan.js");
+var Iati = require("./Iati.js");
 var Selector = require("./Selector.js");
 var Utility = require("./utility.js");
 var Insertor = require("./Insertor.js");
 
 //configs
-const port = 8400
+const port = 8400;
+
+function comparePrice( a, b ) {
+  if ( a.IntPrice < b.IntPrice ){
+    return -1;
+  }
+  if ( a.IntPrice > b.IntPrice ){
+    return 1;
+  }
+  return 0;
+}
+
+function comparePriceReverse( a, b ) {
+  if ( a.IntPrice > b.IntPrice ){
+    return -1;
+  }
+  if ( a.IntPrice < b.IntPrice ){
+    return 1;
+  }
+  return 0;
+}
+
 
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
@@ -78,6 +100,37 @@ app.get('/flight', function(req, res) {
       });
 })
 
+app.get('/sortedflight', function(req, res) {
+
+      var day_value = req.query.date.split('-')[2];
+      var month_value = req.query.date.split('-')[1];
+      var final_array = [];
+      Zagros.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(all_flights) {
+        final_array = final_array.concat(all_flights);
+
+        Caspian.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(iv_all_flights) {
+          final_array = final_array.concat(iv_all_flights);
+
+          if(req.query.sort==="pricereverse")
+          {
+            final_array=final_array.sort(comparePriceReverse);
+          }
+          else
+          {
+            final_array=final_array.sort(comparePrice);
+          }
+
+          var data = {
+            flights: final_array,
+            today: Utility.GetNowJalali(),
+            par: req.query
+          };
+          console.log(data);
+          res.render('flight_results.ejs', data);
+        });
+      });
+})
+
 app.get('/', function(req, res) {
   Selector.select_all('Tour', function(all_tour) {
     var data = {
@@ -115,7 +168,7 @@ app.post('/payres', function(req, res) {
 
 
 app.get('/test_any', function(req, res) {
-  Mahan.GetFlights("THR","MHD","23","8", 1, 0, 0, function(ccc)
+  Iati.GetFlights("THR","MHD","24","8", 1, 0, 0, function(ccc)
  {
     console.log(ccc);
   });
