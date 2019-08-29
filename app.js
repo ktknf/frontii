@@ -12,17 +12,24 @@ var formidable = require('formidable');
 var mysql = require('mysql');
 var md5 = require('md5');
 
+
+var Iconv  = require('iconv').Iconv;
+var iconv = new Iconv('UTF-8', 'ISO-8859-1');
+
+const utf8 = require('utf8');
+
 //Modules
 var Zagros = require("./Zagros.js");
 var Caspian = require("./Caspian.js");
 var Mahan = require("./Mahan.js");
 var Iati = require("./Iati.js");
 var Selector = require("./Selector.js");
+var Search = require("./Search.js");
 var Utility = require("./utility.js");
 var Insertor = require("./Insertor.js");
 
 //configs
-const port = 8400;
+const port = 3389;
 
 function comparePrice( a, b ) {
   if ( a.IntPrice < b.IntPrice ){
@@ -139,6 +146,13 @@ app.get('/', function(req, res) {
     };
     console.log(data);
     res.render('main.ejs', data);
+
+});
+})
+
+app.get('/cron', function(req, res) {
+    Search.GetBest('THR','MHD',function(best){
+    console.log(best);
   });
 })
 
@@ -168,9 +182,11 @@ app.post('/payres', function(req, res) {
 
 
 app.get('/test_any', function(req, res) {
+
   Iati.GetFlights("THR","MHD","24","8", 1, 0, 0, function(ccc)
  {
-    console.log(ccc);
+   //res.charset('utf-8');
+    res.send(ccc);
   });
 })
 

@@ -29,7 +29,7 @@ module.exports = {
             To:flght[i]['Destination'],
             FullTo:flght[i]['Destination'],
             Price:utility.CommaSeprate(flght[i]['ClassesStatus'][j]['Price']/10),
-            IntPrice:parseInt(flght[i]['ClassesStatus'][j]['Price']/100),
+            IntPrice:parseInt(flght[i]['ClassesStatus'][j]['Price']/10),
             FlightNo:flght[i]['FlightNo'],
             Class:flght[i]['ClassesStatus'][j]['FlightClass'],
             Spec:flght[i]['Origin']+"-"+flght[i]['Destination']+"-"+flght[i]['FlightNo']+"-"+flght[i]['ClassesStatus'][j]['FlightClass']+"-"+Day+"-"+Month+"-"+flght[i]['ClassesStatus'][j]['Price']

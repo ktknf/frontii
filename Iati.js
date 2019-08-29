@@ -1,4 +1,5 @@
 var request = require('request');
+var zlib = require("zlib");
 
 //Modules
 var utility = require("./utility.js");
@@ -7,39 +8,26 @@ module.exports = {
 
   //GetFlights Function
   GetFlights: function(Source, Target, Day, Month, Adult, Child, Infant, callback) {
-    var get_url = "http://Zv.nirasoftware.com:882/AvailabilityFareJS.jsp?Airline=ZV&cbSource=" +
-      Source + "&cbTarget=" + Target + "&cbDay1=" + Day + "&cbMonth1=" + Month + "&cbAdultQty=" + Adult +
-      "&cbChildQt=" + Child + "&InfantQty=" + Infant + "&OfficeUser=THR210-1.WS&OfficePass=K2019";
+    var get_url = "http://testapi.iati.ir/Tracker/Get_LoginID/7D7764DF874F8C9D06B7A5BAA462AD0F";
+    console.log("here!");
 
-      var headers = {
-          'cookie': 'somecookie',
-          'origin': 'https://foo.bar',
-          'accept-encoding': 'gzip, deflate, br',
-          'accept-language': 'en-US,en;q=0.9,pt;q=0.8',
-          'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
-          'content-type': 'application/json; charset=UTF-8',
-          'accept': '*/*',
-          'referer': 'https://foo.bar/path',
-          'authority': 'www.foo.bar',
-          'x-requested-with': 'XMLHttpRequest'
-      };
 
-    var options = {
-      uri: 'http://testapi.iati.ir/Tracker/Get_LoginID/7D7764DF874F8C9D06B7A5BAA462AD0F',
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Accept-Charset': 'utf-8'
-      },
-      body: '{"MemberID": null,"ClientIPAddress": "95.217.5.6"}'
+    //Custom Header pass
+    var headersOpt = {
+      "Accept-Encoding": "gzip,deflate",
+      "Accept": "application/json; charset=UTF-8",
+      "Content-Type": "application/json"
     };
+    request({
+      method: 'post',
+      url: 'http://testapi.iati.ir/Tracker/Get_LoginID/7D7764DF874F8C9D06B7A5BAA462AD0F',
+      form: "{MemberID:null,ClientIPAddress:'95.217.5.6'}",
+      body: "{MemberID:null,ClientIPAddress:'95.217.5.6'}",
+      headers: headersOpt
+    }, function(error, response, body) {
+      //Print the Response
 
-    request(options, function(error, response, body) {
-      if (!error && response.statusCode == 200) {
-
-        var what=decodeURIComponent(body);
-        console.log(what) // Print the shortened url.
-      }
+      callback(body);
     });
 
   },
