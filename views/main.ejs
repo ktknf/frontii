@@ -164,10 +164,12 @@
                                         <div class="form-group col-md-6 begin-part">
                                             <span class="title-input">مبداء</span>
                                             <select name="from" class="form-control">
-                                                <option value="THR">تهران( THR )</option>
-                                                <option value="MHD">مشهد( MHD )</option>
-                                                <option value="MHD">اصفهان( IFN )</option>
-                                                <option value="MHD">آبادان( ABD )</option>
+                                              <option value="MHD">مشهد( MHD )</option>
+                                              <option value="THR">تهران( THR )</option>
+                                              <option value="IFN">اصفهان( IFN )</option>
+                                              <option value="ABD">آبادان( ABD )</option>
+                                              <option value="BUZ">بوشهر( BUZ )</option>
+                                              <option value="AZD">یزد( AZD )</option>
 
                                                 <option value="TTQ">TTQ( TTQ )</option>
                                                 <option value="UGT">UGT( UGT )</option>
@@ -178,8 +180,10 @@
                                             <select name="to" class="form-control">
                                                 <option value="MHD">مشهد( MHD )</option>
                                                 <option value="THR">تهران( THR )</option>
-                                                <option value="MHD">اصفهان( IFN )</option>
-                                                <option value="MHD">آبادان( ABD )</option>
+                                                <option value="IFN">اصفهان( IFN )</option>
+                                                <option value="ABD">آبادان( ABD )</option>
+                                                <option value="BUZ">بوشهر( BUZ )</option>
+                                                <option value="AZD">یزد( AZD )</option>
 
                                                 <option value="TTQ">TTQ( TTQ )</option>
                                                 <option value="UGT">UGT( UGT )</option>
@@ -278,8 +282,12 @@
                     <ul>
                         <li> پرواز از <span>تهران</span> به</li>
                         <li>
-                            <p>بوشهر</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
+                            <p>مشهد</p>
+                            <p>
+                              از
+                               <%= bests['THRMHD'] %>
+                               تومان
+                             </p>
                         </li>
                         <li>
                             <p>یزد</p>

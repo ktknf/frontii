@@ -140,14 +140,23 @@ app.get('/sortedflight', function(req, res) {
 
 app.get('/', function(req, res) {
   Selector.select_all('Tour', function(all_tour) {
-    var data = {
-      tours: all_tour,
-      today: Utility.GetNowJalali()
-    };
-    console.log(data);
-    res.render('main.ejs', data);
+    Selector.select_all('BestCost', function(all_best) {
+      var bests = {};
+      for (var i = 0; i < all_best.length; i++) {
+        bests[all_best[i]['Title']] = all_best[i]['Cost'];
+      }
 
-});
+      var data = {
+        bests: bests,
+        tours: all_tour,
+        today: Utility.GetNowJalali()
+      };
+
+
+      console.log(data);
+      res.render('main.ejs', data);
+    });
+  });
 })
 
 app.get('/cron', function(req, res) {
