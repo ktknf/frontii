@@ -161,9 +161,35 @@ app.get('/', function(req, res) {
 
 app.get('/cron', function(req, res) {
     Search.GetBest('THR','MHD',function(best){
-    console.log(best);
+      Search.GetBest('THR','BUZ',function(best){
+        Search.GetBest('THR','KIH',function(best){
+          Search.GetBest('THR','AZD',function(best){
+            Search.GetBest('THR','ABD',function(best){
+
+        console.log(best);
+      });
+    })
+    });
+  })
   });
-})
+  })
+
+
+  app.get('/cronmhd', function(req, res) {
+      Search.GetBest('MHD','IFN',function(best){
+        Search.GetBest('MHD','THR',function(best){
+          Search.GetBest('MHD','SYZ',function(best){
+            Search.GetBest('MHD','AZD',function(best){
+              Search.GetBest('MHD','ABD',function(best){
+
+          console.log(best);
+        });
+      })
+      });
+    })
+    });
+    })
+
 
 app.get('/soon', function(req, res) {
   res.render('main.ejs');

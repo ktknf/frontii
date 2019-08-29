@@ -8,6 +8,7 @@ var Iati = require("./Iati.js");
 //Modules
 var Utility = require("./utility.js");
 var Insertor = require("./Insertor.js");
+var Updater = require("./Updater.js");
 
 module.exports = {
 
@@ -19,6 +20,10 @@ module.exports = {
     var day_value = Dt.split('-')[2];
     var month_value = Dt.split('-')[1];
     var final_array = [];
+    Caspian.GetFlights(Source, Target, Utility.NextDay(Utility.ToEnglishDigits(day_value)), Utility.ToEnglishDigits(month_value), 1, 0, 0, function(iv_all_flights_) {
+      final_array = final_array.concat(iv_all_flights_);
+    Zagros.GetFlights(Source, Target,Utility.NextDay(Utility.ToEnglishDigits(day_value)), Utility.ToEnglishDigits(month_value), 1, 0, 0, function(all_flights_) {
+      final_array = final_array.concat(all_flights_);
     Zagros.GetFlights(Source, Target, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), 1, 0, 0, function(all_flights) {
       final_array = final_array.concat(all_flights);
 
@@ -32,11 +37,13 @@ module.exports = {
               if (tmp < lowest) lowest = tmp;
               if (tmp > highest) highest = tmp;
           }
-          Insertor.insert_one('BestCost',['BestCostID','Source','Target','Cost'],[0,Source,Target,lowest], function(rs){
+          Updater.update_where('BestCost',['Cost'],[lowest],"Title='"+Source+Target+"'", function(rs){
             callback(lowest)
           });
       });
     });
+  });
+});
 
   }
   //GwtBest Fuvnction End

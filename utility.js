@@ -22,6 +22,7 @@ var FullName = {
   'THR': 'تهران'
 };
 
+
 module.exports = {
   ReplaceDigits:function(str) {
 
@@ -98,6 +99,13 @@ module.exports = {
     //TODO
     return "Hola";
   },
+
+  NextDay: function(day) {
+    //TODO
+    var nxt=parseInt(day)+1;
+    return nxt.toString();
+  },
+
 
 
   CommaSeprate: function(num) {
