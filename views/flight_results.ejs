@@ -64,6 +64,7 @@
                     <input type="hidden" name="day" value="" id="idday">
                     <input type="hidden" name="month" value="" id="idmonth">
                     <input type="hidden" name="price" value="" id="idprice">
+                    <input type="hidden" name="airline" value="" id="idairline">
 
                     <div class="container-fluid padd0">
                         <div class="flat-card traveler-info">
@@ -88,25 +89,25 @@
                                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div class="form-group">
                                                     <label>نام (فارسی) : </label>
-                                                    <input class="item GivenNameFA form-control" maxlength="59" name="edtname" placeholder="به فارسی وارد کنید..." required="required" type="text" value="">
+                                                    <input class="item GivenNameFA form-control" maxlength="59" name="edtname0" placeholder="به فارسی وارد کنید..." required="required" type="text" value="">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div class="form-group">
                                                     <label>نام خانوادگی (فارسی): </label>
-                                                    <input class="item SurNameFA form-control" maxlength="59" name="edtlast" placeholder="به فارسی وارد کنید..." type="text" value="" required="Required">
+                                                    <input class="item SurNameFA form-control" maxlength="59" name="edtlast0" placeholder="به فارسی وارد کنید..." type="text" value="" required="Required">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div class="form-group">
                                                     <label>نام (انگلیسی): </label>
-                                                    <input class="item GivenName form-control" maxlength="59" name="en_edtName1" placeholder="به انگلیسی وارد کنید..." required="required" type="text" value="">
+                                                    <input class="item GivenName form-control" maxlength="59" name="edtname" placeholder="به انگلیسی وارد کنید..." required="required" type="text" value="">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div class="form-group">
                                                     <label>نام خانوادگی (انگلیسی): </label>
-                                                    <input class="item SurName form-control" maxlength="59" name="en_edtLast1" placeholder="به انگلیسی وارد کنید..." required="Required" type="text" value="">
+                                                    <input class="item SurName form-control" maxlength="59" name="edtlast" placeholder="به انگلیسی وارد کنید..." required="Required" type="text" value="">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -1009,6 +1010,7 @@
 		document.getElementById("idday").value=data.split('-')[4];
 		document.getElementById("idmonth").value=data.split('-')[5];
     document.getElementById("idprice").value=data.split('-')[6];
+    document.getElementById("idairline").value=data.split('-')[7];
 
 		$('#modal-buy').modal('show');
 

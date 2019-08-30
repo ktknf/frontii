@@ -32,7 +32,7 @@ module.exports = {
             IntPrice:parseInt(flght[i]['ClassesStatus'][j]['Price']/10),
             FlightNo:flght[i]['FlightNo'],
             Class:flght[i]['ClassesStatus'][j]['FlightClass'],
-            Spec:flght[i]['Origin']+"-"+flght[i]['Destination']+"-"+flght[i]['FlightNo']+"-"+flght[i]['ClassesStatus'][j]['FlightClass']+"-"+Day+"-"+Month+"-"+flght[i]['ClassesStatus'][j]['Price']
+            Spec:flght[i]['Origin']+"-"+flght[i]['Destination']+"-"+flght[i]['FlightNo']+"-"+flght[i]['ClassesStatus'][j]['FlightClass']+"-"+Day+"-"+Month+"-"+flght[i]['ClassesStatus'][j]['Price']+"-IV"
           });
         }
       }
@@ -45,10 +45,10 @@ module.exports = {
 
   //Reserve Function Start
   Reserve: function(Source, Target, FlightClass, No, Day, Month, Name, Last, Age, ID, FlightNo, Contact, callback) {
-    var get_url = "http://book.zagrosairlines.com/cgi-bin/NRSWeb.cgi/ReservJS?Airline=ZV" +
+    var get_url = "http://iv.nirasoftware.com:880/cgi-bin/NRSWeb.cgi/ReservJS?Airline=IV" +
       "&cbSource=" + Source + "&cbTarget=" + Target + "&FlightClass=" + FlightClass + "&No=" + No + "&Day=" +
       Day + "&Month=" + Month + "&edtName1=" + Name + "&edtLast1=" + Last + "&edtAge1=" + Age + "&edtID1=" +
-      ID + "&OfficeUser=THR210-1.WS&OfficePass=K2019&edtContact=" + Contact + "&FlightNo=" + FlightNo;
+      ID + "&OfficeUser=THR752.ws&OfficePass=ko2018h&edtContact=" + Contact + "&FlightNo=" + FlightNo;
 
       console.log(get_url);
     request.get(get_url, function(err, res, body) {

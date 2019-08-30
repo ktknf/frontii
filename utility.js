@@ -74,7 +74,7 @@ module.exports = {
   },
 
   TimeClass: function(datetime) {
-    var time=datetime.split(' ')[1].split(':'[0]);
+    var time=parseInt(datetime.split(' ')[1].split(':'[0]));
     if(time<10)
     {
       return "morning";

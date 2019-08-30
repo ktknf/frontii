@@ -66,12 +66,13 @@ app.post('/zvreserve', function(req, res) {
 
   var age_value = 33;
 
+if(req.body.airline==='ZV'){
   Zagros.Reserve(req.body.from, req.body.to, req.body.classname, 1, req.body.day, req.body.month,
     req.body.edtname, req.body.edtlast, age_value, req.body.edtid, req.body.fnumber, '1111111',
     function(reserve_result) {
       //var data={flights:all_flights,today:Utility.GetNowJalali(),par:req.query};
       console.log(reserve_result);
-      var invoice_id = Math.floor(Math.random() * 1000).toString() + req.body.edtid.substring(3, 7);
+      var invoice_id = Math.floor(Math.random() * 1000).toString() + req.body.edtid.substring(3, 7)+'0';
       Insertor.insert_one('Invoice', ['InvoiceID', 'Type', 'Estate', 'PNR', 'Email'], [invoice_id, 'zagros', 'new', reserve_result['PNR'], req.body.email], function(insert_result) {
         var price_value = 1000;
         //var price_value=req.body.price;
@@ -82,6 +83,26 @@ app.post('/zvreserve', function(req, res) {
       });
       //res.render('flight_results.ejs',data);
     });
+  }
+
+  if(req.body.airline==='IV'){
+    Caspian.Reserve(req.body.from, req.body.to, req.body.classname, 1, req.body.day, req.body.month,
+      req.body.edtname, req.body.edtlast, age_value, req.body.edtid, req.body.fnumber, '1111111',
+      function(reserve_result) {
+        //var data={flights:all_flights,today:Utility.GetNowJalali(),par:req.query};
+        console.log(reserve_result);
+        var invoice_id = Math.floor(Math.random() * 1000).toString() + req.body.edtid.substring(3, 7)+'1';
+        Insertor.insert_one('Invoice', ['InvoiceID', 'Type', 'Estate', 'PNR', 'Email'], [invoice_id, 'caspian', 'new', reserve_result['PNR'], req.body.email], function(insert_result) {
+          var price_value = 1000;
+          //var price_value=req.body.price;
+          var red = "https://sep.shaparak.ir/payment.aspx?Amount=" + price_value + "&ResNum=" + invoice_id + "&MerchantCode=" + reserve_result['PNR'] + "&RedirectURL=http://kouhenour.ir:3389/payres&MID=11593879";
+          console.log(red);
+          res.redirect(red);
+
+        });
+        //res.render('flight_results.ejs',data);
+      });
+    }
 
 })
 

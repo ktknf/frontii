@@ -5,11 +5,11 @@ var connection = mysql.createConnection({
   password: '2bacvvy',
   database: 'cms'
 });
+connection.connect();
 
 
 module.exports = {
   insert_one: function(table,cols,vals,callback) {
-    connection.connect();
 
     var col=""
     var val=""
@@ -30,7 +30,6 @@ module.exports = {
       callback(results);
     });
 
-    connection.end();
   },
 
   ToPersianDigits: function() {

@@ -32,7 +32,7 @@ module.exports = {
             IntPrice:parseInt(flght[i]['ClassesStatus'][j]['Price']/10),
             FlightNo:flght[i]['FlightNo'],
             Class:flght[i]['ClassesStatus'][j]['FlightClass'],
-            Spec:flght[i]['Origin']+"-"+flght[i]['Destination']+"-"+flght[i]['FlightNo']+"-"+flght[i]['ClassesStatus'][j]['FlightClass']+"-"+Day+"-"+Month+"-"+flght[i]['ClassesStatus'][j]['Price']
+            Spec:flght[i]['Origin']+"-"+flght[i]['Destination']+"-"+flght[i]['FlightNo']+"-"+flght[i]['ClassesStatus'][j]['FlightClass']+"-"+Day+"-"+Month+"-"+flght[i]['ClassesStatus'][j]['Price']+"-ZV"
           });
         }
       }
@@ -90,7 +90,7 @@ module.exports = {
       console.log(get_url);
     request.get(get_url, {timeout: 150000}, function(err, res, body) {
       console.log(body);
-      
+
       try {
         callback(body);
       }
