@@ -171,6 +171,11 @@
                                               <option value="BUZ">بوشهر( BUZ )</option>
                                               <option value="AZD">یزد( AZD )</option>
                                               <option value="KIH">کیش( KIH )</option>
+                                              <option value="SYZ">شیراز( SYZ )</option>
+                                              <option value="AWZ">اهواز( AWZ )</option>
+                                              <option value="GSM">قشم( GSM )</option>
+                                              <option value="PGU">عسلویه( PGU )</option>
+                                              <option value="BND">بندرعباس( BND )</option>
 
                                                 <option value="TTQ">TTQ( TTQ )</option>
                                                 <option value="UGT">UGT( UGT )</option>
@@ -186,6 +191,11 @@
                                                 <option value="BUZ">بوشهر( BUZ )</option>
                                                 <option value="AZD">یزد( AZD )</option>
                                                 <option value="KIH">کیش( KIH )</option>
+                                                <option value="SYZ">شیراز( SYZ )</option>
+                                                <option value="AWZ">اهواز( AWZ )</option>
+                                                <option value="GSM">قشم( GSM )</option>
+                                                <option value="PGU">عسلویه( PGU )</option>
+                                                <option value="BND">بندرعباس( BND )</option>
 
                                                 <option value="TTQ">TTQ( TTQ )</option>
                                                 <option value="UGT">UGT( UGT )</option>
@@ -220,7 +230,11 @@
                             </div><!--.form-search-->
                         </div><!--#fly-in-->
                         <div class="tab-pane fade" id="fly-out" role="tabpanel" aria-labelledby="fly-out-tab">
-                            <div class="form-search w-90">
+                          <br> <br>
+                          <h1 style="color: #ffffff;">
+                          به زودی
+                          </h1>
+                            <div class="form-search w-90" hidden>
                                 <form action="/flight">
                                     <div class="form-row">
                                         <div class="form-group col-md-6 begin-part">
@@ -372,79 +386,50 @@
                 </div>
                 <div class="details-info-fly">
                     <ul>
-                        <li> پرواز از <span>تهران</span> به</li>
-                        <li>
-                            <p>بوشهر</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
-                        <li>
-                            <p>یزد</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
-                        <li>
-                            <p>استانبول</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
-                        <li>
-                            <p>بندرعباس</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
-                        <li>
-                            <p>زاهدان</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
+                      <li> پرواز از <span>اصفهان</span> به</li>
+                      <li>
+                        <p>مشهد</p>
+                        <p>
+                          از
+                           <%= bests['IFNMHD'] %>
+                           تومان
+                         </p>
+                      </li>
+                      <li>
+                        <p>کیش</p>
+                        <p>
+                          از
+                           <%= bests['IFNKIH'] %>
+                           تومان
+                         </p>
+                      </li>
+                      <li>
+                        <p>عسلویه</p>
+                        <p>
+                          از
+                           <%= bests['IFNPGU'] %>
+                           تومان
+                         </p>
+                      </li>
+                      <li>
+                        <p>اهواز</p>
+                        <p>
+                          از
+                           <%= bests['IFNAWZ'] %>
+                           تومان
+                         </p>
+                      </li>
+                      <li>
+                        <p>تهران</p>
+                        <p>
+                          از
+                           <%= bests['IFNTHR'] %>
+                           تومان
+                         </p>
+                      </li>
                     </ul>
                 </div>
-                <div class="details-info-fly">
-                    <ul>
-                        <li> پرواز از <span>مشهد</span> به</li>
-                        <li>
-                            <p>بوشهر</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
-                        <li>
-                            <p>یزد</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
-                        <li>
-                            <p>استانبول</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
-                        <li>
-                            <p>بندرعباس</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
-                        <li>
-                            <p>زاهدان</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="details-info-fly">
-                    <ul>
-                        <li> پرواز از <span>اصفهان</span> به</li>
-                        <li>
-                            <p>بوشهر</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
-                        <li>
-                            <p>یزد</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
-                        <li>
-                            <p>استانبول</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
-                        <li>
-                            <p>بندرعباس</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
-                        <li>
-                            <p>زاهدان</p>
-                            <p>از ۲۳۳،۰۰۰ تومان</p>
-                        </li>
-                    </ul>
-                </div>
+
             </div>
         </section><!--.information-fly-->
         <div class="clearfix"></div>

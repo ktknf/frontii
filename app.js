@@ -13,7 +13,7 @@ var mysql = require('mysql');
 var md5 = require('md5');
 
 
-var Iconv  = require('iconv').Iconv;
+var Iconv = require('iconv').Iconv;
 var iconv = new Iconv('UTF-8', 'ISO-8859-1');
 
 const utf8 = require('utf8');
@@ -31,21 +31,21 @@ var Insertor = require("./Insertor.js");
 //configs
 const port = 3389;
 
-function comparePrice( a, b ) {
-  if ( a.IntPrice < b.IntPrice ){
+function comparePrice(a, b) {
+  if (a.IntPrice < b.IntPrice) {
     return -1;
   }
-  if ( a.IntPrice > b.IntPrice ){
+  if (a.IntPrice > b.IntPrice) {
     return 1;
   }
   return 0;
 }
 
-function comparePriceReverse( a, b ) {
-  if ( a.IntPrice > b.IntPrice ){
+function comparePriceReverse(a, b) {
+  if (a.IntPrice > b.IntPrice) {
     return -1;
   }
-  if ( a.IntPrice < b.IntPrice ){
+  if (a.IntPrice < b.IntPrice) {
     return 1;
   }
   return 0;
@@ -75,7 +75,7 @@ app.post('/zvreserve', function(req, res) {
       Insertor.insert_one('Invoice', ['InvoiceID', 'Type', 'Estate', 'PNR', 'Email'], [invoice_id, 'zagros', 'new', reserve_result['PNR'], req.body.email], function(insert_result) {
         var price_value = 1000;
         //var price_value=req.body.price;
-        var red = "https://sep.shaparak.ir/payment.aspx?Amount=" + price_value + "&ResNum=" + invoice_id + "&MerchantCode=" + reserve_result['PNR'] + "&RedirectURL=http://kouhenour.ir:29/payres&MID=11593879";
+        var red = "https://sep.shaparak.ir/payment.aspx?Amount=" + price_value + "&ResNum=" + invoice_id + "&MerchantCode=" + reserve_result['PNR'] + "&RedirectURL=http://kouhenour.ir:3389/payres&MID=11593879";
         console.log(red);
         res.redirect(red);
 
@@ -87,55 +87,52 @@ app.post('/zvreserve', function(req, res) {
 
 app.get('/flight', function(req, res) {
 
-      var day_value = req.query.date.split('-')[2];
-      var month_value = req.query.date.split('-')[1];
-      var final_array = [];
-      Zagros.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(all_flights) {
-        final_array = final_array.concat(all_flights);
+  var day_value = req.query.date.split('-')[2];
+  var month_value = req.query.date.split('-')[1];
+  var final_array = [];
+  Zagros.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(all_flights) {
+    final_array = final_array.concat(all_flights);
 
-        Caspian.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(iv_all_flights) {
-          final_array = final_array.concat(iv_all_flights);
+    Caspian.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(iv_all_flights) {
+      final_array = final_array.concat(iv_all_flights);
 
-          var data = {
-            flights: final_array,
-            today: Utility.GetNowJalali(),
-            par: req.query
-          };
-          console.log(data);
-          res.render('flight_results.ejs', data);
-        });
-      });
+      var data = {
+        flights: final_array,
+        today: Utility.GetNowJalali(),
+        par: req.query
+      };
+      console.log(data);
+      res.render('flight_results.ejs', data);
+    });
+  });
 })
 
 app.get('/sortedflight', function(req, res) {
 
-      var day_value = req.query.date.split('-')[2];
-      var month_value = req.query.date.split('-')[1];
-      var final_array = [];
-      Zagros.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(all_flights) {
-        final_array = final_array.concat(all_flights);
+  var day_value = req.query.date.split('-')[2];
+  var month_value = req.query.date.split('-')[1];
+  var final_array = [];
+  Zagros.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(all_flights) {
+    final_array = final_array.concat(all_flights);
 
-        Caspian.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(iv_all_flights) {
-          final_array = final_array.concat(iv_all_flights);
+    Caspian.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(iv_all_flights) {
+      final_array = final_array.concat(iv_all_flights);
 
-          if(req.query.sort==="pricereverse")
-          {
-            final_array=final_array.sort(comparePriceReverse);
-          }
-          else
-          {
-            final_array=final_array.sort(comparePrice);
-          }
+      if (req.query.sort === "pricereverse") {
+        final_array = final_array.sort(comparePriceReverse);
+      } else {
+        final_array = final_array.sort(comparePrice);
+      }
 
-          var data = {
-            flights: final_array,
-            today: Utility.GetNowJalali(),
-            par: req.query
-          };
-          console.log(data);
-          res.render('flight_results.ejs', data);
-        });
-      });
+      var data = {
+        flights: final_array,
+        today: Utility.GetNowJalali(),
+        par: req.query
+      };
+      console.log(data);
+      res.render('flight_results.ejs', data);
+    });
+  });
 })
 
 app.get('/', function(req, res) {
@@ -160,36 +157,51 @@ app.get('/', function(req, res) {
 })
 
 app.get('/cron', function(req, res) {
-    Search.GetBest('THR','MHD',function(best){
-      Search.GetBest('THR','BUZ',function(best){
-        Search.GetBest('THR','KIH',function(best){
-          Search.GetBest('THR','AZD',function(best){
-            Search.GetBest('THR','ABD',function(best){
+  Search.GetBest('THR', 'MHD', function(best) {
+    Search.GetBest('THR', 'BUZ', function(best) {
+      Search.GetBest('THR', 'KIH', function(best) {
+        Search.GetBest('THR', 'AZD', function(best) {
+          Search.GetBest('THR', 'ABD', function(best) {
 
-        console.log(best);
+            console.log(best);
+          });
+        })
       });
     })
-    });
-  })
   });
-  })
+})
 
 
-  app.get('/cronmhd', function(req, res) {
-      Search.GetBest('MHD','IFN',function(best){
-        Search.GetBest('MHD','THR',function(best){
-          Search.GetBest('MHD','SYZ',function(best){
-            Search.GetBest('MHD','AZD',function(best){
-              Search.GetBest('MHD','ABD',function(best){
+app.get('/cronmhd', function(req, res) {
+  Search.GetBest('MHD', 'IFN', function(best) {
+    Search.GetBest('MHD', 'THR', function(best) {
+      Search.GetBest('MHD', 'SYZ', function(best) {
+        Search.GetBest('MHD', 'AZD', function(best) {
+          Search.GetBest('MHD', 'ABD', function(best) {
 
-          console.log(best);
-        });
-      })
+            console.log(best);
+          });
+        })
       });
     })
-    });
-    })
+  });
+})
 
+
+app.get('/cronifn', function(req, res) {
+  Search.GetBest('IFN', 'MHD', function(best) {
+    Search.GetBest('IFN', 'AWZ', function(best) {
+      Search.GetBest('IFN', 'KIH', function(best) {
+        Search.GetBest('IFN', 'PGU', function(best) {
+          Search.GetBest('MHD', 'ABD', function(best) {
+
+            console.log(best);
+          });
+        })
+      });
+    })
+  });
+})
 
 app.get('/soon', function(req, res) {
   res.render('main.ejs');
@@ -202,15 +214,19 @@ app.post('/payres', function(req, res) {
     Selector.select_all_where('Invoice', 'InvoiceID=' + req.body.ResNum, function(select_result) {
       console.log(select_result[0]);
       Zagros.Issue(select_result[0].PNR, select_result[0].Email, function(issue_result) {
-				if(issue_result==='err')
-				{
-					res.send("خطایی در صدور بلیت رخ داده است. هزینه پرداختی شما ظرف 72 ساعت به حساب شما بازگردانده میشود.");
-				}
-				res.send("رزرو با موفقیت انجام شد . پست الکترونیک خود را چک کنید.");
-
+        if (issue_result === 'err') {
+          res.send("خطایی در صدور بلیت رخ داده است. هزینه پرداختی شما ظرف 72 ساعت به حساب شما بازگردانده میشود.");
+        }
+        Zagros.Etr(issue_result, function(etr_result) {
+          console.log(etr_result);
+          var send_to_front = JSON.parse(etr_result);
+          res.render("ticket.ejs", send_to_front);
+        });
         console.log(issue_result);
       });
     });
+  } else {
+    console.log(req.body);
   }
 })
 //End of Payment Result
@@ -218,9 +234,8 @@ app.post('/payres', function(req, res) {
 
 app.get('/test_any', function(req, res) {
 
-  Iati.GetFlights("THR","MHD","24","8", 1, 0, 0, function(ccc)
- {
-   //res.charset('utf-8');
+  Iati.GetFlights("THR", "MHD", "24", "8", 1, 0, 0, function(ccc) {
+    //res.charset('utf-8');
     res.send(ccc);
   });
 })

@@ -65,7 +65,32 @@ module.exports = {
 
       console.log(get_url);
     request.get(get_url, {timeout: 150000}, function(err, res, body) {
+      body = body.replace(/(\r\n|\n|\r)/gm, "");
+      var rs=JSON.parse(body);
+      console.log(rs["AirNRSTICKETS"][0]["Tickets"].split('=')[1]);
+      var ticket_num=rs["AirNRSTICKETS"][0]["Tickets"].split('=')[1];
+      try {
+        callback(ticket_num);
+      }
+      catch (e) {
+        callback('err');
+        console.log(e);
+        console.log(body);
+      }
+    });
+  },
+  //Issue Fuvnction End
 
+
+  //ETR Function Start
+  Etr: function(TicketNo, callback) {
+    var get_url = "http://Zv.nirasoftware.com:882/NRSETR.jsp?Airline=ZV" +
+      "&TicketNo=" + TicketNo + "&OfficeUser=THR210-1.WS&OfficePass=K2019";
+
+      console.log(get_url);
+    request.get(get_url, {timeout: 150000}, function(err, res, body) {
+      console.log(body);
+      
       try {
         callback(body);
       }
@@ -76,7 +101,7 @@ module.exports = {
       }
     });
   },
-  //Issue Fuvnction End
+  //ETR Fuvnction End
 
 
   //CancelSeat Function Start
