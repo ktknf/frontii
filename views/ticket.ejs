@@ -55,132 +55,132 @@
       <div class="modal-content">
         <div class="modal-body modal-buy-body">
 
-				<form role="form" id="form_reserve" method="post" action="/zvreserve">
-                    <input type="hidden" name="_csrf" value="lKVzpU2cD4Oc1v74zv3PeWTY6B2rPvg6aiL02YcPb9HakhznPstI56-fiqGXqL8hLoCsa59byn06faShyEUKsg==">
-                    <input type="hidden" name="from" value="" id="idfrom">
-                    <input type="hidden" name="to" value="" id="idto">
-                    <input type="hidden" name="fnumber" value="" id="idnum">
-                    <input type="hidden" name="classname" value="" id="idclass">
-                    <input type="hidden" name="day" value="" id="idday">
-                    <input type="hidden" name="month" value="" id="idmonth">
-                    <input type="hidden" name="price" value="" id="idprice">
+          <form role="form" id="form_reserve" method="post" action="/zvreserve">
+            <input type="hidden" name="_csrf" value="lKVzpU2cD4Oc1v74zv3PeWTY6B2rPvg6aiL02YcPb9HakhznPstI56-fiqGXqL8hLoCsa59byn06faShyEUKsg==">
+            <input type="hidden" name="from" value="" id="idfrom">
+            <input type="hidden" name="to" value="" id="idto">
+            <input type="hidden" name="fnumber" value="" id="idnum">
+            <input type="hidden" name="classname" value="" id="idclass">
+            <input type="hidden" name="day" value="" id="idday">
+            <input type="hidden" name="month" value="" id="idmonth">
+            <input type="hidden" name="price" value="" id="idprice">
 
-                    <div class="container-fluid padd0">
-                        <div class="flat-card traveler-info">
-                            <div class="traveler-info-title">
-                                <h3 class="highlight-title">اطلاعات بزرگسال اول</h3>
-                                <a href="#" class="add-passenger">افزودن مسافر جدید</a>
-                            </div>
-                            <div class="traveler-info-body traveler-list-body">
-                                                                    <div class="traveler traveler-template">
-                                        <div class="row">
-                                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                                <div class="form-group">
-                                                    <div class="md-checkbox p-0">
-                                                        <label>
-                                                            <input class="checkbox-inline" id="checkbox-inline" name="passenger[1][nationality]" type="checkbox" value="1">
-                                                            <span class="md-checkbox-material"><span class="check"></span></span>
-                                                            <span class="md-checkbox-label" title="ماهان">مسافر از اتباع خارجی است</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                                <div class="form-group">
-                                                    <label>نام (فارسی) : </label>
-                                                    <input class="item GivenNameFA form-control" maxlength="59" name="edtname" placeholder="به فارسی وارد کنید..." required="required" type="text" value="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                                <div class="form-group">
-                                                    <label>نام خانوادگی (فارسی): </label>
-                                                    <input class="item SurNameFA form-control" maxlength="59" name="edtlast" placeholder="به فارسی وارد کنید..." type="text" value="" required="Required">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                                <div class="form-group">
-                                                    <label>نام (انگلیسی): </label>
-                                                    <input class="item GivenName form-control" maxlength="59" name="en_edtName1" placeholder="به انگلیسی وارد کنید..." required="required" type="text" value="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                                <div class="form-group">
-                                                    <label>نام خانوادگی (انگلیسی): </label>
-                                                    <input class="item SurName form-control" maxlength="59" name="en_edtLast1" placeholder="به انگلیسی وارد کنید..." required="Required" type="text" value="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                                <div class="form-group">
-                                                    <label>جنسیت: </label>
-                                                    <select class="nice-select form-control wide" id="AdultNamePrefix0" name="passenger[1][gender]">
-                                                        <option value="">انتخاب کنید...</option>
-                                                        <option value="1">Mr - مرد</option>
-                                                        <option value="2">Mrs - زن</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                                <div class="form-group">
-                                                    <label>تاریخ تولد: </label>
-                                                    <input required="Required" class=" form-control" name="passenger[1][year]" placeholder="سال" type="text" value="">
-                                                    <input required="Required" class=" form-control" name="passenger[1][month]" placeholder="ماه" type="text" value="">
-                                                    <input required="Required" class=" form-control" name="passenger[1][day]" placeholder="روز" type="text" value="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                                <div class="form-group box-num-code">
-                                                    <label>کد ملی: </label>
-                                                    <input required="Required" class="item form-control NationalCode font-PN" maxlength="10" name="edtid" placeholder="کد 10 رقمی وارد کنید..." type="text" value="">
-                                                </div>
-                                                <div class="form-group box-num-pos" style="display:none;">
-                                                    <label>شماره پاسپورت: </label>
-                                                    <input class="item form-control" name="passenger[1][passport_id]" placeholder="مثال: P36522846" type="text" value="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label><a href="#" class="glyphicon glyphicon-remove remove-item">حذف</a></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                                                </div>
+            <div class="container-fluid padd0">
+              <div class="flat-card traveler-info">
+                <div class="traveler-info-title">
+                  <h3 class="highlight-title">اطلاعات بزرگسال اول</h3>
+                  <a href="#" class="add-passenger">افزودن مسافر جدید</a>
+                </div>
+                <div class="traveler-info-body traveler-list-body">
+                  <div class="traveler traveler-template">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                          <div class="md-checkbox p-0">
+                            <label>
+                              <input class="checkbox-inline" id="checkbox-inline" name="passenger[1][nationality]" type="checkbox" value="1">
+                              <span class="md-checkbox-material"><span class="check"></span></span>
+                              <span class="md-checkbox-label" title="ماهان">مسافر از اتباع خارجی است</span>
+                            </label>
+                          </div>
                         </div>
-                        <div class="clearfix"></div>
-                        <div class="flat-card traveler-info">
-                            <div class="traveler-info-title">
-                                <h3 class="highlight-title">اطلاعات تماس</h3>
-                            </div>
-                            <div class="traveler-info-body">
-                                <div class="description">
-                                    <p>بلیط صادر شده، به‌صورت پیامک و ایمیل برای شما ارسال خواهد شد.</p>
-                                </div>
-                                <div class="traveler">
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                            <div class="form-group">
-                                                <label>آدرس ایمیل:</label>
-                                                <input class="item form-control datepicker" name="email" placeholder="مثال: ali@gmail.com" type="text" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                            <div class="form-group">
-                                                <label>شماره موبایل:</label>
-                                                <input class="PhoneNumber item form-control" maxlength="11" name="edtcontact" placeholder="مثال: 09123456789" type="text" value="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>نام (فارسی) : </label>
+                          <input class="item GivenNameFA form-control" maxlength="59" name="edtname" placeholder="به فارسی وارد کنید..." required="required" type="text" value="">
                         </div>
-                        <div class="clearfix"></div>
-                        <div class="traveler-info">
-                            <p class="txt-rule"> با کلیک بر روی دکمه ادامه خرید، تایید می کنم که <a href="#">قوانین و مقررات</a> را مطالعه کرده و از درستی اطلاعات وارد شده اطمینان دارم.</p>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
-                                <button type="submit" class="btn btn-primary" id="accept_reserve">ادامه خرید</button>
-                            </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>نام خانوادگی (فارسی): </label>
+                          <input class="item SurNameFA form-control" maxlength="59" name="edtlast" placeholder="به فارسی وارد کنید..." type="text" value="" required="Required">
                         </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>نام (انگلیسی): </label>
+                          <input class="item GivenName form-control" maxlength="59" name="en_edtName1" placeholder="به انگلیسی وارد کنید..." required="required" type="text" value="">
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>نام خانوادگی (انگلیسی): </label>
+                          <input class="item SurName form-control" maxlength="59" name="en_edtLast1" placeholder="به انگلیسی وارد کنید..." required="Required" type="text" value="">
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>جنسیت: </label>
+                          <select class="nice-select form-control wide" id="AdultNamePrefix0" name="passenger[1][gender]">
+                            <option value="">انتخاب کنید...</option>
+                            <option value="1">Mr - مرد</option>
+                            <option value="2">Mrs - زن</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>تاریخ تولد: </label>
+                          <input required="Required" class=" form-control" name="passenger[1][year]" placeholder="سال" type="text" value="">
+                          <input required="Required" class=" form-control" name="passenger[1][month]" placeholder="ماه" type="text" value="">
+                          <input required="Required" class=" form-control" name="passenger[1][day]" placeholder="روز" type="text" value="">
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group box-num-code">
+                          <label>کد ملی: </label>
+                          <input required="Required" class="item form-control NationalCode font-PN" maxlength="10" name="edtid" placeholder="کد 10 رقمی وارد کنید..." type="text" value="">
+                        </div>
+                        <div class="form-group box-num-pos" style="display:none;">
+                          <label>شماره پاسپورت: </label>
+                          <input class="item form-control" name="passenger[1][passport_id]" placeholder="مثال: P36522846" type="text" value="">
+                        </div>
+                        <div class="form-group">
+                          <label><a href="#" class="glyphicon glyphicon-remove remove-item">حذف</a></label>
+                        </div>
+                      </div>
                     </div>
-                </form>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="flat-card traveler-info">
+                <div class="traveler-info-title">
+                  <h3 class="highlight-title">اطلاعات تماس</h3>
+                </div>
+                <div class="traveler-info-body">
+                  <div class="description">
+                    <p>بلیط صادر شده، به‌صورت پیامک و ایمیل برای شما ارسال خواهد شد.</p>
+                  </div>
+                  <div class="traveler">
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>آدرس ایمیل:</label>
+                          <input class="item form-control datepicker" name="email" placeholder="مثال: ali@gmail.com" type="text" value="">
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>شماره موبایل:</label>
+                          <input class="PhoneNumber item form-control" maxlength="11" name="edtcontact" placeholder="مثال: 09123456789" type="text" value="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="traveler-info">
+                <p class="txt-rule"> با کلیک بر روی دکمه ادامه خرید، تایید می کنم که <a href="#">قوانین و مقررات</a> را مطالعه کرده و از درستی اطلاعات وارد شده اطمینان دارم.</p>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
+                  <button type="submit" class="btn btn-primary" id="accept_reserve">ادامه خرید</button>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -312,17 +312,14 @@
 
           </tr>
         </tbody>
-      </table>
 
-      <table class="table table-bordered" style="text-align: center;">
-        <thead>
-          <tr>
-            <th>شماره PNR</th>
-            <th>کلاس پرواز</th>
-            <th>مبدا</th>
-            <th>مقصد</th>
+        <tr>
+          <th>شماره PNR</th>
+          <th>کلاس پرواز</th>
+          <th>مبدا</th>
+          <th>مقصد</th>
 
-          </tr>
+        </tr>
         </thead>
         <tbody>
           <tr>
@@ -330,11 +327,18 @@
             <td><%= COUPONS[0].FlightClass %></td>
             <td><%= COUPONS[0].Origin %></td>
             <td><%= COUPONS[0].Destination %></td>
-
           </tr>
         </tbody>
       </table>
 
+      <div style="text-align: center;">
+
+        <br>
+        <h4>شرایط کنسلی:</h4>
+        <p> -- هر گونه تغییر یا استرداد تا 24 ساعت قبل از پرواز مشمول پرداخت هزینه به میزان 20% از نرخ پایه بلیت میگردد</p>
+        <p> -- هرگونه تغییر و یا استرداد بلیت کمتر از 24 ساعت قبل از پرواز مشمول پرداخت هزینه به میزان 40% از نرخ پایه بلیت میگردد</p>
+        <br>
+      </div>
       <!--content-search-->
     </section>
     <!--container-fluid-->
@@ -436,10 +440,10 @@
     });
 
     $('.priceasc').on("click", function() {
-		      $('#modal-popup').modal('show');
-		    //console.log("sortedflight?from="+par.from+"&to="+par.to+"&date="+par.date+"&date2="+par.date2+"&sort=price");
-			// Simulate a mouse click:
-			//window.location.href = "sortedflight?from="+par.from+"&to="+par.to+"&date="+par.date+"&date2="+par.date2+"&sort=price";
+      $('#modal-popup').modal('show');
+      //console.log("sortedflight?from="+par.from+"&to="+par.to+"&date="+par.date+"&date2="+par.date2+"&sort=price");
+      // Simulate a mouse click:
+      //window.location.href = "sortedflight?from="+par.from+"&to="+par.to+"&date="+par.date+"&date2="+par.date2+"&sort=price";
     });
 
     $("#signin").on("click", function() {
@@ -454,32 +458,32 @@
     });
 
     $('body').on('click', '.btn_reserve', function() {
-		console.log("Modal Buy");
-		var data = $(this).attr('data-fnum');
-		console.log(data);
-		document.getElementById("idnum").value=data.split('-')[2];
-		document.getElementById("idfrom").value=data.split('-')[0];
-		document.getElementById("idto").value=data.split('-')[1];
-		document.getElementById("idclass").value=data.split('-')[3];
-		document.getElementById("idday").value=data.split('-')[4];
-		document.getElementById("idmonth").value=data.split('-')[5];
-    document.getElementById("idprice").value=data.split('-')[6];
+      console.log("Modal Buy");
+      var data = $(this).attr('data-fnum');
+      console.log(data);
+      document.getElementById("idnum").value = data.split('-')[2];
+      document.getElementById("idfrom").value = data.split('-')[0];
+      document.getElementById("idto").value = data.split('-')[1];
+      document.getElementById("idclass").value = data.split('-')[3];
+      document.getElementById("idday").value = data.split('-')[4];
+      document.getElementById("idmonth").value = data.split('-')[5];
+      document.getElementById("idprice").value = data.split('-')[6];
 
-		$('#modal-buy').modal('show');
+      $('#modal-buy').modal('show');
 
 
     });
 
     //~ $('body').on('submit', '#form_reserve', function() {
-		//~ console.log("ZV RESERVE !");
-      //~ $('#modal-popup').modal('hide');
-      //~ //$('#modal-buy').modal('hide');
-      //~ event.preventDefault(); //prevent default action
-      //~ var post_url = '/zvreserve'; //get form action url
-      //~ var request_method = 'post'; //get form GET/POST method
-      //~ var form_data = new FormData(this); //Creates new FormData object
+    //~ console.log("ZV RESERVE !");
+    //~ $('#modal-popup').modal('hide');
+    //~ //$('#modal-buy').modal('hide');
+    //~ event.preventDefault(); //prevent default action
+    //~ var post_url = '/zvreserve'; //get form action url
+    //~ var request_method = 'post'; //get form GET/POST method
+    //~ var form_data = new FormData(this); //Creates new FormData object
 
-      //~ });
+    //~ });
     //~ });
 
     $('body').on('click', '.add-passenger', function() {
@@ -582,66 +586,62 @@
 
     $('.chk-time').change(function() {
 
-    		console.log("morning");
+      console.log("morning");
 
-    		if ( ! document.getElementById('morning').checked || ! document.getElementById('c1').checked)
-    		{
+      if (!document.getElementById('morning').checked || !document.getElementById('c1').checked) {
 
-				var divsToHide = document.getElementsByClassName("morning"); //divsToHide is an array
+        var divsToHide = document.getElementsByClassName("morning"); //divsToHide is an array
 
-				console.log(divsToHide.length);
+        console.log(divsToHide.length);
 
-				for(var i = 0; i < divsToHide.length; i++){
-					//divsToHide[i].style.visibility = "hidden"; // or
-					console.log(divsToHide[i].style.display);
-					divsToHide[i].style.display = "none"; // depending on what you're doing
-				}
-			}
-
-
-			if ( ! document.getElementById('noon').checked || ! document.getElementById('c2').checked)
-    		{
-
-				var divsToHide = document.getElementsByClassName("noon"); //divsToHide is an array
-
-				console.log(divsToHide.length);
-
-				for(var i = 0; i < divsToHide.length; i++){
-					//divsToHide[i].style.visibility = "hidden"; // or
-					console.log(divsToHide[i].style.display);
-					divsToHide[i].style.display = "none"; // depending on what you're doing
-				}
-			}
+        for (var i = 0; i < divsToHide.length; i++) {
+          //divsToHide[i].style.visibility = "hidden"; // or
+          console.log(divsToHide[i].style.display);
+          divsToHide[i].style.display = "none"; // depending on what you're doing
+        }
+      }
 
 
-			if ( ! document.getElementById('evening').checked || ! document.getElementById('c3').checked)
-    		{
+      if (!document.getElementById('noon').checked || !document.getElementById('c2').checked) {
 
-				var divsToHide = document.getElementsByClassName("evening"); //divsToHide is an array
+        var divsToHide = document.getElementsByClassName("noon"); //divsToHide is an array
 
-				console.log(divsToHide.length);
+        console.log(divsToHide.length);
 
-				for(var i = 0; i < divsToHide.length; i++){
-					//divsToHide[i].style.visibility = "hidden"; // or
-					console.log(divsToHide[i].style.display);
-					divsToHide[i].style.display = "none"; // depending on what you're doing
-				}
-			}
+        for (var i = 0; i < divsToHide.length; i++) {
+          //divsToHide[i].style.visibility = "hidden"; // or
+          console.log(divsToHide[i].style.display);
+          divsToHide[i].style.display = "none"; // depending on what you're doing
+        }
+      }
 
 
-			if ( ! document.getElementById('night').checked || ! document.getElementById('c4').checked)
-    		{
+      if (!document.getElementById('evening').checked || !document.getElementById('c3').checked) {
 
-				var divsToHide = document.getElementsByClassName("night"); //divsToHide is an array
+        var divsToHide = document.getElementsByClassName("evening"); //divsToHide is an array
 
-				console.log(divsToHide.length);
+        console.log(divsToHide.length);
 
-				for(var i = 0; i < divsToHide.length; i++){
-					//divsToHide[i].style.visibility = "hidden"; // or
-					console.log(divsToHide[i].style.display);
-					divsToHide[i].style.display = "none"; // depending on what you're doing
-				}
-			}
+        for (var i = 0; i < divsToHide.length; i++) {
+          //divsToHide[i].style.visibility = "hidden"; // or
+          console.log(divsToHide[i].style.display);
+          divsToHide[i].style.display = "none"; // depending on what you're doing
+        }
+      }
+
+
+      if (!document.getElementById('night').checked || !document.getElementById('c4').checked) {
+
+        var divsToHide = document.getElementsByClassName("night"); //divsToHide is an array
+
+        console.log(divsToHide.length);
+
+        for (var i = 0; i < divsToHide.length; i++) {
+          //divsToHide[i].style.visibility = "hidden"; // or
+          console.log(divsToHide[i].style.display);
+          divsToHide[i].style.display = "none"; // depending on what you're doing
+        }
+      }
 
 
 
@@ -654,9 +654,6 @@
         sortBy: price
       });
     });
-
-
-
   </script>
 </body>
 
