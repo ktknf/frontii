@@ -60,11 +60,37 @@ module.exports = {
 
   //Issue Function Start
   Issue: function(PNR, Email, callback) {
-    var get_url = "http://Book.zagrosairlines.com/cgi-bin/NRSWeb.cgi/ETIssueJS?Airline=ZV" +
-      "&PNR=" + PNR + "&Email=" + Email+ "&OfficeUser=THR210-1.WS&OfficePass=K2019";
+    var get_url = "http://iv.nirasoftware.com:880/cgi-bin/NRSWeb.cgi/ETIssueJS?Airline=IV" +
+      "&PNR=" + PNR + "&Email=" + Email+ "&OfficeUser=THR752.ws&OfficePass=ko2018h";
 
       console.log(get_url);
     request.get(get_url, {timeout: 150000}, function(err, res, body) {
+
+      body = body.replace(/(\r\n|\n|\r)/gm, "");
+      var rs=JSON.parse(body);
+      console.log(rs["AirNRSTICKETS"][0]["Tickets"].split('=')[1]);
+      var ticket_num=rs["AirNRSTICKETS"][0]["Tickets"].split('=')[1];
+
+      try {
+        callback(ticket_num);
+      }
+      catch (e) {
+        callback('err');
+        console.log(e);
+        console.log(body);
+      }
+    });
+  },
+  //Issue Fuvnction End
+
+  //ETR Function Start
+  Etr: function(TicketNo, callback) {
+    var get_url = "http://iv.nirasoftware.com:882/NRSETR.jsp?Airline=IV" +
+      "&TicketNo=" + TicketNo +  "&OfficeUser=THR752.ws&OfficePass=ko2018h";
+
+      console.log(get_url);
+    request.get(get_url, {timeout: 150000}, function(err, res, body) {
+      console.log(body);
 
       try {
         callback(body);
@@ -76,14 +102,13 @@ module.exports = {
       }
     });
   },
-  //Issue Fuvnction End
-
+  //ETR Fuvnction End
 
   //CancelSeat Function Start
   CancelSeat: function(PNR,Name,Last,Date,FlightNo, callback) {
-    var get_url = "http://Book.zagrosairlines.com/cgi-bin/NRSWeb.cgi/CancelSeatJS?Airline=ZV" +
+    var get_url = "http://iv.nirasoftware.com:882/cgi-bin/NRSWeb.cgi/CancelSeatJS?Airline=IV" +
       "&PNR=" + PNR + "&PassengerName=" + Name+ "&PassengerLastName=" + Last+"&DepartureDate=" + Date+
-      "&FlightNo=" + FlightNo + "&OfficeUser=THR210-1.WS&OfficePass=K2019";
+      "&FlightNo=" + FlightNo + "&OfficeUser=THR752.ws&OfficePass=ko2018h";
 
       console.log(get_url);
     request.get(get_url, function(err, res, body) {

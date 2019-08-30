@@ -66,32 +66,32 @@ app.post('/zvreserve', function(req, res) {
 
   var age_value = 33;
 
-if(req.body.airline==='ZV'){
-  Zagros.Reserve(req.body.from, req.body.to, req.body.classname, 1, req.body.day, req.body.month,
-    req.body.edtname, req.body.edtlast, age_value, req.body.edtid, req.body.fnumber, '1111111',
-    function(reserve_result) {
-      //var data={flights:all_flights,today:Utility.GetNowJalali(),par:req.query};
-      console.log(reserve_result);
-      var invoice_id = Math.floor(Math.random() * 1000).toString() + req.body.edtid.substring(3, 7)+'0';
-      Insertor.insert_one('Invoice', ['InvoiceID', 'Type', 'Estate', 'PNR', 'Email'], [invoice_id, 'zagros', 'new', reserve_result['PNR'], req.body.email], function(insert_result) {
-        var price_value = 1000;
-        //var price_value=req.body.price;
-        var red = "https://sep.shaparak.ir/payment.aspx?Amount=" + price_value + "&ResNum=" + invoice_id + "&MerchantCode=" + reserve_result['PNR'] + "&RedirectURL=http://kouhenour.ir:3389/payres&MID=11593879";
-        console.log(red);
-        res.redirect(red);
+  if (req.body.airline === 'ZV') {
+    Zagros.Reserve(req.body.from, req.body.to, req.body.classname, 1, req.body.day, req.body.month,
+      req.body.edtname, req.body.edtlast, age_value, req.body.edtid, req.body.fnumber, '1111111',
+      function(reserve_result) {
+        //var data={flights:all_flights,today:Utility.GetNowJalali(),par:req.query};
+        console.log(reserve_result);
+        var invoice_id = Math.floor(Math.random() * 1000).toString() + req.body.edtid.substring(3, 7) + '0';
+        Insertor.insert_one('Invoice', ['InvoiceID', 'Type', 'Estate', 'PNR', 'Email'], [invoice_id, 'zagros', 'new', reserve_result['PNR'], req.body.email], function(insert_result) {
+          var price_value = 1000;
+          //var price_value=req.body.price;
+          var red = "https://sep.shaparak.ir/payment.aspx?Amount=" + price_value + "&ResNum=" + invoice_id + "&MerchantCode=" + reserve_result['PNR'] + "&RedirectURL=http://kouhenour.ir:3389/payres&MID=11593879";
+          console.log(red);
+          res.redirect(red);
 
+        });
+        //res.render('flight_results.ejs',data);
       });
-      //res.render('flight_results.ejs',data);
-    });
   }
 
-  if(req.body.airline==='IV'){
+  if (req.body.airline === 'IV') {
     Caspian.Reserve(req.body.from, req.body.to, req.body.classname, 1, req.body.day, req.body.month,
       req.body.edtname, req.body.edtlast, age_value, req.body.edtid, req.body.fnumber, '1111111',
       function(reserve_result) {
         //var data={flights:all_flights,today:Utility.GetNowJalali(),par:req.query};
         console.log(reserve_result);
-        var invoice_id = Math.floor(Math.random() * 1000).toString() + req.body.edtid.substring(3, 7)+'1';
+        var invoice_id = Math.floor(Math.random() * 1000).toString() + req.body.edtid.substring(3, 7) + '1';
         Insertor.insert_one('Invoice', ['InvoiceID', 'Type', 'Estate', 'PNR', 'Email'], [invoice_id, 'caspian', 'new', reserve_result['PNR'], req.body.email], function(insert_result) {
           var price_value = 1000;
           //var price_value=req.body.price;
@@ -102,7 +102,7 @@ if(req.body.airline==='ZV'){
         });
         //res.render('flight_results.ejs',data);
       });
-    }
+  }
 
 })
 
@@ -232,20 +232,41 @@ app.get('/soon', function(req, res) {
 app.post('/payres', function(req, res) {
   if (req.body.State === 'OK') {
     console.log(req.body);
-    Selector.select_all_where('Invoice', 'InvoiceID=' + req.body.ResNum, function(select_result) {
-      console.log(select_result[0]);
-      Zagros.Issue(select_result[0].PNR, select_result[0].Email, function(issue_result) {
-        if (issue_result === 'err') {
-          res.send("خطایی در صدور بلیت رخ داده است. هزینه پرداختی شما ظرف 72 ساعت به حساب شما بازگردانده میشود.");
-        }
-        Zagros.Etr(issue_result, function(etr_result) {
-          console.log(etr_result);
-          var send_to_front = JSON.parse(etr_result);
-          res.render("ticket.ejs", send_to_front);
+
+    if (req.body.ResNum[req.body.ResNum.length - 1] === '0') {
+      Selector.select_all_where('Invoice', 'InvoiceID=' + req.body.ResNum, function(select_result) {
+        console.log(select_result[0]);
+        Zagros.Issue(select_result[0].PNR, select_result[0].Email, function(issue_result) {
+          if (issue_result === 'err') {
+            res.send("خطایی در صدور بلیت رخ داده است. هزینه پرداختی شما ظرف 72 ساعت به حساب شما بازگردانده میشود.");
+          }
+          Zagros.Etr(issue_result, function(etr_result) {
+            console.log(etr_result);
+            var send_to_front = JSON.parse(etr_result);
+            res.render("ticket.ejs", send_to_front);
+          });
+          console.log(issue_result);
         });
-        console.log(issue_result);
       });
-    });
+    }
+
+    if (req.body.ResNum[req.body.ResNum.length - 1] === '1') {
+      Selector.select_all_where('Invoice', 'InvoiceID=' + req.body.ResNum, function(select_result) {
+        console.log(select_result[0]);
+        Caspian.Issue(select_result[0].PNR, select_result[0].Email, function(issue_result) {
+          if (issue_result === 'err') {
+            res.send("خطایی در صدور بلیت رخ داده است. هزینه پرداختی شما ظرف 72 ساعت به حساب شما بازگردانده میشود.");
+          }
+          Caspian.Etr(issue_result, function(etr_result) {
+            console.log(etr_result);
+            var send_to_front = JSON.parse(etr_result);
+            res.render("ticket.ejs", send_to_front);
+          });
+          console.log(issue_result);
+        });
+      });
+    }
+
   } else {
     console.log(req.body);
   }
