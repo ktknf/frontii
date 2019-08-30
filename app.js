@@ -228,6 +228,11 @@ app.get('/soon', function(req, res) {
   res.render('main.ejs');
 })
 
+
+app.get('/mmm', function(req, res) {
+  res.send('just find an other developer!!!!');
+})
+
 //Payment Result
 app.post('/payres', function(req, res) {
   if (req.body.State === 'OK') {
