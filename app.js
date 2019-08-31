@@ -280,10 +280,9 @@ app.post('/payres', function(req, res) {
 
 
 app.get('/test_any', function(req, res) {
-
-  Iati.GetFlights("THR", "MHD", "24", "8", 1, 0, 0, function(ccc) {
-    //res.charset('utf-8');
-    res.send(ccc);
+  Mahan.GetFlights("THR", "MHD", "1", "9", 1, 0, 0, function(iv_all_flights) {
+    console.log(iv_all_flights);
+    res.send(iv_all_flights);
   });
 })
 
