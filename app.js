@@ -280,7 +280,7 @@ app.post('/payres', function(req, res) {
 
 
 app.get('/test_any', function(req, res) {
-  Mahan.GetFlights("THR", "MHD", "1", "9", 1, 0, 0, function(iv_all_flights) {
+  Mahan.GetFlights("THR", "MHD", "2", "9", 1, 0, 0, function(iv_all_flights) {
     console.log(iv_all_flights);
     res.send(iv_all_flights);
   });

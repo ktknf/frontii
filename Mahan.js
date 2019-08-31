@@ -1,4 +1,5 @@
 var request = require('request');
+var xmlParser = require('xml2json');
 
 //Modules
 var utility = require("./utility.js");
@@ -55,9 +56,35 @@ module.exports = {
     console.log(get_url);
     console.log(data);
 
-    request.get(get_url, function(err, res, body) {
-      callback(body);
-    });
+    const opts = {
+      body: data,
+      headers: {
+        'Content-Type': 'text/xml; charset=utf-8',
+        SOAPAction: 'runTransaction'
+      }
+    }
+
+    const body = request.post(get_url, opts, (err, response) => {
+      console.log('response', response.body)
+      var js=xmlParser.toJson(response.body);
+      var json_body=JSON.parse(js)["soap:Envelope"]["soap:Body"]["ns1:OTA_AirAvailRS"]["ns1:OriginDestinationInformation"];
+
+      var prices_body=JSON.parse(js)["soap:Envelope"];
+
+      for (var i=0 ;i < json_body.length;i++)
+      {
+        var datetime=json_body[i]["ns1:DepartureDateTime"];
+        console.log('Date time:', datetime);
+        var from=json_body[i]["ns1:OriginLocation"]["LocationCode"];
+        console.log('From:', from);
+        var to=json_body[i]["ns1:DestinationLocation"]["LocationCode"];
+        console.log('From:', to);
+        var flightnum=json_body[i]["ns1:OriginDestinationOptions"]["ns1:OriginDestinationOption"]["ns1:FlightSegment"]["FlightNumber"];
+        console.log('Flight Number:', flightnum);
+        console.log("-----------------------");
+      }
+      callback(prices_body);
+    })
 
     //request({
     //  url: get_url,
@@ -65,8 +92,8 @@ module.exports = {
     //  body: data
     //}, function(error, response, body) {
     //  console.log(body);
+    //  callback(body);
     //});
-
   },
   //GetFlight Function End
 
