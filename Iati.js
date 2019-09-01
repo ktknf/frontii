@@ -1,6 +1,8 @@
 var request = require('request');
 var zlib = require("zlib");
-
+let {
+  PythonShell
+} = require('python-shell')
 //Modules
 var utility = require("./utility.js");
 
@@ -8,28 +10,20 @@ module.exports = {
 
   //GetFlights Function
   GetFlights: function(Source, Target, Day, Month, Adult, Child, Infant, callback) {
-    var get_url = "http://testapi.iati.ir/Tracker/Get_LoginID/7D7764DF874F8C9D06B7A5BAA462AD0F";
-    console.log("here!");
+    const spawn = require('child_process').spawn;
+    const ls = spawn('python', ['x.py', Source, Target , "2019-"+Month+"-"+Day]);
 
-
-    //Custom Header pass
-    var headersOpt = {
-      "Accept-Encoding": "gzip,deflate",
-      "Accept": "application/json; charset=UTF-8",
-      "Content-Type": "application/json"
-    };
-    request({
-      method: 'post',
-      url: 'http://testapi.iati.ir/Tracker/Get_LoginID/7D7764DF874F8C9D06B7A5BAA462AD0F',
-      form: "{MemberID:null,ClientIPAddress:'95.217.5.6'}",
-      body: "{MemberID:null,ClientIPAddress:'95.217.5.6'}",
-      headers: headersOpt
-    }, function(error, response, body) {
-      //Print the Response
-
-      callback(body);
+    ls.stdout.on('data', (data) => {
+      console.log(`stdout: ${data}`);
     });
 
+    ls.stderr.on('data', (data) => {
+      console.log(`stderr: ${data}`);
+    });
+
+    ls.on('close', (code) => {
+      console.log(`child process exited with code ${code}`);
+    });
   },
   //GetFlight Function End
 
