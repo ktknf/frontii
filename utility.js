@@ -54,7 +54,9 @@ module.exports = {
     var val=str+' ';
     for(var i=0;i<10;i++)
     {
-      val=val.replace(persian[i],english[i]);
+      //val=val.replace(persian[i],english[i]);
+
+      val=val.split(persian[i]).join(english[i]);
     }
     return val.trim();
   },

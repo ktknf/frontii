@@ -94,7 +94,7 @@ module.exports = {
         console.log(datetime.split('T')[1]);
         final_return.push({
           AirLine:'ماهان',
-          AirLineShort:'IV',
+          AirLineShort:'W5',
           TimeClass:utility.TimeClass(datetime.replace('T',' ')),
           DepartureDateTime:utility.ToShamsi(datetime.replace('T',' ')),
           ArrivalDateTime:utility.ToShamsi(datetime.replace('T',' ')),
@@ -106,7 +106,7 @@ module.exports = {
           IntPrice:parseInt(price_val/10),
           FlightNo:flightnum,
           Class:"p",
-          Spec:from+"-"+to+"-"+flightnum+"-"+"p"+"-"+Day+"-"+Month+"-"+price_val+"-IV"
+          Spec:from+"-"+to+"-"+flightnum+"-"+"p"+"-"+Day+"-"+Month+"-"+price_val+"-W5"
         });
 
       }

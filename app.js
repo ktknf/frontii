@@ -111,19 +111,28 @@ app.get('/flight', function(req, res) {
   var day_value = req.query.date.split('-')[2];
   var month_value = req.query.date.split('-')[1];
   var final_array = [];
-  Zagros.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(all_flights) {
-    final_array = final_array.concat(all_flights);
 
-    Caspian.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(iv_all_flights) {
-      final_array = final_array.concat(iv_all_flights);
+  var dayx = (parseInt(day_value) - 3);
+  var monthx = (parseInt(Utility.ToEnglishDigits(month_value)) + 3).toString();
 
-      var data = {
-        flights: final_array,
-        today: Utility.GetNowJalali(),
-        par: req.query
-      };
-      console.log(data);
-      res.render('flight_results.ejs', data);
+  console.log("************" + dayx + "*********" + monthx);
+  Mahan.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value)-9, monthx, 1, 0, 0, function(mv_all_flights) {
+    final_array = final_array.concat(mv_all_flights);
+
+    Zagros.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(all_flights) {
+      final_array = final_array.concat(all_flights);
+
+      Caspian.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(iv_all_flights) {
+        final_array = final_array.concat(iv_all_flights);
+
+        var data = {
+          flights: final_array,
+          today: Utility.GetNowJalali(),
+          par: req.query
+        };
+        console.log(data);
+        res.render('flight_results.ejs', data);
+      });
     });
   });
 })
