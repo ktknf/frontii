@@ -67,10 +67,13 @@ module.exports = {
     const body = request.post(get_url, opts, (err, response) => {
       console.log('response', response.body)
       var js=xmlParser.toJson(response.body);
+
+      var final_return=[];
+
       var json_body=JSON.parse(js)["soap:Envelope"]["soap:Body"]["ns1:OTA_AirAvailRS"]["ns1:OriginDestinationInformation"];
 
-      var prices_body=JSON.parse(js)["soap:Envelope"];
-
+      var prices_body=JSON.parse(js)["soap:Envelope"]["soap:Body"]["ns1:OTA_AirAvailRS"]["ns1:AAAirAvailRSExt"]["ns1:PricedItineraries"]["ns1:PricedItinerary"]["ns1:AirItineraryPricingInfo"]["ns1:ItinTotalFare"]["ns1:TotalFare"]["Amount"];
+      var price_val=prices_body.split('.')[0];
       for (var i=0 ;i < json_body.length;i++)
       {
         var datetime=json_body[i]["ns1:DepartureDateTime"];
@@ -82,8 +85,32 @@ module.exports = {
         var flightnum=json_body[i]["ns1:OriginDestinationOptions"]["ns1:OriginDestinationOption"]["ns1:FlightSegment"]["FlightNumber"];
         console.log('Flight Number:', flightnum);
         console.log("-----------------------");
+
+        var Day=datetime.split('T')[0].split('-')[2];
+        var Month=datetime.split('T')[0].split('-')[1];
+
+        console.log(Day);
+        console.log(Month);
+        console.log(datetime.split('T')[1]);
+        final_return.push({
+          AirLine:'ماهان',
+          AirLineShort:'IV',
+          TimeClass:utility.TimeClass(datetime.replace('T',' ')),
+          DepartureDateTime:utility.ToShamsi(datetime.replace('T',' ')),
+          ArrivalDateTime:utility.ToShamsi(datetime.replace('T',' ')),
+          From:from,
+          FullFrom:from,
+          To:to,
+          FullTo:to,
+          Price:utility.CommaSeprate(price_val/10),
+          IntPrice:parseInt(price_val/10),
+          FlightNo:flightnum,
+          Class:"p",
+          Spec:from+"-"+to+"-"+flightnum+"-"+"p"+"-"+Day+"-"+Month+"-"+price_val+"-IV"
+        });
+
       }
-      callback(prices_body);
+      callback(final_return);
     })
 
     //request({
