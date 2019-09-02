@@ -10,19 +10,35 @@ module.exports = {
 
   //GetFlights Function
   GetFlights: function(Source, Target, Day, Month, Adult, Child, Infant, callback) {
-    const spawn = require('child_process').spawn;
-    const ls = spawn('python', ['x.py', Source, Target , "2019-"+Month+"-"+Day]);
+    var get_url = "http://kouhenour.ir:8400/?from="+Source+"&to="+Target+"&date=2019-"+Month+"-"+Day;
+    console.log(get_url);
 
-    ls.stdout.on('data', (data) => {
-      console.log(`stdout: ${data}`);
-    });
+    request.get(get_url, function(err, res, body) {
+      var flght = JSON.parse(body);
+      var final_return = [];
+      for (var i = 0; i < flght.length; i++) {
+        //console.log(flght[i]);
+          final_return.push({
+            AirLine:flght[i]['Legs'][0]['OperatorName'],
+            AirLineShort:flght[i]['Legs'][0]['OperatorCode'],
+            TimeClass:'noon',
+            DepartureDateTime:flght[i]['Legs'][0]['DepartureTime'],
+            ArrivalDateTime:flght[i]['Legs'][0]['ArrivalTime'],
+            From:Source,
+            FullFrom:Source,
+            To:Target,
+            FullTo:Target,
+            Price:utility.CommaSeprate(10000000),
+            IntPrice:parseInt(1000000),
+            FlightNo:flght[i]['Legs'][0]['FlightNo'],
+            Class:'x',
+            Spec:Source+"-"+Target+"-"+flght[i]['Legs']['FlightNo']+"-"+"X"+"-"+Day+"-"+Month+"-"+"100000"+"-IV"
+          });
+        }
 
-    ls.stderr.on('data', (data) => {
-      console.log(`stderr: ${data}`);
-    });
-
-    ls.on('close', (code) => {
-      console.log(`child process exited with code ${code}`);
+      console.log("total caspain: ");
+      console.log(final_return.length);
+      callback(final_return);
     });
   },
   //GetFlight Function End

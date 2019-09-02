@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/slick.css" />
+  <link rel="stylesheet" href="/css/persian-datepicker.min.css">
+  <link rel="stylesheet" href="/css/style.css" />
+  <!--[if IE]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    -<![endif]-->
+  <meta name="csrf-param" content="_csrf">
+  <meta name="csrf-token" content="1KQ7aanpBDv3BerlNwROi6iiXGYMPyq1sqDhIuIcV4y34UpYn6dJU5t9kK9-N2O47JMSAG9uGNPw97cWiHkh_Q==">
+  <title>نتیجه جستجو</title>
+</head>
+
+<body>
+  <!-- Modal-ok-waiting-error-->
+  <!--Add class .pop-wait to div.modal for waiting-->
+  <!--Add class .pop-error to div.modal for error-->
+  <!--Add class .pop-ok to div.modal for ok-->
+  <div class="modal fade pop-wait" id="modal-popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="ok-part content-popup">
+            <div class="img-popup"></div>
+            <p>عملیات</p>
+            <p>با موفقیت انجام شد</p>
+          </div>
+          <div class="waiting-part content-popup">
+            <div class="img-popup"></div>
+            <p>تا تکمیل جستجو</p>
+            <p>لطفا شکیبا باشید</p>
+          </div>
+          <div class="error-part content-popup">
+            <div class="img-popup"></div>
+            <p>عملیات</p>
+            <p>با خطا روبرو شد</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal-ok-waiting-error-->
+  <!--start-modal-buy-->
+
+  <!-- Modal -->
+  <div class="modal fade continue-buy" id="modal-buy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body modal-buy-body">
+
+				<form role="form" id="form_reserve" method="post" action="/zvreserve">
+                    <input type="hidden" name="_csrf" value="lKVzpU2cD4Oc1v74zv3PeWTY6B2rPvg6aiL02YcPb9HakhznPstI56-fiqGXqL8hLoCsa59byn06faShyEUKsg==">
+                    <input type="hidden" name="from" value="" id="idfrom">
+                    <input type="hidden" name="to" value="" id="idto">
+                    <input type="hidden" name="fnumber" value="" id="idnum">
+                    <input type="hidden" name="classname" value="" id="idclass">
+                    <input type="hidden" name="day" value="" id="idday">
+                    <input type="hidden" name="month" value="" id="idmonth">
+                    <input type="hidden" name="price" value="" id="idprice">
+                    <input type="hidden" name="airline" value="" id="idairline">
+
+                    <div class="container-fluid padd0">
+                        <div class="flat-card traveler-info">
+                            <div class="traveler-info-title">
+                                <h3 class="highlight-title">اطلاعات بزرگسال اول</h3>
+                                <a href="#" class="add-passenger">افزودن مسافر جدید</a>
+                            </div>
+                            <div class="traveler-info-body traveler-list-body">
+                                                                    <div class="traveler traveler-template">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                                <div class="form-group">
+                                                    <div class="md-checkbox p-0">
+                                                        <label>
+                                                            <input class="checkbox-inline" id="checkbox-inline" name="passenger[1][nationality]" type="checkbox" value="1">
+                                                            <span class="md-checkbox-material"><span class="check"></span></span>
+                                                            <span class="md-checkbox-label" title="ماهان">مسافر از اتباع خارجی است</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label>نام (فارسی) : </label>
+                                                    <input class="item GivenNameFA form-control" maxlength="59" name="edtname0" placeholder="به فارسی وارد کنید..." required="required" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label>نام خانوادگی (فارسی): </label>
+                                                    <input class="item SurNameFA form-control" maxlength="59" name="edtlast0" placeholder="به فارسی وارد کنید..." type="text" value="" required="Required">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label>نام (انگلیسی): </label>
+                                                    <input class="item GivenName form-control" maxlength="59" name="edtname" placeholder="به انگلیسی وارد کنید..." required="required" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label>نام خانوادگی (انگلیسی): </label>
+                                                    <input class="item SurName form-control" maxlength="59" name="edtlast" placeholder="به انگلیسی وارد کنید..." required="Required" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label>جنسیت: </label>
+                                                    <select class="nice-select form-control wide" id="AdultNamePrefix0" name="passenger[1][gender]">
+                                                        <option value="">انتخاب کنید...</option>
+                                                        <option value="1">Mr - مرد</option>
+                                                        <option value="2">Mrs - زن</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label>تاریخ تولد: </label>
+                                                    <input required="Required" class=" form-control" name="passenger[1][year]" placeholder="سال" type="text" value="">
+                                                    <input required="Required" class=" form-control" name="passenger[1][month]" placeholder="ماه" type="text" value="">
+                                                    <input required="Required" class=" form-control" name="passenger[1][day]" placeholder="روز" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                                <div class="form-group box-num-code">
+                                                    <label>کد ملی: </label>
+                                                    <input required="Required" class="item form-control NationalCode font-PN" maxlength="10" name="edtid" placeholder="کد 10 رقمی وارد کنید..." type="text" value="">
+                                                </div>
+                                                <div class="form-group box-num-pos" style="display:none;">
+                                                    <label>شماره پاسپورت: </label>
+                                                    <input class="item form-control" name="passenger[1][passport_id]" placeholder="مثال: P36522846" type="text" value="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label><a href="#" class="glyphicon glyphicon-remove remove-item">حذف</a></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="flat-card traveler-info">
+                            <div class="traveler-info-title">
+                                <h3 class="highlight-title">اطلاعات تماس</h3>
+                            </div>
+                            <div class="traveler-info-body">
+                                <div class="description">
+                                    <p>بلیط صادر شده، به‌صورت پیامک و ایمیل برای شما ارسال خواهد شد.</p>
+                                </div>
+                                <div class="traveler">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label>آدرس ایمیل:</label>
+                                                <input class="item form-control datepicker" name="email" placeholder="مثال: ali@gmail.com" type="text" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label>شماره موبایل:</label>
+                                                <input class="PhoneNumber item form-control" maxlength="11" name="edtcontact" placeholder="مثال: 09123456789" type="text" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="traveler-info">
+                            <p class="txt-rule"> با کلیک بر روی دکمه ادامه خرید، تایید می کنم که <a href="#">قوانین و مقررات</a> را مطالعه کرده و از درستی اطلاعات وارد شده اطمینان دارم.</p>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
+                                <button type="submit" class="btn btn-primary" id="accept_reserve">ادامه خرید</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade continue-buy" id="modal-confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body  modal-confirm-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="head-page">
+    <section class="container-fluid">
+      <section class="row content-head">
+        <div class="col-md-3 col-sm-3 logo-part">
+          <a href="#">
+            <img src="/images/logo.png" alt="">
+            <h1 class="sr-only">عنوان سایت</h1>
+            <h2 class="sr-only">توضیحاتی درباره سایت</h2>
+          </a>
+        </div>
+        <!--logo-part-->
+        <div class="col-md-7 col-sm-6 menu-part">
+          <nav class="nav-menu">
+            <ul class="navbar">
+              <li class="nav-item">
+                <a class="nav-link" href="#"> خرید بلیط </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">رزرو هتل</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">تور</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">تور های ویژه </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">پروازهای ویژه</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">هتل های ویژه</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">دانستنی های سفر</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!--.menu-part-->
+        <div class="col-md-2 col-sm-6 login-part">
+          <div class="link-login">
+            <a href="#">ورود | عضویت</a>
+          </div>
+        </div>
+        <!--.login-part-->
+        <div class="responsive-menu col-sm-3">
+          <a href="#" class="icon-menu" data-toggle="modal" data-target="#menuresponsive"></a>
+          <div class="modal right fade" id="menuresponsive" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <nav class="menu-res">
+                    <ul class="text-right navbar">
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"> خرید بلیط </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">رزرو هتل</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">تور</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">تور های ویژه </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">پروازهای ویژه</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">هتل های ویژه</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">دانستنی های سفر</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--responsive-menu-->
+      </section>
+    </section>
+  </header>
+  <main class="main-page" role="main">
+    <section class="container-fluid">
+      <!--search-head-->
+      <section class="row search-head text-right">
+        <div class="col-md-2 btn-group btn-toggle">
+          <button class="btn btn-default">یکطرفه</button>
+          <button class="btn btn-primary active">رفت و برگشت</button>
+        </div>
+        <div class="col-md-10 form-search">
+          <form action="">
+            <div class="form-row">
+              <div class="form-group col-md-2 begin-part">
+                <span class="title-input">مبداء</span>
+                <select name="from" class="form-control">
+                  <option value="IKA" <%- par.to =='IKA' ? 'selected' : '' %> >تهران( IKA )</option>
+                  <option value="DXB" <%- par.to =='DXB' ? 'selected' : '' %> >دبی( DXB )</option>
+                  <option value="GYD" <%- par.to =='GYD' ? 'selected' : '' %> >باکو( GYD )</option>
+                  <option value="SAW" <%- par.to =='SAW' ? 'selected' : '' %> >استانبول( SAW )</option>
+                  <option value="MCT" <%- par.to =='MCT' ? 'selected' : '' %> >مسقط( MCT )</option>
+                  <option value="URC" <%- par.to =='URC' ? 'selected' : '' %> >ارومچی( URC )</option>
+                  <option value="IST" <%- par.to =='IST' ? 'selected' : '' %> >استانبول( IST )</option>
+                  <option value="DOH" <%- par.to =='DOH' ? 'selected' : '' %> >دهه( DOH )</option>
+                  <option value="SVO" <%- par.to =='SVO' ? 'selected' : '' %> >مسکو( SVO )</option>
+                  <option value="FRA" <%- par.to =='FRA' ? 'selected' : '' %> >فرانفورت( FRA )</option>
+                  <option value="ZRH" <%- par.to =='ZRH' ? 'selected' : '' %> >زوریخ( ZRH )</option>
+                  <option value="MUC" <%- par.to =='MUC' ? 'selected' : '' %> >مونیخ( MUC )</option>
+                  <option value="KBP" <%- par.to =='KBP' ? 'selected' : '' %> >کیو( KBP )</option>
+                  <option value="ODS" <%- par.to =='ODS' ? 'selected' : '' %> >ادسا( ODS )</option>
+                  <option value="VIE" <%- par.to =='VIE' ? 'selected' : '' %> >وین( VIE )</option>
+                  <option value="AMM" <%- par.to =='AMM' ? 'selected' : '' %> >امان( AMM )</option>
+                  <option value="KWI" <%- par.to =='KWI' ? 'selected' : '' %> >کویت سیتی( KWI )</option>
+                  <option value="ESB" <%- par.to =='ESB' ? 'selected' : '' %> >آنکارا( ESB )</option>
+                  <option value="WUH" <%- par.to =='WUH' ? 'selected' : '' %> >ووهان( WUH )</option>
+                  <option value="CAN" <%- par.to =='CAN' ? 'selected' : '' %> >گوانجو( CAN )</option>
+                  <option value="ADB" <%- par.to =='ADB' ? 'selected' : '' %> >ازمیر( ADB )</option>
+                  <option value="AYT" <%- par.to =='AYT' ? 'selected' : '' %> >آنتالیا( AYT )</option>
+                  <option value="ADA" <%- par.to =='ADA' ? 'selected' : '' %> >آدنا( ADA )</option>
+                  <option value="DME" <%- par.to =='DME' ? 'selected' : '' %> >مسکو( DME )</option>
+                  <option value="LHR" <%- par.to =='LHR' ? 'selected' : '' %> >لندن( LHR )</option>
+
+                </select>
+              </div>
+              <div class="form-group col-md-2 end-part">
+                <span class="title-input">مقصد</span>
+                <select name="to" class="form-control">
+
+                  <option value="IKA" <%- par.to =='IKA' ? 'selected' : '' %> >تهران( IKA )</option>
+                  <option value="DXB" <%- par.to =='DXB' ? 'selected' : '' %> >دبی( DXB )</option>
+                  <option value="GYD" <%- par.to =='GYD' ? 'selected' : '' %> >باکو( GYD )</option>
+                  <option value="SAW" <%- par.to =='SAW' ? 'selected' : '' %> >استانبول( SAW )</option>
+                  <option value="MCT" <%- par.to =='MCT' ? 'selected' : '' %> >مسقط( MCT )</option>
+                  <option value="URC" <%- par.to =='URC' ? 'selected' : '' %> >ارومچی( URC )</option>
+                  <option value="IST" <%- par.to =='IST' ? 'selected' : '' %> >استانبول( IST )</option>
+                  <option value="DOH" <%- par.to =='DOH' ? 'selected' : '' %> >دهه( DOH )</option>
+                  <option value="SVO" <%- par.to =='SVO' ? 'selected' : '' %> >مسکو( SVO )</option>
+                  <option value="FRA" <%- par.to =='FRA' ? 'selected' : '' %> >فرانفورت( FRA )</option>
+                  <option value="ZRH" <%- par.to =='ZRH' ? 'selected' : '' %> >زوریخ( ZRH )</option>
+                  <option value="MUC" <%- par.to =='MUC' ? 'selected' : '' %> >مونیخ( MUC )</option>
+                  <option value="KBP" <%- par.to =='KBP' ? 'selected' : '' %> >کیو( KBP )</option>
+                  <option value="ODS" <%- par.to =='ODS' ? 'selected' : '' %> >ادسا( ODS )</option>
+                  <option value="VIE" <%- par.to =='VIE' ? 'selected' : '' %> >وین( VIE )</option>
+                  <option value="AMM" <%- par.to =='AMM' ? 'selected' : '' %> >امان( AMM )</option>
+                  <option value="KWI" <%- par.to =='KWI' ? 'selected' : '' %> >کویت سیتی( KWI )</option>
+                  <option value="ESB" <%- par.to =='ESB' ? 'selected' : '' %> >آنکارا( ESB )</option>
+                  <option value="WUH" <%- par.to =='WUH' ? 'selected' : '' %> >ووهان( WUH )</option>
+                  <option value="CAN" <%- par.to =='CAN' ? 'selected' : '' %> >گوانجو( CAN )</option>
+                  <option value="ADB" <%- par.to =='ADB' ? 'selected' : '' %> >ازمیر( ADB )</option>
+                  <option value="AYT" <%- par.to =='AYT' ? 'selected' : '' %> >آنتالیا( AYT )</option>
+                  <option value="ADA" <%- par.to =='ADA' ? 'selected' : '' %> >آدنا( ADA )</option>
+                  <option value="DME" <%- par.to =='DME' ? 'selected' : '' %> >مسکو( DME )</option>
+                  <option value="LHR" <%- par.to =='LHR' ? 'selected' : '' %> >لندن( LHR )</option>
+
+                </select>
+              </div>
+              <div class="form-group col-md-2 go-part">
+                <span class="title-input">رفت</span>
+                <input type="text" name="date" class="form-control" id="dateOne" value="<%= par.date %>">
+              </div>
+              <!--add class-active-for icon comeback-->
+              <div class="form-group col-md-2 back-part" hidden>
+                <span class="title-input">برگشت</span>
+                <input name="date2" type="text" class="form-control" id="dateTwo" value="۱۳۹۸-۰۵-۱۶">
+              </div>
+              <div class="form-group col-md-2 num-part">
+                <span class="title-input">تعداد</span>
+                <select class="form-control" name="adult">
+                    <option value="1"> 1 بزرگسال</option>
+                    <option  value="2"> 2 بزرگسال</option>
+                    <option  value="3" > 3 بزرگسال</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <input type="submit" class="form-control submit-src" value="جستجو" data-toggle="modal" data-target="#modal-popup">
+              </div>
+            </div>
+          </form>
+        </div>
+        <!--.form-search-->
+      </section>
+      <!--search-head-->
+      <section class="responsive-side-src">
+        <ul class="mnu-src-filter">
+          <li class="chane-src"><a href="#" data-toggle="modal" data-target="#modalSrc">تغییر جستجو</a></li>
+          <li class="filter-side"><a href="#" data-toggle="modal" data-target="#modalFilter">فلیتر</a></li>
+        </ul>
+        <!--.mnu-src-filter-->
+        <div class="modal right fade" id="modalSrc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="text-center">تغییر جستجو</h3>
+              </div>
+              <div class="modal-body">
+                <section class="search-head text-right">
+                  <div class="btn-group btn-toggle">
+                    <button class="btn btn-default">یکطرفه</button>
+                    <button class="btn btn-primary active">رفت و برگشت</button>
+                  </div>
+                  <div class="form-search">
+                    <form action="">
+                      <div class="form-row justify-content-center">
+                        <div class="form-group begin-part">
+                          <span class="title-input">مبداء</span>
+                          <select name="from">
+                            <option value="THR">تهران( THR )</option>
+                            <option selected value="MHD">مشهد( MHD )</option>
+                            <option value="TTQ">TTQ( TTQ )</option>
+                            <option value="UGT">UGT( UGT )</option>
+                            <option value="IKA">تهران( IKA )</option>
+                            <option value="DXB">دبی( DXB )</option>
+                          </select>
+                        </div>
+                        <div class="form-group end-part">
+                          <span class="title-input">مقصد</span>
+                          <select name="to">
+                            <option selected value="THR">تهران( THR )</option>
+                            <option value="MHD">مشهد( MHD )</option>
+                            <option value="TTQ">TTQ( TTQ )</option>
+                            <option value="UGT">UGT( UGT )</option>
+                            <option value="IKA">تهران( IKA )</option>
+                            <option value="DXB">دبی( DXB )</option>
+                          </select>
+                        </div>
+                        <div class="form-group go-part">
+                          <span class="title-input">رفت</span>
+                          <input type="text" class="form-control" id="dateOneRes" name="date">
+                        </div>
+                        <!--add class-active-for icon comeback-->
+                        <div class="form-group back-part">
+                          <span class="title-input">برگشت</span>
+                          <input type="text" class="form-control" id="dateTwoRes" name="date2">
+                        </div>
+                        <div class="form-group num-part">
+                          <span class="title-input">تعداد</span>
+                          <select class="form-control">
+                            <option> 1 بزرگسال</option>
+                            <option> 2 بزرگسال</option>
+                            <option> 3 بزرگسال</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <input type="submit" class="form-control submit-src" value="جستجو">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!--.form-search-->
+                </section>
+                <!--search-head-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal right fade" id="modalFilter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="text-center">فیلتر نتایج</h3>
+              </div>
+              <div class="modal-body side-right">
+                <div class="widget div-arrange">
+                  <h3 class="title-widget">مرتب سازی</h3>
+                  <div class="content-widget">
+                    <p>قیمت از زیاد به کم</p>
+                    <span class="num-arrange">7</span>
+                  </div>
+                </div>
+                <div class="widget">
+                  <h3 class="title-widget">ساعت پرواز</h3>
+                  <div class="content-widget">
+                    <ul class="list-check">
+                      <li >
+                        <label class="lableSorc">
+                          <span>صبح </span>
+                          <span class="fa-num"> ۲۴ الی 9 </span>
+                          <span class="fa-num" hidden> ۲۸۰،۰۰۰</span>
+                          <input type="checkbox" checked="checked" class="mor chk-time chk-time1" id="c1">
+                          <span class="checkmark"></span>
+                        </label>
+                      </li>
+                      <li>
+                        <label class="lableSorc">
+                          <span>ظهر</span>
+                          <span class="fa-num"> 9 الی 14 </span>
+                          <span class="fa-num" hidden> ۲۸۰،۰۰۰</span>
+                          <input type="checkbox" checked class="noo chk-time chk-time1" id="c2">
+                          <span class="checkmark"></span>
+                        </label>
+                      </li>
+                      <li>
+                        <label class="lableSorc">
+                          <span>عصر</span>
+                          <span class="fa-num"> 14 الی 19 </span>
+                          <span class="fa-num" hidden> ۲۸۰،۰۰۰</span>
+                          <input type="checkbox" checked class="eve chk-time chk-time1" id="c3">
+                          <span class="checkmark"></span>
+                        </label>
+                      </li>
+                      <li>
+                        <label class="lableSorc">
+                          <span>شب</span>
+                          <span class="fa-num"> 19 الی 24 </span>
+                          <span class="fa-num" hidden> ۲۸۰،۰۰۰</span>
+                          <input type="checkbox" checked class="nig chk-time chk-time1" id="c4">
+                          <span class="checkmark"></span>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="widget">
+                  <h3 class="title-widget">لیست ایرلاین ها</h3>
+                  <div class="content-widget">
+                    <ul class="list-check">
+
+                      <label class="lableSorc">
+                        <span>کاسپین</span>
+                        <span class="icon-fly-check"> <img style="height: 30px;width:30px;" src="/images/airlines/caspian_airline.png" alt=""></span>
+                        <span class="fa-num"></span>
+                        <input type="checkbox" checked="checked" value="IV" class="chk-airline chk-airline2">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="lableSorc">
+                        <span>زاگرس</span>
+                        <span class="icon-fly-check"> <img style="height: 30px;width:30px;" src="/images/airlines/ZV.png" alt=""></span>
+                        <span class="fa-num"></span>
+                        <input type="checkbox" checked="checked" value="ZV" class="chk-airline chk-airline2">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="lableSorc">
+                        <span>ماهان</span>
+                        <span class="icon-fly-check"> <img style="height: 30px;width:30px;" src="/images/airlines/W5.png" alt=""></span>
+                        <span class="fa-num"></span>
+                        <input type="checkbox" checked="checked" value="W5" class="chk-airline chk-airline2">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+
+                    </ul>
+                  </div>
+                </div>
+                <div class="widget" hidden>
+                  <h3 class="title-widget">لیست کلاس های پروازی</h3>
+                  <div class="content-widget list-class-fly">
+                    <ul class="list-check">
+                      <li>
+                        <label class="lableSorc">
+                          <span>اکونومی</span>
+                          <span class="fa-num"> ۲۸۰،۰۰۰</span>
+                          <input type="checkbox" checked="checked">
+                          <span class="checkmark"></span>
+                        </label>
+                      </li>
+                      <li>
+                        <label class="lableSorc">
+                          <span>بیزینس</span>
+                          <span class="fa-num"> ۲۸۰،۰۰۰</span>
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--content-search-->
+      <section class="row content-search">
+        <aside class="col-lg-3 col-md-3 side-right">
+          <div class="widget div-arrange">
+            <h3 class="title-widget">مرتب سازی</h3>
+            <div class="content-widget" >
+              <a href="<%= "sortedflight?from="+par.from+"&to="+par.to+"&date="+par.date+"&date2="+par.date2+"&sort=pricereverse" %>"> <p class="priceasc">قیمت از زیاد به کم</p> </a>
+              <a href="<%= "sortedflight?from="+par.from+"&to="+par.to+"&date="+par.date+"&date2="+par.date2+"&sort=price" %>"> <p class="priceasc">قیمت از کم به زیاد</p> </a>
+            </div>
+          </div>
+          <div class="widget">
+            <h3 class="title-widget">ساعت پرواز</h3>
+            <div class="content-widget">
+
+              <ul class="list-check">
+               <li>
+                  <label class="lableSorc">
+                    <span>صبح </span>
+                    <span class="fa-num"> ۲۴ الی 9 </span>
+                    <span class="fa-num" hidden> ۲۸۰،۰۰۰</span>
+                    <input type="checkbox" checked="checked" class="mor chk-time chk-time2" id="morning">
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="lableSorc">
+                    <span>ظهر</span>
+                    <span class="fa-num"> 9 الی 14 </span>
+                    <span class="fa-num" hidden> ۲۸۰،۰۰۰</span>
+                    <input type="checkbox" checked class="noo chk-time chk-time2 " id="noon">
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="lableSorc">
+                    <span>عصر</span>
+                    <span class="fa-num"> 14 الی 19 </span>
+                    <span class="fa-num" hidden> ۲۸۰،۰۰۰</span>
+                    <input type="checkbox" checked class="evening chk-time chk-time2" id="evening">
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="lableSorc">
+                    <span>شب</span>
+                    <span class="fa-num"> 19 الی 24 </span>
+                    <span class="fa-num" hidden> ۲۸۰،۰۰۰</span>
+                    <input type="checkbox" checked class="night chk-time chk-time2" id="night">
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="widget">
+            <h3 class="title-widget">لیست ایرلاین ها</h3>
+            <div class="content-widget">
+              <ul class="list-check">
+                <li>
+                  <label class="lableSorc">
+                    <span>کاسپین</span>
+                    <span class="icon-fly-check"> <img style="height: 30px;width:30px;" src="/images/airlines/caspian_airline.png" alt=""></span>
+                    <span class="fa-num"></span>
+                    <input type="checkbox" checked="checked" value="IV" class="chk-airline chk-airline2">
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="lableSorc">
+                    <span>زاگرس</span>
+                    <span class="icon-fly-check"> <img style="height: 30px;width:30px;" src="/images/airlines/ZV.png" alt=""></span>
+                    <span class="fa-num"></span>
+                    <input type="checkbox" checked="checked" value="ZV" class="chk-airline chk-airline2">
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="lableSorc">
+                    <span>ماهان</span>
+                    <span class="icon-fly-check"> <img style="height: 30px;width:30px;" src="/images/airlines/W5.png" alt=""></span>
+                    <span class="fa-num"></span>
+                    <input type="checkbox" checked="checked" value="W5" class="chk-airline chk-airline2">
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="widget">
+            <h3 class="title-widget">لیست کلاس های پروازی</h3>
+            <div class="content-widget list-class-fly">
+              <ul class="list-check">
+                <li>
+                  <label class="lableSorc">
+                    <span>اکونومی</span>
+                    <span class="fa-num"></span>
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="lableSorc">
+                    <span>بیزینس</span>
+                    <span class="fa-num"> </span>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+
+
+        <!--.side-right-->
+        <section class="col-lg-7 col-md-12 content-list-src">
+
+
+          <!--.part-advertis-->
+          <div style="height:5px; position:unset;"></div>
+          <% for (var i=0; i<flights.length ; i++){ %>
+
+          <div class="item-list-src container-fluid <%= flights[i].TimeClass %>" style="position:unset;" >
+            <div class="above-div row">
+              <div class="col-lg-9 col-md-9 part-right-above">
+                <div class="sort-fly">
+                  <!--put class .charter instead of .title-system for charter-fly-->
+                  <p class="title-system">سیستمی</p>
+                </div>
+                <div class="icon-fly">
+                  <div class="co-icon-fly">
+                    <img src="<%= "/images/airlines/"+flights[i].AirLineShort+".png" %>"  alt="">
+                    <p><%= flights[i].AirLine %></p>
+                  </div>
+                </div>
+                <div class="hour-start-end">
+                  <ul>
+                    <li>
+                      <p><%= flights[i].DepartureDateTime %></p>
+                      <p><%= flights[i].FullFrom %></p>
+                    </li>
+                    <li class="line-between"></li>
+                    <li>
+                      <p><%= flights[i].ArrivalDateTime %></p>
+                      <p><%= flights[i].FullTo %></p>
+                    </li>
+                  </ul>
+                </div>
+                <!--.hour-start-end-->
+              </div>
+              <!--.part-right-above-->
+              <div class="col-lg-3 col-md-3 part-left-above">
+                <p>قیمت 1 مسافر</p>
+                <p class="price-ticket">
+                  <span class="price"><%= flights[i].Price %></span>
+                  <span>تومان</span>
+                </p>
+                <a href="#" data-fnum="<%= flights[i].Spec %>" class="btn btn-primary btn_reserve">خرید بلیط</a>
+              </div>
+              <!--.part-left-above-->
+            </div>
+            <!--.above-div-->
+            <div class="footer-co-src row">
+              <div class="col-lg-9 col-sm-9 number-fly">
+                <p><%= flights[i].Class %> / شماره پرواز : <%= flights[i].FlightNo %> </p>
+              </div>
+              <div class="col-lg-3 col-sm-3 details-fly" hidden>
+                <a href="#collapseDetails-5" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseDetails-5">جزئیات پرواز</a>
+              </div>
+            </div>
+            <!--.footer-co-src-->
+            <div class="collapse row" id="collapseDetails-5">
+              <div class="card card-body">
+                <div class="col-lg-9 col-sm-9 part-right-collapse">
+                  <div class="num-person text-right">
+                    <span>ظرفیت : </span>
+                    <span>1 نفر</span>
+                  </div>
+                  <div class="condition-cancle text-right">
+                    <h4>شرایط کنسلی:</h4>
+                    <p> -- هر گونه تغییر یا استرداد تا 24 ساعت قبل از پرواز مشمول پرداخت هزینه به میزان 20% از نرخ پایه بلیت میگردد</p>
+                    <p> -- هرگونه تغییر و یا استرداد بلیت کمتر از 24 ساعت قبل از پرواز مشمول پرداخت هزینه به میزان 40% از نرخ پایه بلیت میگردد</p>
+                  </div>
+                </div>
+                <!--.part-right-collapse-->
+                <div class="col-lg-3 col-sm-3 part-left-collapse">
+                  <ul>
+                    <li>
+                      <span> بزرگسال:</span>
+                      <span>2,275,000 ریال</span>
+                    </li>
+                  </ul>
+                </div>
+                <!--.part-left-collapse-->
+              </div>
+              <!--.card-body-->
+            </div>
+            <!--.collapse-->
+          </div>
+
+          <% } %>
+        </section>
+        <!--content-list-src-->
+        <aside class="col-lg-2 col-md-2 side-left">
+          <ul>
+            <li><a href="#"><img src="/images/ad/1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="/images/ad/2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="/images/ad/3.jpg" alt=""></a></li>
+          </ul>
+        </aside>
+        <!--.side-left-->
+      </section>
+      <!--content-search-->
+    </section>
+    <!--container-fluid-->
+  </main>
+
+  <script>
+  </script>
+  <footer class="footer-page">
+    <section class="container-fluid">
+      <div class="row content-footer">
+        <div class="col-md-5 address-info">
+          <ul>
+            <li>
+              <p>آدرس : تهران، فلکه صادقيه،بلوار آيت الله کاشاني، بين اباذر و مهران -مجتمع آرميتا،پلاک77-واحد3</p>
+            </li>
+            <li>021-44049072</li>
+            <li>021-44977069</li>
+          </ul>
+        </div>
+        <div class="col-md-7 list-namd">
+          <div class="top-part">
+            <ul>
+              <li><a href="#"><img src="/images/namad/1.png" alt=""></a></li>
+              <li><a href="#"><img src="/images/namad/2.png" alt=""></a></li>
+              <li><a href="#"><img src="/images/namad/3.png" alt=""></a></li>
+              <li><a href="#"><img src="/images/namad/4.png" alt=""></a></li>
+              <li><a href="#"><img src="/images/namad/5.png" alt=""></a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </footer>
+  <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/js/persian-date.min.js"></script>
+  <script type="text/javascript" src="/js/persian-datepicker.min.js"></script>
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/js/slick.min.js"></script>
+  <script type="text/javascript" src="/js/coustom.js"></script>
+  <script type="text/javascript">
+  </script>
+
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+  <script>
+    function find1() {
+      $('#modal-popup').modal('show');
+      let times = [];
+      let airlines = [];
+      $('.chk-airline1:checked').each(function() {
+        airlines.push($(this).val());
+      });
+      $('.chk-time1:checked').each(function() {
+        times.push($(this).val());
+      });
+      //search();
+      result(search_id, airlines, times);
+    }
+
+    function find2() {
+      $('#modal-popup').modal('show');
+      console.log("find2");
+      let from = 'MHD';
+      let to = 'THR';
+      let date = '2019-8-9';
+      let date2 = '1398-05-16';
+      let child = '0';
+      let adult = '1';
+      let infant = '0';
+      let airlines = [];
+      let times = [];
+      console.log(from);
+      console.log(airlines);
+      $('.chk-airline:checked').each(function() {
+        airlines.push($(this).val());
+      });
+
+
+
+
+      console.log(airlines);
+      result(search_id, airlines, times);
+    }
+
+
+    $('.chk-airline2').change(function() {});
+
+    window.pd5 = $('#datebirth').persianDatepicker({
+      altField: '#normalAlt',
+      altFormat: 'LLLL',
+      initialValue: false,
+      observer: true,
+      format: 'YYYY-MM-DD',
+      autoClose: true,
+      timePicker: {
+        enabled: false
+      }
+    });
+
+    $('.priceasc').on("click", function() {
+		      $('#modal-popup').modal('show');
+		    //console.log("sortedflight?from="+par.from+"&to="+par.to+"&date="+par.date+"&date2="+par.date2+"&sort=price");
+			// Simulate a mouse click:
+			//window.location.href = "sortedflight?from="+par.from+"&to="+par.to+"&date="+par.date+"&date2="+par.date2+"&sort=price";
+    });
+
+    $("#signin").on("click", function() {
+      $('#modal-buy').modal('hide');
+    });
+    //trigger next modal
+    $('body').on('persianDatepicker', '#datebirth', function() {
+      $('#myModal2').modal('show');
+    });
+    $('body').on('click', '#signin', function() {
+      $('#myModal2').modal('show');
+    });
+
+    $('body').on('click', '.btn_reserve', function() {
+		console.log("Modal Buy");
+		var data = $(this).attr('data-fnum');
+		console.log(data);
+		document.getElementById("idnum").value=data.split('-')[2];
+		document.getElementById("idfrom").value=data.split('-')[0];
+		document.getElementById("idto").value=data.split('-')[1];
+		document.getElementById("idclass").value=data.split('-')[3];
+		document.getElementById("idday").value=data.split('-')[4];
+		document.getElementById("idmonth").value=data.split('-')[5];
+    document.getElementById("idprice").value=data.split('-')[6];
+    document.getElementById("idairline").value=data.split('-')[7];
+
+		$('#modal-buy').modal('show');
+
+
+    });
+
+    //~ $('body').on('submit', '#form_reserve', function() {
+		//~ console.log("ZV RESERVE !");
+      //~ $('#modal-popup').modal('hide');
+      //~ //$('#modal-buy').modal('hide');
+      //~ event.preventDefault(); //prevent default action
+      //~ var post_url = '/zvreserve'; //get form action url
+      //~ var request_method = 'post'; //get form GET/POST method
+      //~ var form_data = new FormData(this); //Creates new FormData object
+
+      //~ });
+    //~ });
+
+    $('body').on('click', '.add-passenger', function() {
+      let adding = newitem(cnt);
+      $('.traveler-list-body').append(adding);
+    });
+    $('body').on('click', '.remove-item', function() {
+      let i = $(this).attr('data');
+      console.log(i);
+      $('.traveler-template-' + i).remove();
+    });
+
+
+    $('body').on('change', '.checkbox-inline', function() {
+      if ($(this).is(":checked")) {
+        $(this).parents('.traveler-template').find('div.box-num-pos').addClass("disIn");
+        $(this).parents('.traveler-template').find('div.box-num-code').addClass("disnone");
+      } else {
+        $(this).parents('.traveler-template').find('div.box-num-pos').removeClass("disIn");
+        $(this).parents('.traveler-template').find('div.box-num-code').removeClass("disnone");
+      }
+    });
+
+    $(document).ready(function() {
+
+      // init Isotope
+      var $grid = $('.content-list-src').isotope({
+        itemSelector: '.item-list-src',
+        layoutMode: 'fitRows',
+        getSortData: {
+          price: '.price',
+          symbol: '.symbol',
+          number: '.number parseInt',
+          category: '[data-category]',
+          weight: function(itemElem) {
+            var weight = $(itemElem).find('.weight').text();
+            return parseFloat(weight.replace(/[\(\)]/g, ''));
+          }
+        }
+      });
+
+      window.pd1 = $('#dateOne').persianDatepicker({
+        altField: '#normalAlt',
+        altFormat: 'LLLL',
+        initialValue: false,
+        observer: true,
+        format: 'YYYY-MM-DD',
+        autoClose: true,
+        timePicker: {
+          enabled: false
+        }
+      });
+      window.pd2 = $('#dateTwo').persianDatepicker({
+        altField: '#normalAlt',
+        altFormat: 'LLLL',
+        initialValue: false,
+        observer: true,
+        format: 'YYYY-MM-DD',
+        autoClose: true,
+        timePicker: {
+          enabled: false
+        }
+      });
+      window.pd3 = $('#datethree').persianDatepicker({
+        altField: '#normalAlt',
+        altFormat: 'LLLL',
+        initialValue: false,
+        observer: true,
+        format: 'YYYY-MM-DD',
+        autoClose: true,
+        timePicker: {
+          enabled: false
+        }
+      });
+      window.pd1 = $('#dateOneRes').persianDatepicker({
+        altField: '#normalAlt',
+        altFormat: 'LLLL',
+        initialValue: false,
+        observer: true,
+        format: 'YYYY/MM/DD',
+        autoClose: true,
+        timePicker: {
+          enabled: false
+        }
+      });
+      window.pd2 = $('#dateTwoRes').persianDatepicker({
+        altField: '#normalAlt',
+        altFormat: 'LLLL',
+        initialValue: false,
+        observer: true,
+        format: 'YYYY-MM-DD',
+        autoClose: true,
+        timePicker: {
+          enabled: false
+        }
+      });
+    });
+
+
+
+    $('.chk-time').change(function() {
+      //$('#modal-popup').modal('show');
+
+    		console.log("morning");
+
+    		if ( ! document.getElementById('morning').checked || ! document.getElementById('c1').checked)
+    		{
+
+				var divsToHide = document.getElementsByClassName("morning"); //divsToHide is an array
+
+				console.log(divsToHide.length);
+
+				for(var i = 0; i < divsToHide.length; i++){
+					//divsToHide[i].style.visibility = "hidden"; // or
+					console.log(divsToHide[i].style.display);
+					divsToHide[i].style.display = "none"; // depending on what you're doing
+          //divsToHide[i].remove();
+				}
+			}
+
+
+			if ( ! document.getElementById('noon').checked || ! document.getElementById('c2').checked)
+    		{
+
+				var divsToHide = document.getElementsByClassName("noon"); //divsToHide is an array
+
+				console.log(divsToHide.length);
+
+				for(var i = 0; i < divsToHide.length; i++){
+					//divsToHide[i].style.visibility = "hidden"; // or
+					console.log(divsToHide[i].style.display);
+					divsToHide[i].style.display = "none"; // depending on what you're doing
+          //divsToHide[i].remove();
+				}
+			}
+
+
+			if ( ! document.getElementById('evening').checked || ! document.getElementById('c3').checked)
+    		{
+
+				var divsToHide = document.getElementsByClassName("evening"); //divsToHide is an array
+
+				console.log(divsToHide.length);
+
+				for(var i = 0; i < divsToHide.length; i++){
+					//divsToHide[i].style.visibility = "hidden"; // or
+					console.log(divsToHide[i].style.display);
+					divsToHide[i].style.display = "none"; // depending on what you're doing
+          //divsToHide[i].remove();
+				}
+			}
+
+
+			if ( ! document.getElementById('night').checked || ! document.getElementById('c4').checked)
+    		{
+
+				var divsToHide = document.getElementsByClassName("night"); //divsToHide is an array
+
+				console.log(divsToHide.length);
+
+				for(var i = 0; i < divsToHide.length; i++){
+					//divsToHide[i].style.visibility = "hidden"; // or
+					console.log(divsToHide[i].style.display);
+					divsToHide[i].style.display = "none"; // depending on what you're doing
+          //divsToHide[i].remove();
+				}
+			}
+
+
+
+    });
+
+
+    $('.chk-airline').change(function() {
+      console.log("('.chk-airline').change(function()");
+      $('.content-list-src').isotope({
+        sortBy: price
+      });
+    });
+
+
+
+  </script>
+</body>
+
+</html>

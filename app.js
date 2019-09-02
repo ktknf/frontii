@@ -106,6 +106,32 @@ app.post('/zvreserve', function(req, res) {
 
 })
 
+app.get('/interflight', function(req, res) {
+
+  var day_value = req.query.date.split('-')[2];
+  var month_value = req.query.date.split('-')[1];
+  var final_array = [];
+
+  var dayx = (parseInt(day_value) - 3);
+  var monthx = (parseInt(Utility.ToEnglishDigits(month_value)) + 3).toString();
+
+  console.log("************" + dayx + "*********" + monthx);
+
+
+      Iati.GetFlights(req.query.from, req.query.to,Utility.ToEnglishDigits(day_value)-9, monthx, req.query.adult, 0, 0, function(iv_all_flights) {
+        final_array = final_array.concat(iv_all_flights);
+
+        var data = {
+          flights: final_array,
+          today: Utility.GetNowJalali(),
+          par: req.query
+        };
+        console.log(data);
+        res.render('iati_results.ejs', data);
+      });
+
+})
+
 app.get('/flight', function(req, res) {
 
   var day_value = req.query.date.split('-')[2];
@@ -289,7 +315,7 @@ app.post('/payres', function(req, res) {
 
 
 app.get('/test_any', function(req, res) {
-  Iati.GetFlights("THR", "MHD", "2", "9", 1, 0, 0, function(iv_all_flights) {
+  Iati.GetFlights("IKA", "DXB", "03", "09", 1, 0, 0, function(iv_all_flights) {
     console.log(iv_all_flights);
     res.send(iv_all_flights);
   });

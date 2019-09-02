@@ -11,7 +11,7 @@ app = Flask(__name__)
 def hello():
     payload = {'MemberID': '', 'ClientIPAddress': '95.217.5.6'}
     r = requests.post("http://testapi.iati.ir/Tracker/Get_LoginID/7D7764DF874F8C9D06B7A5BAA462AD0F", data="{MemberID:null,ClientIPAddress:'95.217.5.6'}")
-    #print(r.text)
+    print(r.text)
     datastore = json.loads(r.text)
 
     sesseionid=datastore["LoginID"]
@@ -21,11 +21,11 @@ def hello():
 
     payload=reqstr.replace("#FROM#", request.args.get('from')).replace("#TO#", request.args.get('to')).replace("#DATE1#", request.args.get('date')).replace("#SESSIONID#",sesseionid)
 
-    print(request.args.get('from'))
+    print(payload)
 
 
     r = requests.post("http://testapi.iati.ir/Flight/Search/7D7764DF874F8C9D06B7A5BAA462AD0F", data=payload)
-    #print(r.text)
+    print(r.text)
     datastore = json.loads(r.text)
 
     #print(len(datastore["Flights"][0]["Legs"]))
