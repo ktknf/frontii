@@ -7,7 +7,7 @@ module.exports = {
 
   //GetFlights Function
   GetFlights: function(Source, Target, Day, Month, Adult, Child, Infant, callback) {
-    var get_url = "http://Zv.nirasoftware.com:882/AvailabilityFareJS.jsp?Airline=ZV&cbSource=" +
+    var get_url = "http://Zv.nirasoftware.com:882/AvailabilityJS.jsp?Airline=ZV&cbSource=" +
       Source + "&cbTarget=" + Target + "&cbDay1=" + Day + "&cbMonth1=" + Month + "&cbAdultQty=" + Adult +
       "&cbChildQt=" + Child + "&InfantQty=" + Infant + "&OfficeUser=THR210-1.WS&OfficePass=K2019";
     console.log(get_url);
@@ -17,23 +17,47 @@ module.exports = {
       var final_return = [];
       for (var i = 0; i < flght.length; i++) {
         //console.log(flght[i]);
-        for (var j = 0; j < flght[i]['ClassesStatus'].length; j++) {
-          final_return.push({
-            AirLine:'زاگرس',
-            AirLineShort:'ZV',
-            TimeClass:utility.TimeClass(flght[i]['DepartureDateTime']),
-            DepartureDateTime:utility.ToShamsi(flght[i]['DepartureDateTime']),
-            ArrivalDateTime:utility.ToShamsi(flght[i]['ArrivalDateTime']),
-            From:flght[i]['Origin'],
-            FullFrom:flght[i]['Origin'],
-            To:flght[i]['Destination'],
-            FullTo:flght[i]['Destination'],
-            Price:utility.CommaSeprate(flght[i]['ClassesStatus'][j]['Price']/10),
-            IntPrice:parseInt(flght[i]['ClassesStatus'][j]['Price']/10),
-            FlightNo:flght[i]['FlightNo'],
-            Class:flght[i]['ClassesStatus'][j]['FlightClass'],
-            Spec:flght[i]['Origin']+"-"+flght[i]['Destination']+"-"+flght[i]['FlightNo']+"-"+flght[i]['ClassesStatus'][j]['FlightClass']+"-"+Day+"-"+Month+"-"+flght[i]['ClassesStatus'][j]['Price']+"-ZV"
-          });
+        var adp=flght[i]['AdultTotalPrices'].split(' ');
+        var sts=flght[i]['ClassesStatus'].replace('/','').split(' ');
+
+        var availClaess=[];
+
+        for (var k =0; k<sts.length; k++)
+        {
+          if(sts[k][sts[k].length-1]!=='C' && sts[k][sts[k].length-1]!=='X')
+          {
+            availClaess.push(sts[k].slice(0, -1));
+          }
+        }
+
+        console.log("avail:   ");
+        console.log(availClaess);
+
+        for (var j = 0; j < adp.length; j++) {
+
+          var class_val=adp[j].split(':')[0];
+          var price_val=adp[j].split(':')[1];
+          price_val=price_val/10;
+
+          if (availClaess.indexOf(class_val) != -1) {
+
+            final_return.push({
+              AirLine: 'زاگرس',
+              AirLineShort: 'ZV',
+              TimeClass: utility.TimeClass(flght[i]['DepartureDateTime']),
+              DepartureDateTime: utility.ToShamsi(flght[i]['DepartureDateTime']),
+              ArrivalDateTime: utility.ToShamsi(flght[i]['ArrivalDateTime']),
+              From: flght[i]['Origin'],
+              FullFrom: flght[i]['Origin'],
+              To: flght[i]['Destination'],
+              FullTo: flght[i]['Destination'],
+              Price: utility.CommaSeprate(price_val),
+              IntPrice: parseInt(price_val),
+              FlightNo: flght[i]['FlightNo'],
+              Class: class_val,
+              Spec: flght[i]['Origin'] + "-" + flght[i]['Destination'] + "-" + flght[i]['FlightNo'] + "-" + class_val + "-" + Day + "-" + Month + "-" + price_val + "-ZV"
+            });
+          }
         }
       }
       console.log("total Zagros: ");
@@ -50,7 +74,7 @@ module.exports = {
       Day + "&Month=" + Month + "&edtName1=" + Name + "&edtLast1=" + Last + "&edtAge1=" + Age + "&edtID1=" +
       ID + "&OfficeUser=THR210-1.WS&OfficePass=K2019&edtContact=" + Contact + "&FlightNo=" + FlightNo;
 
-      console.log(get_url);
+    console.log(get_url);
     request.get(get_url, function(err, res, body) {
       callback(JSON.parse(body)['AirReserve'][0]);
     });
@@ -61,18 +85,19 @@ module.exports = {
   //Issue Function Start
   Issue: function(PNR, Email, callback) {
     var get_url = "http://Book.zagrosairlines.com/cgi-bin/NRSWeb.cgi/ETIssueJS?Airline=ZV" +
-      "&PNR=" + PNR + "&Email=" + Email+ "&OfficeUser=THR210-1.WS&OfficePass=K2019";
+      "&PNR=" + PNR + "&Email=" + Email + "&OfficeUser=THR210-1.WS&OfficePass=K2019";
 
-      console.log(get_url);
-    request.get(get_url, {timeout: 150000}, function(err, res, body) {
+    console.log(get_url);
+    request.get(get_url, {
+      timeout: 150000
+    }, function(err, res, body) {
       body = body.replace(/(\r\n|\n|\r)/gm, "");
-      var rs=JSON.parse(body);
+      var rs = JSON.parse(body);
       console.log(rs["AirNRSTICKETS"][0]["Tickets"].split('=')[1]);
-      var ticket_num=rs["AirNRSTICKETS"][0]["Tickets"].split('=')[1];
+      var ticket_num = rs["AirNRSTICKETS"][0]["Tickets"].split('=')[1];
       try {
         callback(ticket_num);
-      }
-      catch (e) {
+      } catch (e) {
         callback('err');
         console.log(e);
         console.log(body);
@@ -87,14 +112,15 @@ module.exports = {
     var get_url = "http://Zv.nirasoftware.com:882/NRSETR.jsp?Airline=ZV" +
       "&TicketNo=" + TicketNo + "&OfficeUser=THR210-1.WS&OfficePass=K2019";
 
-      console.log(get_url);
-    request.get(get_url, {timeout: 150000}, function(err, res, body) {
+    console.log(get_url);
+    request.get(get_url, {
+      timeout: 150000
+    }, function(err, res, body) {
       console.log(body);
 
       try {
         callback(body);
-      }
-      catch (e) {
+      } catch (e) {
         callback('err');
         console.log(e);
         console.log(body);
@@ -105,12 +131,12 @@ module.exports = {
 
 
   //CancelSeat Function Start
-  CancelSeat: function(PNR,Name,Last,Date,FlightNo, callback) {
+  CancelSeat: function(PNR, Name, Last, Date, FlightNo, callback) {
     var get_url = "http://Book.zagrosairlines.com/cgi-bin/NRSWeb.cgi/CancelSeatJS?Airline=ZV" +
-      "&PNR=" + PNR + "&PassengerName=" + Name+ "&PassengerLastName=" + Last+"&DepartureDate=" + Date+
+      "&PNR=" + PNR + "&PassengerName=" + Name + "&PassengerLastName=" + Last + "&DepartureDate=" + Date +
       "&FlightNo=" + FlightNo + "&OfficeUser=THR210-1.WS&OfficePass=K2019";
 
-      console.log(get_url);
+    console.log(get_url);
     request.get(get_url, function(err, res, body) {
       callback(body);
     }).setTimeout(600000);

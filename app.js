@@ -74,11 +74,17 @@ app.post('/zvreserve', function(req, res) {
         console.log(reserve_result);
         var invoice_id = Math.floor(Math.random() * 1000).toString() + req.body.edtid.substring(3, 7) + '0';
         Insertor.insert_one('Invoice', ['InvoiceID', 'Type', 'Estate', 'PNR', 'Email'], [invoice_id, 'zagros', 'new', reserve_result['PNR'], req.body.email], function(insert_result) {
-          var price_value = 1000;
+          var price_value = req.body.price;
           //var price_value=req.body.price;
-          var red = "https://sep.shaparak.ir/payment.aspx?Amount=" + price_value + "&ResNum=" + invoice_id + "&MerchantCode=" + reserve_result['PNR'] + "&RedirectURL=http://kouhenour.ir:3389/payres&MID=11593879";
+          var red = "https://sep.shaparak.ir/payment.aspx?Amount=" + price_value + "0&ResNum=" + invoice_id + "&MerchantCode=" + reserve_result['PNR'] + "&RedirectURL=http://kouhenour.ir:3389/payres&MID=11593879";
           console.log(red);
-          res.redirect(red);
+          if(reserve_result['PNR']==='')
+          {
+            res.send('خطایی در رزرو بلیط شما رخ داده است. لطفا مجددا تلاش کنید یا کلاس پروازی دیگری انتخاب کنید.');
+          }
+          else {
+            res.redirect(red);
+          }
 
         });
         //res.render('flight_results.ejs',data);
@@ -93,12 +99,17 @@ app.post('/zvreserve', function(req, res) {
         console.log(reserve_result);
         var invoice_id = Math.floor(Math.random() * 1000).toString() + req.body.edtid.substring(3, 7) + '1';
         Insertor.insert_one('Invoice', ['InvoiceID', 'Type', 'Estate', 'PNR', 'Email'], [invoice_id, 'caspian', 'new', reserve_result['PNR'], req.body.email], function(insert_result) {
-          var price_value = 1000;
+          var price_value = req.body.price;
           //var price_value=req.body.price;
-          var red = "https://sep.shaparak.ir/payment.aspx?Amount=" + price_value + "&ResNum=" + invoice_id + "&MerchantCode=" + reserve_result['PNR'] + "&RedirectURL=http://kouhenour.ir:3389/payres&MID=11593879";
+          var red = "https://sep.shaparak.ir/payment.aspx?Amount=" + price_value + "0&ResNum=" + invoice_id + "&MerchantCode=" + reserve_result['PNR'] + "&RedirectURL=http://kouhenour.ir:3389/payres&MID=11593879";
           console.log(red);
-          res.redirect(red);
-
+          if(reserve_result['PNR']==='')
+          {
+            res.send('خطایی در رزرو بلیط شما رخ داده است. لطفا مجددا تلاش کنید یا کلاس پروازی دیگری انتخاب کنید.');
+          }
+          else {
+            res.redirect(red);
+          }
         });
         //res.render('flight_results.ejs',data);
       });
