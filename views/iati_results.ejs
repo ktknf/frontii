@@ -55,7 +55,7 @@
       <div class="modal-content">
         <div class="modal-body modal-buy-body">
 
-				<form role="form" id="form_reserve" method="post" action="/zvreserve">
+				<form role="form" id="form_reserve" method="post" action="/iatires">
                     <input type="hidden" name="_csrf" value="lKVzpU2cD4Oc1v74zv3PeWTY6B2rPvg6aiL02YcPb9HakhznPstI56-fiqGXqL8hLoCsa59byn06faShyEUKsg==">
                     <input type="hidden" name="from" value="" id="idfrom">
                     <input type="hidden" name="to" value="" id="idto">
@@ -65,6 +65,9 @@
                     <input type="hidden" name="month" value="" id="idmonth">
                     <input type="hidden" name="price" value="" id="idprice">
                     <input type="hidden" name="airline" value="" id="idairline">
+                    <input type="hidden" name="searchid" value="" id="idsearchid">
+                    <input type="hidden" name="flightid" value="" id="idflightid">
+                    <input type="hidden" name="sessid" value="" id="idsessid">
 
                     <div class="container-fluid padd0">
                         <div class="flat-card traveler-info">
@@ -920,14 +923,17 @@
 		console.log("Modal Buy");
 		var data = $(this).attr('data-fnum');
 		console.log(data);
-		document.getElementById("idnum").value=data.split('-')[2];
-		document.getElementById("idfrom").value=data.split('-')[0];
-		document.getElementById("idto").value=data.split('-')[1];
-		document.getElementById("idclass").value=data.split('-')[3];
-		document.getElementById("idday").value=data.split('-')[4];
-		document.getElementById("idmonth").value=data.split('-')[5];
-    document.getElementById("idprice").value=data.split('-')[6];
-    document.getElementById("idairline").value=data.split('-')[7];
+		document.getElementById("idnum").value=data.split('#')[2];
+		document.getElementById("idfrom").value=data.split('#')[0];
+		document.getElementById("idto").value=data.split('#')[1];
+		document.getElementById("idclass").value=data.split('#')[3];
+		document.getElementById("idday").value=data.split('#')[4];
+		document.getElementById("idmonth").value=data.split('#')[5];
+    document.getElementById("idprice").value=data.split('#')[6];
+    document.getElementById("idairline").value=data.split('#')[7];
+    document.getElementById("idsearchid").value=data.split('#')[8];
+    document.getElementById("idflightid").value=data.split('#')[9];
+    document.getElementById("idsessid").value=data.split('#')[10];
 
 		$('#modal-buy').modal('show');
 

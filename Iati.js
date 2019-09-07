@@ -7,7 +7,7 @@ let {
 //Modules
 var utility = require("./utility.js");
 
-var month_before = Array('/۰۱/', '/۰۲/', '/۰۳/', '/۰۴/', '/۰۵/', '/۰۶/', '/۰۷/', '/۰۸/', '/۰۹/','/۱۰/','/۱۱/','/۱۲/');
+var month_before = Array('/۰۱/', '/۰۲/', '/۰۳/', '/۰۴/', '/۰۵/', '/۰۶/', '/۰۷/', '/۰۸/', '/۰۹/', '/۱۰/', '/۱۱/', '/۱۲/');
 var month = Array(' فروردین ',
   ' اردیبهشت ',
   ' خرداد ',
@@ -25,7 +25,7 @@ module.exports = {
 
   //GetFlights Function
   GetFlights: function(Source, Target, Day, Month, Adult, Child, Infant, callback) {
-    var get_url = "http://kouhenour.ir:8400/?from="+Source+"&to="+Target+"&date=2019-"+Month+"-"+Day;
+    var get_url = "http://kouhenour.ir:8400/?from=" + Source + "&to=" + Target + "&date=2019-" + Month + "-" + Day;
     console.log(get_url);
 
     request.get(get_url, function(err, res, body) {
@@ -33,53 +33,51 @@ module.exports = {
       var final_return = [];
       for (var i = 0; i < flght.length; i++) {
 
-        var dtime=flght[i]['Legs'][0]['DepartureTime'];
-        var final_dtime=dtime.split(' ')[0];
+        var dtime = flght[i]['Legs'][0]['DepartureTime'];
+        var final_dtime = dtime.split(' ')[0];
 
         m = moment(final_dtime, 'YYYY-M-D');
         m.locale('fa').format('YYYY/MM/DD');
-        var dret=m.locale('fa').format('jDD/jMM/jYYYY')+"   "+dtime.split(' ')[1]+":00";
+        var dret = m.locale('fa').format('jDD/jMM/jYYYY') + "   " + dtime.split(' ')[1] + ":00";
 
-        for(var j=0;j<12;j++)
-        {
-          dret=dret.replace(month_before[j],month[j]);
+        for (var j = 0; j < 12; j++) {
+          dret = dret.replace(month_before[j], month[j]);
         }
 
 
-        var atime=flght[i]['Legs'][0]['ArrivalTime'];
-        var final_atime=atime.split(' ')[0];
+        var atime = flght[i]['Legs'][0]['ArrivalTime'];
+        var final_atime = atime.split(' ')[0];
 
         m = moment(final_atime, 'YYYY-M-D');
         m.locale('fa').format('YYYY/MM/DD');
-        var aret=m.locale('fa').format('jDD/jMM/jYYYY')+"   "+atime.split(' ')[1]+":00";
+        var aret = m.locale('fa').format('jDD/jMM/jYYYY') + "   " + atime.split(' ')[1] + ":00";
 
-        for(var j=0;j<12;j++)
-        {
-          aret=aret.replace(month_before[j],month[j]);
+        for (var j = 0; j < 12; j++) {
+          aret = aret.replace(month_before[j], month[j]);
         }
 
 
-//console.log(flght[i]['Legs'][0]['Baseprice']);
-          var prstr=Math.floor(flght[i]['Baseprice']/10000)*1000;
+        //console.log(flght[i]['Legs'][0]['Baseprice']);
+        var prstr = Math.floor(flght[i]['Baseprice'] / 10000) * 1000;
 
         //console.log(flght[i]);
-          final_return.push({
-            AirLine:flght[i]['Legs'][0]['OperatorName'],
-            AirLineShort:flght[i]['Legs'][0]['OperatorCode'],
-            TimeClass:'noon',
-            DepartureDateTime:dret,
-            ArrivalDateTime:aret,
-            From:Source,
-            FullFrom:Source,
-            To:Target,
-            FullTo:Target,
-            Price:utility.CommaSeprate(prstr),
-            IntPrice:parseInt(flght[i]['Baseprice']),
-            FlightNo:flght[i]['Legs'][0]['FlightNo'],
-            Class:'x',
-            Spec:Source+"-"+Target+"-"+flght[i]['Legs']['FlightNo']+"-"+"X"+"-"+Day+"-"+Month+"-"+"100000"+"-IV"
-          });
-        }
+        final_return.push({
+          AirLine: flght[i]['Legs'][0]['OperatorName'],
+          AirLineShort: flght[i]['Legs'][0]['OperatorCode'],
+          TimeClass: 'noon',
+          DepartureDateTime: dret,
+          ArrivalDateTime: aret,
+          From: Source,
+          FullFrom: Source,
+          To: Target,
+          FullTo: Target,
+          Price: utility.CommaSeprate(prstr),
+          IntPrice: parseInt(flght[i]['Baseprice']),
+          FlightNo: flght[i]['Legs'][0]['FlightNo'],
+          Class: 'x',
+          Spec: Source + "#" + Target + "#" + flght[i]['Legs']['FlightNo'] + "#" + "X" + "#" + Day + "#" + Month + "#" + "100000" + "#IV#" + flght[i]['SearchID'] + "#" + flght[i]['FlightID'] + "#" + flght[i]['SessID']
+        });
+      }
 
       console.log("total caspain: ");
       console.log(final_return.length);
@@ -89,18 +87,21 @@ module.exports = {
   //GetFlight Function End
 
   //Reserve Function Start
-  Reserve: function(Source, Target, FlightClass, No, Day, Month, Name, Last, Age, ID, FlightNo, Contact, callback) {
-    var get_url = "http://book.zagrosairlines.com/cgi-bin/NRSWeb.cgi/ReservJS?Airline=ZV" +
-      "&cbSource=" + Source + "&cbTarget=" + Target + "&FlightClass=" + FlightClass + "&No=" + No + "&Day=" +
-      Day + "&Month=" + Month + "&edtName1=" + Name + "&edtLast1=" + Last + "&edtAge1=" + Age + "&edtID1=" +
-      ID + "&OfficeUser=THR210-1.WS&OfficePass=K2019&edtContact=" + Contact + "&FlightNo=" + FlightNo;
+  Reserve: function(Source, Target, FlightClass, No, Day, Month, Name, Last, Age, ID, FlightNo, Contact, FlightID, SearchID, SessID, callback) {
+
+    var get_url = "http://kouhenour.ir:8400/pricedetail?search=" + SearchID + "&sess=" + SessID + "&adult=" + No + "&flight=" + FlightID;
 
     console.log(get_url);
     request.get(get_url, function(err, res, body) {
-      callback(JSON.parse(body)['AirReserve'][0]);
+      var get_url = "http://kouhenour.ir:8400/addticket?sess=" + SessID + "&detailid=" + JSON.parse(body)["PriceDetialID"] + "&name=" + Name + "&last=" + Last + "&enname=" + Name + "&enlast=" + Last;
+
+      console.log(get_url);
+      request.get(get_url, function(err, res, body) {
+        callback(body);
+      });
     });
   },
-  //Reserve Fuvnction End
+  //Reserve Function End
 
 
   //Issue Function Start

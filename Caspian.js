@@ -38,7 +38,7 @@ module.exports = {
           var price_val=adp[j].split(':')[1];
           price_val=price_val/10;
 
-          if (parseInt(price_val)<500000 && parseInt(price_val)>100000 /*availClaess.indexOf(class_val) != -1*/) {
+          if (availClaess.indexOf(class_val) != -1) {
             final_return.push({
               AirLine: 'کاسپین',
               AirLineShort: 'IV',

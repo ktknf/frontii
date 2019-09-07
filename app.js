@@ -117,6 +117,22 @@ app.post('/zvreserve', function(req, res) {
 
 })
 
+
+
+app.post('/iatires', function(req, res) {
+
+  var age_value = 33;
+
+    Iati.Reserve(req.body.from, req.body.to, req.body.classname, 1, req.body.day, req.body.month,
+      req.body.edtname, req.body.edtlast, age_value, req.body.edtid, req.body.fnumber, '1111111',
+      req.body.flightid,req.body.searchid,req.body.sessid,
+      function(reserve_result) {
+        console.log(reserve_result);
+      });
+
+})
+
+
 app.get('/interflight', function(req, res) {
 
   var day_value = req.query.date.split('-')[2];
