@@ -51,6 +51,19 @@ def payid():
     return json.dumps(datastore)
 
 
+#get VMoney
+@app.route('/vmoney')
+def vmoney():
+    reqstr=''' {   "MemberSessionID":"#SESSIONID#", "PaymentCode": "#PAYCODE#" } '''
+    payload=reqstr.replace("#SESSIONID#",request.args.get('sess')).replace("#PAYCODE#",request.args.get('payid'));
+    print(payload)
+
+    r = requests.post("http://testapi.iati.ir/Payment/Get_Payment_From_VMoney_Website/7D7764DF874F8C9D06B7A5BAA462AD0F", data=payload)
+    print(r.text)
+    datastore = json.loads(r.text)
+    return json.dumps(datastore)
+
+
 #get PaymentID
 @app.route('/pricedetail')
 def pricedetail():
@@ -70,9 +83,30 @@ def pricedetail():
 #get PaymentID
 @app.route('/addticket')
 def addticket():
-    reqstr='''{   "LoginID":"#SESSIONID#",   "CallBackURL":"http://iati.ir/payment/check/{{id}}",   "PaymentTypeID": 1,   "PaymentCode": "#PAYCODE#",   "ServiceName": "FLIGHT",   "MemberDescription": "",   "PriceDetailID": "#DETAILID#",   "Description": "",   "BookArray": \"{\"TestMode\":true,\"ContactInfo\":{\"Email\":\"#EMAIL#\",\"CellphoneNumber\": \"#MOBILE#\",\"PhoneNumber\":\"#PHONE#\"},\"PassengerList\":[{\"FirstName\":\"#NAME#\",\"LastName\":\"#LAST#\", "FirstNameEnglish\":\"#ENNAME#\",\"LastNameEnglish\":\"#ENLAST#\",\"IdentityNumber\":\"#ID#\",\"IdentityExpireDate\":\"#EXPIRE#\",\"BirthDate\":\"#BD#\",\"Gender\":true,\"Nationality\":\"IR\",\"DomesticFlight\":true,\"PassengerType\":\"ADULT\", \"NationalCode\":\"0077707788\"}]}\" ,   "ExteraAgency": 0 }  '''
+    reqstr='''{   "LoginID":"#SESSIONID#",   "CallBackURL":"http://iati.ir/payment/check/{{id}}",
+    "PaymentTypeID": 1,"PaymentCode": "#PAYCODE#","ServiceName": "FLIGHT", "MemberDescription": "",
+    "PriceDetailID": "#DETAILID#",   "Description": "" ,"BookArray":"{\\"TestMode\\":true,
+    \\"ContactInfo\\":{
+    \\"Email\\":\\"#EMAIL#\\",
+    \\"CellphoneNumber\\": \\"#MOBILE#\\",
+    \\"PhoneNumber\\":\\"#PHONE#\\"},
+    \\"PassengerList\\":[
+    {\\"FirstName\\":\\"#NAME#\\",
+    \\"LastName\\":\\"#LAST#\\",
+     \\"FirstNameEnglish\\":\\"#ENNAME#\\",
+     \\"LastNameEnglish\\":\\"#ENLAST#\\",
+     \\"IdentityNumber\\":\\"#ID#\\",
+     \\"IdentityExpireDate\\":\\"#EXPIRE#\\",
+     \\"BirthDate\\":\\"#BD#\\",
+     \\"Gender\\":\\"true\\",
+     \\"Nationality\\":\\"IR\\",
+     \\"DomesticFlight\\":true,
+     \\"PassengerType\\":\\"ADULT\\",
+     \\"NationalCode\\":\\"0077707788\\"}
+     ]}" ,
+    "ExteraAgency": 0 }  '''
     payload=reqstr.replace("#SESSIONID#",request.args.get('sess'))
-    payload=payload.replace("#PAYCODE#","")
+    payload=payload.replace("#PAYCODE#",request.args.get('payid'))
     payload=payload.replace("#DETAILID#",request.args.get('detailid'))
     payload=payload.replace("#ENNAME#",request.args.get('enname'))
     payload=payload.replace("#ENLAST#",request.args.get('enlast'))
@@ -88,6 +122,7 @@ def addticket():
 
     r = requests.post("http://testapi.iati.ir/Payment/Invoice_Add_Item/7D7764DF874F8C9D06B7A5BAA462AD0F", data=payload)
     print(r.text)
+
     datastore = json.loads(r.text)
     return json.dumps(datastore)
 

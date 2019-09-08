@@ -127,7 +127,23 @@ app.post('/iatires', function(req, res) {
       req.body.edtname, req.body.edtlast, age_value, req.body.edtid, req.body.fnumber, '1111111',
       req.body.flightid,req.body.searchid,req.body.sessid,
       function(reserve_result) {
+        reserve_result=JSON.parse(reserve_result);
+        console.log("$$$$$$$$$$$$$$");
         console.log(reserve_result);
+        console.log("$$$$$$$$$$$$$$");
+        console.log(reserve_result["Message"]);
+
+        var red = "https://sep.shaparak.ir/payment.aspx?Amount=1000" + "&ResNum=9110001" + "&MerchantCode=123456" + "&RedirectURL="+reserve_result["PaymentURL"]+"&MID=11593879";
+        console.log(red);
+        if("PaymentURL"==='')
+        {
+          res.send('خطایی در رزرو بلیط شما رخ داده است. لطفا مجددا تلاش کنید یا کلاس پروازی دیگری انتخاب کنید.');
+        }
+        else {
+          res.redirect(red);
+        }
+
+
       });
 
 })
@@ -294,6 +310,20 @@ app.get('/soon', function(req, res) {
 app.get('/mmm', function(req, res) {
   res.send('just find an other developer!!!!');
 })
+
+app.post('/payresiati', function(req, res) {
+  if (req.body.State === 'OK') {
+    console.log(req.body);
+
+    console.log(req.body);
+    console.log(req.body);
+
+
+  } else {
+    console.log(req.body);
+  }
+})
+
 
 //Payment Result
 app.post('/payres', function(req, res) {

@@ -90,14 +90,18 @@ module.exports = {
   Reserve: function(Source, Target, FlightClass, No, Day, Month, Name, Last, Age, ID, FlightNo, Contact, FlightID, SearchID, SessID, callback) {
 
     var get_url = "http://kouhenour.ir:8400/pricedetail?search=" + SearchID + "&sess=" + SessID + "&adult=" + No + "&flight=" + FlightID;
-
     console.log(get_url);
     request.get(get_url, function(err, res, body) {
-      var get_url = "http://kouhenour.ir:8400/addticket?sess=" + SessID + "&detailid=" + JSON.parse(body)["PriceDetialID"] + "&name=" + Name + "&last=" + Last + "&enname=" + Name + "&enlast=" + Last;
-
+      var pricedetail_val=JSON.parse(body)["PriceDetialID"];
+      var get_url = "http://kouhenour.ir:8400/payid?sess=" + SessID;
       console.log(get_url);
       request.get(get_url, function(err, res, body) {
-        callback(body);
+        var payment_val=JSON.parse(body)["PaymentCode"];
+        var get_url = "http://kouhenour.ir:8400/addticket?sess=" + SessID + "&detailid=" + pricedetail_val + "&name=" + Name + "&last=" + Last + "&enname=" + Name + "&enlast=" + Last+"&payid="+payment_val;
+        console.log(get_url);
+        request.get(get_url, function(err, res, body) {
+          callback(body);
+        });
       });
     });
   },
