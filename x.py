@@ -58,7 +58,20 @@ def vmoney():
     payload=reqstr.replace("#SESSIONID#",request.args.get('sess')).replace("#PAYCODE#",request.args.get('payid'));
     print(payload)
 
-    r = requests.post("http://testapi.iati.ir/Payment/Get_Payment_From_VMoney_Website/7D7764DF874F8C9D06B7A5BAA462AD0F", data=payload)
+    r = requests.post("http://testapi.iati.ir/Payment/Payment_From_VMoney_Website/7D7764DF874F8C9D06B7A5BAA462AD0F", data=payload)
+    print(r.text)
+    datastore = json.loads(r.text)
+    return json.dumps(datastore)
+
+
+#get VMoney
+@app.route('/selllist')
+def selllist():
+    reqstr=''' {   "MemberSessionID":"#SESSIONID#", "PaymentCode": "#PAYCODE#" } '''
+    payload=reqstr.replace("#SESSIONID#",request.args.get('sess')).replace("#PAYCODE#",request.args.get('payid'));
+    print(payload)
+
+    r = requests.post("http://testapi.iati.ir/Payment/Get_Member_Sell_List/7D7764DF874F8C9D06B7A5BAA462AD0F", data=payload)
     print(r.text)
     datastore = json.loads(r.text)
     return json.dumps(datastore)

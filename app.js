@@ -133,7 +133,7 @@ app.post('/iatires', function(req, res) {
         console.log("$$$$$$$$$$$$$$");
         console.log(reserve_result["Message"]);
 
-        var red = "https://sep.shaparak.ir/payment.aspx?Amount=1000" + "&ResNum=9110001" + "&MerchantCode=123456" + "&RedirectURL="+reserve_result["PaymentURL"]+"&MID=11593879";
+        var red = "https://sep.shaparak.ir/payment.aspx?Amount=1000" + "&ResNum=9110001" + "&MerchantCode=123456" + "&RedirectURL="+"http://kouhenour.ir:3389/payresiati"+"&MID=11593879";
         console.log(red);
         if("PaymentURL"==='')
         {
@@ -313,12 +313,9 @@ app.get('/mmm', function(req, res) {
 
 app.post('/payresiati', function(req, res) {
   if (req.body.State === 'OK') {
+    console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
     console.log(req.body);
-
-    console.log(req.body);
-    console.log(req.body);
-
-
+    console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
   } else {
     console.log(req.body);
   }
