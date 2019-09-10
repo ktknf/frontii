@@ -78,11 +78,9 @@ app.post('/zvreserve', function(req, res) {
           //var price_value=req.body.price;
           var red = "https://sep.shaparak.ir/payment.aspx?Amount=" + price_value + "0&ResNum=" + invoice_id + "&MerchantCode=" + reserve_result['PNR'] + "&RedirectURL=http://kouhenour.ir:3389/payres&MID=11593879";
           console.log(red);
-          if(reserve_result['PNR']==='')
-          {
+          if (reserve_result['PNR'] === '') {
             res.send('خطایی در رزرو بلیط شما رخ داده است. لطفا مجددا تلاش کنید یا کلاس پروازی دیگری انتخاب کنید.');
-          }
-          else {
+          } else {
             res.redirect(red);
           }
 
@@ -103,11 +101,9 @@ app.post('/zvreserve', function(req, res) {
           //var price_value=req.body.price;
           var red = "https://sep.shaparak.ir/payment.aspx?Amount=" + price_value + "0&ResNum=" + invoice_id + "&MerchantCode=" + reserve_result['PNR'] + "&RedirectURL=http://kouhenour.ir:3389/payres&MID=11593879";
           console.log(red);
-          if(reserve_result['PNR']==='')
-          {
+          if (reserve_result['PNR'] === '') {
             res.send('خطایی در رزرو بلیط شما رخ داده است. لطفا مجددا تلاش کنید یا کلاس پروازی دیگری انتخاب کنید.');
-          }
-          else {
+          } else {
             res.redirect(red);
           }
         });
@@ -123,28 +119,26 @@ app.post('/iatires', function(req, res) {
 
   var age_value = 33;
 
-    Iati.Reserve(req.body.from, req.body.to, req.body.classname, 1, req.body.day, req.body.month,
-      req.body.edtname, req.body.edtlast, age_value, req.body.edtid, req.body.fnumber, '1111111',
-      req.body.flightid,req.body.searchid,req.body.sessid,
-      function(reserve_result) {
-        reserve_result=JSON.parse(reserve_result);
-        console.log("$$$$$$$$$$$$$$");
-        console.log(reserve_result);
-        console.log("$$$$$$$$$$$$$$");
-        console.log(reserve_result["Message"]);
+  Iati.Reserve(req.body.from, req.body.to, req.body.classname, 1, req.body.day, req.body.month,
+    req.body.edtname, req.body.edtlast, age_value, req.body.edtid, req.body.fnumber, '1111111',req.body.email,
+    req.body.flightid, req.body.searchid, req.body.sessid,
+    function(reserve_result) {
+      reserve_result = JSON.parse(reserve_result);
+      console.log("$$$$$$$$$$$$$$");
+      console.log(reserve_result);
+      console.log("$$$$$$$$$$$$$$");
+      console.log(reserve_result["Message"]);
 
-        var red = "https://sep.shaparak.ir/payment.aspx?Amount=1000" + "&ResNum=9110001" + "&MerchantCode=123456" + "&RedirectURL="+"http://kouhenour.ir:3389/payresiati"+"&MID=11593879";
-        console.log(red);
-        if("PaymentURL"==='')
-        {
-          res.send('خطایی در رزرو بلیط شما رخ داده است. لطفا مجددا تلاش کنید یا کلاس پروازی دیگری انتخاب کنید.');
-        }
-        else {
-          res.redirect(red);
-        }
+      var red = "https://sep.shaparak.ir/payment.aspx?Amount=1000" + "&ResNum=" + reserve_result["PaymentCode"] + "&MerchantCode=123456" + "&RedirectURL=" + "http://kouhenour.ir:3389/payresiati?sessid=" + req.body.sessid + "&MID=11593879";
+      console.log(red);
+      if (reserve_result["Message"] === 'An error has occurred.') {
+        res.send('خطایی در رزرو بلیط شما رخ داده است. لطفا مجددا تلاش کنید یا کلاس پروازی دیگری انتخاب کنید.');
+      } else {
+        res.redirect(red);
+      }
 
 
-      });
+    });
 
 })
 
@@ -161,17 +155,17 @@ app.get('/interflight', function(req, res) {
   console.log("************" + dayx + "*********" + monthx);
 
 
-      Iati.GetFlights(req.query.from, req.query.to,Utility.ToEnglishDigits(day_value)-9, monthx, req.query.adult, 0, 0, function(iv_all_flights) {
-        final_array = final_array.concat(iv_all_flights);
+  Iati.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value) - 9, monthx, req.query.adult, 0, 0, function(iv_all_flights) {
+    final_array = final_array.concat(iv_all_flights);
 
-        var data = {
-          flights: final_array,
-          today: Utility.GetNowJalali(),
-          par: req.query
-        };
-        console.log(data);
-        res.render('iati_results.ejs', data);
-      });
+    var data = {
+      flights: final_array,
+      today: Utility.GetNowJalali(),
+      par: req.query
+    };
+    console.log(data);
+    res.render('iati_results.ejs', data);
+  });
 
 })
 
@@ -185,7 +179,7 @@ app.get('/flight', function(req, res) {
   var monthx = (parseInt(Utility.ToEnglishDigits(month_value)) + 3).toString();
 
   console.log("************" + dayx + "*********" + monthx);
-  Mahan.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value)-9, monthx, 1, 0, 0, function(mv_all_flights) {
+  Mahan.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value) - 9, monthx, 1, 0, 0, function(mv_all_flights) {
     final_array = final_array.concat(mv_all_flights);
 
     Zagros.GetFlights(req.query.from, req.query.to, Utility.ToEnglishDigits(day_value), Utility.ToEnglishDigits(month_value), req.query.adult, 0, 0, function(all_flights) {
@@ -314,8 +308,23 @@ app.get('/mmm', function(req, res) {
 app.post('/payresiati', function(req, res) {
   if (req.body.State === 'OK') {
     console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-    console.log(req.body);
-    console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+    console.log(req.body.ResNum);
+    var get_url = "http://kouhenour.ir:8400/vmoney?sess=" + req.query.sessid + "&payid=" + req.body.ResNum;
+    console.log(get_url);
+    request.get(get_url, function(err, reso, body) {
+      var get_url = "http://kouhenour.ir:8400/selllist?sess=" + req.query.sessid + "&payid=" + req.body.ResNum;
+      console.log(body);
+
+      console.log(get_url);
+      request.get(get_url, function(err, reso, body) {
+        var bookarray=JSON.parse(body)[0].BookingArray;
+        console.log(typeof bookarray);
+        var send_to_front = {"data":JSON.parse(bookarray)};
+        console.log("$$$$$$$$$$$$$$$$$$ SENT TO FRONT $$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+        console.log(send_to_front);
+        res.render("iatiticket.ejs", send_to_front);
+      });
+    });
   } else {
     console.log(req.body);
   }

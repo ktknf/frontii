@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/slick.css" />
+  <link rel="stylesheet" href="/css/persian-datepicker.min.css">
+  <link rel="stylesheet" href="/css/style.css" />
+  <!--[if IE]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    -<![endif]-->
+  <meta name="csrf-param" content="_csrf">
+  <meta name="csrf-token" content="1KQ7aanpBDv3BerlNwROi6iiXGYMPyq1sqDhIuIcV4y34UpYn6dJU5t9kK9-N2O47JMSAG9uGNPw97cWiHkh_Q==">
+  <title>نتیجه جستجو</title>
+</head>
+
+<body>
+  <!-- Modal-ok-waiting-error-->
+  <!--Add class .pop-wait to div.modal for waiting-->
+  <!--Add class .pop-error to div.modal for error-->
+  <!--Add class .pop-ok to div.modal for ok-->
+  <div class="modal fade pop-wait" id="modal-popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="ok-part content-popup">
+            <div class="img-popup"></div>
+            <p>عملیات</p>
+            <p>با موفقیت انجام شد</p>
+          </div>
+          <div class="waiting-part content-popup">
+            <div class="img-popup"></div>
+            <p>تا تکمیل جستجو</p>
+            <p>لطفا شکیبا باشید</p>
+          </div>
+          <div class="error-part content-popup">
+            <div class="img-popup"></div>
+            <p>عملیات</p>
+            <p>با خطا روبرو شد</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal-ok-waiting-error-->
+  <!--start-modal-buy-->
+
+  <!-- Modal -->
+  <div class="modal fade continue-buy" id="modal-buy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body modal-buy-body">
+
+          <form role="form" id="form_reserve" method="post" action="/zvreserve">
+            <input type="hidden" name="_csrf" value="lKVzpU2cD4Oc1v74zv3PeWTY6B2rPvg6aiL02YcPb9HakhznPstI56-fiqGXqL8hLoCsa59byn06faShyEUKsg==">
+            <input type="hidden" name="from" value="" id="idfrom">
+            <input type="hidden" name="to" value="" id="idto">
+            <input type="hidden" name="fnumber" value="" id="idnum">
+            <input type="hidden" name="classname" value="" id="idclass">
+            <input type="hidden" name="day" value="" id="idday">
+            <input type="hidden" name="month" value="" id="idmonth">
+            <input type="hidden" name="price" value="" id="idprice">
+
+            <div class="container-fluid padd0">
+              <div class="flat-card traveler-info">
+                <div class="traveler-info-title">
+                  <h3 class="highlight-title">اطلاعات بزرگسال اول</h3>
+                  <a href="#" class="add-passenger">افزودن مسافر جدید</a>
+                </div>
+                <div class="traveler-info-body traveler-list-body">
+                  <div class="traveler traveler-template">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                          <div class="md-checkbox p-0">
+                            <label>
+                              <input class="checkbox-inline" id="checkbox-inline" name="passenger[1][nationality]" type="checkbox" value="1">
+                              <span class="md-checkbox-material"><span class="check"></span></span>
+                              <span class="md-checkbox-label" title="ماهان">مسافر از اتباع خارجی است</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>نام (فارسی) : </label>
+                          <input class="item GivenNameFA form-control" maxlength="59" name="edtname" placeholder="به فارسی وارد کنید..." required="required" type="text" value="">
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>نام خانوادگی (فارسی): </label>
+                          <input class="item SurNameFA form-control" maxlength="59" name="edtlast" placeholder="به فارسی وارد کنید..." type="text" value="" required="Required">
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>نام (انگلیسی): </label>
+                          <input class="item GivenName form-control" maxlength="59" name="en_edtName1" placeholder="به انگلیسی وارد کنید..." required="required" type="text" value="">
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>نام خانوادگی (انگلیسی): </label>
+                          <input class="item SurName form-control" maxlength="59" name="en_edtLast1" placeholder="به انگلیسی وارد کنید..." required="Required" type="text" value="">
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>جنسیت: </label>
+                          <select class="nice-select form-control wide" id="AdultNamePrefix0" name="passenger[1][gender]">
+                            <option value="">انتخاب کنید...</option>
+                            <option value="1">Mr - مرد</option>
+                            <option value="2">Mrs - زن</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>تاریخ تولد: </label>
+                          <input required="Required" class=" form-control" name="passenger[1][year]" placeholder="سال" type="text" value="">
+                          <input required="Required" class=" form-control" name="passenger[1][month]" placeholder="ماه" type="text" value="">
+                          <input required="Required" class=" form-control" name="passenger[1][day]" placeholder="روز" type="text" value="">
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group box-num-code">
+                          <label>کد ملی: </label>
+                          <input required="Required" class="item form-control NationalCode font-PN" maxlength="10" name="edtid" placeholder="کد 10 رقمی وارد کنید..." type="text" value="">
+                        </div>
+                        <div class="form-group box-num-pos" style="display:none;">
+                          <label>شماره پاسپورت: </label>
+                          <input class="item form-control" name="passenger[1][passport_id]" placeholder="مثال: P36522846" type="text" value="">
+                        </div>
+                        <div class="form-group">
+                          <label><a href="#" class="glyphicon glyphicon-remove remove-item">حذف</a></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="flat-card traveler-info">
+                <div class="traveler-info-title">
+                  <h3 class="highlight-title">اطلاعات تماس</h3>
+                </div>
+                <div class="traveler-info-body">
+                  <div class="description">
+                    <p>بلیط صادر شده، به‌صورت پیامک و ایمیل برای شما ارسال خواهد شد.</p>
+                  </div>
+                  <div class="traveler">
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>آدرس ایمیل:</label>
+                          <input class="item form-control datepicker" name="email" placeholder="مثال: ali@gmail.com" type="text" value="">
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>شماره موبایل:</label>
+                          <input class="PhoneNumber item form-control" maxlength="11" name="edtcontact" placeholder="مثال: 09123456789" type="text" value="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="traveler-info">
+                <p class="txt-rule"> با کلیک بر روی دکمه ادامه خرید، تایید می کنم که <a href="#">قوانین و مقررات</a> را مطالعه کرده و از درستی اطلاعات وارد شده اطمینان دارم.</p>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
+                  <button type="submit" class="btn btn-primary" id="accept_reserve">ادامه خرید</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade continue-buy" id="modal-confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body  modal-confirm-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="head-page">
+    <section class="container-fluid">
+      <section class="row content-head">
+        <div class="col-md-3 col-sm-3 logo-part">
+          <a href="#">
+            <img src="/images/logo.png" alt="">
+            <h1 class="sr-only">عنوان سایت</h1>
+            <h2 class="sr-only">توضیحاتی درباره سایت</h2>
+          </a>
+        </div>
+        <!--logo-part-->
+        <div class="col-md-7 col-sm-6 menu-part">
+          <nav class="nav-menu">
+            <ul class="navbar">
+              <li class="nav-item">
+                <a class="nav-link" href="#"> خرید بلیط </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">رزرو هتل</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">تور</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">تور های ویژه </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">پروازهای ویژه</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">هتل های ویژه</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">دانستنی های سفر</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!--.menu-part-->
+        <div class="col-md-2 col-sm-6 login-part">
+          <div class="link-login">
+            <a href="#">ورود | عضویت</a>
+          </div>
+        </div>
+        <!--.login-part-->
+        <div class="responsive-menu col-sm-3">
+          <a href="#" class="icon-menu" data-toggle="modal" data-target="#menuresponsive"></a>
+          <div class="modal right fade" id="menuresponsive" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <nav class="menu-res">
+                    <ul class="text-right navbar">
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"> خرید بلیط </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">رزرو هتل</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">تور</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">تور های ویژه </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">پروازهای ویژه</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">هتل های ویژه</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">دانستنی های سفر</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--responsive-menu-->
+      </section>
+    </section>
+  </header>
+  <main class="main-page" role="main">
+    <section class="container-fluid">
+      <!--search-head-->
+      <div style="text-align: center;">
+        <h1> اطلاعات بلیط </h1>
+        <h2>وضعیت: صدور نهایی</h2>
+      </div>
+      <table class="table table-bordered" style="text-align: center;">
+        <thead>
+          <tr>
+            <th>نام و نام خانوادگی</th>
+            <th>شماره پرواز</th>
+            <th>شماره بلیط</th>
+            <th>زمان پرواز</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= data[0].Passengers[0].FirstNameEnglish+"/"+ data[0].Passengers[0].LastNameEnglish %></td>
+            <td><%= data[0].Passengers[0].ETicketNumber %></td>
+            <td>TO BE ADDED</td>
+            <td>TO BE ADDED</td>
+
+          </tr>
+        </tbody>
+
+        <tr>
+          <th>شماره PNR</th>
+          <th>کلاس پرواز</th>
+          <th>مبدا</th>
+          <th>مقصد</th>
+
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= data[0].PNRCode %></td>
+            <td>TO BE ADDED</td>
+            <td>TO BE ADDED</td>
+            <td>TO BE ADDED</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="text-align: center;">
+
+        <br>
+        <h4>شرایط کنسلی:</h4>
+        <p> -- هر گونه تغییر یا استرداد تا 24 ساعت قبل از پرواز مشمول پرداخت هزینه به میزان 20% از نرخ پایه بلیت میگردد</p>
+        <p> -- هرگونه تغییر و یا استرداد بلیت کمتر از 24 ساعت قبل از پرواز مشمول پرداخت هزینه به میزان 40% از نرخ پایه بلیت میگردد</p>
+        <br>
+      </div>
+      <!--content-search-->
+    </section>
+    <!--container-fluid-->
+  </main>
+
+  <script>
+  </script>
+  <footer class="footer-page">
+    <section class="container-fluid">
+      <div class="row content-footer">
+        <div class="col-md-5 address-info">
+          <ul>
+            <li>
+              <p>آدرس : تهران، فلکه صادقيه،بلوار آيت الله کاشاني، بين اباذر و مهران -مجتمع آرميتا،پلاک77-واحد3</p>
+            </li>
+            <li>021-44049072</li>
+            <li>021-44977069</li>
+          </ul>
+        </div>
+        <div class="col-md-7 list-namd">
+          <div class="top-part">
+            <ul>
+              <li><a href="#"><img src="/images/namad/1.png" alt=""></a></li>
+              <li><a href="#"><img src="/images/namad/2.png" alt=""></a></li>
+              <li><a href="#"><img src="/images/namad/3.png" alt=""></a></li>
+              <li><a href="#"><img src="/images/namad/4.png" alt=""></a></li>
+              <li><a href="#"><img src="/images/namad/5.png" alt=""></a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </footer>
+  <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/js/persian-date.min.js"></script>
+  <script type="text/javascript" src="/js/persian-datepicker.min.js"></script>
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/js/slick.min.js"></script>
+  <script type="text/javascript" src="/js/coustom.js"></script>
+  <script type="text/javascript">
+  </script>
+
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+  <script>
+    function find1() {
+      $('#modal-popup').modal('show');
+      let times = [];
+      let airlines = [];
+      $('.chk-airline1:checked').each(function() {
+        airlines.push($(this).val());
+      });
+      $('.chk-time1:checked').each(function() {
+        times.push($(this).val());
+      });
+      //search();
+      result(search_id, airlines, times);
+    }
+
+    function find2() {
+      $('#modal-popup').modal('show');
+      console.log("find2");
+      let from = 'MHD';
+      let to = 'THR';
+      let date = '2019-8-9';
+      let date2 = '1398-05-16';
+      let child = '0';
+      let adult = '1';
+      let infant = '0';
+      let airlines = [];
+      let times = [];
+      console.log(from);
+      console.log(airlines);
+      $('.chk-airline:checked').each(function() {
+        airlines.push($(this).val());
+      });
+
+
+
+
+      console.log(airlines);
+      result(search_id, airlines, times);
+    }
+
+
+    $('.chk-airline2').change(function() {});
+
+    window.pd5 = $('#datebirth').persianDatepicker({
+      altField: '#normalAlt',
+      altFormat: 'LLLL',
+      initialValue: false,
+      observer: true,
+      format: 'YYYY-MM-DD',
+      autoClose: true,
+      timePicker: {
+        enabled: false
+      }
+    });
+
+    $('.priceasc').on("click", function() {
+      $('#modal-popup').modal('show');
+      //console.log("sortedflight?from="+par.from+"&to="+par.to+"&date="+par.date+"&date2="+par.date2+"&sort=price");
+      // Simulate a mouse click:
+      //window.location.href = "sortedflight?from="+par.from+"&to="+par.to+"&date="+par.date+"&date2="+par.date2+"&sort=price";
+    });
+
+    $("#signin").on("click", function() {
+      $('#modal-buy').modal('hide');
+    });
+    //trigger next modal
+    $('body').on('persianDatepicker', '#datebirth', function() {
+      $('#myModal2').modal('show');
+    });
+    $('body').on('click', '#signin', function() {
+      $('#myModal2').modal('show');
+    });
+
+    $('body').on('click', '.btn_reserve', function() {
+      console.log("Modal Buy");
+      var data = $(this).attr('data-fnum');
+      console.log(data);
+      document.getElementById("idnum").value = data.split('-')[2];
+      document.getElementById("idfrom").value = data.split('-')[0];
+      document.getElementById("idto").value = data.split('-')[1];
+      document.getElementById("idclass").value = data.split('-')[3];
+      document.getElementById("idday").value = data.split('-')[4];
+      document.getElementById("idmonth").value = data.split('-')[5];
+      document.getElementById("idprice").value = data.split('-')[6];
+
+      $('#modal-buy').modal('show');
+
+
+    });
+
+    //~ $('body').on('submit', '#form_reserve', function() {
+    //~ console.log("ZV RESERVE !");
+    //~ $('#modal-popup').modal('hide');
+    //~ //$('#modal-buy').modal('hide');
+    //~ event.preventDefault(); //prevent default action
+    //~ var post_url = '/zvreserve'; //get form action url
+    //~ var request_method = 'post'; //get form GET/POST method
+    //~ var form_data = new FormData(this); //Creates new FormData object
+
+    //~ });
+    //~ });
+
+    $('body').on('click', '.add-passenger', function() {
+      let adding = newitem(cnt);
+      $('.traveler-list-body').append(adding);
+    });
+    $('body').on('click', '.remove-item', function() {
+      let i = $(this).attr('data');
+      console.log(i);
+      $('.traveler-template-' + i).remove();
+    });
+
+
+    $('body').on('change', '.checkbox-inline', function() {
+      if ($(this).is(":checked")) {
+        $(this).parents('.traveler-template').find('div.box-num-pos').addClass("disIn");
+        $(this).parents('.traveler-template').find('div.box-num-code').addClass("disnone");
+      } else {
+        $(this).parents('.traveler-template').find('div.box-num-pos').removeClass("disIn");
+        $(this).parents('.traveler-template').find('div.box-num-code').removeClass("disnone");
+      }
+    });
+
+    $(document).ready(function() {
+
+      // init Isotope
+      var $grid = $('.content-list-src').isotope({
+        itemSelector: '.item-list-src',
+        layoutMode: 'fitRows',
+        getSortData: {
+          price: '.price',
+          symbol: '.symbol',
+          number: '.number parseInt',
+          category: '[data-category]',
+          weight: function(itemElem) {
+            var weight = $(itemElem).find('.weight').text();
+            return parseFloat(weight.replace(/[\(\)]/g, ''));
+          }
+        }
+      });
+
+      window.pd1 = $('#dateOne').persianDatepicker({
+        altField: '#normalAlt',
+        altFormat: 'LLLL',
+        initialValue: false,
+        observer: true,
+        format: 'YYYY-MM-DD',
+        autoClose: true,
+        timePicker: {
+          enabled: false
+        }
+      });
+      window.pd2 = $('#dateTwo').persianDatepicker({
+        altField: '#normalAlt',
+        altFormat: 'LLLL',
+        initialValue: false,
+        observer: true,
+        format: 'YYYY-MM-DD',
+        autoClose: true,
+        timePicker: {
+          enabled: false
+        }
+      });
+      window.pd3 = $('#datethree').persianDatepicker({
+        altField: '#normalAlt',
+        altFormat: 'LLLL',
+        initialValue: false,
+        observer: true,
+        format: 'YYYY-MM-DD',
+        autoClose: true,
+        timePicker: {
+          enabled: false
+        }
+      });
+      window.pd1 = $('#dateOneRes').persianDatepicker({
+        altField: '#normalAlt',
+        altFormat: 'LLLL',
+        initialValue: false,
+        observer: true,
+        format: 'YYYY/MM/DD',
+        autoClose: true,
+        timePicker: {
+          enabled: false
+        }
+      });
+      window.pd2 = $('#dateTwoRes').persianDatepicker({
+        altField: '#normalAlt',
+        altFormat: 'LLLL',
+        initialValue: false,
+        observer: true,
+        format: 'YYYY-MM-DD',
+        autoClose: true,
+        timePicker: {
+          enabled: false
+        }
+      });
+    });
+
+
+
+    $('.chk-time').change(function() {
+
+      console.log("morning");
+
+      if (!document.getElementById('morning').checked || !document.getElementById('c1').checked) {
+
+        var divsToHide = document.getElementsByClassName("morning"); //divsToHide is an array
+
+        console.log(divsToHide.length);
+
+        for (var i = 0; i < divsToHide.length; i++) {
+          //divsToHide[i].style.visibility = "hidden"; // or
+          console.log(divsToHide[i].style.display);
+          divsToHide[i].style.display = "none"; // depending on what you're doing
+        }
+      }
+
+
+      if (!document.getElementById('noon').checked || !document.getElementById('c2').checked) {
+
+        var divsToHide = document.getElementsByClassName("noon"); //divsToHide is an array
+
+        console.log(divsToHide.length);
+
+        for (var i = 0; i < divsToHide.length; i++) {
+          //divsToHide[i].style.visibility = "hidden"; // or
+          console.log(divsToHide[i].style.display);
+          divsToHide[i].style.display = "none"; // depending on what you're doing
+        }
+      }
+
+
+      if (!document.getElementById('evening').checked || !document.getElementById('c3').checked) {
+
+        var divsToHide = document.getElementsByClassName("evening"); //divsToHide is an array
+
+        console.log(divsToHide.length);
+
+        for (var i = 0; i < divsToHide.length; i++) {
+          //divsToHide[i].style.visibility = "hidden"; // or
+          console.log(divsToHide[i].style.display);
+          divsToHide[i].style.display = "none"; // depending on what you're doing
+        }
+      }
+
+
+      if (!document.getElementById('night').checked || !document.getElementById('c4').checked) {
+
+        var divsToHide = document.getElementsByClassName("night"); //divsToHide is an array
+
+        console.log(divsToHide.length);
+
+        for (var i = 0; i < divsToHide.length; i++) {
+          //divsToHide[i].style.visibility = "hidden"; // or
+          console.log(divsToHide[i].style.display);
+          divsToHide[i].style.display = "none"; // depending on what you're doing
+        }
+      }
+
+
+
+    });
+
+
+    $('.chk-airline').change(function() {
+      console.log("('.chk-airline').change(function()");
+      $('.content-list-src').isotope({
+        sortBy: price
+      });
+    });
+  </script>
+</body>
+
+</html>

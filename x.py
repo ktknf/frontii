@@ -130,7 +130,7 @@ def addticket():
     payload=payload.replace("#BD#","1990-04-22")
     payload=payload.replace("#MOBILE#","09112868767")
     payload=payload.replace("#PHONE#","6565877")
-    payload=payload.replace("#EMAIL#","aaaa@bou.com")
+    payload=payload.replace("#EMAIL#",request.args.get('email'))
     print(payload)
 
     r = requests.post("http://testapi.iati.ir/Payment/Invoice_Add_Item/7D7764DF874F8C9D06B7A5BAA462AD0F", data=payload)
