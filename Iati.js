@@ -25,7 +25,8 @@ module.exports = {
 
   //GetFlights Function
   GetFlights: function(Source, Target, Day, Month, Adult, Child, Infant, callback) {
-    var get_url = "http://kouhenour.ir:8400/?from=" + Source + "&to=" + Target + "&date=2019-" + Month + "-" + Day;
+    var get_url = "http://kouhenour.ir:8400/?from=" + Source + "&to=" + Target + "&date=2019-" + Month + "-" + Day+"&adult=1&child=0&infant=0";
+    console.log("_______________________________________");
     console.log(get_url);
 
     request.get(get_url, function(err, res, body) {
@@ -87,7 +88,7 @@ module.exports = {
   //GetFlight Function End
 
   //Reserve Function Start
-  Reserve: function(Source, Target, FlightClass, No, Day, Month, Name, Last, Age, ID, FlightNo, Contact,Email, FlightID, SearchID, SessID, callback) {
+  Reserve: function(Source, Target, FlightClass, No, Day, Month, Name, Last, FaName,FaLast, Age, ID, FlightNo, Contact,Email, FlightID, SearchID, SessID, callback) {
 
     var get_url = "http://kouhenour.ir:8400/pricedetail?search=" + SearchID + "&sess=" + SessID + "&adult=" + No + "&flight=" + FlightID;
     console.log(get_url);
@@ -97,7 +98,8 @@ module.exports = {
       console.log(get_url);
       request.get(get_url, function(err, res, body) {
         var payment_val=JSON.parse(body)["PaymentCode"];
-        var get_url = "http://kouhenour.ir:8400/addticket?sess=" + SessID + "&detailid=" + pricedetail_val + "&name=" + Name + "&last=" + Last + "&enname=" + Name + "&enlast=" + Last+"&email=" + Email+"&payid="+payment_val;
+        var get_url = "http://kouhenour.ir:8400/addticket?sess=" + SessID + "&detailid=" + pricedetail_val + "&name=" + FaName + "&last=" + FaLast +
+         "&enname=" + Name + "&enlast=" + Last+"&email=" + Email+"&id=" + ID+"&payid="+payment_val;
         console.log(get_url);
         request.get(get_url, function(err, res, body) {
           callback(body);

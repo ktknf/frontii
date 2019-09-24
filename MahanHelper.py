@@ -5,68 +5,148 @@ import json
 import sys
 from flask import request
 from flask import Flask
+from bs4 import BeautifulSoup
 app = Flask(__name__)
 
 @app.route('/')
-def hello():
-    payload = {'MemberID': '', 'ClientIPAddress': '95.217.5.6'}
-    r = requests.post("http://testapi.iati.ir/Tracker/Get_LoginID/7D7764DF874F8C9D06B7A5BAA462AD0F", data="{MemberID:null,ClientIPAddress:'95.217.5.6'}")
-    print("-----")
+def flights():
+    Username="APIKOOHENOOR"
+    Password="Noor@1212"
+    reqstr='''<?xml version="1.0" encoding="utf-16"?>
+<Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+<Header>
+<Security p5:mustUnderstand="1" xmlns:p5="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+<UsernameToken p7:Id="UsernameToken-17855236" xmlns:p7="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+<Username>#USER#</Username>
+<Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">#PASS#</Password>
+</UsernameToken>
+</Security>
+</Header>
+<Body>
+<OTA_AirAvailRQ EchoToken="" PrimaryLangID="en-us" SequenceNmbr="0" Target="TEST" TimeStamp="" Version="20061.00" xmlns="http://www.opentravel.org/OTA/2003/05">
+<POS>
+<Source TerminalID="TestUser/Test Runne">
+  <RequestorID ID="APIKOOHENOOR" Type="4" />
+  <BookingChannel Type="12" />
+</Source>
+</POS>
+<OriginDestinationInformation>
+<DepartureDateTime>#DATE#T00:00:00</DepartureDateTime>
+<OriginLocation LocationCode="#FROM#" />
+<DestinationLocation LocationCode="#TO#" />
+</OriginDestinationInformation>
+<FlexiQuote>true</FlexiQuote>
+<TravelerInfoSummary>
+<AirTravelerAvail>
+  <PassengerTypeQuantity Code="ADT" Quantity="1" />
+  <PassengerTypeQuantity Code="CHD" Quantity="0" />
+  <PassengerTypeQuantity Code="INF" Quantity="0" />
+</AirTravelerAvail>
+</TravelerInfoSummary>
+</OTA_AirAvailRQ>
+</Body>
+</Envelope>
+    '''
+    reqstr = reqstr.replace("#USER#", 'APIKOOHENOOR')
+    reqstr = reqstr.replace("#PASS#", 'Noor@1212')
+    reqstr = reqstr.replace("#FROM#", request.args.get('from'))
+    reqstr = reqstr.replace("#TO#", request.args.get('to'))
+    reqstr = reqstr.replace("#DATE#", request.args.get('date'))
+    print(reqstr)
 
+    headers= {'Content-Type': 'text/xml; charset=utf-8','SOAPAction': 'runTransaction'}
+
+    r = requests.post("https://reservations.mahan.aero/webservices/services/AAResWebServices", data=reqstr ,headers=headers)
     print(r.text)
-    print("-----")
+    soup = BeautifulSoup(r.text, 'xml')
+    arv = soup.find_all('ns1:ArrivalAirport')
+    print(arv)
+    print(len(arv))
 
-    datastore = json.loads(r.text)
-    sesseionid=datastore["LoginID"]
-
-    reqstr=''' { "fromAirport": "#FROM#","allinFromCity": false,"toAirport": "#TO#","allinToCity": false,"fromDate": "#DATE1#","returnDate": "",   "adult": "#ADULT#",   "child": "#CHILD#",   "infant": "#INFANT#",   "TestMode": false,   "MemberSessionID": "#SESSIONID#" } '''
-    payload=reqstr.replace("#FROM#", request.args.get('from')).replace("#TO#", request.args.get('to')).replace("#DATE1#", request.args.get('date')).replace("#SESSIONID#",sesseionid).replace("#ADULT#", request.args.get('adult')).replace("#CHILD#", request.args.get('child')).replace("#INFANT#", request.args.get('infant'))
-
-    print(payload)
-
-    r = requests.post("http://testapi.iati.ir/Flight/Search/7D7764DF874F8C9D06B7A5BAA462AD0F", data=payload)
-    #print(r.text)
-    datastore = json.loads(r.text)
-
-    #print(len(datastore["Flights"][0]["Legs"]))
-
-    result=[]
-
-    for i in range(0,len(datastore["Flights"])):
-        if  len(datastore["Flights"][i]["Legs"])==1:
-            datastore["Flights"][i]["SearchID"]=datastore["SearchID"];
-            datastore["Flights"][i]["SessID"]=sesseionid;
-            result.append(datastore["Flights"][i]);
-
-    return json.dumps(result)
+    dpr = soup.find_all('ns1:DepartureAirport')
+    print("--------------------")
+    print(dpr)
+    print(len(dpr))
 
 
+    ns2 = soup.find_all('ns1:OriginDestinationOptions')
+    print("--------------------")
+    print(ns2)
+    print(len(ns2))
+
+    ns2 = soup.find_all('ns1:FlightSegment')
+    print("--------------------")
+    print(ns2)
+    print(len(ns2))
+
+    final=[]
+    for i in range(0,len(arv)):
+        final.append({
+        'AirLine': 'ماهان',
+        'AirLineShort': 'W5',
+        'FlightNo':ns2[i].attrs['FlightNumber'],
+        'From':arv[i].attrs['LocationCode'],
+        'To':dpr[i].attrs['LocationCode'],
+        'DepartureDateTime':ns2[i].attrs['DepartureDateTime'],
+        'ArrivalDateTime':ns2[i].attrs['ArrivalDateTime']
+
+        })
+        print(arv[i].attrs['LocationCode'])
+
+    #datastore = json.loads(r.text)
+    return json.dumps(final)
 
 
-#get PaymentID
-@app.route('/payid')
-def payid():
-    reqstr=''' {   "LoginID":"#SESSIONID#",   "CallBackURL":"http://pw.Iati.ir/payment/check/{{id}}",   "PaymentTypeID": 1 } '''
-    payload=reqstr.replace("#SESSIONID#",request.args.get('sess'))
-    print(payload)
 
-    r = requests.post("http://testapi.iati.ir/Payment/Get_Payment_Code/7D7764DF874F8C9D06B7A5BAA462AD0F", data=payload)
+
+def getPrice(tid,short1,short2,time1,time2,flightno,flightid,adult,child,infant):
+    Username="APIKOOHENOOR"
+    Password="Noor@1212"
+    reqstr="     <soap:Envelope xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>"
+    reqstr=reqstr+'\n'+ "        <soap:Header>"
+    reqstr=reqstr+'\n'+ "           <wsse:Security soap:mustUnderstand='1' xmlns:wsse='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd'>"
+    reqstr=reqstr+'\n'+ "              <wsse:UsernameToken wsu:Id='UsernameToken-32124385' xmlns:wsu='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd'>"
+    reqstr=reqstr+'\n'+ "                 <wsse:Username>" + Username + "</wsse:Username>"
+    reqstr=reqstr+'\n'+ "                 <wsse:Password Type='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText'>" + Password + "</wsse:Password>"
+    reqstr=reqstr+'\n'+ "              </wsse:UsernameToken>"
+    reqstr=reqstr+'\n'+ "           </wsse:Security>"
+    reqstr=reqstr+'\n'+ "        </soap:Header>"
+    reqstr=reqstr+'\n'+ "        <soap:Body xmlns:ns1='http://www.opentravel.org/OTA/2003/05'>"
+    reqstr=reqstr+'\n'+ "           <ns1:OTA_AirPriceRQ EchoToken='12662148060105253838426' PrimaryLangID='en-us' SequenceNmbr='1' TimeStamp='2010-02-15T10:20:06' TransactionIdentifier='" + rid + "' Version='20061.00'>"
+    reqstr=reqstr+'\n'+ "              <ns1:POS>"
+    reqstr=reqstr+'\n'+ "                 <ns1:Source TerminalID='TestUser/Test Runner'>"
+    reqstr=reqstr+'\n'+ "                    <ns1:RequestorID ID='" + Username + "' Type='4'/>"
+    reqstr=reqstr+'\n'+ "                    <ns1:BookingChannel Type='12'/>"
+    reqstr=reqstr+'\n'+ "                 </ns1:Source>"
+    reqstr=reqstr+'\n'+ "              </ns1:POS>"
+    reqstr=reqstr+'\n'+ "              <ns1:AirItinerary DirectionInd='OneWay'>"
+    reqstr=reqstr+'\n'+ "                 <ns1:OriginDestinationOptions>"
+    reqstr=reqstr+'\n'+ "                    <ns1:OriginDestinationOption>"
+    reqstr=reqstr+'\n'+ "                       <ns1:FlightSegment ArrivalDateTime='" + time2 + "' DepartureDateTime='" + time1 + "' FlightNumber='" + flightno + "' RPH='" + flightid + "'>"
+    reqstr=reqstr+'\n'+ "                          <ns1:DepartureAirport LocationCode='" + short1 + "' Terminal='TerminalX'/>"
+    reqstr=reqstr+'\n'+ "                          <ns1:ArrivalAirport LocationCode='" + short2 + "'/>"
+    reqstr=reqstr+'\n'+ "                       </ns1:FlightSegment>"
+    reqstr=reqstr+'\n'+ "                    </ns1:OriginDestinationOption>"
+    reqstr=reqstr+'\n'+ "                 </ns1:OriginDestinationOptions>"
+    reqstr=reqstr+'\n'+ "              </ns1:AirItinerary>"
+    reqstr=reqstr+'\n'+ "              <ns1:TravelerInfoSummary>"
+    reqstr=reqstr+'\n'+ "                 <ns1:AirTravelerAvail>"
+    reqstr=reqstr+'\n'+ "                    <ns1:PassengerTypeQuantity Quantity='" + adult + "' Code='ADT'/>"
+    reqstr=reqstr+'\n'+ "                    <ns1:PassengerTypeQuantity Quantity='" + child + "' Code='CHD'/>"
+    reqstr=reqstr+'\n'+ "                    <ns1:PassengerTypeQuantity Quantity='" + infant + "' Code='INF'/>"
+    reqstr=reqstr+'\n'+ "                 </ns1:AirTravelerAvail>"
+    reqstr=reqstr+'\n'+ "              </ns1:TravelerInfoSummary>"
+    reqstr=reqstr+'\n'+ "           </ns1:OTA_AirPriceRQ>"
+    reqstr=reqstr+'\n'+ "        </soap:Body>"
+    reqstr=reqstr+'\n'+ "     </soap:Envelope>"
+
+    print(reqstr)
+    headers= {'Content-Type': 'text/xml; charset=utf-8','SOAPAction': 'runTransaction'}
+
+    r = requests.post("https://reservations.mahan.aero/webservices/services/AAResWebServices", data=reqstr ,headers=headers)
     print(r.text)
-    datastore = json.loads(r.text)
-    return json.dumps(datastore)
-
-
-#get VMoney
-@app.route('/vmoney')
-def vmoney():
-    reqstr=''' {   "MemberSessionID":"#SESSIONID#", "PaymentCode": "#PAYCODE#" } '''
-    payload=reqstr.replace("#SESSIONID#",request.args.get('sess')).replace("#PAYCODE#",request.args.get('payid'));
-    print(payload)
-
-    r = requests.post("http://testapi.iati.ir/Payment/Payment_From_VMoney_Website/7D7764DF874F8C9D06B7A5BAA462AD0F", data=payload)
-    print(r.text)
-    datastore = json.loads(r.text)
-    return json.dumps(datastore)
+    #datastore = json.loads(r.text)
+    return json.dumps(r.text)
 
 
 #get VMoney
@@ -246,7 +326,7 @@ def addticket():
     return json.dumps(datastore)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8400)
+    app.run(host='0.0.0.0', port=8401)
 
 #for rs in result:
 #    print(rs["Legs"][0]["FlightNo"])

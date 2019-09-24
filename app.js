@@ -120,7 +120,7 @@ app.post('/iatires', function(req, res) {
   var age_value = 33;
 
   Iati.Reserve(req.body.from, req.body.to, req.body.classname, 1, req.body.day, req.body.month,
-    req.body.edtname, req.body.edtlast, age_value, req.body.edtid, req.body.fnumber, '1111111',req.body.email,
+    req.body.edtname, req.body.edtlast,req.body.faname, req.body.falast, age_value, req.body.edtid, req.body.fnumber, '1111111',req.body.email,
     req.body.flightid, req.body.searchid, req.body.sessid,
     function(reserve_result) {
       reserve_result = JSON.parse(reserve_result);
