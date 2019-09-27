@@ -154,7 +154,7 @@
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="fly-in" role="tabpanel" aria-labelledby="fly-in-tab">
-                            <div class="btn-group btn-toggle" hidden>
+                            <div class="btn-group btn-toggle" >
                                 <button class="btn btn-default">یکطرفه</button>
                                 <button class="btn btn-primary active">رفت و برگشت</button>
                             </div>
@@ -230,7 +230,7 @@
                             </div><!--.form-search-->
                         </div><!--#fly-in-->
                         <div class="tab-pane fade" id="fly-out" role="tabpanel" aria-labelledby="fly-out-tab">
-                          <div class="btn-group btn-toggle" hidden>
+                          <div class="btn-group btn-toggle">
                               <button class="btn btn-default">یکطرفه</button>
                               <button class="btn btn-primary active">رفت و برگشت</button>
                           </div>
@@ -306,9 +306,9 @@
                                           <input type="text" class="form-control" id="dateX" name="date" value="<%= today %>" >
                                       </div>
                                       <!--add class-active-for icon comeback-->
-                                      <div class="form-group col-md-6 back-part" hidden>
+                                      <div class="form-group col-md-6 go-part">
                                           <span class="title-input">برگشت</span>
-                                          <input type="text" class="form-control" id="dateTwo" name="date2" value="<%= today %>" >
+                                          <input type="text" class="form-control" id="dateY" name="date2" value="<%= today %>" >
                                       </div>
                                   </div>
                                   <div class="form-row">
@@ -318,6 +318,26 @@
                                               <option value="1"> 1 بزرگسال</option>
                                               <option  value="2"> 2 بزرگسال</option>
                                               <option  value="3" > 3 بزرگسال</option>
+                                          </select>
+                                      </div>
+                                      <div class="form-group col-md-6 num-part">
+                                          <span class="title-input">تعداد</span>
+                                          <select class="form-control" name="child">
+                                            <option value="0"> 0 کودک</option>
+                                              <option value="1"> 1 کودک</option>
+                                              <option  value="2"> 2 کودک</option>
+                                              <option  value="3" > 3 کودک</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="form-row">
+                                      <div class="form-group col-md-6 num-part">
+                                          <span class="title-input">تعداد</span>
+                                          <select class="form-control" name="infant">
+                                            <option value="0"> 0 خردسال</option>
+                                              <option value="1"> 1 خردسال</option>
+                                              <option  value="2"> 2 خردسال</option>
+                                              <option  value="3" > 3 خردسال</option>
                                           </select>
                                       </div>
                                       <div class="form-group col-md-6">
@@ -695,7 +715,7 @@
             }
         });
 
-        window.pd1 = $('#dateX').persianDatepicker({
+        window.pd3 = $('#dateX').persianDatepicker({
             altField: '#normalAlt',
             altFormat: 'LLLL',
             initialValue: false,
@@ -707,6 +727,17 @@
             }
         });
 
+        window.pd4 = $('#dateY').persianDatepicker({
+            altField: '#normalAlt',
+            altFormat: 'LLLL',
+            initialValue: false,
+            observer: true,
+            format: 'YYYY-MM-DD',
+            autoClose: true,
+            timePicker: {
+                enabled: false
+            }
+        });
         window.pd2 = $('#dateTwo').persianDatepicker({
             altField: '#normalAlt',
             altFormat: 'LLLL',

@@ -71,7 +71,14 @@ module.exports = {
     {
       ret=ret.replace(month_before[i],month[i]);
     }
-
+    return ret;
+  },
+  DateToGeorg: function(datetime) {
+    console.log("XXXXXX:"+datetime);
+    m = moment(datetime, 'jYYYY-jM-jD');
+    console.log(m);
+    //m.locale('fa').format('YYYY/MM/DD');
+    var ret=m.format('YYYY-MM-DD');
     return ret;
   },
 

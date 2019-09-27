@@ -12,7 +12,6 @@ def hello():
     payload = {'MemberID': '', 'ClientIPAddress': '95.217.5.6'}
     r = requests.post("http://testapi.iati.ir/Tracker/Get_LoginID/7D7764DF874F8C9D06B7A5BAA462AD0F", data="{MemberID:null,ClientIPAddress:'95.217.5.6'}")
     print("-----")
-
     print(r.text)
     print("-----")
 
@@ -25,11 +24,11 @@ def hello():
     print(payload)
 
     r = requests.post("http://testapi.iati.ir/Flight/Search/7D7764DF874F8C9D06B7A5BAA462AD0F", data=payload)
+    #print("________________________________________________________________________________________________")
     #print(r.text)
+    #print("________________________________________________________________________________________________")
     datastore = json.loads(r.text)
-
     #print(len(datastore["Flights"][0]["Legs"]))
-
     result=[]
 
     for i in range(0,len(datastore["Flights"])):
@@ -39,7 +38,6 @@ def hello():
             result.append(datastore["Flights"][i]);
 
     return json.dumps(result)
-
 
 
 
@@ -117,10 +115,10 @@ def view():
 #get PaymentID
 @app.route('/pricedetail')
 def pricedetail():
-    reqstr=''' {   "FareRefereces": [     {       "FlightID": "#FLIGHTID#",       "FareType": "ECONOMY"     } , {       "FlightID": "#FLIGHTID2#",       "FareType": "ECONOMY"     }],   "AdultCount": #ADULT#,   "ChildCount": 1,   "InfantCount": 1,   "Currency": "IRR",   "SearchID": "#SEARCHID#",   "MemberSessionID": "#SESSIONID#" }  '''
+    reqstr=''' {   "FareRefereces": [     {       "FlightID": "#FLIGHTID#",       "FareType": "ECONOMY"     } ],   "AdultCount": #ADULT#,   "ChildCount": 0,   "InfantCount":0,   "Currency": "IRR",   "SearchID": "#SEARCHID#",   "MemberSessionID": "#SESSIONID#" }  '''
     payload=reqstr.replace("#SESSIONID#",request.args.get('sess'))
     payload=payload.replace("#FLIGHTID#",request.args.get('flight'))
-    payload=payload.replace("#FLIGHTID2#",request.args.get('flight2'))
+    #payload=payload.replace("#FLIGHTID2#",request.args.get('flight2'))
     payload=payload.replace("#ADULT#",request.args.get('adult'))
     payload=payload.replace("#SEARCHID#",request.args.get('search'))
 

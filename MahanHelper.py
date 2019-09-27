@@ -57,30 +57,37 @@ def flights():
     headers= {'Content-Type': 'text/xml; charset=utf-8','SOAPAction': 'runTransaction'}
 
     r = requests.post("https://reservations.mahan.aero/webservices/services/AAResWebServices", data=reqstr ,headers=headers)
-    print(r.text)
+    #print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+    #print(r.text)
+    #print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
     soup = BeautifulSoup(r.text, 'xml')
     arv = soup.find_all('ns1:ArrivalAirport')
-    print(arv)
-    print(len(arv))
 
     dpr = soup.find_all('ns1:DepartureAirport')
-    print("--------------------")
-    print(dpr)
-    print(len(dpr))
 
 
-    ns2 = soup.find_all('ns1:OriginDestinationOptions')
-    print("--------------------")
-    print(ns2)
-    print(len(ns2))
+    td = soup.find_all('ns1:OTA_AirAvailRS')
+    #print("--------------------")
+    #print(td[0].attrs['TransactionIdentifier'])
+    tid_val=td[0].attrs['TransactionIdentifier']
+
+
 
     ns2 = soup.find_all('ns1:FlightSegment')
-    print("--------------------")
-    print(ns2)
+
+    print("============================================================================================")
     print(len(ns2))
+    print("============================================================================================")
 
     final=[]
     for i in range(0,len(arv)):
+        rph_val=ns2[i].attrs['RPH']
+
+        print("************************")
+        print(ns2[i])
+        print("************************")
+
+        price_val=getPrice(tid_val,arv[i].attrs['LocationCode'],dpr[i].attrs['LocationCode'],ns2[i].attrs['DepartureDateTime'],ns2[i].attrs['ArrivalDateTime'],ns2[i].attrs['FlightNumber'],rph_val,'1','0','0',i+1)
         final.append({
         'AirLine': 'ماهان',
         'AirLineShort': 'W5',
@@ -88,10 +95,11 @@ def flights():
         'From':arv[i].attrs['LocationCode'],
         'To':dpr[i].attrs['LocationCode'],
         'DepartureDateTime':ns2[i].attrs['DepartureDateTime'],
-        'ArrivalDateTime':ns2[i].attrs['ArrivalDateTime']
+        'ArrivalDateTime':ns2[i].attrs['ArrivalDateTime'],
+        'Price':price_val
 
         })
-        print(arv[i].attrs['LocationCode'])
+        #print(arv[i].attrs['LocationCode'])
 
     #datastore = json.loads(r.text)
     return json.dumps(final)
@@ -99,7 +107,7 @@ def flights():
 
 
 
-def getPrice(tid,short1,short2,time1,time2,flightno,flightid,adult,child,infant):
+def getPrice(tid,short1,short2,time1,time2,flightno,flightid,adult,child,infant,ind):
     Username="APIKOOHENOOR"
     Password="Noor@1212"
     reqstr="     <soap:Envelope xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>"
@@ -112,7 +120,7 @@ def getPrice(tid,short1,short2,time1,time2,flightno,flightid,adult,child,infant)
     reqstr=reqstr+'\n'+ "           </wsse:Security>"
     reqstr=reqstr+'\n'+ "        </soap:Header>"
     reqstr=reqstr+'\n'+ "        <soap:Body xmlns:ns1='http://www.opentravel.org/OTA/2003/05'>"
-    reqstr=reqstr+'\n'+ "           <ns1:OTA_AirPriceRQ EchoToken='12662148060105253838426' PrimaryLangID='en-us' SequenceNmbr='1' TimeStamp='2010-02-15T10:20:06' TransactionIdentifier='" + rid + "' Version='20061.00'>"
+    reqstr=reqstr+'\n'+ "           <ns1:OTA_AirPriceRQ EchoToken='' PrimaryLangID='en-us' SequenceNmbr='"+str(ind)+"' TimeStamp='2010-02-15T10:20:06' TransactionIdentifier='" + tid + "' Version='20061.00'>"
     reqstr=reqstr+'\n'+ "              <ns1:POS>"
     reqstr=reqstr+'\n'+ "                 <ns1:Source TerminalID='TestUser/Test Runner'>"
     reqstr=reqstr+'\n'+ "                    <ns1:RequestorID ID='" + Username + "' Type='4'/>"
@@ -145,8 +153,16 @@ def getPrice(tid,short1,short2,time1,time2,flightno,flightid,adult,child,infant)
 
     r = requests.post("https://reservations.mahan.aero/webservices/services/AAResWebServices", data=reqstr ,headers=headers)
     print(r.text)
+    soup = BeautifulSoup(r.text, 'xml')
+    arv = soup.find_all('ns1:TotalFare')
+    prc=0
+    if len(arv)!=0:
+        prc=int(float(arv[0].attrs['Amount']))
+    print("___________________________________________________________________________________________________________")
+    print(prc)
+    print("___________________________________________________________________________________________________________")
     #datastore = json.loads(r.text)
-    return json.dumps(r.text)
+    return json.dumps(prc)
 
 
 #get VMoney
