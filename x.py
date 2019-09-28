@@ -18,8 +18,12 @@ def hello():
     datastore = json.loads(r.text)
     sesseionid=datastore["LoginID"]
 
-    reqstr=''' { "fromAirport": "#FROM#","allinFromCity": false,"toAirport": "#TO#","allinToCity": false,"fromDate": "#DATE1#","returnDate": "",   "adult": "#ADULT#",   "child": "#CHILD#",   "infant": "#INFANT#",   "TestMode": false,   "MemberSessionID": "#SESSIONID#" } '''
-    payload=reqstr.replace("#FROM#", request.args.get('from')).replace("#TO#", request.args.get('to')).replace("#DATE1#", request.args.get('date')).replace("#SESSIONID#",sesseionid).replace("#ADULT#", request.args.get('adult')).replace("#CHILD#", request.args.get('child')).replace("#INFANT#", request.args.get('infant'))
+    date2=""
+    if request.args.get('IsRound')=="true":
+        date2=request.args.get('date2')
+
+    reqstr=''' { "fromAirport": "#FROM#","allinFromCity": false,"toAirport": "#TO#","allinToCity": false,"fromDate": "#DATE1#","returnDate": "#DATE2#",   "adult": "#ADULT#",   "child": "#CHILD#",   "infant": "#INFANT#",   "TestMode": false,   "MemberSessionID": "#SESSIONID#" } '''
+    payload=reqstr.replace("#FROM#", request.args.get('from')).replace("#TO#", request.args.get('to')).replace("#DATE1#", request.args.get('date')).replace("#DATE2#", request.args.get('date2')).replace("#SESSIONID#",sesseionid).replace("#ADULT#", request.args.get('adult')).replace("#CHILD#", request.args.get('child')).replace("#INFANT#", request.args.get('infant'))
 
     print(payload)
 

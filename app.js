@@ -145,16 +145,10 @@ app.post('/iatires', function(req, res) {
 //Iati Flights List
 app.get('/interflight', function(req, res) {
 
-  var day_value = req.query.date.split('-')[2];
-  var month_value = req.query.date.split('-')[1];
+console.log("???????"+req.query.date+"||||"+req.query.date2);
   var final_array = [];
 
-  var dayx = (parseInt(day_value) - 3);
-  var monthx = (parseInt(Utility.ToEnglishDigits(month_value)) + 2).toString();
-
-  console.log("************" + req.query.iroundtrip + "*********" + monthx);
-
-  Iati.GetFlights(req.query.from, req.query.to, Utility.DateToGeorg(Utility.ToEnglishDigits(req.query.date)) , req.query.iroundtrip, req.query.adult, req.query.child, req.query.infant, function(iv_all_flights) {
+  Iati.GetFlights(req.query.from, req.query.to, Utility.DateToGeorg(Utility.ToEnglishDigits(req.query.date)) , Utility.DateToGeorg(Utility.ToEnglishDigits(req.query.date2)) , req.query.iroundtrip, req.query.adult, req.query.child, req.query.infant, function(iv_all_flights) {
     final_array = final_array.concat(iv_all_flights);
 
     var data = {

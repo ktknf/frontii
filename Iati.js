@@ -24,8 +24,8 @@ var month = Array(' فروردین ',
 module.exports = {
 
   //GetFlights Function
-  GetFlights: function(Source, Target, Day, IsRound, Adult, Child, Infant, callback) {
-    var get_url = "http://kouhenour.ir:8400/?from=" + Source + "&to=" + Target + "&date="+ Day+"&adult="+Adult+"&child="+Child+"&infant="+Infant+"&IsRound="+IsRound;
+  GetFlights: function(Source, Target, Day, Date2, IsRound, Adult, Child, Infant, callback) {
+    var get_url = "http://kouhenour.ir:8400/?from=" + Source + "&to=" + Target + "&date="+ Day+"&date2="+ Date2+"&adult="+Adult+"&child="+Child+"&infant="+Infant+"&IsRound="+IsRound;
     console.log("_______________________________________");
     console.log(get_url);
 
