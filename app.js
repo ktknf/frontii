@@ -152,9 +152,9 @@ app.get('/interflight', function(req, res) {
   var dayx = (parseInt(day_value) - 3);
   var monthx = (parseInt(Utility.ToEnglishDigits(month_value)) + 2).toString();
 
-  console.log("************" + dayx + "*********" + monthx);
+  console.log("************" + req.query.iroundtrip + "*********" + monthx);
 
-  Iati.GetFlights(req.query.from, req.query.to, Utility.DateToGeorg(Utility.ToEnglishDigits(req.query.date)) , monthx, req.query.adult, req.query.child, req.query.infant, function(iv_all_flights) {
+  Iati.GetFlights(req.query.from, req.query.to, Utility.DateToGeorg(Utility.ToEnglishDigits(req.query.date)) , req.query.iroundtrip, req.query.adult, req.query.child, req.query.infant, function(iv_all_flights) {
     final_array = final_array.concat(iv_all_flights);
 
     var data = {

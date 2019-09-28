@@ -24,8 +24,8 @@ var month = Array(' فروردین ',
 module.exports = {
 
   //GetFlights Function
-  GetFlights: function(Source, Target, Day, Month, Adult, Child, Infant, callback) {
-    var get_url = "http://kouhenour.ir:8400/?from=" + Source + "&to=" + Target + "&date="+ Day+"&adult="+Adult+"&child="+Child+"&infant="+Infant;
+  GetFlights: function(Source, Target, Day, IsRound, Adult, Child, Infant, callback) {
+    var get_url = "http://kouhenour.ir:8400/?from=" + Source + "&to=" + Target + "&date="+ Day+"&adult="+Adult+"&child="+Child+"&infant="+Infant+"&IsRound="+IsRound;
     console.log("_______________________________________");
     console.log(get_url);
 
@@ -59,7 +59,7 @@ module.exports = {
 
 
         //console.log(flght[i]['Legs'][0]['Baseprice']);
-        var prstr = Math.floor(flght[i]['Baseprice'] / 100000) * 1000;
+        var prstr = Math.floor(flght[i]['WagedTotalSingleAdultFare'] / 10) ;
 
         //console.log(flght[i]);
         final_return.push({
@@ -73,10 +73,10 @@ module.exports = {
           To: Target,
           FullTo: Target,
           Price: utility.CommaSeprate(prstr),
-          IntPrice: parseInt(flght[i]['Baseprice']),
+          IntPrice: parseInt(flght[i]['WagedTotalSingleAdultFare']),
           FlightNo: flght[i]['Legs'][0]['FlightNo'],
           Class: flght[i]['SegmentNames'][0],
-          Spec: Source + "#" + Target + "#" + flght[i]['Legs']['FlightNo'] + "#" + "X" + "#" + Day + "#" + Month + "#" + "100000" + "#IV#" + flght[i]['SearchID'] + "#" + flght[i]['FlightID'] + "#" + flght[i]['SessID']
+          Spec: Source + "#" + Target + "#" + flght[i]['Legs']['FlightNo'] + "#" + "X" + "#" + Day + "#" + IsRound + "#" + "100000" + "#IV#" + flght[i]['SearchID'] + "#" + flght[i]['FlightID'] + "#" + flght[i]['SessID']
         });
       }
 

@@ -32,7 +32,7 @@ def hello():
     result=[]
 
     for i in range(0,len(datastore["Flights"])):
-        if  len(datastore["Flights"][i]["Legs"])==1:
+        #if  len(datastore["Flights"][i]["Legs"])==1:
             datastore["Flights"][i]["SearchID"]=datastore["SearchID"];
             datastore["Flights"][i]["SessID"]=sesseionid;
             result.append(datastore["Flights"][i]);
