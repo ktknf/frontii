@@ -39,7 +39,7 @@ module.exports = {
 
         m = moment(final_dtime, 'YYYY-M-D');
         m.locale('fa').format('YYYY/MM/DD');
-        var dret = m.locale('fa').format('jDD/jMM/jYYYY') + "   " + dtime.split(' ')[1] + ":00";
+        var dret = m.locale('fa').format('jDD/jMM/jYYYY') + "  " + dtime.split(' ')[1] ;
 
         for (var j = 0; j < 12; j++) {
           dret = dret.replace(month_before[j], month[j]);
@@ -51,12 +51,13 @@ module.exports = {
 
         m = moment(final_atime, 'YYYY-M-D');
         m.locale('fa').format('YYYY/MM/DD');
-        var aret = m.locale('fa').format('jDD/jMM/jYYYY') + "   " + atime.split(' ')[1] + ":00";
+        var aret = m.locale('fa').format('jDD/jMM/jYYYY') + "  " + atime.split(' ')[1] ;
 
         for (var j = 0; j < 12; j++) {
           aret = aret.replace(month_before[j], month[j]);
         }
 
+        var leglen=flght[i]['Legs'].length;
 
         //console.log(flght[i]['Legs'][0]['Baseprice']);
         var prstr = Math.floor(flght[i]['WagedTotalSingleAdultFare'] / 10) ;
@@ -68,10 +69,10 @@ module.exports = {
           TimeClass: 'noon',
           DepartureDateTime: dret,
           ArrivalDateTime: aret,
-          From: Source,
-          FullFrom: Source,
-          To: Target,
-          FullTo: Target,
+          From: flght[i]['Legs'][0]['DepartureAirport'],
+          FullFrom: flght[i]['Legs'][0]['DepartureAirport'],
+          To: flght[i]['Legs'][leglen-1]['ArrivalAirport'],
+          FullTo: flght[i]['Legs'][leglen-1]['ArrivalAirport'],
           Price: utility.CommaSeprate(prstr),
           IntPrice: parseInt(flght[i]['WagedTotalSingleAdultFare']),
           FlightNo: flght[i]['Legs'][0]['FlightNo'],
