@@ -715,8 +715,8 @@
           <div style="height:5px; position:unset;"></div>
           <% for (var i=0; i<flights.length ; i++){ %>
 
-          <div class="item-list-src container-fluid <%= flights[i].TimeClass %>" style="position:unset;" >
-            <div class="above-div row">
+          <div class="item-list-src container-fluid <%= flights[i].TimeClass %>"  >
+            <div class="above-div row" style="position:initial !important">
               <div class="col-lg-9 col-md-9 part-right-above">
                 <div class="sort-fly">
                   <!--put class .charter instead of .title-system for charter-fly-->
@@ -760,7 +760,7 @@
                 <p><%= flights[i].Class %> / شماره پرواز : <%= flights[i].FlightNo %> </p>
               </div>
               <div class="col-lg-3 col-sm-3 details-fly">
-                <a  class="collapsed" data-toggle="collapse"  data-target="#collapseDetails-<%= i %>">جزئیات پرواز</a>
+                <a  class="collapsed" data-toggle="collapse"  aria-expanded="true" aria-controls="collapseDetails-<%= i %>" data-target="#collapseDetails-<%= i %>">جزئیات پرواز</a>
               </div>
             </div>
             <!--.footer-co-src-->
@@ -769,10 +769,10 @@
                 <div class="col-lg-9 col-sm-9 part-right-collapse">
                   <div class="num-person text-right">
                     <span>ظرفیت : </span>
-                    <span>1 نفر</span>
+                    <span><%= flights[i].FreeSeatCount %> نفر</span>
                   </div>
                   <div class="condition-cancle text-right">
-                    <h4>شرایط کنسلی:</h4>
+                    <h4> <%= flights[i].Legs.length %></h4>
                     <p> -- هر گونه تغییر یا استرداد تا 24 ساعت قبل از پرواز مشمول پرداخت هزینه به میزان 20% از نرخ پایه بلیت میگردد</p>
                     <p> -- هرگونه تغییر و یا استرداد بلیت کمتر از 24 ساعت قبل از پرواز مشمول پرداخت هزینه به میزان 40% از نرخ پایه بلیت میگردد</p>
                   </div>
@@ -1078,21 +1078,6 @@
 
     $(document).ready(function() {
 
-      // init Isotope
-      var $grid = $('.content-list-src').isotope({
-        itemSelector: '.item-list-src',
-        layoutMode: 'fitRows',
-        getSortData: {
-          price: '.price',
-          symbol: '.symbol',
-          number: '.number parseInt',
-          category: '[data-category]',
-          weight: function(itemElem) {
-            var weight = $(itemElem).find('.weight').text();
-            return parseFloat(weight.replace(/[\(\)]/g, ''));
-          }
-        }
-      });
 
       window.pd1 = $('#dateOne').persianDatepicker({
         altField: '#normalAlt',

@@ -35,6 +35,7 @@ module.exports = {
       var final_return_flight = [];
 
       for (var i = 0; i < flght.length; i++) {
+        var leglen=flght[i]['Legs'].length;
 
         var dtime = flght[i]['Legs'][0]['DepartureTime'];
         var final_dtime = dtime.split(' ')[0];
@@ -48,7 +49,7 @@ module.exports = {
         }
 
 
-        var atime = flght[i]['Legs'][0]['ArrivalTime'];
+        var atime = flght[i]['Legs'][leglen-1]['ArrivalTime'];
         var final_atime = atime.split(' ')[0];
 
         m = moment(final_atime, 'YYYY-M-D');
@@ -59,7 +60,6 @@ module.exports = {
           aret = aret.replace(month_before[j], month[j]);
         }
 
-        var leglen=flght[i]['Legs'].length;
 
         //console.log(flght[i]['Legs'][0]['Baseprice']);
         var prstr = Math.floor(flght[i]['WagedTotalSingleAdultFare'] / 10) ;
@@ -68,6 +68,8 @@ module.exports = {
         {
         //console.log(flght[i]);
         final_return.push({
+          Legs:flght[i]['Legs'],
+          FreeSeatCount:flght[i]['FreeSeatCount'],
           AirLine: flght[i]['Legs'][0]['OperatorName'],
           AirLineShort: flght[i]['Legs'][0]['OperatorCode'],
           TimeClass: 'noon',
@@ -86,6 +88,8 @@ module.exports = {
         }
         else {
           final_return_flight.push({
+            Legs:flght[i]['Legs'],
+            FreeSeatCount:flght[i]['FreeSeatCount'],
             AirLine: flght[i]['Legs'][0]['OperatorName'],
             AirLineShort: flght[i]['Legs'][0]['OperatorCode'],
             TimeClass: 'noon',
