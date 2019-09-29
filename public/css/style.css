@@ -1,42 +1,56 @@
 @font-face {
   font-family: 'persian-num';
-  src: url("../fonts/IRANSansWeb(FaNum)_UltraLight.eot") format("eot"), url("../fonts/IRANSansWeb(FaNum)_UltraLight.woff2") format("woff2"), url("../fonts/IRANSansWeb(FaNum)_UltraLight.ttf") format("ttf"), url("../fonts/IRANSansWeb(FaNum)_UltraLight.woff") format("woff"); }
+  src: url("../fonts/IRANSansWeb(FaNum)_UltraLight.eot") format("eot"), url("../fonts/IRANSansWeb(FaNum)_UltraLight.woff2") format("woff2"), url("../fonts/IRANSansWeb(FaNum)_UltraLight.ttf") format("ttf"), url("../fonts/IRANSansWeb(FaNum)_UltraLight.woff") format("woff");
+}
+
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: 900;
   src: url("../fonts/eot/IRANSansWeb_Black.eot");
-  src: url("../fonts/eot/IRANSansWeb_Black.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb_Black.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb_Black.woff") format("woff"), url("../fonts/ttf/IRANSansWeb_Black.ttf") format("truetype"); }
+  src: url("../fonts/eot/IRANSansWeb_Black.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb_Black.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb_Black.woff") format("woff"), url("../fonts/ttf/IRANSansWeb_Black.ttf") format("truetype");
+}
+
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: bold;
   src: url("../fonts/eot/IRANSansWeb_Bold.eot");
-  src: url("../fonts/eot/IRANSansWeb_Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb_Bold.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb_Bold.woff") format("woff"), url("../fonts/ttf/IRANSansWeb_Bold.ttf") format("truetype"); }
+  src: url("../fonts/eot/IRANSansWeb_Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb_Bold.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb_Bold.woff") format("woff"), url("../fonts/ttf/IRANSansWeb_Bold.ttf") format("truetype");
+}
+
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: 500;
   src: url("../fonts/eot/IRANSansWeb_Medium.eot");
-  src: url("../fonts/eot/IRANSansWeb_Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb_Medium.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb_Medium.woff") format("woff"), url("../fonts/ttf/IRANSansWeb_Medium.ttf") format("truetype"); }
+  src: url("../fonts/eot/IRANSansWeb_Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb_Medium.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb_Medium.woff") format("woff"), url("../fonts/ttf/IRANSansWeb_Medium.ttf") format("truetype");
+}
+
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: 300;
   src: url("../fonts/eot/IRANSansWeb_Light.eot");
-  src: url("../fonts/eot/IRANSansWeb_Light.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb_Light.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb_Light.woff") format("woff"), url("../fonts/ttf/IRANSansWeb_Light.ttf") format("truetype"); }
+  src: url("../fonts/eot/IRANSansWeb_Light.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb_Light.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb_Light.woff") format("woff"), url("../fonts/ttf/IRANSansWeb_Light.ttf") format("truetype");
+}
+
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: 200;
   src: url("../fonts/eot/IRANSansWeb_UltraLight.eot");
-  src: url("../fonts/eot/IRANSansWeb_UltraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb_UltraLight.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb_UltraLight.woff") format("woff"), url("../fonts/ttf/IRANSansWeb_UltraLight.ttf") format("truetype"); }
+  src: url("../fonts/eot/IRANSansWeb_UltraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb_UltraLight.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb_UltraLight.woff") format("woff"), url("../fonts/ttf/IRANSansWeb_UltraLight.ttf") format("truetype");
+}
+
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: normal;
   src: url("../fonts/eot/IRANSansWeb.eot");
-  src: url("../fonts/eot/IRANSansWeb.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb.woff") format("woff"), url("../fonts/ttf/IRANSansWeb.ttf") format("truetype"); }
+  src: url("../fonts/eot/IRANSansWeb.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/IRANSansWeb.woff2") format("woff2"), url("../fonts/woff/IRANSansWeb.woff") format("woff"), url("../fonts/ttf/IRANSansWeb.ttf") format("truetype");
+}
+
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -44,55 +58,67 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent; }
+  background: transparent;
+}
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block; }
+  display: block;
+}
 
 nav ul {
-  list-style: none; }
+  list-style: none;
+}
 
 blockquote, q {
-  quotes: none; }
+  quotes: none;
+}
 
 blockquote:before, blockquote:after, q:before, q:after {
   content: '';
-  content: none; }
+  content: none;
+}
 
 a {
   margin: 0;
   padding: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent; }
+  background: transparent;
+}
 
 a:focus, a:hover {
   text-decoration: none;
-  outline: 0; }
+  outline: 0;
+}
 
 /* change colours to suit your needs */
 ins {
   background-color: #ff9;
   color: #000;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 /* change colours to suit your needs */
 mark {
   background-color: #ff9;
   color: #000;
   font-style: italic;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 del {
-  text-decoration: line-through; }
+  text-decoration: line-through;
+}
 
 abbr[title], dfn[title] {
   border-bottom: 1px dotted;
-  cursor: help; }
+  cursor: help;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 /* change border colour to suit your needs */
 hr {
@@ -101,392 +127,527 @@ hr {
   border: 0;
   border-top: 1px solid #cccccc;
   margin: 1em 0;
-  padding: 0; }
+  padding: 0;
+}
 
 input, select {
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 html {
-  font-size: 15px; }
+  font-size: 15px;
+}
 
 body {
   font-family: "IRANSans", Tahoma, Geneva, sans-serif !important;
   font-size: 100%;
   line-height: 30px;
   color: #3c3c3c;
-  direction: rtl; }
+  direction: rtl;
+}
 
 * {
-  direction: rtl; }
+  direction: rtl;
+}
 
 p {
   line-height: 32px;
   direction: rtl;
-  font-family: "IRANSans", tahoma, Geneva, sans-serif !important; }
+  font-family: "IRANSans", tahoma, Geneva, sans-serif !important;
+}
 
 li {
-  list-style: none; }
+  list-style: none;
+}
 
 .clearfix:after {
   content: '';
-  clear: both; }
+  clear: both;
+}
 
 .clearfix {
   zoom: 1;
-  /* IE 6/7 */ }
+  /* IE 6/7 */
+}
 
 .clear {
-  clear: both; }
+  clear: both;
+}
 
 h1, h2, h3, h4, h5, h6, figcaption, pre, span {
-  font-family: 'IRANSans', arial, tahoma; }
+  font-family: 'IRANSans', arial, tahoma;
+}
 
 h1 {
   font-size: 20px;
-  line-height: 40px; }
+  line-height: 40px;
+}
 
 h2 {
   font-size: 18px;
-  line-height: 38px; }
+  line-height: 38px;
+}
 
 h3 {
   font-size: 16px;
-  line-height: 36px; }
+  line-height: 36px;
+}
 
 h4 {
   font-size: 15px;
-  line-height: 34px; }
+  line-height: 34px;
+}
 
 h5 {
   font-size: 14px;
-  line-height: 32px; }
+  line-height: 32px;
+}
 
 h6 {
   font-size: 13px;
-  line-height: 30px; }
+  line-height: 30px;
+}
 
 .fa-num, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title span, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section .t-value, .continue-buy .modal-dialog .modal-body .price-table tbody tr td:nth-child(2), .main-page .information-fly .list-info-fly .details-info-fly ul li p:last-child, .footer-page .content-footer .address-info li:nth-child(2), .footer-page .content-footer .address-info li:nth-child(3), .side-right .div-arrange .num-arrange, .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket span:first-child, .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li p:first-child, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul li span:last-child {
   font-family: "persian-num" !important;
   font-size: 13px;
-  font-weight: 600 !important; }
+  font-weight: 600 !important;
+}
 
 .ltr-dir {
-  direction: ltr; }
+  direction: ltr;
+}
 
 .font-s {
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 .color-black, .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title .add-passenger, .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details a, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title span, .continue-buy .modal-dialog .modal-body .price-table tbody tr td, .content-search .content-list-src .item-list-src .collapse .card .part-right-collapse .num-person span:first-child, .content-search .content-list-src .item-list-src .collapse .card .part-right-collapse .condition-cancle h4 {
-  color: #000; }
+  color: #000;
+}
 
 .color-white, .head-page .menu-part .navbar li a, .head-page .login-part .link-login a, .main-page .slide-search .search-section .box-search ul li.nav-item a, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .btn-toggle .btn.active, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .form-control.submit-src, .main-page .special-tour .title-section h2, .main-page .special-fly .title-section h2, .main-page .special-hotel .title-section h2, .main-page .special-tour .content-special .item-special a.more-info, .main-page .special-fly .content-special .item-special a.more-info, .main-page .special-hotel .content-special .item-special a.more-info, .footer-page .content-footer .address-info li, .footer-page .content-footer .list-namd .bottom-part .box-copyright p, .search-head .btn-toggle .btn.active, .search-head .form-search form .form-row .form-group .form-control.submit-src, .side-right .widget .title-widget, .side-right .div-arrange p, .side-right .div-arrange .num-arrange, .side-right ul.list-check .lableSorc {
-  color: #fff; }
+  color: #fff;
+}
 
 .color-low-black, .responsive-side-src ul.mnu-src-filter li a, .content-search .content-list-src .item-list-src .above-div .part-left-above p:first-child, .content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly p.title-system, .content-search .content-list-src .item-list-src .above-div .part-right-above .icon-fly p, .content-search .content-list-src .item-list-src .footer-co-src .number-fly p, .content-search .content-list-src .item-list-src .footer-co-src .details-fly a, .content-search .content-list-src .item-list-src .collapse .card .part-right-collapse .num-person span:last-child {
-  color: #71716f; }
+  color: #71716f;
+}
 
 .color1 {
-  color: #848482; }
+  color: #848482;
+}
 
 .color2 {
-  color: #858583; }
+  color: #858583;
+}
 
 .color6 {
-  color: #666666; }
+  color: #666666;
+}
 
 .color8 {
-  color: #828282; }
+  color: #828282;
+}
 
 .color-blue, .continue-buy .modal-dialog .modal-body .traveler-info .description .table thead tr td, .continue-buy .modal-dialog .modal-body .warning.blue-box p, .main-page .slide-search .search-section .box-search ul li.nav-item a.active, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .btn-toggle .btn, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .title-input, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.back-part.active .title-input, .main-page .information-fly .list-info-fly .details-info-fly ul li, .main-page .information-fly .list-info-fly .details-info-fly ul li p:first-child, .main-page .special-tour .content-special .item-special h3, .main-page .special-tour .content-special .item-special p, .main-page .special-fly .content-special .item-special h3, .main-page .special-fly .content-special .item-special p, .main-page .special-hotel .content-special .item-special h3, .main-page .special-hotel .content-special .item-special p, .search-head .btn-toggle .btn, .search-head .form-search form .form-row .form-group .title-input, .search-head .form-search form .form-row .form-group.back-part.active .title-input {
-  color: #0077bb; }
+  color: #0077bb;
+}
 
 .color-org {
-  color: #FFA255; }
+  color: #FFA255;
+}
 
 .color-red {
-  color: #FF7979; }
+  color: #FF7979;
+}
 
 .blue {
-  background: #72bef2; }
+  background: #72bef2;
+}
 
 .red {
-  background: #FF7979; }
+  background: #FF7979;
+}
 
 .org {
-  background: #FFA255; }
+  background: #FFA255;
+}
 
 .dis-in, .continue-buy .modal-dialog .modal-body .traveler-info .text-error, .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details, .continue-buy .modal-dialog .modal-body .code-off .form-group, .continue-buy .modal-dialog .modal-body .code-off .form-group input, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .title-input, .main-page .information-fly .list-info-fly .details-info-fly ul li, .main-page .special-tour .content-special .list-item-spe .slick-arrow, .main-page .special-fly .content-special .list-item-spe .slick-arrow, .main-page .special-hotel .content-special .list-item-spe .slick-arrow, .main-page .special-tour .content-special .item-special, .main-page .special-fly .content-special .item-special, .main-page .special-hotel .content-special .item-special, .main-page .special-tour .content-special .item-special a.more-info, .main-page .special-fly .content-special .item-special a.more-info, .main-page .special-hotel .content-special .item-special a.more-info, .footer-page .content-footer .list-namd .top-part ul li, .search-head .form-search form .form-row .form-group .title-input, .responsive-side-src ul.mnu-src-filter li, .responsive-side-src .modal-content .modal-header, .responsive-side-src .modal-content .modal-header h3, .side-right .list-class-fly ul.list-check li .lableSorc span:first-child, .side-right .list-class-fly ul.list-check li .lableSorc span:nth-child(2), .side-right ul.list-check .lableSorc, .side-right ul.list-check .lableSorc span.icon-fly-check, .side-right ul.list-check .lableSorc span:first-child, .side-right ul.list-check .lableSorc span.fa-num, .side-right ul.list-check .lableSorc .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title span, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title .side-right ul.list-check .lableSorc span, .side-right ul.list-check .lableSorc .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section span.t-value, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section .side-right ul.list-check .lableSorc span.t-value, .side-right ul.list-check .lableSorc .div-arrange span.num-arrange, .side-right .div-arrange ul.list-check .lableSorc span.num-arrange, .side-right ul.list-check .lableSorc .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket span:first-child, .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket .side-right ul.list-check .lableSorc span:first-child, .side-right .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul.list-check .lableSorc li span:last-child, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse .side-right ul.list-check .lableSorc li span:last-child, .side-right .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul.list-check li .lableSorc span:last-child, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse .side-right ul.list-check li .lableSorc span:last-child, .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li {
-  display: inline-block; }
+  display: inline-block;
+}
 
 .dis-f {
-  display: flex; }
+  display: flex;
+}
 
 .dis-none {
-  display: none; }
+  display: none;
+}
 
 .dis-block, .main-page .slide-search .search-section .box-search ul li.nav-item a:before, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .title-input:before, .main-page .special-tour .content-special .item-special a.over-pic, .main-page .special-fly .content-special .item-special a.over-pic, .main-page .special-hotel .content-special .item-special a.over-pic, .search-head .form-search form .form-row .form-group .title-input:before, .content-search .side-left a {
-  display: block; }
+  display: block;
+}
 
 .dis-flx, .head-page .menu-part, .head-page .login-part, .head-page .responsive-menu, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section .week {
   display: inline-flex;
-  align-items: center; }
+  align-items: center;
+}
 
 .dis-table {
-  display: table; }
+  display: table;
+}
 
 .dis-table-cell {
-  display: table-cell; }
+  display: table-cell;
+}
 
 .icon, .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details a:before, .responsive-side-src ul.mnu-src-filter li a:before, .content-search .content-list-src .item-list-src .footer-co-src .details-fly a:after {
   width: 20px;
   height: 20px;
-  display: inline-block; }
+  display: inline-block;
+}
 
 .head-page .responsive-menu .icon-menu, .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title .add-passenger:before, .continue-buy .modal-dialog .modal-body .traveler-info .text-error .circle-icon, .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details .circle-icon, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section .week .icon-fly-de, .continue-buy .modal-dialog .modal-body .flat-card .warning p .circle-icon {
   width: 25px;
   height: 25px;
-  display: inline-block; }
+  display: inline-block;
+}
 
 .f-right {
-  float: right; }
+  float: right;
+}
 
 .f-left, .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details {
-  float: left; }
+  float: left;
+}
 
-.ver-midd, .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title .add-passenger:before, .continue-buy .modal-dialog .modal-body .traveler-info .text-error .circle-icon, .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details .circle-icon, .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details a:before, .continue-buy .modal-dialog .modal-body .flat-card .warning p .circle-icon, .main-page .information-fly .list-info-fly .details-info-fly ul li, .footer-page .content-footer .list-namd .top-part ul li, .responsive-side-src ul.mnu-src-filter li a:before, .content-search .content-list-src .item-list-src .above-div .part-right-above > div, .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li, .content-search .content-list-src .item-list-src .footer-co-src .details-fly a:after {
-  vertical-align: middle; }
+.ver-midd, .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title .add-passenger:before, .continue-buy .modal-dialog .modal-body .traveler-info .text-error .circle-icon, .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details .circle-icon, .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details a:before, .continue-buy .modal-dialog .modal-body .flat-card .warning p .circle-icon, .main-page .information-fly .list-info-fly .details-info-fly ul li, .footer-page .content-footer .list-namd .top-part ul li, .responsive-side-src ul.mnu-src-filter li a:before, .content-search .content-list-src .item-list-src .above-div .part-right-above>div, .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li, .content-search .content-list-src .item-list-src .footer-co-src .details-fly a:after {
+  vertical-align: middle;
+}
 
 .ver-top {
-  vertical-align: top; }
+  vertical-align: top;
+}
 
 .font-w, #modal-popup .modal-dialog .modal-content .modal-body .content-popup p, .continue-buy .modal-dialog .modal-body .price-table tbody tr td, .main-page .slide-search .search-section .box-search ul li.nav-item a, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .btn-toggle .btn, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .title-input, .main-page .information-fly .list-info-fly .details-info-fly ul li p:first-child, .main-page .information-fly .list-info-fly .details-info-fly ul li:first-child span, .main-page .special-tour .content-special .item-special h3, .main-page .special-tour .content-special .item-special p, .main-page .special-fly .content-special .item-special h3, .main-page .special-fly .content-special .item-special p, .main-page .special-hotel .content-special .item-special h3, .main-page .special-hotel .content-special .item-special p, .footer-page .content-footer .address-info li:nth-child(2), .footer-page .content-footer .address-info li:nth-child(3), .search-head .btn-toggle .btn, .search-head .form-search form .form-row .form-group .title-input, .side-right ul.list-check .lableSorc, .content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly p, .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li, .content-search .content-list-src .item-list-src .collapse .card .part-right-collapse .condition-cancle h4, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul li {
-  font-weight: 500; }
+  font-weight: 500;
+}
 
 .w100, .main-page .information-fly .list-info-fly, .main-page .special-tour .content-special .item-special a.over-pic img, .main-page .special-fly .content-special .item-special a.over-pic img, .main-page .special-hotel .content-special .item-special a.over-pic img {
-  width: 100%; }
+  width: 100%;
+}
 
 .mrg-auto, #modal-popup .modal-dialog .modal-content .modal-body .content-popup .img-popup, .main-page .slide-search .search-section .box-search ul li.nav-item a:before {
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .w-90, .main-page .special-tour .content-special .list-item-spe, .main-page .special-fly .content-special .list-item-spe, .main-page .special-hotel .content-special .list-item-spe {
   width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .w-95, .main-page .slide-search, .main-page .special-tour, .main-page .special-fly, .main-page .special-hotel, .footer-page .content-footer {
   width: 95%;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .border-c {
-  border: 1px solid #cccccc; }
+  border: 1px solid #cccccc;
+}
 
 .height100 {
-  height: 100%; }
+  height: 100%;
+}
 
 .max-w100 {
-  max-width: 100%; }
+  max-width: 100%;
+}
 
 .pos-relative, .head-page .menu-part .navbar li, .head-page .login-part .link-login, .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title, .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-body .traveler .form-group, .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-body .traveler .form-group .form-control, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group, .main-page .special-tour .title-section, .main-page .special-fly .title-section, .main-page .special-hotel .title-section, .search-head .form-search form .form-row .form-group, .responsive-side-src .modal-content .modal-header, .side-right ul.list-check .lableSorc, .side-right .content-widget, .content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly, .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li.line-between {
-  position: relative; }
+  position: relative;
+}
 
 .pos-abs, .head-page .menu-part .navbar li a:before, .head-page .menu-part .navbar li a:hover:before, .head-page .menu-part .navbar li a:focus:before, .head-page .login-part .link-login a:before, .head-page .login-part .link-login a:hover:before, .head-page .login-part .link-login a:focus:before, .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title .add-passenger, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .title-input, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .title-input:before, .main-page .special-tour .title-section h2, .main-page .special-fly .title-section h2, .main-page .special-hotel .title-section h2, .search-head .form-search form .form-row .form-group .title-input, .search-head .form-search form .form-row .form-group .title-input:before, .responsive-side-src .modal-content .modal-header .close, .side-right .div-arrange .num-arrange, .content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly p, .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li.line-between:after {
-  position: absolute; }
+  position: absolute;
+}
 
 .txt-center, #modal-popup .modal-dialog .modal-content .modal-body .content-popup p, .head-page .logo-part, .continue-buy .modal-dialog .modal-body .traveler-info p.txt-rule, .continue-buy .modal-dialog .modal-body .traveler-info .description .table thead tr, .continue-buy .modal-dialog .modal-body .traveler-info .description .table td, .continue-buy .modal-dialog .modal-body .price-table tbody tr td:nth-child(2), .continue-buy .modal-dialog .modal-body .warning.blue-box p, .main-page .slide-search .search-section .box-search ul li.nav-item, .main-page .slide-search .search-section .box-search .tab-content .tab-pane, .main-page .information-fly .list-info-fly, .main-page .special-tour .content-special, .main-page .special-fly .content-special, .main-page .special-hotel .content-special, .footer-page .content-footer .list-namd .bottom-part .box-copyright, .responsive-side-src, .side-right .div-arrange .num-arrange, .side-right ul.list-check .lableSorc span.icon-fly-check, .side-right ul.list-check .lableSorc span:first-child, .content-search .content-list-src .item-list-src .above-div .part-left-above, .content-search .content-list-src .item-list-src .above-div .part-right-above .icon-fly .co-icon-fly, .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul, .content-search .content-list-src .item-list-src .footer-co-src .details-fly, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul, .content-search .content-list-src .part-advertis {
-  text-align: center; }
+  text-align: center;
+}
 
 .txt-right, .continue-buy .modal-dialog, .footer-page .content-footer .address-info, .side-right .widget, .side-right .widget .title-widget, .side-right .list-class-fly ul.list-check li .lableSorc span:first-child, .content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly p, .content-search .content-list-src .item-list-src .above-div .part-right-above .icon-fly, .content-search .content-list-src .item-list-src .footer-co-src .number-fly {
-  text-align: right; }
+  text-align: right;
+}
 
 .txt-left, .side-right .list-class-fly ul.list-check li .lableSorc span:nth-child(2), .side-right ul.list-check .lableSorc span.fa-num, .side-right ul.list-check .lableSorc .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title span, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title .side-right ul.list-check .lableSorc span, .side-right ul.list-check .lableSorc .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section span.t-value, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section .side-right ul.list-check .lableSorc span.t-value, .side-right ul.list-check .lableSorc .div-arrange span.num-arrange, .side-right .div-arrange ul.list-check .lableSorc span.num-arrange, .side-right ul.list-check .lableSorc .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket span:first-child, .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket .side-right ul.list-check .lableSorc span:first-child, .side-right .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul.list-check .lableSorc li span:last-child, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse .side-right ul.list-check .lableSorc li span:last-child, .side-right .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul.list-check li .lableSorc span:last-child, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse .side-right ul.list-check li .lableSorc span:last-child {
-  text-align: left; }
+  text-align: left;
+}
 
 .head-page .login-part, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section .week {
-  justify-content: center; }
+  justify-content: center;
+}
 
 .back-white, .continue-buy .modal-dialog .modal-body .traveler-info, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .btn-toggle, .main-page .information-fly .list-info-fly .details-info-fly:nth-child(even), .main-page .special-tour .content-special, .main-page .special-fly .content-special, .main-page .special-hotel .content-special, .search-head .btn-toggle, .content-search .content-list-src .item-list-src {
-  background: #fff; }
+  background: #fff;
+}
 
 .backf8 {
-  background: #F8F8F8; }
+  background: #F8F8F8;
+}
 
 .back-blue, #modal-popup .modal-dialog .modal-content .modal-body, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .form-control.submit-src, .main-page .special-tour .title-section, .main-page .special-fly .title-section, .main-page .special-hotel .title-section, .main-page .special-tour .content-special .item-special:hover a.more-info, .main-page .special-fly .content-special .item-special:hover a.more-info, .main-page .special-hotel .content-special .item-special:hover a.more-info, .footer-page .content-footer .list-namd .bottom-part .box-copyright, .search-head .form-search form .form-row .form-group .form-control.submit-src, .side-right .widget .title-widget, .side-right .div-arrange .num-arrange {
-  background: #0077bb; }
+  background: #0077bb;
+}
 
 .main-page .slide-search .search-section .box-search, .main-page .slide-search .search-section .box-search ul li.nav-item a.active, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover, .search-head, .side-right .content-widget {
-  background: #ffa800; }
+  background: #ffa800;
+}
 
 .margin-auto {
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket span {
-  color: #00bc41; }
+  color: #00bc41;
+}
 
 .continue-buy .modal-dialog .modal-content, .continue-buy .modal-dialog .modal-body, .continue-buy .modal-dialog .modal-body .traveler-info, .content-search .content-list-src .item-list-src {
-  border-radius: 10px; }
+  border-radius: 10px;
+}
 
 #modal-popup .modal-dialog .modal-content, #modal-popup .modal-dialog .modal-content .modal-body, .main-page .slide-search .search-section .box-search, .main-page .special-tour .content-special .item-special a.over-pic, .main-page .special-fly .content-special .item-special a.over-pic, .main-page .special-hotel .content-special .item-special a.over-pic, .main-page .special-tour .content-special .item-special a.over-pic img, .main-page .special-fly .content-special .item-special a.over-pic img, .main-page .special-hotel .content-special .item-special a.over-pic img, .main-page .special-tour .content-special .item-special a.more-info, .main-page .special-fly .content-special .item-special a.more-info, .main-page .special-hotel .content-special .item-special a.more-info, .footer-page .content-footer .list-namd .bottom-part .box-copyright {
-  border-radius: 20px; }
+  border-radius: 20px;
+}
 
 .border-r {
-  border-radius: 20px 0 0 20px; }
+  border-radius: 20px 0 0 20px;
+}
 
 .padd0, .head-page .menu-part, .head-page .menu-part .navbar, .head-page .responsive-menu .modal-dialog .modal-body, .head-page .responsive-menu .modal-dialog .modal-body nav ul, .footer-page .content-footer .list-namd, .search-head .btn-toggle, .responsive-side-src .modal-content .modal-body, .content-search .content-list-src, .content-search .content-list-src .item-list-src .above-div .part-right-above {
-  padding: 0; }
+  padding: 0;
+}
 
 .padd-top50, .main-page .slide-search {
-  padding-top: 50px; }
+  padding-top: 50px;
+}
 
 .padd-r0 {
-  padding-right: 0; }
+  padding-right: 0;
+}
 
 .padd-l0 {
-  padding-left: 0; }
+  padding-left: 0;
+}
 
 .m-top10, .head-page .logo-part a img, .main-page .special-tour .content-special .item-special a.more-info, .main-page .special-fly .content-special .item-special a.more-info, .main-page .special-hotel .content-special .item-special a.more-info, .footer-page .content-footer .address-info li:nth-child(3) {
-  margin-top: 10px; }
+  margin-top: 10px;
+}
 
 .m-top20, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .btn-toggle, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form, .footer-page .content-footer .address-info li:nth-child(2), .search-head .btn-toggle, .search-head .form-search form, .responsive-side-src {
-  margin-top: 20px; }
+  margin-top: 20px;
+}
 
 .m-top30, .main-page .special-tour, .main-page .special-fly, .main-page .special-hotel {
-  margin-top: 30px; }
+  margin-top: 30px;
+}
 
 .border-b {
-  border-bottom: 1px solid #cccccc; }
+  border-bottom: 1px solid #cccccc;
+}
 
 .continue-buy .modal-dialog .modal-body .traveler-info, .main-page .special-tour .content-special .item-special a.more-info, .main-page .special-fly .content-special .item-special a.more-info, .main-page .special-hotel .content-special .item-special a.more-info, .responsive-side-src ul.mnu-src-filter {
-  box-shadow: 0 0 13px 1px #d7d7d7; }
+  box-shadow: 0 0 13px 1px #d7d7d7;
+}
 
 .head-page .menu-part .navbar li a, .head-page .login-part .link-login a, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .form-control.submit-src:hover, .main-page .special-tour .content-special .item-special a.more-info, .main-page .special-fly .content-special .item-special a.more-info, .main-page .special-hotel .content-special .item-special a.more-info, .search-head .form-search form .form-row .form-group .form-control.submit-src:hover {
   -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out; }
+  transition: all 0.4s ease-in-out;
+}
 
 .opa8 {
-  opacity: .8; }
+  opacity: .8;
+}
 
 .m-b15 {
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+}
 
 /*********************header*******************************************/
 #modal-popup .modal-dialog {
-  margin-top: 120px; }
-  #modal-popup .modal-dialog .modal-content {
-    border: 1px solid #0077bb; }
-    #modal-popup .modal-dialog .modal-content .modal-body {
-      min-height: 360px;
-      padding-top: 60px; }
-      #modal-popup .modal-dialog .modal-content .modal-body .content-popup .img-popup {
-        width: 250px;
-        height: 170px;
-        background-size: contain !important;
-        max-width: 100%;
-        background-position: center !important; }
-      #modal-popup .modal-dialog .modal-content .modal-body .content-popup p {
-        color: #ffa800;
-        font-size: 18px; }
-      #modal-popup .modal-dialog .modal-content .modal-body .ok-part {
-        display: none; }
-        #modal-popup .modal-dialog .modal-content .modal-body .ok-part .img-popup {
-          background: url("../images/ok.png") no-repeat; }
-      #modal-popup .modal-dialog .modal-content .modal-body .waiting-part {
-        display: none; }
-        #modal-popup .modal-dialog .modal-content .modal-body .waiting-part .img-popup {
-          background: url("../images/waiting.png") no-repeat; }
-      #modal-popup .modal-dialog .modal-content .modal-body .error-part {
-        display: none; }
-        #modal-popup .modal-dialog .modal-content .modal-body .error-part .img-popup {
-          background: url("../images/error.png") no-repeat; }
+  margin-top: 120px;
+}
+
+#modal-popup .modal-dialog .modal-content {
+  border: 1px solid #0077bb;
+}
+
+#modal-popup .modal-dialog .modal-content .modal-body {
+  min-height: 360px;
+  padding-top: 60px;
+}
+
+#modal-popup .modal-dialog .modal-content .modal-body .content-popup .img-popup {
+  width: 250px;
+  height: 170px;
+  background-size: contain !important;
+  max-width: 100%;
+  background-position: center !important;
+}
+
+#modal-popup .modal-dialog .modal-content .modal-body .content-popup p {
+  color: #ffa800;
+  font-size: 18px;
+}
+
+#modal-popup .modal-dialog .modal-content .modal-body .ok-part {
+  display: none;
+}
+
+#modal-popup .modal-dialog .modal-content .modal-body .ok-part .img-popup {
+  background: url("../images/ok.png") no-repeat;
+}
+
+#modal-popup .modal-dialog .modal-content .modal-body .waiting-part {
+  display: none;
+}
+
+#modal-popup .modal-dialog .modal-content .modal-body .waiting-part .img-popup {
+  background: url("../images/waiting.png") no-repeat;
+}
+
+#modal-popup .modal-dialog .modal-content .modal-body .error-part {
+  display: none;
+}
+
+#modal-popup .modal-dialog .modal-content .modal-body .error-part .img-popup {
+  background: url("../images/error.png") no-repeat;
+}
+
 #modal-popup.pop-ok .modal-dialog .modal-content .modal-body .ok-part {
-  display: block; }
+  display: block;
+}
+
 #modal-popup.pop-wait .modal-dialog .modal-content .modal-body .waiting-part {
-  display: block; }
+  display: block;
+}
+
 #modal-popup.pop-error .modal-dialog .modal-content .modal-body .error-part {
-  display: block; }
+  display: block;
+}
 
 .head-page {
   background: #0077bb;
-  min-height: 125px; }
-  .head-page .menu-part .navbar li a {
-    border-left: 1px solid #fff;
-    padding: 5px 15px;
-    line-height: 1; }
-    .head-page .menu-part .navbar li a:before {
-      background-color: rgba(255, 255, 255, 0);
-      -webkit-border-radius: 100px;
-      -moz-border-radius: 100px;
-      border-radius: 100px;
-      content: '';
-      height: 40%;
-      opacity: 0;
-      visibility: hidden;
-      right: 30%;
-      top: 30%;
-      width: 40%;
-      -webkit-transition: .3s all;
-      -moz-transition: .3s all;
-      transition: .3s all; }
-    .head-page .menu-part .navbar li a:hover:before, .head-page .menu-part .navbar li a:focus:before {
-      background-color: rgba(0, 0, 0, 0.1);
-      -webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      border-radius: 4px;
-      opacity: 1;
-      visibility: visible;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: 100%; }
-  .head-page .menu-part .navbar li:last-child a {
-    border-left: none; }
-  .head-page .login-part .link-login {
-    padding: 5px; }
-    .head-page .login-part .link-login a {
-      font-size: 14px; }
-      .head-page .login-part .link-login a:before {
-        background-color: rgba(255, 255, 255, 0);
-        -webkit-border-radius: 100px;
-        -moz-border-radius: 100px;
-        border-radius: 100px;
-        content: '';
-        height: 40%;
-        opacity: 0;
-        visibility: hidden;
-        right: 30%;
-        top: 30%;
-        width: 40%;
-        -webkit-transition: .3s all;
-        -moz-transition: .3s all;
-        transition: .3s all; }
-      .head-page .login-part .link-login a:hover:before, .head-page .login-part .link-login a:focus:before {
-        background-color: rgba(0, 0, 0, 0.1);
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
-        opacity: 1;
-        visibility: visible;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 100%; }
-  .head-page .responsive-menu {
-    justify-content: flex-end;
-    display: none; }
-    .head-page .responsive-menu .icon-menu {
-      background: url(../images/icon.png) 38px -98px; }
-    .head-page .responsive-menu .modal-dialog .modal-header {
-      background: url("../images/mobile-header.jpg");
-      min-height: 100px;
-      background-size: cover; }
-    .head-page .responsive-menu .modal-dialog .modal-body nav ul {
-      display: block; }
-      .head-page .responsive-menu .modal-dialog .modal-body nav ul li a {
-        margin: 0;
-        border-bottom: 1px solid #eee;
-        padding: 14px 15px 18px;
-        text-align: right;
-        display: block;
-        font-size: 14px;
-        color: #444; }
+  min-height: 125px;
+}
+
+.head-page .menu-part .navbar li a {
+  border-left: 1px solid #fff;
+  padding: 5px 15px;
+  line-height: 1;
+}
+
+.head-page .menu-part .navbar li a:before {
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  content: '';
+  height: 40%;
+  opacity: 0;
+  visibility: hidden;
+  right: 30%;
+  top: 30%;
+  width: 40%;
+  -webkit-transition: .3s all;
+  -moz-transition: .3s all;
+  transition: .3s all;
+}
+
+.head-page .menu-part .navbar li a:hover:before, .head-page .menu-part .navbar li a:focus:before {
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  opacity: 1;
+  visibility: visible;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.head-page .menu-part .navbar li:last-child a {
+  border-left: none;
+}
+
+.head-page .login-part .link-login {
+  padding: 5px;
+}
+
+.head-page .login-part .link-login a {
+  font-size: 14px;
+}
+
+.head-page .login-part .link-login a:before {
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  content: '';
+  height: 40%;
+  opacity: 0;
+  visibility: hidden;
+  right: 30%;
+  top: 30%;
+  width: 40%;
+  -webkit-transition: .3s all;
+  -moz-transition: .3s all;
+  transition: .3s all;
+}
+
+.head-page .login-part .link-login a:hover:before, .head-page .login-part .link-login a:focus:before {
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  opacity: 1;
+  visibility: visible;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.head-page .responsive-menu {
+  justify-content: flex-end;
+  display: none;
+}
+
+.head-page .responsive-menu .icon-menu {
+  background: url(../images/icon.png) 38px -98px;
+}
+
+.head-page .responsive-menu .modal-dialog .modal-header {
+  background: url("../images/mobile-header.jpg");
+  min-height: 100px;
+  background-size: cover;
+}
+
+.head-page .responsive-menu .modal-dialog .modal-body nav ul {
+  display: block;
+}
+
+.head-page .responsive-menu .modal-dialog .modal-body nav ul li a {
+  margin: 0;
+  border-bottom: 1px solid #eee;
+  padding: 14px 15px 18px;
+  text-align: right;
+  display: block;
+  font-size: 14px;
+  color: #444;
+}
 
 /*******************************/
 .modal.left .modal-dialog,
@@ -498,12 +659,14 @@ h6 {
   -webkit-transform: translate3d(0%, 0, 0);
   -ms-transform: translate3d(0%, 0, 0);
   -o-transform: translate3d(0%, 0, 0);
-  transform: translate3d(0%, 0, 0); }
+  transform: translate3d(0%, 0, 0);
+}
 
 .modal.left .modal-content,
 .modal.right .modal-content {
   height: 100%;
-  overflow-y: auto; }
+  overflow-y: auto;
+}
 
 /*Left*/
 .modal.left.fade .modal-dialog {
@@ -511,10 +674,12 @@ h6 {
   -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
   -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
   -o-transition: opacity 0.3s linear, left 0.3s ease-out;
-  transition: opacity 0.3s linear, left 0.3s ease-out; }
+  transition: opacity 0.3s linear, left 0.3s ease-out;
+}
 
 .modal.left.fade.in .modal-dialog {
-  left: 0; }
+  left: 0;
+}
 
 /*Right*/
 .modal.right.fade .modal-dialog {
@@ -522,786 +687,1258 @@ h6 {
   -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
   -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
   -o-transition: opacity 0.3s linear, right 0.3s ease-out;
-  transition: opacity 0.3s linear, right 0.3s ease-out; }
+  transition: opacity 0.3s linear, right 0.3s ease-out;
+}
 
 .modal.right.fade.show .modal-dialog {
-  right: 0; }
+  right: 0;
+}
 
 /*********************menu*******************************************/
 /*********************modal-buy*******************************/
 body.modal-open .datepicker-container {
-  z-index: 1151 !important; }
+  z-index: 1151 !important;
+}
 
 .continue-buy {
   overflow-x: hidden !important;
-  overflow-y: auto !important; }
-  .continue-buy .modal-dialog {
-    max-width: 800px; }
-    .continue-buy .modal-dialog .modal-body {
-      background: #f3f3f3;
-      padding: 10px; }
-      .continue-buy .modal-dialog .modal-body .traveler-info {
-        padding: 5px 10px;
-        border: 1px solid #e1e1e1;
-        margin-bottom: 10px; }
-        .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title {
-          border-bottom: 1px solid #e1e1e1; }
-          .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title .add-passenger {
-            left: 10px;
-            top: 0;
-            font-size: 12px; }
-            .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title .add-passenger:before {
-              content: '';
-              background: url(../images/icon.png) -282px -243px; }
-        .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-body .traveler .form-group {
-          z-index: 9999999; }
-          .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-body .traveler .form-group label {
-            color: #353638;
-            font-weight: normal;
-            font-size: 12px; }
-          .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-body .traveler .form-group .form-control {
-            z-index: 9999999;
-            border-color: #e1e1e1;
-            text-align: right;
-            border-radius: 0 !important;
-            height: 35px;
-            transition: all 300ms ease;
-            font-size: 12px;
-            background: #fff; }
-          .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-body .traveler .form-group.disIn {
-            display: block !important; }
-          .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-body .traveler .form-group.disnone {
-            display: none; }
-        .continue-buy .modal-dialog .modal-body .traveler-info .modal-footer {
-          justify-content: center;
-          border-top: none; }
-          .continue-buy .modal-dialog .modal-body .traveler-info .modal-footer button {
-            margin: 5px; }
-        .continue-buy .modal-dialog .modal-body .traveler-info .form-control:focus {
-          box-shadow: 0 0 0 1px rgba(0, 123, 255, 0.25); }
-        .continue-buy .modal-dialog .modal-body .traveler-info p.txt-rule {
-          font-size: 13px; }
-        .continue-buy .modal-dialog .modal-body .traveler-info .text-error, .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details {
-          font-size: 13px; }
-          .continue-buy .modal-dialog .modal-body .traveler-info .text-error .circle-icon, .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details .circle-icon {
-            background: url(../images/icon.png) -196px -239px; }
-        .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details a {
-          background: #f8f8f8;
-          border-radius: 0;
-          border: 1px solid #ccc;
-          padding: 5px 10px;
-          font-size: 11px; }
-          .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details a:before {
-            content: '';
-            background: url(../images/icon.png) -90px -240px; }
-          .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details a:not(.collapsed):before {
-            transform: rotate(180deg);
-            background-position: -90px -240px; }
-          .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details a .collapsed:before {
-            transform: rotate(0deg); }
-        .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails {
-          padding: 5px; }
-          .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card {
-            border-top: 1px dashed #d0d0d0;
-            background: #eeeeee; }
-            .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .subject {
-              padding-top: 20px;
-              text-align: center; }
-              .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .subject h4 {
-                font-size: 13px;
-                line-height: 1; }
-              .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .subject span {
-                font-size: 11px; }
-            .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text {
-              padding-top: 15px;
-              padding-bottom: 5px;
-              margin-left: -10px; }
-              .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section .t-value {
-                float: left;
-                text-align: center;
-                width: 100%;
-                font-weight: bold;
-                font-size: 14px; }
-              .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section .week .icon-fly-de {
-                background: url(../images/icon.png) -243px -243px; }
-        .continue-buy .modal-dialog .modal-body .traveler-info .description .table {
-          margin-bottom: 0; }
-          .continue-buy .modal-dialog .modal-body .traveler-info .description .table thead {
-            background: #c9e2f3; }
-            .continue-buy .modal-dialog .modal-body .traveler-info .description .table thead tr td {
-              padding: 2px;
-              font-weight: bold; }
-          .continue-buy .modal-dialog .modal-body .traveler-info .description .table tbody tr:nth-child(odd) {
-            background: #eeeeee; }
-          .continue-buy .modal-dialog .modal-body .traveler-info .description .table td {
-            font-size: 13px;
-            padding: 3px; }
-      .continue-buy .modal-dialog .modal-body .price-table tbody tr {
-        border-bottom: 1px dashed #ddd; }
-        .continue-buy .modal-dialog .modal-body .price-table tbody tr td {
-          padding: 3px;
-          font-size: 13px;
-          border-top: none; }
-          .continue-buy .modal-dialog .modal-body .price-table tbody tr td:first-child {
-            width: 45%; }
-          .continue-buy .modal-dialog .modal-body .price-table tbody tr td:nth-child(2) {
-            width: 55%;
-            font-size: 14px; }
-        .continue-buy .modal-dialog .modal-body .price-table tbody tr:last-child {
-          border-bottom: none; }
-          .continue-buy .modal-dialog .modal-body .price-table tbody tr:last-child td {
-            font-weight: bold; }
-        .continue-buy .modal-dialog .modal-body .price-table tbody tr.b-t-solid {
-          border-top: 2px solid #ddd; }
-      .continue-buy .modal-dialog .modal-body .code-off {
-        margin-top: 15px; }
-        .continue-buy .modal-dialog .modal-body .code-off label {
-          font-size: 13px;
-          margin-bottom: 7px;
-          color: #555;
-          white-space: nowrap;
-          float: right; }
-        .continue-buy .modal-dialog .modal-body .code-off .form-group {
-          width: 200px;
-          margin-right: 10px; }
-          .continue-buy .modal-dialog .modal-body .code-off .form-group input {
-            font-size: 13px;
-            background: white;
-            border-color: #cccccc;
-            width: 125px;
-            margin-left: -7px; }
-          .continue-buy .modal-dialog .modal-body .code-off .form-group button.btn {
-            width: 70px;
-            border-radius: 5px 0px 0px 5px;
-            background: #dedede;
-            transition: all 150ms ease 0s;
-            border: 1px solid #cccccc;
-            font-size: 12px;
-            height: 33px;
-            color: #222222 !important; }
-          .continue-buy .modal-dialog .modal-body .code-off .form-group .field-validation {
-            display: inline-block;
-            margin-top: 5px;
-            font-size: 12px;
-            color: #f11100; }
-      .continue-buy .modal-dialog .modal-body .warning.blue-box p {
-        font-size: 13px;
-        position: relative;
-        margin-top: 0; }
-      .continue-buy .modal-dialog .modal-body .flat-card .warning {
-        background: #fec;
-        color: #d8730b; }
-        .continue-buy .modal-dialog .modal-body .flat-card .warning p {
-          text-align: right;
-          font-size: 13px;
-          padding: 10px 15px;
-          margin-bottom: 10px; }
-          .continue-buy .modal-dialog .modal-body .flat-card .warning p .circle-icon {
-            background: url(../images/icon.png) -196px -239px; }
+  overflow-y: auto !important;
+}
+
+.continue-buy .modal-dialog {
+  max-width: 800px;
+}
+
+.continue-buy .modal-dialog .modal-body {
+  background: #f3f3f3;
+  padding: 10px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info {
+  padding: 5px 10px;
+  border: 1px solid #e1e1e1;
+  margin-bottom: 10px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title .add-passenger {
+  left: 10px;
+  top: 0;
+  font-size: 12px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title .add-passenger:before {
+  content: '';
+  background: url(../images/icon.png) -282px -243px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-body .traveler .form-group {
+  z-index: 9999999;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-body .traveler .form-group label {
+  color: #353638;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-body .traveler .form-group .form-control {
+  z-index: 9999999;
+  border-color: #e1e1e1;
+  text-align: right;
+  border-radius: 0 !important;
+  height: 35px;
+  transition: all 300ms ease;
+  font-size: 12px;
+  background: #fff;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-body .traveler .form-group.disIn {
+  display: block !important;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-body .traveler .form-group.disnone {
+  display: none;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .modal-footer {
+  justify-content: center;
+  border-top: none;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .modal-footer button {
+  margin: 5px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .form-control:focus {
+  box-shadow: 0 0 0 1px rgba(0, 123, 255, 0.25);
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info p.txt-rule {
+  font-size: 13px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .text-error, .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details {
+  font-size: 13px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .text-error .circle-icon, .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details .circle-icon {
+  background: url(../images/icon.png) -196px -239px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details a {
+  background: #f8f8f8;
+  border-radius: 0;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  font-size: 11px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details a:before {
+  content: '';
+  background: url(../images/icon.png) -90px -240px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details a:not(.collapsed):before {
+  transform: rotate(180deg);
+  background-position: -90px -240px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details a .collapsed:before {
+  transform: rotate(0deg);
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails {
+  padding: 5px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card {
+  border-top: 1px dashed #d0d0d0;
+  background: #eeeeee;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .subject {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .subject h4 {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .subject span {
+  font-size: 11px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  margin-left: -10px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section .t-value {
+  float: left;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section .week .icon-fly-de {
+  background: url(../images/icon.png) -243px -243px;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .description .table {
+  margin-bottom: 0;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .description .table thead {
+  background: #c9e2f3;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .description .table thead tr td {
+  padding: 2px;
+  font-weight: bold;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .description .table tbody tr:nth-child(odd) {
+  background: #eeeeee;
+}
+
+.continue-buy .modal-dialog .modal-body .traveler-info .description .table td {
+  font-size: 13px;
+  padding: 3px;
+}
+
+.continue-buy .modal-dialog .modal-body .price-table tbody tr {
+  border-bottom: 1px dashed #ddd;
+}
+
+.continue-buy .modal-dialog .modal-body .price-table tbody tr td {
+  padding: 3px;
+  font-size: 13px;
+  border-top: none;
+}
+
+.continue-buy .modal-dialog .modal-body .price-table tbody tr td:first-child {
+  width: 45%;
+}
+
+.continue-buy .modal-dialog .modal-body .price-table tbody tr td:nth-child(2) {
+  width: 55%;
+  font-size: 14px;
+}
+
+.continue-buy .modal-dialog .modal-body .price-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.continue-buy .modal-dialog .modal-body .price-table tbody tr:last-child td {
+  font-weight: bold;
+}
+
+.continue-buy .modal-dialog .modal-body .price-table tbody tr.b-t-solid {
+  border-top: 2px solid #ddd;
+}
+
+.continue-buy .modal-dialog .modal-body .code-off {
+  margin-top: 15px;
+}
+
+.continue-buy .modal-dialog .modal-body .code-off label {
+  font-size: 13px;
+  margin-bottom: 7px;
+  color: #555;
+  white-space: nowrap;
+  float: right;
+}
+
+.continue-buy .modal-dialog .modal-body .code-off .form-group {
+  width: 200px;
+  margin-right: 10px;
+}
+
+.continue-buy .modal-dialog .modal-body .code-off .form-group input {
+  font-size: 13px;
+  background: white;
+  border-color: #cccccc;
+  width: 125px;
+  margin-left: -7px;
+}
+
+.continue-buy .modal-dialog .modal-body .code-off .form-group button.btn {
+  width: 70px;
+  border-radius: 5px 0px 0px 5px;
+  background: #dedede;
+  transition: all 150ms ease 0s;
+  border: 1px solid #cccccc;
+  font-size: 12px;
+  height: 33px;
+  color: #222222 !important;
+}
+
+.continue-buy .modal-dialog .modal-body .code-off .form-group .field-validation {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #f11100;
+}
+
+.continue-buy .modal-dialog .modal-body .warning.blue-box p {
+  font-size: 13px;
+  position: relative;
+  margin-top: 0;
+}
+
+.continue-buy .modal-dialog .modal-body .flat-card .warning {
+  background: #fec;
+  color: #d8730b;
+}
+
+.continue-buy .modal-dialog .modal-body .flat-card .warning p {
+  text-align: right;
+  font-size: 13px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+}
+
+.continue-buy .modal-dialog .modal-body .flat-card .warning p .circle-icon {
+  background: url(../images/icon.png) -196px -239px;
+}
 
 /*********************main*******************************/
 .main-page {
   padding-bottom: 50px;
-  background: #f0f0f2; }
-  .main-page .slide-search .search-section .box-search {
-    min-height: 400px; }
-    .main-page .slide-search .search-section .box-search ul {
-      border-radius: 20px 20px 0 0;
-      background: #ffba00;
-      border-bottom: none; }
-      .main-page .slide-search .search-section .box-search ul li.nav-item {
-        background: #ffba00;
-        border-left: 4px solid #ffa800;
-        width: 25%;
-        max-height: 102px; }
-        .main-page .slide-search .search-section .box-search ul li.nav-item a {
-          font-size: 16px;
-          padding: 10px 0; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a.active, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover {
-            border-color: transparent; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a.active#fly-in-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#fly-in-tab:before {
-            background: url("../images/icon.png") 155px -69px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a.active#fly-out-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#fly-out-tab:before {
-            background: url("../images/icon.png") -154px -75px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a.active#hotel-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#hotel-tab:before {
-            background: url("../images/icon.png") -80px -80px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a.active#tour-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#tour-tab:before {
-            background: url("../images/icon.png") -6px -80px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a:before {
-            content: '';
-            width: 60px;
-            height: 50px;
-            margin-bottom: 5px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a#fly-in-tab:before {
-            background: url("../images/icon.png") 163px -13px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a#fly-out-tab:before {
-            background: url("../images/icon.png") -154px -10px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a#hotel-tab:before {
-            background: url("../images/icon.png") -80px -10px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a#tour-tab:before {
-            background: url("../images/icon.png") -6px -10px; }
-        .main-page .slide-search .search-section .box-search ul li.nav-item:first-child {
-          border-radius: 0 20px 0 0; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item:first-child a {
-            border-radius: 0 20px 0 0; }
-        .main-page .slide-search .search-section .box-search ul li.nav-item:last-child {
-          border-radius: 20px 0 0 0;
-          border-left: none;
-          margin: 0; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item:last-child a {
-            border-radius: 20px 0 0 0; }
-    .main-page .slide-search .search-section .box-search .tab-content .tab-pane .btn-toggle {
-      border-radius: 20px;
-      width: 180px; }
-      .main-page .slide-search .search-section .box-search .tab-content .tab-pane .btn-toggle .btn {
-        padding: 3px 10px;
-        font-size: 12px; }
-        .main-page .slide-search .search-section .box-search .tab-content .tab-pane .btn-toggle .btn.active {
-          border-radius: 20px; }
-    .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .title-input {
-      right: 18px;
-      font-size: 12px;
-      bottom: 0; }
-      .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .title-input:before {
-        content: '';
-        width: 30px;
-        height: 30px;
-        top: -20px;
-        right: -6px; }
-    .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.begin-part .title-input:before, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.end-part .title-input:before {
-      background: url(../images/icon.png) 37px -8px; }
-    .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.go-part .title-input:before {
-      background: url(../images/icon.png) 37px -48px; }
-    .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.back-part .title-input {
-      color: #cbcbcb;
-      right: 15px; }
-      .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.back-part .title-input:before {
-        background: url(../images/icon.png) 77px -48px;
-        right: 2px; }
-    .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.back-part .form-control {
-      border: 1px solid #cbcbcb; }
-    .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.back-part.active .title-input:before {
-      background: url(../images/icon.png) 37px -48px; }
-    .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.back-part.active .form-control {
-      border: 1px solid #0478b8; }
-    .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.num-part .title-input:before {
-      background: url(../images/icon.png) 76px -9px; }
-    .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .form-control {
-      height: 45px;
-      border-radius: 0;
-      border: 1px solid #0478b8;
-      padding-right: 40px;
-      width: 95%;
-      margin: 7px auto; }
-      .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .form-control.submit-src {
-        border: 1px solid #fff;
-        padding-right: 0; }
-        .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .form-control.submit-src:hover {
-          background: #0328bb; }
-  .main-page .slide-search .slide-img img {
-    max-width: 100%;
-    margin: 15px 0; }
-  .main-page .information-fly .list-info-fly .details-info-fly ul li {
-    margin: 15px 35px;
-    font-size: 22px; }
-    .main-page .information-fly .list-info-fly .details-info-fly ul li p:last-child {
-      color: #ffa800;
-      font-size: 18px; }
-    .main-page .information-fly .list-info-fly .details-info-fly ul li:first-child span {
-      font-size: 24px; }
-  .main-page .special-tour, .main-page .special-fly, .main-page .special-hotel {
-    min-height: 300px; }
-    .main-page .special-tour .title-section, .main-page .special-fly .title-section, .main-page .special-hotel .title-section {
-      border-radius: 0 20px 20px 0;
-      width: 85px;
-      padding: 10px 15px; }
-      .main-page .special-tour .title-section h2, .main-page .special-fly .title-section h2, .main-page .special-hotel .title-section h2 {
-        transform: rotate(-270deg);
-        width: 174px;
-        display: block;
-        top: 58%;
-        right: -44px;
-        height: 40px; }
-    .main-page .special-tour .content-special, .main-page .special-fly .content-special, .main-page .special-hotel .content-special {
-      width: 92.5%;
-      padding: 30px 10px;
-      border-radius: 20px 0 0 20px; }
-      .main-page .special-tour .content-special .list-item-spe .slick-arrow, .main-page .special-fly .content-special .list-item-spe .slick-arrow, .main-page .special-hotel .content-special .list-item-spe .slick-arrow {
-        width: 60px;
-        height: 65px; }
-      .main-page .special-tour .content-special .list-item-spe .slick-prev, .main-page .special-fly .content-special .list-item-spe .slick-prev, .main-page .special-hotel .content-special .list-item-spe .slick-prev {
-        background: url(../images/icon.png) -6px -153px;
-        left: -56px; }
-      .main-page .special-tour .content-special .list-item-spe .slick-next, .main-page .special-fly .content-special .list-item-spe .slick-next, .main-page .special-hotel .content-special .list-item-spe .slick-next {
-        background: url(../images/icon.png) -76px -153px;
-        right: -56px; }
-      .main-page .special-tour .content-special .item-special, .main-page .special-fly .content-special .item-special, .main-page .special-hotel .content-special .item-special {
-        width: 350px; }
-        .main-page .special-tour .content-special .item-special a.over-pic, .main-page .special-fly .content-special .item-special a.over-pic, .main-page .special-hotel .content-special .item-special a.over-pic {
-          overflow: hidden; }
-          .main-page .special-tour .content-special .item-special a.over-pic img, .main-page .special-fly .content-special .item-special a.over-pic img, .main-page .special-hotel .content-special .item-special a.over-pic img {
-            -webkit-transition: all .25s linear;
-            transition: all .25s linear; }
-        .main-page .special-tour .content-special .item-special:hover a.over-pic img, .main-page .special-fly .content-special .item-special:hover a.over-pic img, .main-page .special-hotel .content-special .item-special:hover a.over-pic img {
-          -webkit-transform: scale3d(1.2, 1.2, 1);
-          transform: scale3d(1.2, 1.2, 1); }
-        .main-page .special-tour .content-special .item-special a.more-info, .main-page .special-fly .content-special .item-special a.more-info, .main-page .special-hotel .content-special .item-special a.more-info {
-          background: #ffa800;
-          padding: 3px 30px;
-          font-size: 13px;
-          line-height: 1.5; }
-        .main-page .special-tour .content-special .item-special h3, .main-page .special-fly .content-special .item-special h3, .main-page .special-hotel .content-special .item-special h3 {
-          font-size: 16px; }
-        .main-page .special-tour .content-special .item-special p, .main-page .special-fly .content-special .item-special p, .main-page .special-hotel .content-special .item-special p {
-          font-size: 22px; }
+  background: #f0f0f2;
+}
+
+.main-page .slide-search .search-section .box-search {
+  min-height: 400px;
+}
+
+.main-page .slide-search .search-section .box-search ul {
+  border-radius: 20px 20px 0 0;
+  background: #ffba00;
+  border-bottom: none;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item {
+  background: #ffba00;
+  border-left: 4px solid #ffa800;
+  width: 25%;
+  max-height: 102px;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item a {
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item a.active, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover {
+  border-color: transparent;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item a.active#fly-in-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#fly-in-tab:before {
+  background: url("../images/icon.png") 155px -69px;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item a.active#fly-out-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#fly-out-tab:before {
+  background: url("../images/icon.png") -154px -75px;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item a.active#hotel-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#hotel-tab:before {
+  background: url("../images/icon.png") -80px -80px;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item a.active#tour-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#tour-tab:before {
+  background: url("../images/icon.png") -6px -80px;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item a:before {
+  content: '';
+  width: 60px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item a#fly-in-tab:before {
+  background: url("../images/icon.png") 163px -13px;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item a#fly-out-tab:before {
+  background: url("../images/icon.png") -154px -10px;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item a#hotel-tab:before {
+  background: url("../images/icon.png") -80px -10px;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item a#tour-tab:before {
+  background: url("../images/icon.png") -6px -10px;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item:first-child {
+  border-radius: 0 20px 0 0;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item:first-child a {
+  border-radius: 0 20px 0 0;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item:last-child {
+  border-radius: 20px 0 0 0;
+  border-left: none;
+  margin: 0;
+}
+
+.main-page .slide-search .search-section .box-search ul li.nav-item:last-child a {
+  border-radius: 20px 0 0 0;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .btn-toggle {
+  border-radius: 20px;
+  width: 180px;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .btn-toggle .btn {
+  padding: 3px 10px;
+  font-size: 12px;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .btn-toggle .btn.active {
+  border-radius: 20px;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .title-input {
+  right: 18px;
+  font-size: 12px;
+  bottom: 0;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .title-input:before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  top: -20px;
+  right: -6px;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.begin-part .title-input:before, .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.end-part .title-input:before {
+  background: url(../images/icon.png) 37px -8px;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.go-part .title-input:before {
+  background: url(../images/icon.png) 37px -48px;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.back-part .title-input {
+  color: #cbcbcb;
+  right: 15px;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.back-part .title-input:before {
+  background: url(../images/icon.png) 77px -48px;
+  right: 2px;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.back-part .form-control {
+  border: 1px solid #cbcbcb;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.back-part.active .title-input:before {
+  background: url(../images/icon.png) 37px -48px;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.back-part.active .form-control {
+  border: 1px solid #0478b8;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group.num-part .title-input:before {
+  background: url(../images/icon.png) 76px -9px;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .form-control {
+  height: 45px;
+  border-radius: 0;
+  border: 1px solid #0478b8;
+  padding-right: 40px;
+  width: 95%;
+  margin: 7px auto;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .form-control.submit-src {
+  border: 1px solid #fff;
+  padding-right: 0;
+}
+
+.main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .form-control.submit-src:hover {
+  background: #0328bb;
+}
+
+.main-page .slide-search .slide-img img {
+  max-width: 100%;
+  margin: 15px 0;
+}
+
+.main-page .information-fly .list-info-fly .details-info-fly ul li {
+  margin: 15px 35px;
+  font-size: 22px;
+}
+
+.main-page .information-fly .list-info-fly .details-info-fly ul li p:last-child {
+  color: #ffa800;
+  font-size: 18px;
+}
+
+.main-page .information-fly .list-info-fly .details-info-fly ul li:first-child span {
+  font-size: 24px;
+}
+
+.main-page .special-tour, .main-page .special-fly, .main-page .special-hotel {
+  min-height: 300px;
+}
+
+.main-page .special-tour .title-section, .main-page .special-fly .title-section, .main-page .special-hotel .title-section {
+  border-radius: 0 20px 20px 0;
+  width: 85px;
+  padding: 10px 15px;
+}
+
+.main-page .special-tour .title-section h2, .main-page .special-fly .title-section h2, .main-page .special-hotel .title-section h2 {
+  transform: rotate(-270deg);
+  width: 174px;
+  display: block;
+  top: 58%;
+  right: -44px;
+  height: 40px;
+}
+
+.main-page .special-tour .content-special, .main-page .special-fly .content-special, .main-page .special-hotel .content-special {
+  width: 92.5%;
+  padding: 30px 10px;
+  border-radius: 20px 0 0 20px;
+}
+
+.main-page .special-tour .content-special .list-item-spe .slick-arrow, .main-page .special-fly .content-special .list-item-spe .slick-arrow, .main-page .special-hotel .content-special .list-item-spe .slick-arrow {
+  width: 60px;
+  height: 65px;
+}
+
+.main-page .special-tour .content-special .list-item-spe .slick-prev, .main-page .special-fly .content-special .list-item-spe .slick-prev, .main-page .special-hotel .content-special .list-item-spe .slick-prev {
+  background: url(../images/icon.png) -6px -153px;
+  left: -56px;
+}
+
+.main-page .special-tour .content-special .list-item-spe .slick-next, .main-page .special-fly .content-special .list-item-spe .slick-next, .main-page .special-hotel .content-special .list-item-spe .slick-next {
+  background: url(../images/icon.png) -76px -153px;
+  right: -56px;
+}
+
+.main-page .special-tour .content-special .item-special, .main-page .special-fly .content-special .item-special, .main-page .special-hotel .content-special .item-special {
+  width: 350px;
+}
+
+.main-page .special-tour .content-special .item-special a.over-pic, .main-page .special-fly .content-special .item-special a.over-pic, .main-page .special-hotel .content-special .item-special a.over-pic {
+  overflow: hidden;
+}
+
+.main-page .special-tour .content-special .item-special a.over-pic img, .main-page .special-fly .content-special .item-special a.over-pic img, .main-page .special-hotel .content-special .item-special a.over-pic img {
+  -webkit-transition: all .25s linear;
+  transition: all .25s linear;
+}
+
+.main-page .special-tour .content-special .item-special:hover a.over-pic img, .main-page .special-fly .content-special .item-special:hover a.over-pic img, .main-page .special-hotel .content-special .item-special:hover a.over-pic img {
+  -webkit-transform: scale3d(1.2, 1.2, 1);
+  transform: scale3d(1.2, 1.2, 1);
+}
+
+.main-page .special-tour .content-special .item-special a.more-info, .main-page .special-fly .content-special .item-special a.more-info, .main-page .special-hotel .content-special .item-special a.more-info {
+  background: #ffa800;
+  padding: 3px 30px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.main-page .special-tour .content-special .item-special h3, .main-page .special-fly .content-special .item-special h3, .main-page .special-hotel .content-special .item-special h3 {
+  font-size: 16px;
+}
+
+.main-page .special-tour .content-special .item-special p, .main-page .special-fly .content-special .item-special p, .main-page .special-hotel .content-special .item-special p {
+  font-size: 22px;
+}
 
 .datepicker-plot-area .datepicker-navigator .pwt-btn-next, .datepicker-plot-area .datepicker-navigator .pwt-btn-switch, .datepicker-plot-area .datepicker-navigator .pwt-btn-prev, .datepicker-plot-area .datepicker-navigator .pwt-btn-next {
-  direction: ltr; }
+  direction: ltr;
+}
 
 .datepicker-plot-area {
   width: 280px;
   max-width: 100%;
   min-width: 230px;
   direction: rtl;
-  right: -230px; }
-  .datepicker-plot-area .toolbox .pwt-btn-calendar {
-    background: #0077bb;
-    background-color: #0077bb !important;
-    color: #fff;
-    border-radius: 5px; }
+  right: -230px;
+}
+
+.datepicker-plot-area .toolbox .pwt-btn-calendar {
+  background: #0077bb;
+  background-color: #0077bb !important;
+  color: #fff;
+  border-radius: 5px;
+}
 
 /*********************footer*******************************************/
 .footer-page {
   background: #ffa800;
   border-top: 8px solid #0077bb;
-  border-bottom: 8px solid #0077bb; }
-  .footer-page .content-footer {
-    padding-top: 30px; }
-    .footer-page .content-footer .address-info li:nth-child(2), .footer-page .content-footer .address-info li:nth-child(3) {
-      font-size: 30px; }
-    .footer-page .content-footer .list-namd .top-part ul li {
-      margin: 5px; }
-    .footer-page .content-footer .list-namd .bottom-part .box-copyright {
-      width: 50%;
-      min-height: 60px; }
-      .footer-page .content-footer .list-namd .bottom-part .box-copyright p {
-        padding-top: 5px; }
+  border-bottom: 8px solid #0077bb;
+}
+
+.footer-page .content-footer {
+  padding-top: 30px;
+}
+
+.footer-page .content-footer .address-info li:nth-child(2), .footer-page .content-footer .address-info li:nth-child(3) {
+  font-size: 30px;
+}
+
+.footer-page .content-footer .list-namd .top-part ul li {
+  margin: 5px;
+}
+
+.footer-page .content-footer .list-namd .bottom-part .box-copyright {
+  width: 50%;
+  min-height: 60px;
+}
+
+.footer-page .content-footer .list-namd .bottom-part .box-copyright p {
+  padding-top: 5px;
+}
 
 /*********************archive*******************************************/
 /*********************search-page*******************************/
 .search-head {
   align-items: center;
-  justify-content: center; }
-  .search-head .btn-toggle {
-    border-radius: 20px;
-    max-width: 170px;
-    height: 30px; }
-    .search-head .btn-toggle .btn {
-      padding: 3px 10px;
-      font-size: 12px; }
-      .search-head .btn-toggle .btn.active {
-        border-radius: 20px; }
-  .search-head .form-search form .form-row .form-group .title-input {
-    right: 18px;
-    font-size: 12px;
-    bottom: 0; }
-    .search-head .form-search form .form-row .form-group .title-input:before {
-      content: '';
-      width: 30px;
-      height: 30px;
-      top: -20px;
-      right: -6px; }
-  .search-head .form-search form .form-row .form-group.begin-part .title-input:before, .search-head .form-search form .form-row .form-group.end-part .title-input:before {
-    background: url(../images/icon.png) 37px -8px; }
-  .search-head .form-search form .form-row .form-group.go-part .title-input:before {
-    background: url(../images/icon.png) 37px -48px; }
-  .search-head .form-search form .form-row .form-group.back-part .title-input {
-    color: #cbcbcb;
-    right: 15px; }
-    .search-head .form-search form .form-row .form-group.back-part .title-input:before {
-      background: url(../images/icon.png) 77px -48px;
-      right: 2px; }
-  .search-head .form-search form .form-row .form-group.back-part .form-control {
-    border: 1px solid #cbcbcb; }
-  .search-head .form-search form .form-row .form-group.back-part.active .title-input:before {
-    background: url(../images/icon.png) 37px -48px; }
-  .search-head .form-search form .form-row .form-group.back-part.active .form-control {
-    border: 1px solid #0478b8; }
-  .search-head .form-search form .form-row .form-group.num-part .title-input:before {
-    background: url(../images/icon.png) 76px -9px; }
-  .search-head .form-search form .form-row .form-group .form-control {
-    height: 45px;
-    border-radius: 0;
-    border: 1px solid #0478b8;
-    padding-right: 40px;
-    width: 95%;
-    margin: 7px auto; }
-    .search-head .form-search form .form-row .form-group .form-control.submit-src {
-      border: 1px solid #fff;
-      padding-right: 0; }
-      .search-head .form-search form .form-row .form-group .form-control.submit-src:hover {
-        background: #0328bb; }
+  justify-content: center;
+}
+
+.search-head .btn-toggle {
+  border-radius: 20px;
+  max-width: 170px;
+  height: 30px;
+}
+
+.search-head .btn-toggle .btn {
+  padding: 3px 10px;
+  font-size: 12px;
+}
+
+.search-head .btn-toggle .btn.active {
+  border-radius: 20px;
+}
+
+.search-head .form-search form .form-row .form-group .title-input {
+  right: 18px;
+  font-size: 12px;
+  bottom: 0;
+}
+
+.search-head .form-search form .form-row .form-group .title-input:before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  top: -20px;
+  right: -6px;
+}
+
+.search-head .form-search form .form-row .form-group.begin-part .title-input:before, .search-head .form-search form .form-row .form-group.end-part .title-input:before {
+  background: url(../images/icon.png) 37px -8px;
+}
+
+.search-head .form-search form .form-row .form-group.go-part .title-input:before {
+  background: url(../images/icon.png) 37px -48px;
+}
+
+.search-head .form-search form .form-row .form-group.back-part .title-input {
+  color: #cbcbcb;
+  right: 15px;
+}
+
+.search-head .form-search form .form-row .form-group.back-part .title-input:before {
+  background: url(../images/icon.png) 77px -48px;
+  right: 2px;
+}
+
+.search-head .form-search form .form-row .form-group.back-part .form-control {
+  border: 1px solid #cbcbcb;
+}
+
+.search-head .form-search form .form-row .form-group.back-part.active .title-input:before {
+  background: url(../images/icon.png) 37px -48px;
+}
+
+.search-head .form-search form .form-row .form-group.back-part.active .form-control {
+  border: 1px solid #0478b8;
+}
+
+.search-head .form-search form .form-row .form-group.num-part .title-input:before {
+  background: url(../images/icon.png) 76px -9px;
+}
+
+.search-head .form-search form .form-row .form-group .form-control {
+  height: 45px;
+  border-radius: 0;
+  border: 1px solid #0478b8;
+  padding-right: 40px;
+  width: 95%;
+  margin: 7px auto;
+}
+
+.search-head .form-search form .form-row .form-group .form-control.submit-src {
+  border: 1px solid #fff;
+  padding-right: 0;
+}
+
+.search-head .form-search form .form-row .form-group .form-control.submit-src:hover {
+  background: #0328bb;
+}
 
 .responsive-side-src {
-  display: none; }
-  .responsive-side-src ul.mnu-src-filter li {
-    margin: 5px 0;
-    width: 49%; }
-    .responsive-side-src ul.mnu-src-filter li a:before {
-      margin-left: 6px; }
-    .responsive-side-src ul.mnu-src-filter li:first-child {
-      border-left: 1px solid #cccccc; }
-    .responsive-side-src ul.mnu-src-filter li.chane-src a:before {
-      content: '';
-      background: url(../images/icon.png) -160px -244px; }
-    .responsive-side-src ul.mnu-src-filter li.filter-side a:before {
-      content: '';
-      background: url(../images/icon.png) -123px -242px; }
-  .responsive-side-src .modal-content .modal-header {
-    padding: 5px; }
-    .responsive-side-src .modal-content .modal-header .close {
-      top: 15px;
-      right: 15px; }
-  .responsive-side-src .modal-content .modal-body .search-head {
-    text-align: center !important; }
-  .responsive-side-src .modal-content .modal-body .form-search .form-row .form-group {
-    width: 96%; }
+  display: none;
+}
+
+.responsive-side-src ul.mnu-src-filter li {
+  margin: 5px 0;
+  width: 49%;
+}
+
+.responsive-side-src ul.mnu-src-filter li a:before {
+  margin-left: 6px;
+}
+
+.responsive-side-src ul.mnu-src-filter li:first-child {
+  border-left: 1px solid #cccccc;
+}
+
+.responsive-side-src ul.mnu-src-filter li.chane-src a:before {
+  content: '';
+  background: url(../images/icon.png) -160px -244px;
+}
+
+.responsive-side-src ul.mnu-src-filter li.filter-side a:before {
+  content: '';
+  background: url(../images/icon.png) -123px -242px;
+}
+
+.responsive-side-src .modal-content .modal-header {
+  padding: 5px;
+}
+
+.responsive-side-src .modal-content .modal-header .close {
+  top: 15px;
+  right: 15px;
+}
+
+.responsive-side-src .modal-content .modal-body .search-head {
+  text-align: center !important;
+}
+
+.responsive-side-src .modal-content .modal-body .form-search .form-row .form-group {
+  width: 96%;
+}
 
 .side-right .widget {
-  margin-bottom: 25px; }
-  .side-right .widget .title-widget {
-    font-size: 13px;
-    padding: 0 15px; }
+  margin-bottom: 25px;
+}
+
+.side-right .widget .title-widget {
+  font-size: 13px;
+  padding: 0 15px;
+}
+
 .side-right .div-arrange p {
-  padding: 5px 10px; }
+  padding: 5px 10px;
+}
+
 .side-right .div-arrange .num-arrange {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   left: 10px;
-  top: 5px; }
+  top: 5px;
+}
+
 .side-right .list-class-fly ul.list-check li .lableSorc {
-  width: 100%; }
-  .side-right .list-class-fly ul.list-check li .lableSorc span:first-child, .side-right .list-class-fly ul.list-check li .lableSorc span:nth-child(2) {
-    width: 45%; }
-  .side-right .list-class-fly ul.list-check li .lableSorc span:nth-child(2) {
-    padding-left: 10px; }
+  width: 100%;
+}
+
+.side-right .list-class-fly ul.list-check li .lableSorc span:first-child, .side-right .list-class-fly ul.list-check li .lableSorc span:nth-child(2) {
+  width: 45%;
+}
+
+.side-right .list-class-fly ul.list-check li .lableSorc span:nth-child(2) {
+  padding-left: 10px;
+}
+
 .side-right ul.list-check {
   padding-top: 10px;
   /* Hide the browser's default checkbox */
   /* Create a custom checkbox */
   /* Create the checkmark/indicator (hidden when not checked) */
   /* Show the checkmark when checked */
-  /* Style the checkmark/indicator */ }
-  .side-right ul.list-check .lableSorc {
-    padding-right: 40px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-    .side-right ul.list-check .lableSorc span {
-      font-size: 16px;
-      margin: 0 5px; }
-      .side-right ul.list-check .lableSorc span.icon-fly-check, .side-right ul.list-check .lableSorc span:first-child {
-        min-width: 70px;
-        vertical-align: top; }
-      .side-right ul.list-check .lableSorc span.fa-num, .side-right ul.list-check .lableSorc .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title span, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title .side-right ul.list-check .lableSorc span, .side-right ul.list-check .lableSorc .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section span.t-value, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section .side-right ul.list-check .lableSorc span.t-value, .side-right ul.list-check .lableSorc .div-arrange span.num-arrange, .side-right .div-arrange ul.list-check .lableSorc span.num-arrange, .side-right ul.list-check .lableSorc .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket span:first-child, .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket .side-right ul.list-check .lableSorc span:first-child, .side-right .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul.list-check .lableSorc li span:last-child, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse .side-right ul.list-check .lableSorc li span:last-child, .side-right .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul.list-check li .lableSorc span:last-child, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse .side-right ul.list-check li .lableSorc span:last-child {
-        width: 75px; }
-  .side-right ul.list-check .lableSorc input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0; }
-  .side-right ul.list-check .checkmark {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    height: 20px;
-    width: 20px;
-    background-color: #fff;
-    border: 2px solid #0077bb; }
-  .side-right ul.list-check .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none; }
-  .side-right ul.list-check .lableSorc input:checked ~ .checkmark:after {
-    display: block; }
-  .side-right ul.list-check .lableSorc .checkmark:after {
-    left: 8px;
-    top: 2px;
-    width: 5px;
-    height: 10px;
-    border: solid #72bef2;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg); }
+  /* Style the checkmark/indicator */
+}
+
+.side-right ul.list-check .lableSorc {
+  padding-right: 40px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.side-right ul.list-check .lableSorc span {
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+.side-right ul.list-check .lableSorc span.icon-fly-check, .side-right ul.list-check .lableSorc span:first-child {
+  min-width: 70px;
+  vertical-align: top;
+}
+
+.side-right ul.list-check .lableSorc span.fa-num, .side-right ul.list-check .lableSorc .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title span, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title .side-right ul.list-check .lableSorc span, .side-right ul.list-check .lableSorc .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section span.t-value, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section .side-right ul.list-check .lableSorc span.t-value, .side-right ul.list-check .lableSorc .div-arrange span.num-arrange, .side-right .div-arrange ul.list-check .lableSorc span.num-arrange, .side-right ul.list-check .lableSorc .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket span:first-child, .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket .side-right ul.list-check .lableSorc span:first-child, .side-right .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul.list-check .lableSorc li span:last-child, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse .side-right ul.list-check .lableSorc li span:last-child, .side-right .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul.list-check li .lableSorc span:last-child, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse .side-right ul.list-check li .lableSorc span:last-child {
+  width: 75px;
+}
+
+.side-right ul.list-check .lableSorc input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.side-right ul.list-check .checkmark {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 2px solid #0077bb;
+}
+
+.side-right ul.list-check .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.side-right ul.list-check .lableSorc input:checked~.checkmark:after {
+  display: block;
+}
+
+.side-right ul.list-check .lableSorc .checkmark:after {
+  left: 8px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #72bef2;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 .side-right .content-widget {
-  margin-top: 3px; }
+  margin-top: 3px;
+}
 
 .content-search {
-  padding-top: 30px; }
-  .content-search .content-list-src .item-list-src {
-    margin-bottom: 15px;
-    border: 1px solid #d0d1d2; }
-    .content-search .content-list-src .item-list-src .above-div {
-      min-height: 105px; }
-      .content-search .content-list-src .item-list-src .above-div .part-left-above p:first-child {
-        font-size: 13px;
-        padding-top: 10px;
-        line-height: 1.5; }
-      .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket span {
-        font-weight: bolder; }
-        .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket span:first-child {
-          font-size: 20px; }
-        .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket span:last-child {
-          font-size: 14px; }
-      .content-search .content-list-src .item-list-src .above-div .part-right-above {
-        border-left: 2px dashed #dee0e4;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        align-items: center; }
-        .content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly {
-          width: 45px; }
-          .content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly p {
-            transform: rotate(270deg);
-            display: block;
-            right: -17px;
-            bottom: -16px;
-            padding: 5px 15px;
-            line-height: 1;
-            border-radius: 5px 5px 0 0;
-            font-size: 13px; }
-            .content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly p.charter {
-              color: #0077bb;
-              border: 1px solid #0077bb;
-              border-bottom: 0; }
-            .content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly p.title-system {
-              right: -25px;
-              border: 1px solid #777777;
-              border-bottom: 0;
-              font-size: 12px; }
-        .content-search .content-list-src .item-list-src .above-div .part-right-above .icon-fly {
-          width: 27%;
-          padding: 0 30px; }
-          .content-search .content-list-src .item-list-src .above-div .part-right-above .icon-fly p {
-            font-size: 12px;
-            line-height: 1; }
-          .content-search .content-list-src .item-list-src .above-div .part-right-above .icon-fly .co-icon-fly {
-            width: 60px; }
-        .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end {
-          width: 62%; }
-          .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li {
-            margin: 0 5px; }
-            .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li p:first-child {
-              font-size: 20px;
-              color: #000; }
-            .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li p:last-child {
-              font-size: 16px;
-              color: #777777; }
-            .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li.line-between {
-              width: 50%;
-              height: 3px;
-              background: #dadce0; }
-              .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li.line-between:after {
-                content: '';
-                border-top: 5px solid transparent;
-                border-left: 5px solid transparent;
-                border-right: 5px solid #dadce0;
-                border-bottom: 5px solid #dadce0;
-                left: 0;
-                bottom: 3px; }
-    .content-search .content-list-src .item-list-src .footer-co-src {
-      border-top: 1px solid #d0d1d2;
-      min-height: 40px; }
-      .content-search .content-list-src .item-list-src .footer-co-src .number-fly {
-        border-left: 2px dashed #dee0e4; }
-      .content-search .content-list-src .item-list-src .footer-co-src .details-fly a:after {
-        content: '';
-        background: url(../images/icon.png) -95px -238px; }
-      .content-search .content-list-src .item-list-src .footer-co-src .details-fly a:not(.collapsed):after {
-        transform: rotate(180deg);
-        background-position: -88px -242px; }
-      .content-search .content-list-src .item-list-src .footer-co-src .details-fly a .collapsed:after {
-        transform: rotate(0deg); }
-    .content-search .content-list-src .item-list-src .collapse .card {
-      border: none;
-      border-top: 2px dashed #dee0e4;
-      padding: 0;
-      display: -ms-flexbox;
-      flex-direction: row;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      align-items: center; }
-      .content-search .content-list-src .item-list-src .collapse .card .part-right-collapse {
-        border-left: 2px dashed #dee0e4; }
-        .content-search .content-list-src .item-list-src .collapse .card .part-right-collapse .num-person {
-          padding: 15px 0 5px;
-          font-size: 13px; }
-        .content-search .content-list-src .item-list-src .collapse .card .part-right-collapse .condition-cancle {
-          padding-bottom: 15px; }
-          .content-search .content-list-src .item-list-src .collapse .card .part-right-collapse .condition-cancle h4 {
-            font-size: 16px; }
-          .content-search .content-list-src .item-list-src .collapse .card .part-right-collapse .condition-cancle p {
-            line-height: 1.7;
-            font-size: 13px; }
-      .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul li span:last-child {
-        font-size: 16px; }
-      .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul li:last-child {
-        color: #00bc41; }
-  .content-search .content-list-src .part-advertis img {
-    max-width: 100%; }
-  .content-search .side-left a img {
-    max-width: 100%; }
+  padding-top: 30px;
+}
+
+.content-search .content-list-src .item-list-src {
+  margin-bottom: 15px;
+  border: 1px solid #d0d1d2;
+}
+
+.content-search .content-list-src .item-list-src .above-div {
+  min-height: 105px;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-left-above p:first-child {
+  font-size: 13px;
+  padding-top: 10px;
+  line-height: 1.5;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket span {
+  font-weight: bolder;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket span:first-child {
+  font-size: 20px;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket span:last-child {
+  font-size: 14px;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-right-above {
+  border-left: 2px dashed #dee0e4;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly {
+  width: 45px;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly p {
+  transform: rotate(270deg);
+  display: block;
+  right: -17px;
+  bottom: -16px;
+  padding: 5px 15px;
+  line-height: 1;
+  border-radius: 5px 5px 0 0;
+  font-size: 13px;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly p.charter {
+  color: #0077bb;
+  border: 1px solid #0077bb;
+  border-bottom: 0;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly p.title-system {
+  right: -25px;
+  border: 1px solid #777777;
+  border-bottom: 0;
+  font-size: 12px;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-right-above .icon-fly {
+  width: 27%;
+  padding: 0 30px;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-right-above .icon-fly p {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-right-above .icon-fly .co-icon-fly {
+  width: 60px;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end {
+  width: 62%;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li {
+  margin: 0 5px;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li p:first-child {
+  font-size: 20px;
+  color: #000;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li p:last-child {
+  font-size: 16px;
+  color: #777777;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li.line-between {
+  width: 50%;
+  height: 3px;
+  background: #dadce0;
+}
+
+.content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li.line-between:after {
+  content: '';
+  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid #dadce0;
+  border-bottom: 5px solid #dadce0;
+  left: 0;
+  bottom: 3px;
+}
+
+.content-search .content-list-src .item-list-src .footer-co-src {
+  border-top: 1px solid #d0d1d2;
+  min-height: 40px;
+}
+
+.content-search .content-list-src .item-list-src .footer-co-src .number-fly {
+  border-left: 2px dashed #dee0e4;
+}
+
+.content-search .content-list-src .item-list-src .footer-co-src .details-fly a:after {
+  content: '';
+  background: url(../images/icon.png) -95px -238px;
+}
+
+.content-search .content-list-src .item-list-src .footer-co-src .details-fly a:not(.collapsed):after {
+  transform: rotate(180deg);
+  background-position: -88px -242px;
+}
+
+.content-search .content-list-src .item-list-src .footer-co-src .details-fly a .collapsed:after {
+  transform: rotate(0deg);
+}
+
+.content-search .content-list-src .item-list-src .collapse .card {
+  border: none;
+  border-top: 2px dashed #dee0e4;
+  padding: 0;
+  display: -ms-flexbox;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.content-search .content-list-src .item-list-src .collapse .card .part-right-collapse {
+  border-left: 2px dashed #dee0e4;
+}
+
+.content-search .content-list-src .item-list-src .collapse .card .part-right-collapse .num-person {
+  padding: 15px 0 5px;
+  font-size: 13px;
+}
+
+.content-search .content-list-src .item-list-src .collapse .card .part-right-collapse .condition-cancle {
+  padding-bottom: 15px;
+}
+
+.content-search .content-list-src .item-list-src .collapse .card .part-right-collapse .condition-cancle h4 {
+  font-size: 16px;
+}
+
+.content-search .content-list-src .item-list-src .collapse .card .part-right-collapse .condition-cancle p {
+  line-height: 1.7;
+  font-size: 13px;
+}
+
+.content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul li span:last-child {
+  font-size: 16px;
+}
+
+.content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul li:last-child {
+  color: #00bc41;
+}
+
+.content-search .content-list-src .part-advertis img {
+  max-width: 100%;
+}
+
+.content-search .side-left a img {
+  max-width: 100%;
+}
 
 /*********************responsive*******************************************/
 /*********************responsive*******************************************/
 @media only screen and (min-width: 1400px) {
   .container-fluid {
-    max-width: 1600px; } }
-@media only screen and (max-width: 1250px) {
+    max-width: 1600px;
+  }
+}
 
+@media only screen and (min-width: 1000px) {
+  .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li.line-between {
+    width: 8%;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
   .head-page .menu-part .navbar li a {
-    font-size: 13px; }
+    font-size: 13px;
+  }
 
   .main-page .slide-search .search-section .box-search ul li.nav-item a {
-    font-size: 14px; }
+    font-size: 14px;
+  }
+
   .main-page .information-fly .list-info-fly .details-info-fly ul li {
     font-size: 18px;
-    margin: 15px 20px; }
-    .main-page .information-fly .list-info-fly .details-info-fly ul li p:last-child {
-      font-size: 14px; }
+    margin: 15px 20px;
+  }
+
+  .main-page .information-fly .list-info-fly .details-info-fly ul li p:last-child {
+    font-size: 14px;
+  }
+
   .main-page .special-tour .content-special, .main-page .special-fly .content-special, .main-page .special-hotel .content-special {
-    width: 90%; } }
+    width: 90%;
+  }
+}
+
 @media only screen and (min-width: 1200px) {
   .content-search .content-list-src {
-    min-width: 725px; }
+    min-width: 725px;
+  }
+
   .content-search .side-left {
-    max-width: 165px; } }
+    max-width: 165px;
+  }
+}
+
 @media only screen and (min-width: 1300px) {
   .content-search .content-list-src {
-    min-width: 795px !important; }
+    min-width: 795px !important;
+  }
+
   .content-search .side-left {
-    max-width: 165px; } }
+    max-width: 165px;
+  }
+}
+
 @media only screen and (min-width: 1350px) {
   .content-search .content-list-src {
-    min-width: 830px !important; }
-  .content-search .side-left {
-    max-width: 165px; } }
-@media only screen and (max-width: 990px) {
+    min-width: 830px !important;
+  }
 
-  .item-list-src{
-    width:90%;
+  .content-search .side-left {
+    max-width: 165px;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .item-list-src {
+    width: 90%;
     left: 5%;
   }
 
-
   .head-page .menu-part {
-    display: none; }
+    display: none;
+  }
+
   .head-page .responsive-menu {
-    display: inline-flex; }
-  .head-page .content-head > div {
-    padding: 0; }
-    .head-page .content-head > div:first-child, .head-page .content-head > div:nth-child(2), .head-page .content-head > div:nth-child(3) {
-      -ms-flex: 0 0 42%;
-      flex: 0 0 42%;
-      max-width: 42%; }
-    .head-page .content-head > div.menu-part {
-      padding: 10px 20px; }
-    .head-page .content-head > div.responsive-menu {
-      -ms-flex: 0 0 15%;
-      flex: 0 0 15%;
-      max-width: 15%; }
+    display: inline-flex;
+  }
+
+  .head-page .content-head>div {
+    padding: 0;
+  }
+
+  .head-page .content-head>div:first-child, .head-page .content-head>div:nth-child(2), .head-page .content-head>div:nth-child(3) {
+    -ms-flex: 0 0 42%;
+    flex: 0 0 42%;
+    max-width: 42%;
+  }
+
+  .head-page .content-head>div.menu-part {
+    padding: 10px 20px;
+  }
+
+  .head-page .content-head>div.responsive-menu {
+    -ms-flex: 0 0 15%;
+    flex: 0 0 15%;
+    max-width: 15%;
+  }
 
   .main-page .slide-search {
-    width: 100%; }
+    width: 100%;
+  }
+
   .main-page .information-fly .list-info-fly .details-info-fly {
-    padding-right: 20px; }
-    .main-page .information-fly .list-info-fly .details-info-fly ul li {
-      margin: 5px 10px; }
-      .main-page .information-fly .list-info-fly .details-info-fly ul li:first-child {
-        display: block;
-        text-align: right; }
-        .main-page .information-fly .list-info-fly .details-info-fly ul li:first-child span {
-          font-size: 20px; }
+    padding-right: 20px;
+  }
+
+  .main-page .information-fly .list-info-fly .details-info-fly ul li {
+    margin: 5px 10px;
+  }
+
+  .main-page .information-fly .list-info-fly .details-info-fly ul li:first-child {
+    display: block;
+    text-align: right;
+  }
+
+  .main-page .information-fly .list-info-fly .details-info-fly ul li:first-child span {
+    font-size: 20px;
+  }
+
   .main-page .special-tour, .main-page .special-fly, .main-page .special-hotel {
-    width: 100%; }
-    .main-page .special-tour .content-special, .main-page .special-fly .content-special, .main-page .special-hotel .content-special {
-      width: 88%; }
+    width: 100%;
+  }
+
+  .main-page .special-tour .content-special, .main-page .special-fly .content-special, .main-page .special-hotel .content-special {
+    width: 88%;
+  }
 
   .search-head {
-    display: none; }
+    display: none;
+  }
 
   .datepicker-container {
     position: fixed;
     top: 0 !important;
     width: 100%;
     left: 0 !important;
-    height: 100vh; }
-    .datepicker-container .glyphicon {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      font-size: 22px;
-      cursor: pointer;
-      color: #fff;
-      z-index: 999;
-      background: url(../images/icon.png) 70px -100px;
-      width: 25px;
-      height: 25px;
-      display: inline-block; }
-    .datepicker-container .datepicker-plot-area {
-      padding-top: 60px;
-      top: 0 !important;
-      direction: ltr;
-      width: 100%;
-      left: 0 !important;
-      height: 100vh;
-      background: #000000f5; }
-      .datepicker-container .datepicker-plot-area .datepicker-day-view .table-days td span {
-        background: #000000f5;
-        background-color: #000000f5;
-        color: #ffffff !important; }
-        .datepicker-container .datepicker-plot-area .datepicker-day-view .table-days td span:hover {
-          background-color: #007be6; }
-      .datepicker-container .datepicker-plot-area .datepicker-day-view .table-days td.selected span {
-        background-color: #005299; }
-      .datepicker-container .datepicker-plot-area .datepicker-day-view .month-grid-box .header .header-row-cell {
-        color: #007be6; }
-      .datepicker-container .datepicker-plot-area .datepicker-navigator .pwt-btn-switch, .datepicker-container .datepicker-plot-area .datepicker-navigator .pwt-btn-prev, .datepicker-container .datepicker-plot-area .datepicker-navigator .pwt-btn-next {
-        background-color: #f6f3f3; }
-      .datepicker-container .datepicker-plot-area .toolbox .pwt-btn-today {
-        float: right !important;
-        background-color: #fafafa;
-        position: relative;
-        right: 0; }
+    height: 100vh;
+  }
+
+  .datepicker-container .glyphicon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #fff;
+    z-index: 999;
+    background: url(../images/icon.png) 70px -100px;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+  }
+
+  .datepicker-container .datepicker-plot-area {
+    padding-top: 60px;
+    top: 0 !important;
+    direction: ltr;
+    width: 100%;
+    left: 0 !important;
+    height: 100vh;
+    background: #000000f5;
+  }
+
+  .datepicker-container .datepicker-plot-area .datepicker-day-view .table-days td span {
+    background: #000000f5;
+    background-color: #000000f5;
+    color: #ffffff !important;
+  }
+
+  .datepicker-container .datepicker-plot-area .datepicker-day-view .table-days td span:hover {
+    background-color: #007be6;
+  }
+
+  .datepicker-container .datepicker-plot-area .datepicker-day-view .table-days td.selected span {
+    background-color: #005299;
+  }
+
+  .datepicker-container .datepicker-plot-area .datepicker-day-view .month-grid-box .header .header-row-cell {
+    color: #007be6;
+  }
+
+  .datepicker-container .datepicker-plot-area .datepicker-navigator .pwt-btn-switch, .datepicker-container .datepicker-plot-area .datepicker-navigator .pwt-btn-prev, .datepicker-container .datepicker-plot-area .datepicker-navigator .pwt-btn-next {
+    background-color: #f6f3f3;
+  }
+
+  .datepicker-container .datepicker-plot-area .toolbox .pwt-btn-today {
+    float: right !important;
+    background-color: #fafafa;
+    position: relative;
+    right: 0;
+  }
 
   .responsive-side-src {
-    display: block; }
-    .responsive-side-src .modal-content .modal-body .search-head {
-      display: inline-block !important; }
+    display: block;
+  }
+
+  .responsive-side-src .modal-content .modal-body .search-head {
+    display: inline-block !important;
+  }
 
   .content-search .content-list-src {
-    padding: 0 15px; }
+    padding: 0 15px;
+  }
+
   .content-search .side-left, .content-search .side-right {
-    display: none; }
+    display: none;
+  }
 
   .side-right .widget {
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+  }
+
   .side-right .list-class-fly ul.list-check li .lableSorc span:first-child, .side-right .list-class-fly ul.list-check li .lableSorc span:nth-child(2) {
-    width: 43%; }
+    width: 43%;
+  }
+
   .side-right ul.list-check .lableSorc span {
-    font-size: 14px; }
-    .side-right ul.list-check .lableSorc span.icon-fly-check, .side-right ul.list-check .lableSorc span:first-child {
-      min-width: 55px; }
-    .side-right ul.list-check .lableSorc span.fa-num, .side-right ul.list-check .lableSorc .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title span, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title .side-right ul.list-check .lableSorc span, .side-right ul.list-check .lableSorc .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section span.t-value, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section .side-right ul.list-check .lableSorc span.t-value, .side-right ul.list-check .lableSorc .div-arrange span.num-arrange, .side-right .div-arrange ul.list-check .lableSorc span.num-arrange, .side-right ul.list-check .lableSorc .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket span:first-child, .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket .side-right ul.list-check .lableSorc span:first-child, .side-right .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul.list-check .lableSorc li span:last-child, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse .side-right ul.list-check .lableSorc li span:last-child, .side-right .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul.list-check li .lableSorc span:last-child, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse .side-right ul.list-check li .lableSorc span:last-child {
-      width: 60px; }
+    font-size: 14px;
+  }
+
+  .side-right ul.list-check .lableSorc span.icon-fly-check, .side-right ul.list-check .lableSorc span:first-child {
+    min-width: 55px;
+  }
+
+  .side-right ul.list-check .lableSorc span.fa-num, .side-right ul.list-check .lableSorc .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title span, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title .side-right ul.list-check .lableSorc span, .side-right ul.list-check .lableSorc .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section span.t-value, .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section .side-right ul.list-check .lableSorc span.t-value, .side-right ul.list-check .lableSorc .div-arrange span.num-arrange, .side-right .div-arrange ul.list-check .lableSorc span.num-arrange, .side-right ul.list-check .lableSorc .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket span:first-child, .content-search .content-list-src .item-list-src .above-div .part-left-above .price-ticket .side-right ul.list-check .lableSorc span:first-child, .side-right .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul.list-check .lableSorc li span:last-child, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse .side-right ul.list-check .lableSorc li span:last-child, .side-right .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse ul.list-check li .lableSorc span:last-child, .content-search .content-list-src .item-list-src .collapse .card .part-left-collapse .side-right ul.list-check li .lableSorc span:last-child {
+    width: 60px;
+  }
 
   .content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly p {
     right: -5px;
@@ -1309,201 +1946,333 @@ body.modal-open .datepicker-container {
     padding: 5px;
     line-height: 1;
     border-radius: 5px 5px 0 0;
-    font-size: 11px; }
-    .content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly p.title-system {
-      right: -12px;
-      font-size: 10px; }
+    font-size: 11px;
+  }
+
+  .content-search .content-list-src .item-list-src .above-div .part-right-above .sort-fly p.title-system {
+    right: -12px;
+    font-size: 10px;
+  }
+
   .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li {
-    margin: 0; }
-    .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li p:first-child {
-      font-size: 16px; }
-    .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li p:last-child {
-      font-size: 14px; }
-    .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li.line-between {
-      width: 50%; }
+    margin: 0;
+  }
+
+  .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li p:first-child {
+    font-size: 16px;
+  }
+
+  .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li p:last-child {
+    font-size: 14px;
+  }
+
+  .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li.line-between {
+    width: 50%;
+  }
+
   .content-search .content-list-src .footer-co-src .number-fly, .content-search .content-list-src .footer-co-src .details-fly {
     width: 49%;
-    display: inline-block; } }
+    display: inline-block;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .head-page {
-    min-height: 80px; }
-    .head-page .logo-part img {
-      max-width: 100%; }
+    min-height: 80px;
+  }
+
+  .head-page .logo-part img {
+    max-width: 100%;
+  }
 
   .main-page {
-    padding-top: 10px; }
-    .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .form-control {
-      width: 100%; }
-    .main-page .information-fly .list-info-fly .details-info-fly {
-      padding-right: 5px; }
-    .main-page .special-tour, .main-page .special-fly, .main-page .special-hotel {
-      width: auto;
-      margin-right: -15px;
-      margin-left: -15px;
-      overflow: hidden; }
-      .main-page .special-tour .title-section, .main-page .special-fly .title-section, .main-page .special-hotel .title-section {
-        border-radius: 0;
-        width: auto;
-        padding: 0 15px;
-        margin-right: 4px; }
-        .main-page .special-tour .title-section h2, .main-page .special-fly .title-section h2, .main-page .special-hotel .title-section h2 {
-          transform: rotate(0deg);
-          width: auto;
-          display: block;
-          top: auto;
-          right: auto;
-          height: auto;
-          position: relative; }
-      .main-page .special-tour .content-special, .main-page .special-fly .content-special, .main-page .special-hotel .content-special {
-        width: 98%;
-        border-radius: 0;
-        margin: 0 auto;
-        border-top: 2px solid #0077bb; }
-        .main-page .special-tour .content-special .list-item-spe .slick-arrow, .main-page .special-fly .content-special .list-item-spe .slick-arrow, .main-page .special-hotel .content-special .list-item-spe .slick-arrow {
-          width: 35px;
-          height: 35px; }
-        .main-page .special-tour .content-special .list-item-spe .slick-prev, .main-page .special-fly .content-special .list-item-spe .slick-prev, .main-page .special-hotel .content-special .list-item-spe .slick-prev {
-          background: url(../images/icon.png) -9px -240px;
-          left: -23px; }
-        .main-page .special-tour .content-special .list-item-spe .slick-next, .main-page .special-fly .content-special .list-item-spe .slick-next, .main-page .special-hotel .content-special .list-item-spe .slick-next {
-          background: url(../images/icon.png) -48px -240px;
-          right: -23px; }
-        .main-page .special-tour .content-special .item-special a.over-pic img, .main-page .special-fly .content-special .item-special a.over-pic img, .main-page .special-hotel .content-special .item-special a.over-pic img {
-          width: auto;
-          margin: 0 auto; }
-        .main-page .special-tour .content-special .item-special h3, .main-page .special-fly .content-special .item-special h3, .main-page .special-hotel .content-special .item-special h3 {
-          font-size: 13px; }
-        .main-page .special-tour .content-special .item-special p, .main-page .special-fly .content-special .item-special p, .main-page .special-hotel .content-special .item-special p {
-          font-size: 18px; }
+    padding-top: 10px;
+  }
 
-  .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title > div {
+  .main-page .slide-search .search-section .box-search .tab-content .tab-pane .form-search form .form-row .form-group .form-control {
+    width: 100%;
+  }
+
+  .main-page .information-fly .list-info-fly .details-info-fly {
+    padding-right: 5px;
+  }
+
+  .main-page .special-tour, .main-page .special-fly, .main-page .special-hotel {
+    width: auto;
+    margin-right: -15px;
+    margin-left: -15px;
+    overflow: hidden;
+  }
+
+  .main-page .special-tour .title-section, .main-page .special-fly .title-section, .main-page .special-hotel .title-section {
+    border-radius: 0;
+    width: auto;
+    padding: 0 15px;
+    margin-right: 4px;
+  }
+
+  .main-page .special-tour .title-section h2, .main-page .special-fly .title-section h2, .main-page .special-hotel .title-section h2 {
+    transform: rotate(0deg);
+    width: auto;
+    display: block;
+    top: auto;
+    right: auto;
+    height: auto;
+    position: relative;
+  }
+
+  .main-page .special-tour .content-special, .main-page .special-fly .content-special, .main-page .special-hotel .content-special {
+    width: 98%;
+    border-radius: 0;
+    margin: 0 auto;
+    border-top: 2px solid #0077bb;
+  }
+
+  .main-page .special-tour .content-special .list-item-spe .slick-arrow, .main-page .special-fly .content-special .list-item-spe .slick-arrow, .main-page .special-hotel .content-special .list-item-spe .slick-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .main-page .special-tour .content-special .list-item-spe .slick-prev, .main-page .special-fly .content-special .list-item-spe .slick-prev, .main-page .special-hotel .content-special .list-item-spe .slick-prev {
+    background: url(../images/icon.png) -9px -240px;
+    left: -23px;
+  }
+
+  .main-page .special-tour .content-special .list-item-spe .slick-next, .main-page .special-fly .content-special .list-item-spe .slick-next, .main-page .special-hotel .content-special .list-item-spe .slick-next {
+    background: url(../images/icon.png) -48px -240px;
+    right: -23px;
+  }
+
+  .main-page .special-tour .content-special .item-special a.over-pic img, .main-page .special-fly .content-special .item-special a.over-pic img, .main-page .special-hotel .content-special .item-special a.over-pic img {
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .main-page .special-tour .content-special .item-special h3, .main-page .special-fly .content-special .item-special h3, .main-page .special-hotel .content-special .item-special h3 {
+    font-size: 13px;
+  }
+
+  .main-page .special-tour .content-special .item-special p, .main-page .special-fly .content-special .item-special p, .main-page .special-hotel .content-special .item-special p {
+    font-size: 18px;
+  }
+
+  .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title>div {
     width: 32%;
     display: inline-block;
-    text-align: center; }
-    .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title > div span {
-      font-size: 11px; }
+    text-align: center;
+  }
+
+  .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .title>div span {
+    font-size: 11px;
+  }
+
   .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .subject {
     width: 29%;
     display: inline-block;
-    padding: 5px; }
+    padding: 5px;
+  }
+
   .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text {
     width: 70%;
     display: inline-block;
-    padding: 5px; }
-    .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section > div {
-      width: 32%;
-      display: inline-block; } }
+    padding: 5px;
+  }
+
+  .continue-buy .modal-dialog .modal-body .traveler-info .collapseDetails .traveler .flat-card .other .text .t-section>div {
+    width: 32%;
+    display: inline-block;
+  }
+}
+
 @media (max-width: 650px) {
   .content-search .content-list-src .item-list-src .above-div .part-right-above {
-      border-left:unset;
+    border-left: unset;
   }
 
   .content-search .content-list-src .item-list-src .above-div .part-right-above .icon-fly {
     width: 20%;
-    padding: 0 0; }
+    padding: 0 0;
+  }
+
   .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end {
-    width: 63%; }
-    .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li p:first-child {
-      font-size: 14px; }
-    .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li p:last-child {
-      font-size: 13px; }
+    width: 63%;
+  }
+
+  .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li p:first-child {
+    font-size: 14px;
+  }
+
+  .content-search .content-list-src .item-list-src .above-div .part-right-above .hour-start-end ul li p:last-child {
+    font-size: 13px;
+  }
+
   .content-search .content-list-src .footer-co-src .number-fly, .content-search .content-list-src .footer-co-src .details-fly {
-    padding: 0 5px; }
-    .content-search .content-list-src .footer-co-src .number-fly p, .content-search .content-list-src .footer-co-src .number-fly a, .content-search .content-list-src .footer-co-src .details-fly p, .content-search .content-list-src .footer-co-src .details-fly a {
-      font-size: 12px; }
+    padding: 0 5px;
+  }
+
+  .content-search .content-list-src .footer-co-src .number-fly p, .content-search .content-list-src .footer-co-src .number-fly a, .content-search .content-list-src .footer-co-src .details-fly p, .content-search .content-list-src .footer-co-src .details-fly a {
+    font-size: 12px;
+  }
 
   .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title h3 {
-    font-size: 14px; }
+    font-size: 14px;
+  }
+
   .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title .add-passenger {
     left: -3px;
-    font-size: 10px; }
+    font-size: 10px;
+  }
 
   .continue-buy .modal-dialog .modal-body .traveler-info .sr-other-details {
     float: none;
     width: 100%;
-    text-align: left; } }
+    text-align: left;
+  }
+}
+
 @media (max-width: 576px) {
   .main-page .slide-search {
     width: auto;
     margin-right: -15px;
-    margin-left: -15px; }
-    .main-page .slide-search .search-section {
-      padding: 0; }
-      .main-page .slide-search .search-section .box-search ul li.nav-item {
-        max-height: 95px; }
-        .main-page .slide-search .search-section .box-search ul li.nav-item a {
-          font-size: 13px;
-          padding: 10px 0; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a.active#fly-in-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#fly-in-tab:before {
-            background: url("../images/icon.png") 55px -174px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a.active#fly-out-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#fly-out-tab:before {
-            background: url("../images/icon.png") 117px -180px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a.active#hotel-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#hotel-tab:before {
-            background: url("../images/icon.png") 178px -180px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a.active#tour-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#tour-tab:before {
-            background: url("../images/icon.png") 238px -180px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a:before {
-            content: '';
-            width: 45px;
-            height: 45px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a#fly-in-tab:before {
-            background: url("../images/icon.png") 55px -133px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a#fly-out-tab:before {
-            background: url("../images/icon.png") 116px -133px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a#hotel-tab:before {
-            background: url("../images/icon.png") 177px -133px; }
-          .main-page .slide-search .search-section .box-search ul li.nav-item a#tour-tab:before {
-            background: url("../images/icon.png") 238px -133px; }
+    margin-left: -15px;
+  }
+
+  .main-page .slide-search .search-section {
+    padding: 0;
+  }
+
+  .main-page .slide-search .search-section .box-search ul li.nav-item {
+    max-height: 95px;
+  }
+
+  .main-page .slide-search .search-section .box-search ul li.nav-item a {
+    font-size: 13px;
+    padding: 10px 0;
+  }
+
+  .main-page .slide-search .search-section .box-search ul li.nav-item a.active#fly-in-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#fly-in-tab:before {
+    background: url("../images/icon.png") 55px -174px;
+  }
+
+  .main-page .slide-search .search-section .box-search ul li.nav-item a.active#fly-out-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#fly-out-tab:before {
+    background: url("../images/icon.png") 117px -180px;
+  }
+
+  .main-page .slide-search .search-section .box-search ul li.nav-item a.active#hotel-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#hotel-tab:before {
+    background: url("../images/icon.png") 178px -180px;
+  }
+
+  .main-page .slide-search .search-section .box-search ul li.nav-item a.active#tour-tab:before, .main-page .slide-search .search-section .box-search ul li.nav-item a:hover#tour-tab:before {
+    background: url("../images/icon.png") 238px -180px;
+  }
+
+  .main-page .slide-search .search-section .box-search ul li.nav-item a:before {
+    content: '';
+    width: 45px;
+    height: 45px;
+  }
+
+  .main-page .slide-search .search-section .box-search ul li.nav-item a#fly-in-tab:before {
+    background: url("../images/icon.png") 55px -133px;
+  }
+
+  .main-page .slide-search .search-section .box-search ul li.nav-item a#fly-out-tab:before {
+    background: url("../images/icon.png") 116px -133px;
+  }
+
+  .main-page .slide-search .search-section .box-search ul li.nav-item a#hotel-tab:before {
+    background: url("../images/icon.png") 177px -133px;
+  }
+
+  .main-page .slide-search .search-section .box-search ul li.nav-item a#tour-tab:before {
+    background: url("../images/icon.png") 238px -133px;
+  }
 
   .footer-page .content-footer {
     width: auto;
     margin-right: -15px;
-    margin-left: -15px; }
-    .footer-page .content-footer .list-namd .top-part ul {
-      text-align: center; }
-      .footer-page .content-footer .list-namd .top-part ul li {
-        width: 25%; }
-        .footer-page .content-footer .list-namd .top-part ul li img {
-          width: 100%; }
-    .footer-page .content-footer .address-info li:nth-child(2), .footer-page .content-footer .address-info li:nth-child(3) {
-      font-size: 22px; }
-    .footer-page .content-footer .list-namd .bottom-part .box-copyright {
-      width: 90%;
-      margin: 0 auto;
-      min-height: 70px; }
+    margin-left: -15px;
+  }
+
+  .footer-page .content-footer .list-namd .top-part ul {
+    text-align: center;
+  }
+
+  .footer-page .content-footer .list-namd .top-part ul li {
+    width: 25%;
+  }
+
+  .footer-page .content-footer .list-namd .top-part ul li img {
+    width: 100%;
+  }
+
+  .footer-page .content-footer .address-info li:nth-child(2), .footer-page .content-footer .address-info li:nth-child(3) {
+    font-size: 22px;
+  }
+
+  .footer-page .content-footer .list-namd .bottom-part .box-copyright {
+    width: 90%;
+    margin: 0 auto;
+    min-height: 70px;
+  }
 
   .content-search .content-list-src .item-list-src .above-div .part-left-above {
-    border-top: 1px dashed #cccccc; }
-    .content-search .content-list-src .item-list-src .above-div .part-left-above p {
-      display: inline-block;
-      margin: 0 10px; }
-      .content-search .content-list-src .item-list-src .above-div .part-left-above p:first-child {
-        font-size: 11px; }
-      .content-search .content-list-src .item-list-src .above-div .part-left-above p.price-ticket span:first-child {
-        font-size: 16px !important; }
-    .content-search .content-list-src .item-list-src .above-div .part-left-above .btn-primary {
-      padding: 5px;
-      line-height: 1;
-      font-size: 13px; }
+    border-top: 1px dashed #cccccc;
+  }
+
+  .content-search .content-list-src .item-list-src .above-div .part-left-above p {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  .content-search .content-list-src .item-list-src .above-div .part-left-above p:first-child {
+    font-size: 11px;
+  }
+
+  .content-search .content-list-src .item-list-src .above-div .part-left-above p.price-ticket span:first-child {
+    font-size: 16px !important;
+  }
+
+  .content-search .content-list-src .item-list-src .above-div .part-left-above .btn-primary {
+    padding: 5px;
+    line-height: 1;
+    font-size: 13px;
+  }
 
   .continue-buy .modal-dialog .modal-body .traveler-info .description {
     overflow-x: scroll !important;
-    width: 100%; }
-    .continue-buy .modal-dialog .modal-body .traveler-info .description .table {
-      overflow-x: scroll;
-      width: 400px; }
-      .continue-buy .modal-dialog .modal-body .traveler-info .description .table td {
-        font-size: 12px; } }
+    width: 100%;
+  }
+
+  .continue-buy .modal-dialog .modal-body .traveler-info .description .table {
+    overflow-x: scroll;
+    width: 400px;
+  }
+
+  .continue-buy .modal-dialog .modal-body .traveler-info .description .table td {
+    font-size: 12px;
+  }
+}
+
 @media only screen and (max-width: 370px) {
   .main-page .information-fly .list-info-fly .details-info-fly ul li {
     margin: 5px;
-    font-size: 16px; }
-    .main-page .information-fly .list-info-fly .details-info-fly ul li p:last-child {
-      font-size: 13px; }
-    .main-page .information-fly .list-info-fly .details-info-fly ul li:first-child span {
-      font-size: 18px; } }
+    font-size: 16px;
+  }
+
+  .main-page .information-fly .list-info-fly .details-info-fly ul li p:last-child {
+    font-size: 13px;
+  }
+
+  .main-page .information-fly .list-info-fly .details-info-fly ul li:first-child span {
+    font-size: 18px;
+  }
+}
+
 @media only screen and (max-width: 340px) {
   .continue-buy .modal-dialog .modal-body .traveler-info .traveler-info-title .add-passenger {
-    position: relative; } }
+    position: relative;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

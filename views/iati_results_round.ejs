@@ -709,7 +709,7 @@
 
           <!--.part-advertis-->
           <div style="height:5px; position:unset;"></div>
-          <% for (var i=0; i<returns.length ; i++){ %>
+          <% for (var i=0; i<Math.min(returns.length,flights.length) ; i++){ %>
 
           <div class="item-list-src container-fluid <%= flights[i].TimeClass %>" style="position:unset;" >
             <div class="above-div row">
@@ -720,8 +720,11 @@
                 </div>
                 <div class="icon-fly">
                   <div class="co-icon-fly">
+                    <br>
                     <img src="<%= "/images/airlines/"+flights[i].AirLineShort+".png" %>"  alt="">
                     <p style="width: 100px;"><%= flights[i].AirLine %></p>
+                    <p style="width: 100px;"> <%= flights[i].Class %> / <%= flights[i].FlightNo %> </p>
+
                   </div>
                 </div>
                 <div class="hour-start-end">
@@ -740,6 +743,7 @@
                 <!--.hour-start-end-->
               </div>
               <br>
+              <br>
               <div class="col-lg-9 col-md-9 part-right-above">
                 <div class="sort-fly">
                   <!--put class .charter instead of .title-system for charter-fly-->
@@ -747,8 +751,10 @@
                 </div>
                 <div class="icon-fly">
                   <div class="co-icon-fly">
-                    <img src="<%= "/images/airlines/"+flights[i].AirLineShort+".png" %>"  alt="">
+                    <br>
+                    <img src="<%= "/images/airlines/"+returns[i].AirLineShort+".png" %>"  alt="">
                     <p style="width: 100px;"><%= returns[i].AirLine %></p>
+                    <p style="width: 100px;"><%= returns[i].Class %> / <%= returns[i].FlightNo %> </p>
                   </div>
                 </div>
                 <div class="hour-start-end">
@@ -767,18 +773,21 @@
                 <!--.hour-start-end-->
               </div>
               <!--.part-right-above-->
-              <div class="col-lg-3 col-md-3 part-left-above">
+              <div class="col-lg-3 col-md-3 part-left-above" style="margin-top: -75px;">
                 <p>قیمت 1 مسافر</p>
                 <p class="price-ticket">
                   <span class="price"><%= flights[i].Price %></span>
                   <span>تومان</span>
-                  <br>
-                  <span>+</span>
-                  <br>
+
+                </p>
+                <p>قیمت 1 مسافر</p>
+                <p class="price-ticket">
+
                   <span class="price"><%= returns[i].Price %></span>
                   <span>تومان</span>
 
                 </p>
+
                 <a href="#" data-fnum="<%= flights[i].Spec %>" class="btn btn-primary btn_reserve">خرید بلیط</a>
               </div>
               <!--.part-left-above-->
@@ -786,9 +795,9 @@
             <!--.above-div-->
             <div class="footer-co-src row">
               <div class="col-lg-9 col-sm-9 number-fly">
-                <p><%= flights[i].Class %> / شماره پرواز : <%= flights[i].FlightNo %> </p>
+                <p> </p>
               </div>
-              <div class="col-lg-3 col-sm-3 details-fly" hidden>
+              <div class="col-lg-3 col-sm-3 details-fly" >
                 <a href="#collapseDetails-5" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseDetails-5">جزئیات پرواز</a>
               </div>
             </div>
@@ -811,7 +820,7 @@
                   <ul>
                     <li>
                       <span> بزرگسال:</span>
-                      <span>2,275,000 ریال</span>
+                      <span><%= flights[i].Price %></span>
                     </li>
                   </ul>
                 </div>
