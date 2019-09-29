@@ -76,7 +76,7 @@
                                 <a href="#" class="add-passenger">افزودن مسافر جدید</a>
                             </div>
                             <div class="traveler-info-body traveler-list-body">
-                                                                    <div class="traveler traveler-template">
+                                    <div class="traveler traveler-template">
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-12 col-md-12">
                                                 <div class="form-group">
@@ -847,6 +847,105 @@
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
   <script>
+
+  var tflight = 0;
+      var cnt = 1;
+      function newitem(i) {
+          cnt = i+1;
+          let  t = '<div class="traveler traveler-template traveler-template-'+cnt+'">' +
+              '                                        <div class="row">' +
+              '                                            <div class="col-xs-12 col-sm-12 col-md-12">' +
+              '                                                <div class="form-group">' +
+              '                                                    <div class="md-checkbox p-0">' +
+              '                                                        <label>' +
+              '                                                            <input class="checkbox-inline" id="checkbox-inline" name="passenger['+cnt+'][nationality]" type="checkbox"' +
+              '                                                                   value="1" >' +
+              '                                                            <span class="md-checkbox-material"><span' +
+              '                                                                        class="check"></span></span>' +
+              '                                                            <span class="md-checkbox-label" title="ماهان">مسافر از اتباع خارجی است</span>' +
+              '                                                        </label>' +
+              '                                                    </div>' +
+              '                                                </div>' +
+              '                                            </div>' +
+              '                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">' +
+              '                                                <div class="form-group">' +
+              '                                                    <label>نام (فارسی) : </label>' +
+              '                                                    <input class="item GivenNameFA form-control" maxlength="59" name="passenger['+cnt+'][name]"' +
+              '                                                           placeholder="به فارسی وارد کنید..." required="required"' +
+              '                                                           type="text" value="">' +
+              '                                                </div>' +
+              '                                            </div>' +
+              '                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">' +
+              '                                                <div class="form-group">' +
+              '                                                    <label>نام خانوادگی (فارسی): </label>' +
+              '                                                    <input class="item SurNameFA form-control" maxlength="59" name="passenger['+cnt+'][family]"' +
+              '                                                           placeholder="به فارسی وارد کنید..." type="text" value=""' +
+              '                                                           required="Required">' +
+              '                                                </div>' +
+              '                                            </div>' +
+              '                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">' +
+              '                                                <div class="form-group">' +
+              '                                                    <label>نام (انگلیسی): </label>' +
+              '                                                    <input class="item GivenName form-control" maxlength="59" name="passenger['+cnt+'][en_name]"' +
+              '                                                           placeholder="به انگلیسی وارد کنید..." required="required"' +
+              '                                                           type="text" value="">' +
+              '                                                </div>' +
+              '                                            </div>' +
+              '                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">' +
+              '                                                <div class="form-group">' +
+              '                                                    <label>نام خانوادگی (انگلیسی): </label>' +
+              '                                                    <input class="item SurName form-control" maxlength="59" name="passenger['+cnt+'][en_family]"' +
+              '                                                           placeholder="به انگلیسی وارد کنید..." required="Required"' +
+              '                                                           type="text" value="">' +
+              '                                                </div>' +
+              '                                            </div>' +
+              '                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">' +
+              '                                                <div class="form-group">' +
+              '                                                    <label>جنسیت: </label>' +
+              '                                                    <select class="nice-select form-control wide" id="AdultNamePrefix0"' +
+              '                                                            name="passenger['+cnt+'][gender]">' +
+              '                                                        <option value="">انتخاب کنید...</option>' +
+              '                                                        <option value="1">Mr - مرد</option>' +
+              '                                                        <option value="2">Mrs - زن</option>' +
+              '                                                    </select>' +
+              '                                                </div>' +
+              '                                            </div>' +
+              '                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">' +
+              '                                                <div class="form-group">' +
+              '                                                    <label>تاریخ تولد: </label>' +
+              '                                                    <input required="Required" class=" form-control"' +
+              '                                                           name="passenger['+cnt+'][year]" placeholder="سال"' +
+              '                                                           type="text" value="" >' +
+              '                                                    <input required="Required" class=" form-control"' +
+              '                                                           name="passenger['+cnt+'][month]" placeholder="ماه"' +
+              '                                                           type="text" value="" >' +
+              '                                                    <input required="Required" class=" form-control"' +
+              '                                                           name="passenger['+cnt+'][day]" placeholder="روز"' +
+              '                                                           type="text" value="" >' +
+              '                                                </div>' +
+              '                                            </div>' +
+              '                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">' +
+              '                                                <div class="form-group box-num-code">' +
+              '                                                    <label>کد ملی: </label>' +
+              '                                                    <input required="Required"' +
+              '                                                           class="item form-control NationalCode font-PN" maxlength="10"' +
+              '                                                           name="passenger['+cnt+'][national_id]" placeholder="کد 10 رقمی وارد کنید..." type="text"' +
+              '                                                           value="">' +
+              '                                                </div>' +
+              '                                                <div class="form-group box-num-pos" style="display:none;">' +
+              '                                                    <label>شماره پاسپورت: </label>' +
+              '                                                    <input  class="item form-control" name="passenger['+cnt+'][passport_id]"' +
+              '                                                           placeholder="مثال: P36522846" type="text" value="">' +
+              '                                                </div>' +
+              '                                                <div class="form-group">' +
+              '                                                    <label><a href="#" class="glyphicon glyphicon-remove remove-item" data="'+cnt+'" >حذف</a></label>' +
+              '                                                </div>' +
+              '                                            </div>' +
+              '                                        </div>' +
+              '                                    </div>';
+          return t;
+      }
+
     function find1() {
       $('#modal-popup').modal('show');
       let times = [];

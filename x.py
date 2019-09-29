@@ -23,7 +23,7 @@ def hello():
         date2=request.args.get('date2')
 
     reqstr=''' { "fromAirport": "#FROM#","allinFromCity": false,"toAirport": "#TO#","allinToCity": false,"fromDate": "#DATE1#","returnDate": "#DATE2#",   "adult": "#ADULT#",   "child": "#CHILD#",   "infant": "#INFANT#",   "TestMode": false,   "MemberSessionID": "#SESSIONID#" } '''
-    payload=reqstr.replace("#FROM#", request.args.get('from')).replace("#TO#", request.args.get('to')).replace("#DATE1#", request.args.get('date')).replace("#DATE2#", request.args.get('date2')).replace("#SESSIONID#",sesseionid).replace("#ADULT#", request.args.get('adult')).replace("#CHILD#", request.args.get('child')).replace("#INFANT#", request.args.get('infant'))
+    payload=reqstr.replace("#FROM#", request.args.get('from')).replace("#TO#", request.args.get('to')).replace("#DATE1#", request.args.get('date')).replace("#DATE2#",date2).replace("#SESSIONID#",sesseionid).replace("#ADULT#", request.args.get('adult')).replace("#CHILD#", request.args.get('child')).replace("#INFANT#", request.args.get('infant'))
 
     print(payload)
 
@@ -136,6 +136,8 @@ def pricedetail():
 #get PaymentID
 @app.route('/addticket')
 def addticket():
+    print("IN ADD TICKET")
+
     reqstr='''{   "LoginID":"#SESSIONID#",   "CallBackURL":"http://iati.ir/payment/check/{{id}}",
     "PaymentTypeID": 1,"PaymentCode": "#PAYCODE#","ServiceName": "FLIGHT", "MemberDescription": "",
     "PriceDetailID": "#DETAILID#",   "Description": "" ,"BookArray":"{\\"TestMode\\":true,
@@ -159,80 +161,13 @@ def addticket():
      ]}" ,
     "ExteraAgency": 0 }  '''
 
-    reqdummy='''
-{   "LoginID":"1edd5d10-f162-4f32-8df0-2f9f79d42",   "CallBackURL":"http://iati.ir/payment/check/{{id}}",
-    "PaymentTypeID": 1,"PaymentCode": "eeb4913b-0395-4593-80d3-1f59c0b5e547","ServiceName": "FLIGHT", "MemberDescription": "",
-    "PriceDetailID": "60cee529-c4fd-463a-bac2-39d5dd92c254",   "Description": "" ,"BookArray":"{\\"TestMode\\":true,
-    \\"ContactInfo\\":{
-    \\"Email\\":\\"amzoddin@gmail.com\\",
-    \\"CellphoneNumber\\": \\"09190008767\\",
-    \\"PhoneNumber\\":\\"6500877\\"},
-    \\"PassengerList\\":[
-    {\\"FirstName\\":\\"محمد\\",
-    \\"LastName\\":\\"جبلی\\",
-     \\"FirstNameEnglish\\":\\"mohammad\\",
-     \\"LastNameEnglish\\":\\"jebeli\\",
-     \\"IdentityNumber\\":\\"P490070566\\",
-     \\"IdentityExpireDate\\":\\"2020-12-22\\",
-     \\"BirthDate\\":\\"1990-04-22\\",
-     \\"Gender\\":true,
-     \\"Nationality\\":\\"IR\\",
-     \\"DomesticFlight\\":false,
-     \\"PassengerType\\":\\"ADULT\\",
-     \\"NationalCode\\":\\"0477707708\\"}
-     ,
-     {\\"FirstName\\":\\"معصومه\\",
-    \\"LastName\\":\\"جبلی\\",
-     \\"FirstNameEnglish\\":\\"masoumeh\\",
-     \\"LastNameEnglish\\":\\"jebeli\\",
-     \\"IdentityNumber\\":\\"P110071566\\",
-     \\"IdentityExpireDate\\":\\"2020-12-22\\",
-     \\"BirthDate\\":\\"1992-11-22\\",
-     \\"Gender\\":false,
-     \\"Nationality\\":\\"IR\\",
-     \\"DomesticFlight\\":false,
-     \\"PassengerType\\":\\"ADULT\\",
-     \\"NationalCode\\":\\"2317707088\\"}
-     ,
-     {\\"FirstName\\":\\"علی\\",
-    \\"LastName\\":\\"جبلی\\",
-     \\"FirstNameEnglish\\":\\"ali\\",
-     \\"LastNameEnglish\\":\\"jebeli\\",
-     \\"IdentityNumber\\":\\"P192040066\\",
-     \\"IdentityExpireDate\\":\\"2020-12-22\\",
-     \\"BirthDate\\":\\"2014-02-02\\",
-     \\"Gender\\":true,
-     \\"Nationality\\":\\"IR\\",
-     \\"DomesticFlight\\":false,
-     \\"PassengerType\\":\\"CHILD\\",
-     \\"NationalCode\\":\\"0077727580\\"}
-     ,
-     {\\"FirstName\\":\\"بهمن\\",
-    \\"LastName\\":\\"جبلی\\",
-     \\"FirstNameEnglish\\":\\"bahman\\",
-     \\"LastNameEnglish\\":\\"jebeli\\",
-     \\"IdentityNumber\\":\\"P192033566\\",
-     \\"IdentityExpireDate\\":\\"2020-12-22\\",
-     \\"BirthDate\\":\\"2019-04-22\\",
-     \\"Gender\\":true,
-     \\"Nationality\\":\\"IR\\",
-     \\"DomesticFlight\\":false,
-     \\"PassengerType\\":\\"INFANT\\",
-     \\"NationalCode\\":\\"123447788\\"}
-
-
-     ]}" ,
-    "ExteraAgency": 0 }
-    '''
-
-
     payload=reqstr.replace("#SESSIONID#",request.args.get('sess'))
     payload=payload.replace("#PAYCODE#",request.args.get('payid'))
     payload=payload.replace("#DETAILID#",request.args.get('detailid'))
     payload=payload.replace("#ENNAME#",request.args.get('enname'))
     payload=payload.replace("#ENLAST#",request.args.get('enlast'))
-    payload=payload.replace("#NAME#",request.args.get('enname'))
-    payload=payload.replace("#LAST#",request.args.get('enlast'))
+    payload=payload.replace("#NAME#",request.args.get('name'))
+    payload=payload.replace("#LAST#",request.args.get('last'))
     payload=payload.replace("#ID#",request.args.get('id'))
     payload=payload.replace("#EXPIRE#","2020-12-22")
     payload=payload.replace("#BD#","1990-04-22")
@@ -241,7 +176,7 @@ def addticket():
     payload=payload.replace("#EMAIL#",request.args.get('email'))
     print(reqstr)
 
-    r = requests.post("http://testapi.iati.ir/Payment/Invoice_Add_Item/7D7764DF874F8C9D06B7A5BAA462AD0F", data=reqdummy)
+    r = requests.post("http://testapi.iati.ir/Payment/Invoice_Add_Item/7D7764DF874F8C9D06B7A5BAA462AD0F", data=payload)
     print(r.text)
 
     datastore = json.loads(r.text)

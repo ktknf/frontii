@@ -55,7 +55,7 @@
       <div class="modal-content">
         <div class="modal-body modal-buy-body">
 
-				<form role="form" id="form_reserve" method="post" action="/zvreserve">
+				<form role="form" id="form_reserve" method="post" action="/iatires">
                     <input type="hidden" name="_csrf" value="lKVzpU2cD4Oc1v74zv3PeWTY6B2rPvg6aiL02YcPb9HakhznPstI56-fiqGXqL8hLoCsa59byn06faShyEUKsg==">
                     <input type="hidden" name="from" value="" id="idfrom">
                     <input type="hidden" name="to" value="" id="idto">
@@ -65,6 +65,9 @@
                     <input type="hidden" name="month" value="" id="idmonth">
                     <input type="hidden" name="price" value="" id="idprice">
                     <input type="hidden" name="airline" value="" id="idairline">
+                    <input type="hidden" name="searchid" value="" id="idsearchid">
+                    <input type="hidden" name="flightid" value="" id="idflightid">
+                    <input type="hidden" name="sessid" value="" id="idsessid">
 
                     <div class="container-fluid padd0">
                         <div class="flat-card traveler-info">
@@ -73,7 +76,7 @@
                                 <a href="#" class="add-passenger">افزودن مسافر جدید</a>
                             </div>
                             <div class="traveler-info-body traveler-list-body">
-                                                                    <div class="traveler traveler-template">
+                                    <div class="traveler traveler-template">
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-12 col-md-12">
                                                 <div class="form-group">
@@ -89,13 +92,13 @@
                                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div class="form-group">
                                                     <label>نام (فارسی) : </label>
-                                                    <input class="item GivenNameFA form-control" maxlength="59" name="edtname0" placeholder="به فارسی وارد کنید..." required="required" type="text" value="">
+                                                    <input class="item GivenNameFA form-control" maxlength="59" name="faname" placeholder="به فارسی وارد کنید..." required="required" type="text" value="">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div class="form-group">
                                                     <label>نام خانوادگی (فارسی): </label>
-                                                    <input class="item SurNameFA form-control" maxlength="59" name="edtlast0" placeholder="به فارسی وارد کنید..." type="text" value="" required="Required">
+                                                    <input class="item SurNameFA form-control" maxlength="59" name="falast" placeholder="به فارسی وارد کنید..." type="text" value="" required="Required">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -123,9 +126,9 @@
                                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div class="form-group">
                                                     <label>تاریخ تولد: </label>
-                                                    <input required="Required" class=" form-control" name="passenger[1][year]" placeholder="سال" type="text" value="">
-                                                    <input required="Required" class=" form-control" name="passenger[1][month]" placeholder="ماه" type="text" value="">
-                                                    <input required="Required" class=" form-control" name="passenger[1][day]" placeholder="روز" type="text" value="">
+                                                    <input required="Required" class=" form-control" name="bdyear" placeholder="سال" type="text" value="">
+                                                    <input required="Required" class=" form-control" name="bdmonth" placeholder="ماه" type="text" value="">
+                                                    <input required="Required" class=" form-control" name="bdday" placeholder="روز" type="text" value="">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -301,44 +304,63 @@
               <div class="form-group col-md-2 begin-part">
                 <span class="title-input">مبداء</span>
                 <select name="from" class="form-control">
-                  <option value="THR" <%- par.from =='THR' ? 'selected' : '' %> >تهران( THR )</option>
-                  <option value="MHD" <%- par.from =='MHD' ? 'selected' : '' %> >مشهد( MHD )</option>
-                  <option value="IFN" <%- par.from =='IFN' ? 'selected' : '' %> >اصفهان( IFN )</option>
-                  <option value="ABD" <%- par.from =='ABD' ? 'selected' : '' %> >آبادان( ABD )</option>
-                  <option value="AZD" <%- par.from =='AZD' ? 'selected' : '' %> >یزد( AZD )</option>
-                  <option value="BUZ" <%- par.from =='BUZ' ? 'selected' : '' %> >بوشهر( BUZ )</option>
-                  <option value="KIH" <%- par.from =='KIH' ? 'selected' : '' %> >کیش( KIH )</option>
-                  <option value="SYZ" <%- par.from =='SYZ' ? 'selected' : '' %> >شیراز( SYZ )</option>
-                  <option value="AWZ" <%- par.from =='AWZ' ? 'selected' : '' %> >اهواز( AWZ )</option>
-                  <option value="GSM" <%- par.from =='GSM' ? 'selected' : '' %> >قشم( GSM )</option>
-                  <option value="PGU" <%- par.from =='PGU' ? 'selected' : '' %> >عسلویه( PGU )</option>
-                  <option value="BND" <%- par.from =='BND' ? 'selected' : '' %> >بندرعباس( BND )</option>
-
-
-                  <option value="TTQ"  <%- par.from =='TTQ' ? 'selected' : '' %> >TTQ( TTQ )</option>
-                  <option value="UGT"  <%- par.from =='UGT' ? 'selected' : '' %> >UGT( UGT )</option>
+                  <option value="IKA" <%- par.from =='IKA' ? 'selected' : '' %> >تهران( IKA )</option>
+                  <option value="DXB" <%- par.from =='DXB' ? 'selected' : '' %> >دبی( DXB )</option>
+                  <option value="GYD" <%- par.from =='GYD' ? 'selected' : '' %> >باکو( GYD )</option>
+                  <option value="SAW" <%- par.from =='SAW' ? 'selected' : '' %> >استانبول( SAW )</option>
+                  <option value="MCT" <%- par.from =='MCT' ? 'selected' : '' %> >مسقط( MCT )</option>
+                  <option value="URC" <%- par.from =='URC' ? 'selected' : '' %> >ارومچی( URC )</option>
+                  <option value="IST" <%- par.from =='IST' ? 'selected' : '' %> >استانبول( IST )</option>
+                  <option value="DOH" <%- par.from =='DOH' ? 'selected' : '' %> >دهه( DOH )</option>
+                  <option value="SVO" <%- par.from =='SVO' ? 'selected' : '' %> >مسکو( SVO )</option>
+                  <option value="FRA" <%- par.from =='FRA' ? 'selected' : '' %> >فرانفورت( FRA )</option>
+                  <option value="ZRH" <%- par.from =='ZRH' ? 'selected' : '' %> >زوریخ( ZRH )</option>
+                  <option value="MUC" <%- par.from =='MUC' ? 'selected' : '' %> >مونیخ( MUC )</option>
+                  <option value="KBP" <%- par.from =='KBP' ? 'selected' : '' %> >کیو( KBP )</option>
+                  <option value="ODS" <%- par.from =='ODS' ? 'selected' : '' %> >ادسا( ODS )</option>
+                  <option value="VIE" <%- par.from =='VIE' ? 'selected' : '' %> >وین( VIE )</option>
+                  <option value="AMM" <%- par.from =='AMM' ? 'selected' : '' %> >امان( AMM )</option>
+                  <option value="KWI" <%- par.from =='KWI' ? 'selected' : '' %> >کویت سیتی( KWI )</option>
+                  <option value="ESB" <%- par.from =='ESB' ? 'selected' : '' %> >آنکارا( ESB )</option>
+                  <option value="WUH" <%- par.from =='WUH' ? 'selected' : '' %> >ووهان( WUH )</option>
+                  <option value="CAN" <%- par.from =='CAN' ? 'selected' : '' %> >گوانجو( CAN )</option>
+                  <option value="ADB" <%- par.from =='ADB' ? 'selected' : '' %> >ازمیر( ADB )</option>
+                  <option value="AYT" <%- par.from =='AYT' ? 'selected' : '' %> >آنتالیا( AYT )</option>
+                  <option value="ADA" <%- par.from =='ADA' ? 'selected' : '' %> >آدنا( ADA )</option>
+                  <option value="DME" <%- par.from =='DME' ? 'selected' : '' %> >مسکو( DME )</option>
+                  <option value="LHR" <%- par.from =='LHR' ? 'selected' : '' %> >لندن( LHR )</option>
 
                 </select>
               </div>
               <div class="form-group col-md-2 end-part">
                 <span class="title-input">مقصد</span>
                 <select name="to" class="form-control">
-                  <option value="THR" <%- par.to =='THR' ? 'selected' : '' %> >تهران( THR )</option>
-                  <option value="MHD" <%- par.to =='MHD' ? 'selected' : '' %> >مشهد( MHD )</option>
-                  <option value="IFN" <%- par.to =='IFN' ? 'selected' : '' %> >اصفهان( IFN )</option>
-                  <option value="ABD" <%- par.to =='ABD' ? 'selected' : '' %> >آبادان( ABD )</option>
-                  <option value="AZD" <%- par.to =='AZD' ? 'selected' : '' %> >یزد( AZD )</option>
-                  <option value="BUZ" <%- par.to =='BUZ' ? 'selected' : '' %> >بوشهر( BUZ )</option>
-                  <option value="KIH" <%- par.to =='KIH' ? 'selected' : '' %> >کیش( KIH )</option>
-                  <option value="SYZ" <%- par.to =='SYZ' ? 'selected' : '' %> >شیراز( SYZ )</option>
-                  <option value="AWZ" <%- par.to =='AWZ' ? 'selected' : '' %> >اهواز( AWZ )</option>
-                  <option value="GSM" <%- par.to =='GSM' ? 'selected' : '' %> >قشم( GSM )</option>
-                  <option value="PGU" <%- par.to =='PGU' ? 'selected' : '' %> >عسلویه( PGU )</option>
-                  <option value="BND" <%- par.to =='BND' ? 'selected' : '' %> >بندرعباس( BND )</option>
 
-
-                  <option value="TTQ"  <%- par.to =='TTQ' ? 'selected' : '' %> >TTQ( TTQ )</option>
-                  <option value="UGT"  <%- par.to =='UGT' ? 'selected' : '' %> >UGT( UGT )</option>
+                  <option value="IKA" <%- par.to =='IKA' ? 'selected' : '' %> >تهران( IKA )</option>
+                  <option value="DXB" <%- par.to =='DXB' ? 'selected' : '' %> >دبی( DXB )</option>
+                  <option value="GYD" <%- par.to =='GYD' ? 'selected' : '' %> >باکو( GYD )</option>
+                  <option value="SAW" <%- par.to =='SAW' ? 'selected' : '' %> >استانبول( SAW )</option>
+                  <option value="MCT" <%- par.to =='MCT' ? 'selected' : '' %> >مسقط( MCT )</option>
+                  <option value="URC" <%- par.to =='URC' ? 'selected' : '' %> >ارومچی( URC )</option>
+                  <option value="IST" <%- par.to =='IST' ? 'selected' : '' %> >استانبول( IST )</option>
+                  <option value="DOH" <%- par.to =='DOH' ? 'selected' : '' %> >دهه( DOH )</option>
+                  <option value="SVO" <%- par.to =='SVO' ? 'selected' : '' %> >مسکو( SVO )</option>
+                  <option value="FRA" <%- par.to =='FRA' ? 'selected' : '' %> >فرانفورت( FRA )</option>
+                  <option value="ZRH" <%- par.to =='ZRH' ? 'selected' : '' %> >زوریخ( ZRH )</option>
+                  <option value="MUC" <%- par.to =='MUC' ? 'selected' : '' %> >مونیخ( MUC )</option>
+                  <option value="KBP" <%- par.to =='KBP' ? 'selected' : '' %> >کیو( KBP )</option>
+                  <option value="ODS" <%- par.to =='ODS' ? 'selected' : '' %> >ادسا( ODS )</option>
+                  <option value="VIE" <%- par.to =='VIE' ? 'selected' : '' %> >وین( VIE )</option>
+                  <option value="AMM" <%- par.to =='AMM' ? 'selected' : '' %> >امان( AMM )</option>
+                  <option value="KWI" <%- par.to =='KWI' ? 'selected' : '' %> >کویت سیتی( KWI )</option>
+                  <option value="ESB" <%- par.to =='ESB' ? 'selected' : '' %> >آنکارا( ESB )</option>
+                  <option value="WUH" <%- par.to =='WUH' ? 'selected' : '' %> >ووهان( WUH )</option>
+                  <option value="CAN" <%- par.to =='CAN' ? 'selected' : '' %> >گوانجو( CAN )</option>
+                  <option value="ADB" <%- par.to =='ADB' ? 'selected' : '' %> >ازمیر( ADB )</option>
+                  <option value="AYT" <%- par.to =='AYT' ? 'selected' : '' %> >آنتالیا( AYT )</option>
+                  <option value="ADA" <%- par.to =='ADA' ? 'selected' : '' %> >آدنا( ADA )</option>
+                  <option value="DME" <%- par.to =='DME' ? 'selected' : '' %> >مسکو( DME )</option>
+                  <option value="LHR" <%- par.to =='LHR' ? 'selected' : '' %> >لندن( LHR )</option>
 
                 </select>
               </div>
@@ -687,7 +709,7 @@
 
           <!--.part-advertis-->
           <div style="height:5px; position:unset;"></div>
-          <% for (var i=0; i<flights.length ; i++){ %>
+          <% for (var i=0; i<returns.length ; i++){ %>
 
           <div class="item-list-src container-fluid <%= flights[i].TimeClass %>" style="position:unset;" >
             <div class="above-div row">
@@ -699,7 +721,7 @@
                 <div class="icon-fly">
                   <div class="co-icon-fly">
                     <img src="<%= "/images/airlines/"+flights[i].AirLineShort+".png" %>"  alt="">
-                    <p><%= flights[i].AirLine %></p>
+                    <p style="width: 100px;"><%= flights[i].AirLine %></p>
                   </div>
                 </div>
                 <div class="hour-start-end">
@@ -717,12 +739,45 @@
                 </div>
                 <!--.hour-start-end-->
               </div>
+              <br>
+              <div class="col-lg-9 col-md-9 part-right-above">
+                <div class="sort-fly">
+                  <!--put class .charter instead of .title-system for charter-fly-->
+                  <p class="title-system">سیستمی</p>
+                </div>
+                <div class="icon-fly">
+                  <div class="co-icon-fly">
+                    <img src="<%= "/images/airlines/"+flights[i].AirLineShort+".png" %>"  alt="">
+                    <p style="width: 100px;"><%= returns[i].AirLine %></p>
+                  </div>
+                </div>
+                <div class="hour-start-end">
+                  <ul>
+                    <li>
+                      <p><%= returns[i].DepartureDateTime %></p>
+                      <p><%= returns[i].FullFrom %></p>
+                    </li>
+                    <li class="line-between"></li>
+                    <li>
+                      <p><%= returns[i].ArrivalDateTime %></p>
+                      <p><%= returns[i].FullTo %></p>
+                    </li>
+                  </ul>
+                </div>
+                <!--.hour-start-end-->
+              </div>
               <!--.part-right-above-->
               <div class="col-lg-3 col-md-3 part-left-above">
                 <p>قیمت 1 مسافر</p>
                 <p class="price-ticket">
                   <span class="price"><%= flights[i].Price %></span>
                   <span>تومان</span>
+                  <br>
+                  <span>+</span>
+                  <br>
+                  <span class="price"><%= returns[i].Price %></span>
+                  <span>تومان</span>
+
                 </p>
                 <a href="#" data-fnum="<%= flights[i].Spec %>" class="btn btn-primary btn_reserve">خرید بلیط</a>
               </div>
@@ -772,9 +827,9 @@
         <!--content-list-src-->
         <aside class="col-lg-2 col-md-2 side-left">
           <ul>
-            <li><a href="#"><img src="/images/ad/1.jpg" alt=""></a></li>
-            <li><a href="#"><img src="/images/ad/2.jpg" alt=""></a></li>
-            <li><a href="#"><img src="/images/ad/3.jpg" alt=""></a></li>
+            <li hidden><a href="#"><img src="/images/ad/1.jpg" alt=""></a></li>
+            <li hidden><a href="#"><img src="/images/ad/2.jpg" alt=""></a></li>
+            <li hidden><a href="#"><img src="/images/ad/3.jpg" alt=""></a></li>
           </ul>
         </aside>
         <!--.side-left-->
@@ -1000,14 +1055,17 @@
 		console.log("Modal Buy");
 		var data = $(this).attr('data-fnum');
 		console.log(data);
-		document.getElementById("idnum").value=data.split('-')[2];
-		document.getElementById("idfrom").value=data.split('-')[0];
-		document.getElementById("idto").value=data.split('-')[1];
-		document.getElementById("idclass").value=data.split('-')[3];
-		document.getElementById("idday").value=data.split('-')[4];
-		document.getElementById("idmonth").value=data.split('-')[5];
-    document.getElementById("idprice").value=data.split('-')[6];
-    document.getElementById("idairline").value=data.split('-')[7];
+		document.getElementById("idnum").value=data.split('#')[2];
+		document.getElementById("idfrom").value=data.split('#')[0];
+		document.getElementById("idto").value=data.split('#')[1];
+		document.getElementById("idclass").value=data.split('#')[3];
+		document.getElementById("idday").value=data.split('#')[4];
+		document.getElementById("idmonth").value=data.split('#')[5];
+    document.getElementById("idprice").value=data.split('#')[6];
+    document.getElementById("idairline").value=data.split('#')[7];
+    document.getElementById("idsearchid").value=data.split('#')[8];
+    document.getElementById("idflightid").value=data.split('#')[9];
+    document.getElementById("idsessid").value=data.split('#')[10];
 
 		$('#modal-buy').modal('show');
 

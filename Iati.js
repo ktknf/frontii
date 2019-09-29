@@ -32,6 +32,8 @@ module.exports = {
     request.get(get_url, function(err, res, body) {
       var flght = JSON.parse(body);
       var final_return = [];
+      var final_return_flight = [];
+
       for (var i = 0; i < flght.length; i++) {
 
         var dtime = flght[i]['Legs'][0]['DepartureTime'];
@@ -62,6 +64,8 @@ module.exports = {
         //console.log(flght[i]['Legs'][0]['Baseprice']);
         var prstr = Math.floor(flght[i]['WagedTotalSingleAdultFare'] / 10) ;
 
+        if(flght[i]['ReturnFlight']===false)
+        {
         //console.log(flght[i]);
         final_return.push({
           AirLine: flght[i]['Legs'][0]['OperatorName'],
@@ -79,11 +83,30 @@ module.exports = {
           Class: flght[i]['SegmentNames'][0],
           Spec: Source + "#" + Target + "#" + flght[i]['Legs']['FlightNo'] + "#" + "X" + "#" + Day + "#" + IsRound + "#" + "100000" + "#IV#" + flght[i]['SearchID'] + "#" + flght[i]['FlightID'] + "#" + flght[i]['SessID']
         });
+        }
+        else {
+          final_return_flight.push({
+            AirLine: flght[i]['Legs'][0]['OperatorName'],
+            AirLineShort: flght[i]['Legs'][0]['OperatorCode'],
+            TimeClass: 'noon',
+            DepartureDateTime: dret,
+            ArrivalDateTime: aret,
+            From: flght[i]['Legs'][0]['DepartureAirport'],
+            FullFrom: flght[i]['Legs'][0]['DepartureAirport'],
+            To: flght[i]['Legs'][leglen-1]['ArrivalAirport'],
+            FullTo: flght[i]['Legs'][leglen-1]['ArrivalAirport'],
+            Price: utility.CommaSeprate(prstr),
+            IntPrice: parseInt(flght[i]['WagedTotalSingleAdultFare']),
+            FlightNo: flght[i]['Legs'][0]['FlightNo'],
+            Class: flght[i]['SegmentNames'][0],
+            Spec: Source + "#" + Target + "#" + flght[i]['Legs']['FlightNo'] + "#" + "X" + "#" + Day + "#" + IsRound + "#" + "100000" + "#IV#" + flght[i]['SearchID'] + "#" + flght[i]['FlightID'] + "#" + flght[i]['SessID']
+          });
+        }
       }
 
       console.log("total caspain: ");
       console.log(final_return.length);
-      callback(final_return);
+      callback({flight:final_return,return:final_return_flight});
     });
   },
   //GetFlight Function End
@@ -103,6 +126,8 @@ module.exports = {
          "&enname=" + Name + "&enlast=" + Last+"&email=" + Email+"&id=" + ID+"&payid="+payment_val;
         console.log(get_url);
         request.get(get_url, function(err, res, body) {
+          console.log(get_url);
+
           callback(body);
         });
       });

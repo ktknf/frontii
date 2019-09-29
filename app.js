@@ -147,17 +147,28 @@ app.get('/interflight', function(req, res) {
 
 console.log("???????"+req.query.date+"||||"+req.query.date2);
   var final_array = [];
+  var final_array_returns = [];
 
   Iati.GetFlights(req.query.from, req.query.to, Utility.DateToGeorg(Utility.ToEnglishDigits(req.query.date)) , Utility.DateToGeorg(Utility.ToEnglishDigits(req.query.date2)) , req.query.iroundtrip, req.query.adult, req.query.child, req.query.infant, function(iv_all_flights) {
-    final_array = final_array.concat(iv_all_flights);
+    final_array = final_array.concat(iv_all_flights.flight);
+    final_array_returns = final_array_returns.concat(iv_all_flights.return);
 
     var data = {
       flights: final_array,
+      returns:final_array_returns,
       today: Utility.GetNowJalali(),
       par: req.query
     };
     console.log(data);
-    res.render('iati_results.ejs', data);
+    if(req.query.iroundtrip==='true')
+      {
+        res.render('iati_results_round.ejs', data);
+      }
+    else
+      {
+        res.render('iati_results.ejs', data);
+      }
+
   });
 
 })
